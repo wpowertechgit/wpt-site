@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --wpt-waste-gray: #8E8E8E;
+    --wpt-power-red: #ED1C24;
+    --wpt-tech-blue: #0000FF;
+    --wpt-white: #FFFFFF;
+}
+
+@layer base {
+    body {
+        @apply bg-brand-white text-brand-black antialiased;
+        overflow-x: hidden;
+    }
+
+    hr {
+        @apply border-t border-brand-black opacity-10 my-8;
+    }
+}
+
+@layer components {
+    .section-container {
+        @apply max-w-8xl mx-auto px-6 py-12 md:px-12 lg:px-24;
+    }
+
+    .pillar-grid {
+        @apply grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x border-y border-brand-black;
+    }
+}
