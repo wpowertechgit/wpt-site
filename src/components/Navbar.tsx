@@ -1,7 +1,9 @@
-import { AppBar, Box, Button, Menu, MenuItem, Container, Link as MuiLink } from "@mui/material";
+import { AppBar, Box, Button, Menu, MenuItem, Container, Link as MuiLink, IconButton } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { IoLanguage } from "react-icons/io5";
+import { MdLanguage } from "react-icons/md";
 
 const NAV_ITEMS = [
     { label: "Technology", to: "/technology" },
@@ -11,7 +13,19 @@ const NAV_ITEMS = [
     { label: "Contact", to: "/contact" },
 ];
 
-const LOCALES = ["en", "de", "fr"];
+const LOCALES = [
+    ["en", "/us.png", "English"],
+    ["ro", "/ro.png", "Română"],
+    ["hu", "/hu.png", "Magyar"],
+    ["de", "/de.png", "Deutsch"],
+    ["fr", "/fr.png", "Français"],
+    ["it", "/it.png", "Italiano"],
+    ["gr", "/gr.png", "Ελληνικά"],
+    ["tr", "/tr.png", "Türkçe"],
+    ["zh", "/zh.png", "中文"],
+    ["es", "/es.png", "Español"],
+    ["pl", "/pl.png", "Polski"]
+];
 
 export default function Navbar() {
     const { i18n } = useTranslation();
@@ -41,13 +55,20 @@ export default function Navbar() {
                 zIndex: 50
             }}
         >
-            <Container maxWidth="lg" sx={{ px: "2rem !important" }}>
+            <Container
+                maxWidth={false}
+                sx={{
+                    px: { md: "2rem !important", xl: "3rem !important" },
+                    width: "100%",
+                    maxWidth: "120rem",
+                }}
+            >
                 <Box
                     sx={{
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-between",
-                        height: "4rem"
+                        height: { xs: "clamp(4.5rem, 4vw, 6rem)", xxxl: "10vh" }
                     }}
                 >
                     {/* LOGO */}
@@ -67,8 +88,11 @@ export default function Navbar() {
                             component="img"
                             src="/logo.svg"
                             alt="Waste Powertech Logo"
+                            loading="eager"
+                            decoding="async"
+                            fetchPriority="high"
                             sx={{
-                                height: "2.5rem",
+                                height: { xs: "clamp(2.75rem, 2.4vw, 4rem)", xxxl: "8vh" },
                                 width: "auto"
                             }}
                         />
@@ -84,11 +108,11 @@ export default function Navbar() {
                                 sx={{
                                     color: "#000",
                                     textTransform: "none",
-                                    fontSize: "1rem",
+                                    fontSize: { xs: "clamp(1rem, 0.95vw, 1.4rem)", xxxl: "2.7rem" },
                                     fontFamily: "Figtree",
-                                    fontWeight: 500,
-                                    px: "1.5rem",
-                                    py: "0.75rem",
+                                    fontWeight: 600,
+                                    px: "clamp(1rem, 1.2vw, 2rem)",
+                                    py: "clamp(0.6rem, 0.8vw, 1rem)",
                                     position: "relative",
                                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                                     "&:hover": {
@@ -103,27 +127,24 @@ export default function Navbar() {
                         ))}
 
                         {/* LOCALE DROPDOWN */}
-                        <Button
+                        <IconButton
                             onClick={handleLocaleClick}
                             sx={{
                                 color: "#000",
-                                textTransform: "none",
-                                fontSize: "1rem",
-                                fontFamily: "Figtree",
-                                fontWeight: 500,
-                                px: "1.5rem",
-                                py: "0.75rem",
-                                ml: "1rem",
+                                ml: "clamp(0.5rem, 0.8vw, 1.2rem)",
+                                p: { xs: "0.5rem", xxxl: "0.95rem" },
                                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                "& svg": {
+                                    fontSize: { xs: "clamp(1.7rem, 1.2vw, 2.5rem)", xxxl: "4rem" }
+                                },
                                 "&:hover": {
-                                    bgcolor: "#000",
-                                    color: "#fff",
-                                    transform: "translateY(-2px)"
+                                    color: "#ED1C24"
                                 }
                             }}
                         >
-                            {i18n.language.toUpperCase()}
-                        </Button>
+                            <IoLanguage />
+                            <MdLanguage />
+                        </IconButton>
                         <Menu
                             anchorEl={localeAnchor}
                             open={Boolean(localeAnchor)}
@@ -133,18 +154,26 @@ export default function Navbar() {
                                 "& .MuiPaper-root": {
                                     bgcolor: "#ffffff",
                                     border: "1px solid #ddd",
-                                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)"
+                                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                                    minWidth: { xs: "12.5rem", lg: "14rem", xxxl: "22rem" },
+                                    py: { xs: "0.3rem", xxxl: "0.7rem" }
                                 }
                             }}
                         >
-                            {LOCALES.map((lng) => (
+                            {LOCALES.map(([code, flag, label]) => (
                                 <MenuItem
-                                    key={lng}
-                                    onClick={() => handleLanguageChange(lng)}
-                                    selected={i18n.language === lng}
+                                    key={code}
+                                    onClick={() => handleLanguageChange(code)}
+                                    selected={i18n.language === code}
                                     sx={{
                                         fontFamily: "Figtree",
+                                        fontSize: { xs: "clamp(1rem, 0.95vw, 1.2rem)", xxxl: "2rem" },
+                                        minHeight: { xs: "2.6rem", xxxl: "4.2rem" },
                                         color: "#000",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: { xs: "0.75rem", xxxl: "1.2rem" },
+                                        px: { xs: "0.9rem", xxxl: "1.4rem" },
                                         "&:hover": {
                                             bgcolor: "#f5f5f5"
                                         },
@@ -156,7 +185,20 @@ export default function Navbar() {
                                         }
                                     }}
                                 >
-                                    {lng.toUpperCase()}
+                                    <Box
+                                        component="img"
+                                        src={flag}
+                                        alt={label}
+                                        loading="lazy"
+                                        decoding="async"
+                                        fetchPriority="low"
+                                        sx={{
+                                            width: { xs: "2rem", lg: "2.25rem", xxxl: "4.5rem" },
+                                            height: { xs: "1.35rem", lg: "1.5rem", xxxl: "3rem" },
+                                            objectFit: "contain"
+                                        }}
+                                    />
+                                    {label}
                                 </MenuItem>
                             ))}
                         </Menu>

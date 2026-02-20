@@ -23,6 +23,9 @@ const PrivacyMap = () => {
           <img
             src={"mappreview.png"} // local static preview image fdrom public folder
             alt="Map preview"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             style={{
               width: "100%",
               height: "100%",

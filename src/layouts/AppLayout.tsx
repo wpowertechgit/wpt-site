@@ -1,20 +1,27 @@
+import type { ReactNode } from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import { useMediaQuery } from "@mui/material";
+import NavbarDesktop from "../components/Navbar";
+import NavbarMobile from "../components/NavbarMobile";
 import FFooter from "../components/FFooter";
 
-// App layout wrapper with navbar
-export default function AppLayout() {
-    return (
-        <div className="min-h-screen flex flex-col bg-brand.white text-brand.black">
-            {/* Header */}
-            <Navbar />
+type AppLayoutProps = {
+    children?: ReactNode;
+};
 
-            {/* Main content */}
-            <main className="flex-1 w-full">
-                <Outlet />
-            </main>
+export default function AppLayout({ children }: AppLayoutProps) {
+    const isMobile = useMediaQuery("(max-width:900px)");
+
+    return (
+        <div className="layout min-h-screen flex flex-col bg-brand-white text-brand-black">
+            <header>
+                {isMobile ? <NavbarMobile /> : <NavbarDesktop />}
+            </header>
+
+            <main className="flex-1 w-full">{children ?? <Outlet />}</main>
 
             <FFooter />
         </div>
     );
 }
+

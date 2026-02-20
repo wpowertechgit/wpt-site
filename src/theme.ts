@@ -1,6 +1,27 @@
 import { createTheme } from "@mui/material/styles";
 
+declare module "@mui/material/styles" {
+    interface BreakpointOverrides {
+        xs: true;
+        sm: true;
+        md: true;
+        lg: true;
+        xl: true;
+        xxxl: true;
+    }
+}
+
 const theme = createTheme({
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 960,
+            lg: 1280,
+            xl: 1920,
+            xxxl: 2560
+        }
+    },
     typography: {
         fontFamily: "Figtree, sans-serif",
         h1: {

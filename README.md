@@ -2,6 +2,13 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Quality gates
+
+- `npm run test:e2e` runs Playwright smoke tests.
+- `npm run test:a11y` runs axe checks on core routes.
+- `npm run perf:lighthouse` runs Lighthouse CI assertions.
+- `npm run ci:quality` runs build + E2E + Lighthouse.
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh

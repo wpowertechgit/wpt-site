@@ -1,32 +1,155 @@
 {
-    "hero-title": "Waste Powertech",
-    "hero-subtitle": "Transforming waste into power through technology",
-    "pillar-waste": "Waste",
-    "pillar-waste-description": "Efficient waste processing and management systems designed for modern sustainability.",
-    "pillar-power": "Power",
-    "pillar-power-description": "Converting waste to energy with zero CO2 emissions through advanced technology.",
-    "pillar-technology": "Technology",
-    "pillar-technology-description": "Cutting-edge molecular disintegration and processing innovation.",
-    "learn-more": "Learn more",
-    "cluj-title": "Reference Implementation: Cluj",
-    "cluj-description": "Our flagship installation in Cluj demonstrates the full potential of our waste-to-energy technology. This implementation serves as a benchmark for sustainable power generation in Eastern Europe.",
-    "view-case": "View case study",
-    "institutional-b2g": "Institutional (B2G)",
-    "industrial-b2i": "Industrial (B2I)",
-    "app-b2g-description": "Government and institutional partnerships enabling sustainable waste management at municipal scales.",
-    "app-b2i-description": "Industrial applications for waste management and energy recovery in manufacturing sectors.",
-    "explore": "Explore applications",
-    "documentation": "Documentation",
-    "technology-brochure": "Technology Brochure",
-    "method-summary": "Method Summary",
-    "press-kit": "Press Kit",
-    "all-documents": "All documents",
-    "calculator-title": "System Output Calculator",
-    "modules": "Modules",
-    "mwh-year": "MWh/year",
-    "households": "Households",
-    "city-coverage": "% of city",
-    "open-full-calculator": "Open full calculator",
-    "footer-text": "WPT · Waste Powertech · Romania",
-    "contact-us": "Contact us"
+    "hero-title":  "Waste Powertech",
+    "hero-subtitle":  "Transforming waste into power through technology",
+    "pillar-waste":  "Waste",
+    "pillar-waste-description":  "Efficient waste processing and management systems designed for modern sustainability.",
+    "pillar-power":  "Power",
+    "pillar-power-description":  "Converting waste to energy with zero CO2 emissions through advanced technology.",
+    "pillar-technology":  "Technology",
+    "pillar-technology-description":  "Cutting-edge molecular disintegration and processing innovation.",
+    "learn-more":  "Learn more",
+    "cluj-title":  "Reference Implementation: Cluj",
+    "cluj-description":  "Our flagship installation in Cluj demonstrates the full potential of our waste-to-energy technology. This implementation serves as a benchmark for sustainable power generation in Eastern Europe.",
+    "view-case":  "View case study",
+    "institutional-b2g":  "Institutional (B2G)",
+    "industrial-b2i":  "Industrial (B2I)",
+    "app-b2g-description":  "Government and institutional partnerships enabling sustainable waste management at municipal scales.",
+    "app-b2i-description":  "Industrial applications for waste management and energy recovery in manufacturing sectors.",
+    "explore":  "Explore applications",
+    "documentation":  "Documentation",
+    "technology-brochure":  "Technology Brochure",
+    "method-summary":  "Method Summary",
+    "press-kit":  "Press Kit",
+    "all-documents":  "All documents",
+    "calculator-title":  "System Output Calculator",
+    "modules":  "Modules",
+    "mwh-year":  "MWh/year",
+    "households":  "Households",
+    "city-coverage":  "% of city",
+    "open-full-calculator":  "Open full calculator",
+    "footer-text":  "WPT · Waste Powertech · Romania",
+    "contact-us":  "Contact us",
+    "tech-title":  "Molecular Disintegration: A Controlled Technical Process",
+    "tech-intro":  "The technology page describes a linear process from feedstock conditioning to stable energy output. Each stage is measurable, controlled, and documented using operational data.",
+    "tech-diagram-title":  "Process Sequence",
+    "tech-step-feedstock-title":  "1. Feedstock Conditioning",
+    "tech-step-feedstock-desc":  "Input streams are pre-characterized and stabilized for consistent molecular disintegration conditions and auditable throughput.",
+    "tech-step-reactor-desc":  "The reactor module applies controlled thermal and mechanical parameters to disintegrate complex material structures in a closed process envelope.",
+    "tech-step-energy-title":  "3. Power Conversion and Monitoring",
+    "tech-step-energy-desc":  "Recovered output is converted into usable energy while control systems log performance, availability, and compliance metrics in real time.",
+    "tech-control-title":  "Control and Safety Layer",
+    "tech-control-desc":  "System behavior is governed through bounded operating windows, sensor redundancy, and procedural interlocks designed for continuous operation.",
+    "tech-output-title":  "Output and Verification Layer",
+    "tech-output-desc":  "Output quality and system efficiency are validated through repeatable measurement points aligned with technical reporting requirements.",
+    "tech-step-reactor-title":  "2. Controlled Molecular Disintegration",
+    "tabs":  {
+                 "b2g":  {
+                             "label":  "B2G",
+                             "sublabel":  "Government \u0026 Institutional"
+                         },
+                 "b2b":  {
+                             "label":  "B2B / B2I",
+                             "sublabel":  "Industrial \u0026 Commercial"
+                         },
+                 "b2i":  {
+                             "sublabel":  "Infrastructure",
+                             "label":  "B2I"
+                         }
+             },
+    "b2g":  {
+                "subnav":  {
+                               "cityIntegration":  "City Integration",
+                               "caseStudies":  "Public Case Studies",
+                               "certifications":  "Certifications \u0026 Health"
+                           },
+                "overview":  {
+                                 "title":  "Institutional (B2G)",
+                                 "imageAlt":  "City waste infrastructure overview",
+                                 "body":  "Controlled molecular disintegration supports city-level waste handling with auditable operation windows, predictable output, and infrastructure-compatible integration for urban planning programs."
+                             },
+                "caseStudies":  {
+                                    "title":  "Public Case Studies",
+                                    "card1":  {
+                                                  "imageAlt":  "Municipal sanitation deployment",
+                                                  "title":  "Municipal Sanitation Agencies",
+                                                  "body":  "City sanitation agencies deploying modular lines for mixed municipal waste streams with continuous throughput visibility."
+                                              },
+                                    "card2":  {
+                                                  "imageAlt":  "Regional hub power output",
+                                                  "title":  "Regional Power \u0026 Waste Hubs",
+                                                  "body":  "Regional hubs combining waste reduction and stable power output to reduce landfill dependency and improve service continuity."
+                                              }
+                                },
+                "specs":  {
+                              "title":  "Certifications and Public Health",
+                              "imageAlt":  "Compliance and certification documentation",
+                              "spec1":  "Compliance-aligned reporting with traceable operating parameters and quality checkpoints.",
+                              "spec2":  "Closed-process architecture designed for controlled operation in dense urban contexts.",
+                              "spec3":  "Scalable module planning for phased municipal infrastructure upgrades."
+                          }
+            },
+    "b2b":  {
+                "subnav":  {
+                               "roi":  "ROI Framework",
+                               "deployments":  "Industrial Deployments",
+                               "modularSpecs":  "Modular Specifications"
+                           },
+                "overview":  {
+                                 "title":  "Industrial and Commercial (B2B/B2I)",
+                                 "imageAlt":  "Industrial waste-to-energy facility",
+                                 "body":  "Industrial programs prioritize throughput, ROI, and uptime. The system supports complex waste streams, site-adjacent deployment, and predictable energy recovery within a controlled technical envelope."
+                             },
+                "caseStudies":  {
+                                    "title":  "Industrial Deployments",
+                                    "card1":  {
+                                                  "imageAlt":  "Manufacturing campus on-site module",
+                                                  "title":  "Multi-Line Manufacturing Campuses",
+                                                  "body":  "Multi-line manufacturing campuses using on-site modules to reduce transport cost and stabilize energy offsets."
+                                              },
+                                    "card2":  {
+                                                  "imageAlt":  "Logistics facility waste integration",
+                                                  "title":  "Logistics-Intensive Facilities",
+                                                  "body":  "Logistics-intensive facilities integrating near-site operation to cut handling latency and improve waste accountability."
+                                              }
+                                },
+                "specs":  {
+                              "title":  "Modular Specifications and ROI",
+                              "imageAlt":  "Modular unit specifications diagram",
+                              "spec1":  "Predictable module scaling from pilot installation to full industrial throughput.",
+                              "spec2":  "Operational dashboards for uptime, conversion efficiency, and maintenance forecasting.",
+                              "spec3":  "Financial modeling based on waste handling savings, energy recovery, and utilization rates."
+                          }
+            },
+    "b2i":  {
+                "subnav":  {
+                               "hubs":  "Regional Hubs",
+                               "deployments":  "Infrastructure Deployments",
+                               "specs":  "Network Specifications"
+                           },
+                "overview":  {
+                                 "title":  "Infrastructure (B2I)",
+                                 "imageAlt":  "Regional infrastructure hub",
+                                 "body":  "B2I deployments prioritize long-term regional service continuity. Molecular disintegration modules are integrated into distributed utility frameworks with measurable throughput and controlled operating windows."
+                             },
+                "caseStudies":  {
+                                    "title":  "Infrastructure Deployments",
+                                    "card1":  {
+                                                  "imageAlt":  "District-level waste power node",
+                                                  "title":  "District Utility Nodes",
+                                                  "body":  "District-level nodes aggregate municipal and industrial streams to support stable regional capacity planning and predictable energy recovery."
+                                              },
+                                    "card2":  {
+                                                  "imageAlt":  "Interconnected infrastructure corridor",
+                                                  "title":  "Interconnected Corridor Installations",
+                                                  "body":  "Multi-site corridor installations coordinate waste handling, transport balancing, and output dispatch for high-availability service zones."
+                                              }
+                                },
+                "specs":  {
+                              "title":  "Network Specifications",
+                              "imageAlt":  "Infrastructure technical sheet",
+                              "spec1":  "Designed for phased expansion across regional infrastructure programs with synchronized module commissioning.",
+                              "spec2":  "Supports integration with distributed energy systems and utility telemetry layers for continuous monitoring.",
+                              "spec3":  "Built for long-life operation with maintenance scheduling aligned to infrastructure reliability targets."
+                          }
+            }
 }
