@@ -244,9 +244,9 @@ export default function Home() {
                         alignItems: "center",
                         py: { xs: "5rem", xl: "8rem", xxxl: "12rem" },
                         bgcolor: "#ffffff",
-                        borderTop: "1px solid #ddd"
                     }}
                 >
+
                     <Container
                         maxWidth={false}
                         sx={{
@@ -258,7 +258,9 @@ export default function Home() {
                                 display: "grid",
                                 gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
                                 gap: { xs: "3rem", xl: "6rem", xxxl: "10rem" },
-                                alignItems: "center"
+                                alignItems: "center",
+                                borderTop: "0.25rem solid #000000",
+                                p: { xs: "2rem 0", xl: "4rem 0", xxxl: "6rem 0" }
                             }}
                         >
                             {/* LEFT COLUMN: TEXT CONTENT */}
@@ -371,7 +373,6 @@ export default function Home() {
                         alignItems: "center",
                         py: { xs: "4rem", xl: "0" }, // Vertical padding removed on XL as cards are large
                         bgcolor: "#ffffff",
-                        borderTop: "1px solid #ddd"
                     }}
                 >
                     {/* maxWidth={false} allows the section to ignore the 1200px limit.
@@ -393,21 +394,18 @@ export default function Home() {
                             {[
                                 { name: "b2g", title: t("institutional-b2g"), image: "b2g.jpg" },
                                 { name: "b2i", title: t("industrial-b2i"), image: "b2i.jpg" }
-                            ].map((app, index) => (
+                            ].map((app) => (
                                 <Box
                                     key={app.name}
                                     sx={{
                                         bgcolor: "#ffffff",
                                         // Separator border between the two columns on desktop
-                                        borderLeft: {
-                                            md: index === 1 ? "1px solid #eee" : "none"
-                                        },
-                                        borderTop: "0.25rem solid #8E8E8E",
+                                        borderTop: "0.25rem solid #000000",
                                         // Massive scaling of padding for xl and xxxl
                                         p: {
                                             xs: "2rem",
-                                            md: "3rem",
-                                            xl: "5rem 4rem",
+                                            md: "4rem 3rem",
+                                            xl: "6rem 4rem",
                                             xxxl: "8rem 6rem"
                                         },
                                         display: "flex",

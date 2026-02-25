@@ -1,155 +1,289 @@
 {
-    "hero-title":  "Waste Powertech",
-    "hero-subtitle":  "Transforming waste into power through technology",
-    "pillar-waste":  "Waste",
-    "pillar-waste-description":  "Efficient waste processing and management systems designed for modern sustainability.",
-    "pillar-power":  "Power",
-    "pillar-power-description":  "Converting waste to energy with zero CO2 emissions through advanced technology.",
-    "pillar-technology":  "Technology",
-    "pillar-technology-description":  "Cutting-edge molecular disintegration and processing innovation.",
-    "learn-more":  "Learn more",
-    "cluj-title":  "Reference Implementation: Cluj",
-    "cluj-description":  "Our flagship installation in Cluj demonstrates the full potential of our waste-to-energy technology. This implementation serves as a benchmark for sustainable power generation in Eastern Europe.",
-    "view-case":  "View case study",
-    "institutional-b2g":  "Institutional (B2G)",
-    "industrial-b2i":  "Industrial (B2I)",
-    "app-b2g-description":  "Government and institutional partnerships enabling sustainable waste management at municipal scales.",
-    "app-b2i-description":  "Industrial applications for waste management and energy recovery in manufacturing sectors.",
-    "explore":  "Explore applications",
-    "documentation":  "Documentation",
-    "technology-brochure":  "Technology Brochure",
-    "method-summary":  "Method Summary",
-    "press-kit":  "Press Kit",
-    "all-documents":  "All documents",
-    "calculator-title":  "System Output Calculator",
-    "modules":  "Modules",
-    "mwh-year":  "MWh/year",
-    "households":  "Households",
-    "city-coverage":  "% of city",
-    "open-full-calculator":  "Open full calculator",
-    "footer-text":  "WPT · Waste Powertech · Romania",
-    "contact-us":  "Contact us",
-    "tech-title":  "Molecular Disintegration: A Controlled Technical Process",
-    "tech-intro":  "The technology page describes a linear process from feedstock conditioning to stable energy output. Each stage is measurable, controlled, and documented using operational data.",
-    "tech-diagram-title":  "Process Sequence",
-    "tech-step-feedstock-title":  "1. Feedstock Conditioning",
-    "tech-step-feedstock-desc":  "Input streams are pre-characterized and stabilized for consistent molecular disintegration conditions and auditable throughput.",
-    "tech-step-reactor-desc":  "The reactor module applies controlled thermal and mechanical parameters to disintegrate complex material structures in a closed process envelope.",
-    "tech-step-energy-title":  "3. Power Conversion and Monitoring",
-    "tech-step-energy-desc":  "Recovered output is converted into usable energy while control systems log performance, availability, and compliance metrics in real time.",
-    "tech-control-title":  "Control and Safety Layer",
-    "tech-control-desc":  "System behavior is governed through bounded operating windows, sensor redundancy, and procedural interlocks designed for continuous operation.",
-    "tech-output-title":  "Output and Verification Layer",
-    "tech-output-desc":  "Output quality and system efficiency are validated through repeatable measurement points aligned with technical reporting requirements.",
-    "tech-step-reactor-title":  "2. Controlled Molecular Disintegration",
-    "tabs":  {
-                 "b2g":  {
-                             "label":  "B2G",
-                             "sublabel":  "Government \u0026 Institutional"
-                         },
-                 "b2b":  {
-                             "label":  "B2B / B2I",
-                             "sublabel":  "Industrial \u0026 Commercial"
-                         },
-                 "b2i":  {
-                             "sublabel":  "Infrastructure",
-                             "label":  "B2I"
-                         }
-             },
-    "b2g":  {
-                "subnav":  {
-                               "cityIntegration":  "City Integration",
-                               "caseStudies":  "Public Case Studies",
-                               "certifications":  "Certifications \u0026 Health"
-                           },
-                "overview":  {
-                                 "title":  "Institutional (B2G)",
-                                 "imageAlt":  "City waste infrastructure overview",
-                                 "body":  "Controlled molecular disintegration supports city-level waste handling with auditable operation windows, predictable output, and infrastructure-compatible integration for urban planning programs."
-                             },
-                "caseStudies":  {
-                                    "title":  "Public Case Studies",
-                                    "card1":  {
-                                                  "imageAlt":  "Municipal sanitation deployment",
-                                                  "title":  "Municipal Sanitation Agencies",
-                                                  "body":  "City sanitation agencies deploying modular lines for mixed municipal waste streams with continuous throughput visibility."
-                                              },
-                                    "card2":  {
-                                                  "imageAlt":  "Regional hub power output",
-                                                  "title":  "Regional Power \u0026 Waste Hubs",
-                                                  "body":  "Regional hubs combining waste reduction and stable power output to reduce landfill dependency and improve service continuity."
-                                              }
-                                },
-                "specs":  {
-                              "title":  "Certifications and Public Health",
-                              "imageAlt":  "Compliance and certification documentation",
-                              "spec1":  "Compliance-aligned reporting with traceable operating parameters and quality checkpoints.",
-                              "spec2":  "Closed-process architecture designed for controlled operation in dense urban contexts.",
-                              "spec3":  "Scalable module planning for phased municipal infrastructure upgrades."
-                          }
+    "hero-title": "Waste Powertech",
+    "hero-subtitle": "Transforming waste into power through technology",
+    "pillar-waste": "Waste",
+    "pillar-waste-description": "Efficient waste processing and management systems designed for modern sustainability.",
+    "pillar-power": "Power",
+    "pillar-power-description": "Converting waste to energy with zero CO2 emissions through advanced technology.",
+    "pillar-technology": "Technology",
+    "pillar-technology-description": "Cutting-edge molecular disintegration and processing innovation.",
+    "learn-more": "Learn more",
+    "cluj-title": "Reference Implementation: Cluj",
+    "cluj-description": "Our flagship installation in Cluj demonstrates the full potential of our waste-to-energy technology. This implementation serves as a benchmark for sustainable power generation in Eastern Europe.",
+    "view-case": "View case study",
+    "institutional-b2g": "Institutional (B2G)",
+    "industrial-b2i": "Industrial (B2I)",
+    "app-b2g-description": "Government and institutional partnerships enabling sustainable waste management at municipal scales.",
+    "app-b2i-description": "Industrial applications for waste management and energy recovery in manufacturing sectors.",
+    "explore": "Explore applications",
+    "documentation": "Documentation",
+    "technology-brochure": "Technology Brochure",
+    "method-summary": "Method Summary",
+    "press-kit": "Press Kit",
+    "all-documents": "All documents",
+    "press.heroTitle": "Press and External Coverage",
+    "press.heroDescription": "This section lists third-party media references and public institutional communication about Waste Powertech. Content is organized as source-based records, not promotional statements.",
+    "press.readSource": "Read source",
+    "press.imageAltPrefix": "Press item image",
+    "news8": {
+        "title": "Operational Continuity Coverage",
+        "paragraph": "Media reporting highlights the role of molecular disintegration infrastructure in municipal continuity scenarios. Coverage focuses on process reliability, energy output relevance, and local system resilience."
+    },
+    "news7": {
+        "title": "County-Level Public Communication",
+        "paragraph": "Public institutional communication presents the implementation status and expected utility impact. The report frames molecular disintegration as a controlled technical method for waste-to-power integration."
+    },
+    "news6": {
+        "title": "Construction Progress Update",
+        "paragraph": "Published updates document physical deployment progress, including engineering milestones and execution stages. The content describes controlled commissioning toward operational readiness."
+    },
+    "news5": {
+        "title": "National Expansion Commentary",
+        "paragraph": "National-level statements discuss potential replication in additional regions where stable waste handling and energy recovery are required. Coverage references scalability and technical governance."
+    },
+    "news4": {
+        "title": "Implementation Milestone Notice",
+        "paragraph": "An institutional notice outlines a new project milestone in the transition from planning to deployment. It emphasizes measurable process control and long-term system operation."
+    },
+    "news3": {
+        "title": "Regional Reporting Reference",
+        "paragraph": "Regional media presents project context, investment framing, and expected service impact. The article positions molecular disintegration as a controlled infrastructure method."
+    },
+    "news2": {
+        "title": "Contract Signature Announcement",
+        "paragraph": "Public documentation confirms contract formalization for deployment of a municipal waste treatment line. The announcement references compliance, accountability, and implementation scope."
+    },
+    "news1": {
+        "title": "Initial Market Coverage Record",
+        "paragraph": "Business press notes the first implementation in Cluj and summarizes expected operational outcomes. Reporting focuses on deployment intent and technical delivery context."
+    },
+    "calculator-title": "System Output Calculator",
+    "modules": "Modules",
+    "mwh-year": "MWh/year",
+    "households": "Households",
+    "city-coverage": "% of city",
+    "open-full-calculator": "Open full calculator",
+    "footer-text": "WPT · Waste Powertech · Romania",
+    "contact-us": "Contact us",
+    "tech-title": "WPT Technology (Tech)",
+    "tech-intro": "Advances in thermochemical processes and molecular control enable the development of methods capable of treating materials at a structural level, not only mechanically or through combustion.\n\nWithin this technological framework emerges controlled molecular disintegration - a process that acts on the bonds between molecules, facilitating the conversion of matter into a stable and usable energy form.\n\nWaste Power Tech develops and applies this method as an integrated technological infrastructure, positioning itself at the intersection of waste management and energy production.",
+    "tech-body-page-1-title": "",
+    "tech-body-page-1-body": "Modern waste management and energy production can no longer be approached through one-dimensional solutions. Technology plays a crucial role in creating integrated systems capable of addressing material efficiency, environmental impact, and economic viability simultaneously. Without robust technological solutions, waste remains a logistical problem, and energy becomes a pressure point on existing infrastructure.\n\nClassical treatment technologies - whether landfilling, incineration, or anaerobic digestion - have clear limitations regarding energy efficiency, emission control, or the types of materials they can process. Especially for mixed, contaminated, or hard-to-recycle fractions, an approach that intervenes at the chemical level is required, not just mechanical or biological.\n\nMolecular disintegration addresses this need through a controlled thermochemical process that converts the organic fraction of waste into energy-usable synthesis gas. The approach does not aim for simple volumetric reduction, but for the controlled conversion of the chemical energy contained in the material. Through automation, continuous monitoring, and modular architecture, the technology enables integration into an existing energy system, providing operational predictability and adaptability to variable material streams.",
+    "tech-body-page-1-next": "On next page: Molecular Disintegration",
+    "tech-body-prev-link": "On previous page",
+    "tech-body-page-2-title": "Molecular\ndisintegration -\nthe technological principle",
+    "tech-body-page-2-body": "WPT technology is based on a controlled thermochemical process of molecular disintegration of organic materials. The process takes place in a controlled environment, without direct combustion and in the absence of oxygen, avoiding the classical incineration mechanism.",
+    "tech-body-page-2-next": "On next page: Why Molecular Disintegration?",
+    "tech-body-page-2-prev": "On previous page: Modern waste management and energy production",
+    "tech-body-page-3-title": "What is molecular disintegration?",
+    "tech-body-page-3-body": "A controlled technological process through which the complex organic structures in waste are broken down into simpler compounds, without direct combustion.",
+    "tech-body-page-3-subtitle": "What happens, essentially?",
+    "tech-body-page-3-step-1": "The material is introduced into a controlled environment",
+    "tech-body-page-3-step-2": "Thermal parameters are stabilized",
+    "tech-body-page-3-step-3": "Molecular bonds are fragmented",
+    "tech-body-page-3-step-4": "A combustible gas (Syngas) is produced",
+    "tech-body-page-3-next": "What happens to the resulting gas?",
+    "tech-body-page-3-prev": "On previous page: Molecular disintegration - the technological principle",
+    "tech-body-page-4-title": "What happens\nto the resulting gas?",
+    "tech-body-page-4-step-1": "It is collected from the reactor and cooled",
+    "tech-body-page-4-step-2": "Filtered from particles",
+    "tech-body-page-4-step-3": "Stabilized in flow\nand pressure",
+    "tech-body-page-4-step-4": "Used in an engine\nthat produces\nelectric energy",
+    "tech-body-page-4-body": "After the molecular disintegration process, the resulting gas is collected from the reactor, cooled, and filtered to remove residual particles, then stabilized in terms of flow and pressure. In this controlled form, it is used to power a cogeneration engine that converts the combustible gases into electric energy.\n\nThe electricity produced is injected into the national grid and distributed to consumers - whether cities, public infrastructure, or industrial operators - thus integrating the treated waste into the real energy circuit.",
+    "tech-body-page-4-next": "What\nremains after the process?",
+    "tech-body-page-4-prev": "On previous page: What is molecular disintegration?",
+    "tech-body-page-5-title": "What remains after the process?",
+    "tech-body-page-5-body": "The process reduces the organic fraction to synthesis gas and stabilizes the mineral component of the waste. The result is an inert material with potential for reuse in industrial and infrastructure applications, significantly reducing the amount sent to landfilling.",
+    "tech-body-page-5-timeline-label": "WASTE",
+    "tech-body-page-5-tick-1": "80-90% energy",
+    "tech-body-page-5-tick-2": "5-10% reusable\nmineral aggregate",
+    "tech-body-page-5-tick-3": "recovered metals",
+    "tech-body-page-5-next": "On next page: What is the physical configuration of the installation?",
+    "tech-body-page-5-prev": "On previous page: What happens to the resulting gas?",
+    "tech-body-page-6-title": "What is the physical\nconfiguration of the installation?",
+    "tech-body-page-6-body": "The WPT installation is built in a modular configuration and includes the reception and storage area, the molecular-disintegration reactor, the gas cooling and conditioning systems, the cogeneration unit, and the mineral-residue handling line.\n\nFor a detailed presentation of the installation's configuration watch the explanatory video material.",
+    "tech-body-page-6-video-title": "Installation explanatory video",
+    "tech-body-page-6-next": "On next page: What conditions are required for installation?",
+    "tech-body-page-6-prev": "On previous page: What remains after the process?",
+    "tech-body-page-7-title": "What conditions are required for installation?",
+    "tech-body-page-7-body": "Installing a WPT unit requires a constant and predictable material stream, access to electrical infrastructure for integrating the produced energy, and an industrial platform suitable from a logistical and operational standpoint. In addition, the project must align with the applicable regulatory framework, including environmental permitting and integration into the local infrastructure.\n\nThe modular configuration allows the installation to be adapted to the specific conditions of each site, ensuring technical and operational compatibility with the existing context.",
+    "tech-body-page-7-tile-1": "Access to a\nconstant waste",
+    "tech-body-page-7-tile-2": "Connection to the\nelectrical grid",
+    "tech-body-page-7-tile-3": "Suitable industrial\nsurface",
+    "tech-body-page-7-tile-4": "Environmental\npermits and\nintegration into\nlocal infrastructure",
+    "tech-body-page-7-next": "",
+    "tech-body-page-7-prev": "On previous page: What is the physical configuration of the installation?",
+    "tech-diagram-title": "Process Sequence",
+    "tech-step-feedstock-title": "1. Feedstock Conditioning",
+    "tech-step-feedstock-desc": "Input streams are pre-characterized and stabilized for consistent molecular disintegration conditions and auditable throughput.",
+    "tech-step-reactor-desc": "The reactor module applies controlled thermal and mechanical parameters to disintegrate complex material structures in a closed process envelope.",
+    "tech-step-energy-title": "3. Power Conversion and Monitoring",
+    "tech-step-energy-desc": "Recovered output is converted into usable energy while control systems log performance, availability, and compliance metrics in real time.",
+    "tech-control-title": "Control and Safety Layer",
+    "tech-control-desc": "System behavior is governed through bounded operating windows, sensor redundancy, and procedural interlocks designed for continuous operation.",
+    "tech-output-title": "Output and Verification Layer",
+    "tech-output-desc": "Output quality and system efficiency are validated through repeatable measurement points aligned with technical reporting requirements.",
+    "tech-step-reactor-title": "2. Controlled Molecular Disintegration",
+    "tech-scroll-1-title": "Primary Shredder",
+    "tech-scroll-1-body": "The waste enters the system through the primary shredder. This unit reduces bulky solid materials into smaller fragments for consistent downstream sizing.",
+    "tech-scroll-2-title": "Secondary Shredder",
+    "tech-scroll-2-body": "The secondary shredder further processes household and mixed waste to the particle size required for thermal conversion. A large-capacity hopper supports higher throughput and easier loading.",
+    "tech-scroll-3-title": "Temporary Storage for Shredded Material",
+    "tech-scroll-3-body": "After shredding, material is held in a temporary storage unit. This buffer stage provides a steady and controlled feed rate into thermal processing.",
+    "tech-scroll-4-title": "Feed System",
+    "tech-scroll-4-body": "From storage, material is conveyed into the core reactor chamber. The automated feed system regulates input flow to maintain stable operating conditions.",
+    "tech-scroll-5-title": "Pyrolysis Reactor",
+    "tech-scroll-5-body": "Material undergoes high-temperature molecular disintegration in the absence of oxygen. Without air, combustion does not occur. The process thermally decomposes waste into synthesis gas (syngas) and a solid carbon-rich residue.",
+    "tech-scroll-6-title": "Solid Byproduct (Char / Carbon Residue)",
+    "tech-scroll-6-body": "A carbon-rich solid byproduct is produced. This residue can be used in secondary industrial applications, including construction materials and other carbon-based products.",
+    "tech-scroll-7-title": "Gas Filtration and Conditioning",
+    "tech-scroll-7-body": "Produced gas passes through filtration and cleaning stages. Particulates and contaminants are removed to produce cleaner syngas for power generation.",
+    "tech-scroll-8-title": "Gas Storage Tanks",
+    "tech-scroll-8-body": "Cleaned gas is stored in pressurized tanks to regulate flow and maintain consistent supply to generation units. Depending on system configuration, gas can be stored in compressed or partially liquefied form.",
+    "tech-scroll-9-title": "Power Generation",
+    "tech-scroll-9-body": "Conditioned syngas is fed to generator units for electricity production. Each WP1000 system uses five 350 kVA generators, with approximately 1 MW electrical output per operating hour depending on load conditions.",
+    "tabs": {
+        "b2g": {
+            "label": "B2G",
+            "sublabel": "Government \u0026 Institutional"
+        },
+        "b2b": {
+            "label": "B2B / B2I",
+            "sublabel": "Industrial \u0026 Commercial"
+        },
+        "b2i": {
+            "sublabel": "Infrastructure",
+            "label": "B2I"
+        }
+    },
+    "b2g": {
+        "subnav": {
+            "cityIntegration": "City Integration",
+            "caseStudies": "Public Case Studies",
+            "certifications": "Certifications \u0026 Health"
+        },
+        "overview": {
+            "title": "Institutional (B2G)",
+            "imageAlt": "City waste infrastructure overview",
+            "body": "Controlled molecular disintegration supports city-level waste handling with auditable operation windows, predictable output, and infrastructure-compatible integration for urban planning programs."
+        },
+        "caseStudies": {
+            "title": "Public Case Studies",
+            "card1": {
+                "imageAlt": "Municipal sanitation deployment",
+                "title": "Municipal Sanitation Agencies",
+                "body": "City sanitation agencies deploying modular lines for mixed municipal waste streams with continuous throughput visibility."
             },
-    "b2b":  {
-                "subnav":  {
-                               "roi":  "ROI Framework",
-                               "deployments":  "Industrial Deployments",
-                               "modularSpecs":  "Modular Specifications"
-                           },
-                "overview":  {
-                                 "title":  "Industrial and Commercial (B2B/B2I)",
-                                 "imageAlt":  "Industrial waste-to-energy facility",
-                                 "body":  "Industrial programs prioritize throughput, ROI, and uptime. The system supports complex waste streams, site-adjacent deployment, and predictable energy recovery within a controlled technical envelope."
-                             },
-                "caseStudies":  {
-                                    "title":  "Industrial Deployments",
-                                    "card1":  {
-                                                  "imageAlt":  "Manufacturing campus on-site module",
-                                                  "title":  "Multi-Line Manufacturing Campuses",
-                                                  "body":  "Multi-line manufacturing campuses using on-site modules to reduce transport cost and stabilize energy offsets."
-                                              },
-                                    "card2":  {
-                                                  "imageAlt":  "Logistics facility waste integration",
-                                                  "title":  "Logistics-Intensive Facilities",
-                                                  "body":  "Logistics-intensive facilities integrating near-site operation to cut handling latency and improve waste accountability."
-                                              }
-                                },
-                "specs":  {
-                              "title":  "Modular Specifications and ROI",
-                              "imageAlt":  "Modular unit specifications diagram",
-                              "spec1":  "Predictable module scaling from pilot installation to full industrial throughput.",
-                              "spec2":  "Operational dashboards for uptime, conversion efficiency, and maintenance forecasting.",
-                              "spec3":  "Financial modeling based on waste handling savings, energy recovery, and utilization rates."
-                          }
-            },
-    "b2i":  {
-                "subnav":  {
-                               "hubs":  "Regional Hubs",
-                               "deployments":  "Infrastructure Deployments",
-                               "specs":  "Network Specifications"
-                           },
-                "overview":  {
-                                 "title":  "Infrastructure (B2I)",
-                                 "imageAlt":  "Regional infrastructure hub",
-                                 "body":  "B2I deployments prioritize long-term regional service continuity. Molecular disintegration modules are integrated into distributed utility frameworks with measurable throughput and controlled operating windows."
-                             },
-                "caseStudies":  {
-                                    "title":  "Infrastructure Deployments",
-                                    "card1":  {
-                                                  "imageAlt":  "District-level waste power node",
-                                                  "title":  "District Utility Nodes",
-                                                  "body":  "District-level nodes aggregate municipal and industrial streams to support stable regional capacity planning and predictable energy recovery."
-                                              },
-                                    "card2":  {
-                                                  "imageAlt":  "Interconnected infrastructure corridor",
-                                                  "title":  "Interconnected Corridor Installations",
-                                                  "body":  "Multi-site corridor installations coordinate waste handling, transport balancing, and output dispatch for high-availability service zones."
-                                              }
-                                },
-                "specs":  {
-                              "title":  "Network Specifications",
-                              "imageAlt":  "Infrastructure technical sheet",
-                              "spec1":  "Designed for phased expansion across regional infrastructure programs with synchronized module commissioning.",
-                              "spec2":  "Supports integration with distributed energy systems and utility telemetry layers for continuous monitoring.",
-                              "spec3":  "Built for long-life operation with maintenance scheduling aligned to infrastructure reliability targets."
-                          }
+            "card2": {
+                "imageAlt": "Regional hub power output",
+                "title": "Regional Power \u0026 Waste Hubs",
+                "body": "Regional hubs combining waste reduction and stable power output to reduce landfill dependency and improve service continuity."
             }
+        },
+        "specs": {
+            "title": "Certifications and Public Health",
+            "imageAlt": "Compliance and certification documentation",
+            "spec1": "Compliance-aligned reporting with traceable operating parameters and quality checkpoints.",
+            "spec2": "Closed-process architecture designed for controlled operation in dense urban contexts.",
+            "spec3": "Scalable module planning for phased municipal infrastructure upgrades."
+        }
+    },
+    "b2b": {
+        "subnav": {
+            "roi": "ROI Framework",
+            "deployments": "Industrial Deployments",
+            "modularSpecs": "Modular Specifications"
+        },
+        "overview": {
+            "title": "Industrial and Commercial (B2B/B2I)",
+            "imageAlt": "Industrial waste-to-energy facility",
+            "body": "Industrial programs prioritize throughput, ROI, and uptime. The system supports complex waste streams, site-adjacent deployment, and predictable energy recovery within a controlled technical envelope."
+        },
+        "caseStudies": {
+            "title": "Industrial Deployments",
+            "card1": {
+                "imageAlt": "Manufacturing campus on-site module",
+                "title": "Multi-Line Manufacturing Campuses",
+                "body": "Multi-line manufacturing campuses using on-site modules to reduce transport cost and stabilize energy offsets."
+            },
+            "card2": {
+                "imageAlt": "Logistics facility waste integration",
+                "title": "Logistics-Intensive Facilities",
+                "body": "Logistics-intensive facilities integrating near-site operation to cut handling latency and improve waste accountability."
+            }
+        },
+        "specs": {
+            "title": "Modular Specifications and ROI",
+            "imageAlt": "Modular unit specifications diagram",
+            "spec1": "Predictable module scaling from pilot installation to full industrial throughput.",
+            "spec2": "Operational dashboards for uptime, conversion efficiency, and maintenance forecasting.",
+            "spec3": "Financial modeling based on waste handling savings, energy recovery, and utilization rates."
+        }
+    },
+    "b2i": {
+        "subnav": {
+            "hubs": "Regional Hubs",
+            "deployments": "Infrastructure Deployments",
+            "specs": "Network Specifications"
+        },
+        "overview": {
+            "title": "Infrastructure (B2I)",
+            "imageAlt": "Regional infrastructure hub",
+            "body": "B2I deployments prioritize long-term regional service continuity. Molecular disintegration modules are integrated into distributed utility frameworks with measurable throughput and controlled operating windows."
+        },
+        "caseStudies": {
+            "title": "Infrastructure Deployments",
+            "card1": {
+                "imageAlt": "District-level waste power node",
+                "title": "District Utility Nodes",
+                "body": "District-level nodes aggregate municipal and industrial streams to support stable regional capacity planning and predictable energy recovery."
+            },
+            "card2": {
+                "imageAlt": "Interconnected infrastructure corridor",
+                "title": "Interconnected Corridor Installations",
+                "body": "Multi-site corridor installations coordinate waste handling, transport balancing, and output dispatch for high-availability service zones."
+            }
+        },
+        "specs": {
+            "title": "Network Specifications",
+            "imageAlt": "Infrastructure technical sheet",
+            "spec1": "Designed for phased expansion across regional infrastructure programs with synchronized module commissioning.",
+            "spec2": "Supports integration with distributed energy systems and utility telemetry layers for continuous monitoring.",
+            "spec3": "Built for long-life operation with maintenance scheduling aligned to infrastructure reliability targets."
+        }
+    },
+    "blank": "‎ ",
+    "year-1": 2009,
+    "year-1-element-1": "Initiation of the Concept",
+    "year-1-element-2": "The idea of developing an innovative technology for waste valorization is conceived, aimed at transforming waste into value-added products and by-products, paving the way for sustainable waste management solutions.",
+    "year-2": 2010,
+    "year-2-element-1": "Initial Design and International Collaborations",
+    "year-2-element-2": "The first design of the technology is finalized.",
+    "year-2-element-3": "Collaboration with strategic partners from the United States and India begins to integrate international expertise and validate the technological concept.",
+    "year-3": 2014,
+    "year-3-element-1": "Completion of the Prototype",
+    "year-3-element-2": "Conclusion of the initial prototype development phase, marking a crucial step in the testing and refinement process.",
+    "year-4": 2016,
+    "year-4-element-1": "Prototype Development",
+    "year-4-element-2": "Continued improvement and optimization of the prototype, addressing feedback from the testing phase and preparing the technology for production implementation.",
+    "year-5": 2017,
+    "year-5-element-1": "Establishment of SC Waste Powertech SRL",
+    "year-5-element-2": "SC Waste Powertech SRL is established, marking the official beginning of the company.",
+    "year-5-element-3": "Initial collaborations are established, and various tasks are outsourced to support the development and implementation of the technology.",
+    "year-6": 2019,
+    "year-6-element-1": "Completion of the Prototype at Waste Powertech",
+    "year-6-element-2": "The technology prototype is fully completed and integrated within SC Waste Powertech SRL, preparing the company for the next stages of certification and commercialization.",
+    "year-7": 2021,
+    "year-7-element-1": "Waste Powertech becomes an international brand.",
+    "year-8": 2022,
+    "year-8-element-1": "Certification and Patent Application",
+    "year-8-element-2": "The European certificate of conformity is obtained, confirming the high standards of quality and safety of the technology.",
+    "year-8-element-3": "The patent application is filed to protect intellectual property rights. In the same year, the first order is received from a client, marking the beginning of technology commercialization.",
+    "year-9": 2023,
+    "year-9-element-1": "ISO Certifications and Production Start",
+    "year-9-element-2": "ISO standards for production are obtained, ensuring compliance with the highest international quality standards.",
+    "year-9-element-3": "Construction of machinery for various types of organic waste begins, with four machines already in operation for different clients.",
+    "year-10": 2024,
+    "year-10-element-1": "Strategic Contract with CMID",
+    "year-10-element-2": "The first major contract is signed with an Integrated Waste Management Center (CMID) within the Cluj County Council, strengthening SC Waste Powertech SRL’s position in the waste management solutions market and marking a significant step in the company's expansion."
 }

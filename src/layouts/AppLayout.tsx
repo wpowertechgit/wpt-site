@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
 import NavbarDesktop from "../components/Navbar";
 import NavbarMobile from "../components/NavbarMobile";
@@ -11,6 +12,11 @@ type AppLayoutProps = {
 
 export default function AppLayout({ children }: AppLayoutProps) {
     const isMobile = useMediaQuery("(max-width:900px)");
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     return (
         <div className="layout min-h-screen flex flex-col bg-brand-white text-brand-black">

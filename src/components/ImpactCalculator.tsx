@@ -34,14 +34,14 @@ function ImpactCard({ value, label, sub, color, icon: Icon }: ImpactCardProps) {
   return (
     <Box
       sx={{
-        p: { xs: "1.25rem", xl: "1.5rem" },
+        p: { xs: "1rem", xl: "1.5rem" },
         bgcolor: color,
         color: "#fff",
         border: "1px solid #eee",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        minHeight: { xs: "11rem", xl: "12rem" },
+        minHeight: { xs: "9rem", xl: "12rem" },
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: "0.75rem" }}>
@@ -132,13 +132,21 @@ export default function ImpactCalculator() {
         id="calculator"
         sx={{
           minHeight: "100vh",
+          position: "relative",
           display: "flex",
           alignItems: "center",
           py: { xs: "5rem", xl: "10rem" },
           bgcolor: "#f9f9f9",
           borderLeft: { xs: "0.5rem solid #0000FF", xl: "1.5rem solid #0000FF" },
           px: { xs: "1.5rem", xl: "4%", xxxl: "6%" },
-          borderTop: "1px solid #ddd",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            left: { xs: "1.5rem", xl: "4%", xxxl: "6%" },
+            right: { xs: "1.5rem", xl: "4%", xxxl: "6%" },
+            borderTop: "0.25rem solid #000000",
+          },
         }}
       >
         <Container maxWidth={false}>
@@ -151,18 +159,49 @@ export default function ImpactCalculator() {
             }}
           >
             <Box>
-              <Typography
-                variant="h2"
+              <Box
                 sx={{
-                  fontFamily: "Stack Sans Headline, sans-serif",
-                  fontWeight: 700,
+                  display: { xs: "block", sm: "grid" },
+                  gridTemplateColumns: { sm: "auto 1fr" },
+                  columnGap: { sm: "1.25rem", lg: "1.75rem" },
+                  alignItems: "center",
                   mb: "2rem",
-                  fontSize: { xs: "2.5rem", md: "3rem", xl: "4.5rem", xxxl: "6rem" },
-                  lineHeight: 1.1,
                 }}
               >
-                {t("calculator-title")}
-              </Typography>
+                <Box
+                  component="img"
+                  src="/wpt-black-full-length-logo.svg"
+                  alt="Waste Power Tech logo"
+                  sx={{
+                    display: { xs: "block", sm: "none" },
+                    width: "clamp(20rem, 42vw, 13rem)",
+                    height: "auto",
+                    mb: "1.25rem",
+                  }}
+                />
+                <Box
+                  component="img"
+                  src="/wpt-black-compact-logo.svg"
+                  alt="Waste Power Tech logo"
+                  sx={{
+                    display: { xs: "none", sm: "block" },
+                    width: { sm: "85rem", lg: "10rem", xl: "15rem", xxxl: "20rem" },
+                    height: "auto",
+                  }}
+                />
+                <Typography
+                  variant="h2"
+                  sx={{
+                    fontFamily: "Stack Sans Headline, sans-serif",
+                    fontWeight: 700,
+                    mb: 0,
+                    fontSize: { xs: "2.5rem", md: "3rem", xl: "4.5rem", xxxl: "6rem" },
+                    lineHeight: 1.1,
+                  }}
+                >
+                  {t("calculator-title")}
+                </Typography>
+              </Box>
 
               <Box sx={{ mb: "4rem" }}>
                 <Typography
@@ -226,7 +265,7 @@ export default function ImpactCalculator() {
             <Box
               sx={{
                 display: "grid",
-                gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", lg: "1fr 1fr 1fr" },
+                gridTemplateColumns: { xs: "1fr 1fr", lg: "1fr 1fr 1fr" },
                 gap: { xs: "0.75rem", xl: "1rem" },
               }}
             >
@@ -247,5 +286,3 @@ export default function ImpactCalculator() {
     </motion.div>
   );
 }
-
-

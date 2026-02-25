@@ -79,7 +79,7 @@ export default function FFooter() {
               },
             }}
           >
-            {t("contact_us")}
+            {t("contact-us")}
           </Typography>
 
           <Typography
@@ -174,12 +174,12 @@ export default function FFooter() {
               wordBreak: "break-word",
             }}
           >
-            {t("accessibility_title")}
+            Accessibility Notice
           </Link>
 
           <Link
             component={RouterLink}
-            to="/privacy"
+            to="/privacy-policy"
             sx={{
               ...linkBaseSx,
               textAlign: { xs: "center", md: "right" },
@@ -188,12 +188,12 @@ export default function FFooter() {
               wordBreak: "break-word",
             }}
           >
-            {t("privacy_policy_title")}
+            Privacy Policy
           </Link>
 
           <Link
             component={RouterLink}
-            to="/terms"
+            to="/terms-of-use"
             sx={{
               ...linkBaseSx,
               textAlign: { xs: "center", md: "right" },
@@ -202,7 +202,7 @@ export default function FFooter() {
               wordBreak: "break-word",
             }}
           >
-            {t("terms_of_use_title")}
+            Terms of Use
           </Link>
         </Grid>
       </Grid>
@@ -222,7 +222,7 @@ export default function FFooter() {
           },
         }}
       >
-        {t("cookies")}
+        Map content is loaded only after explicit user action. No first-party tracking cookies are intentionally set by this website.
       </Typography>
 
       <Typography

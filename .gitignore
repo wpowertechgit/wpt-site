@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-
+src/assets/assembly/machinecluj.glb
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

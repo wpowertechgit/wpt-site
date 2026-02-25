@@ -99,10 +99,6 @@ body {
   overflow-x: hidden;
 }
 
-* {
-  border-radius: 0 !important;
-}
-
 /* Enforce left-aligned text across the site (brand requirement) */
 html,
 body,

@@ -11,6 +11,7 @@ const NAV_ITEMS = [
     { label: "Docs", to: "/docs" },
     { label: "Press", to: "/press" },
     { label: "Contact", to: "/contact" },
+    { label: "History", to: "/about/history" },
 ];
 
 const LOCALES = [
@@ -86,13 +87,13 @@ export default function Navbar() {
                     >
                         <Box
                             component="img"
-                            src="/logo.svg"
+                            src="/wpt-black-full-length-logo.svg"
                             alt="Waste Powertech Logo"
                             loading="eager"
                             decoding="async"
                             fetchPriority="high"
                             sx={{
-                                height: { xs: "clamp(2.75rem, 2.4vw, 4rem)", xxxl: "8vh" },
+                                height: { xs: "clamp(4.75rem, 3.4vw, 4rem)", xxxl: "8vh" },
                                 width: "auto"
                             }}
                         />
