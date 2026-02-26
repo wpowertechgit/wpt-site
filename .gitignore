@@ -22,3 +22,14 @@ src/assets/assembly/machinecluj.glb
 *.njsproj
 *.sln
 *.sw?
+
+# Testing and audit artifacts
+tests/
+**/__tests__/
+**/*.test.*
+**/*.spec.*
+test-results/
+playwright-report/
+blob-report/
+coverage/
+.lighthouseci/
