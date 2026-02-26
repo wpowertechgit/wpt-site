@@ -1,6 +1,8 @@
-﻿import { Box, Container, Typography, Link as MuiLink } from "@mui/material";
+import { Box, Container, Typography, Link as MuiLink } from "@mui/material";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { LuArrowRight } from "react-icons/lu";
+import { Link as RouterLink } from "react-router-dom";
 import { useNewsData } from "../assets/newsData";
 
 export default function Press() {
@@ -15,9 +17,11 @@ export default function Press() {
           height: "100vh",
           display: "flex",
           alignItems: "center",
+          position: "relative",
           bgcolor: "#2E20FB",
           px: { xs: 2, sm: 3, md: 4, lg: 6, xl: 10, xxl: 10, xxxl: 20 },
           py: { xs: 8, sm: 9, md: 10, lg: 12, xl: 14, xxl: 14, xxxl: 20 },
+          pb: { xs: 16, sm: 16, md: 10, lg: 12, xl: 14, xxl: 14, xxxl: 20 },
         }}
       >
         <Container
@@ -89,6 +93,36 @@ export default function Press() {
             </Box>
           </motion.div>
         </Container>
+        <Box
+          component={RouterLink}
+          to="/docs?pillar=brand"
+          sx={{
+            position: "absolute",
+            left: { xs: 16, sm: 24, md: "auto" },
+            right: { xs: 16, sm: 24, md: 32, lg: 48, xl: 80, xxl: 80, xxxl: 160 },
+            bottom: { xs: 16, sm: 24, md: 32, lg: 40, xl: 56, xxl: 56, xxxl: 80 },
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 1,
+            color: "#FFFFFF",
+            textDecoration: "none",
+            borderBottom: "1px solid rgba(255,255,255,0.9)",
+            pb: 0.25,
+            zIndex: 2,
+          }}
+        >
+          <Typography
+            sx={{
+              textAlign: "left",
+              color: "#FFFFFF",
+              fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem", lg: "1.05rem", xl: "1.8rem", xxl: "1.8rem", xxxl: "3rem" },
+              lineHeight: 1.4,
+            }}
+          >
+            {t("learn-brand")}
+          </Typography>
+          <LuArrowRight size={20} aria-hidden />
+        </Box>
       </Box>
 
       <Container
@@ -198,5 +232,4 @@ export default function Press() {
     </Box>
   );
 }
-
 

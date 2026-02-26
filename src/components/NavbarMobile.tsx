@@ -25,7 +25,7 @@ const COLORS = {
   navbarBg: '#FFFFFF',
   drawerBg: '#FFFFFF',
   text: '#000000',
-  divider: '#8E8E8E',
+  divider: '#000000',
   icon: '#000000',
   buttonBg: '#0000FF',
   buttonHover: '#ED1C24',
@@ -208,7 +208,7 @@ const NavbarMobile = () => {
         <Box sx={{ width: "100%", p: 0, color: COLORS.text }}>
           <List sx={{ p: 0, m: 0 }}>
             {/* Technology */}
-            <ListItem component={Link} to="/technology" disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
+            <ListItem component="a" href="/technology" disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
               <ListItemButton sx={{ backgroundColor: '#0000FF', color: '#FFFFFF' }}>
                 <ListItemText primary="Technology" primaryTypographyProps={{ fontFamily: 'Stack Sans Headline', fontWeight: 700 }} />
               </ListItemButton>

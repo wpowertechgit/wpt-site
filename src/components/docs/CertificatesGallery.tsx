@@ -23,15 +23,12 @@ export default function CertificatesGallery() {
   const [naturalSize, setNaturalSize] = useState<{ width: number; height: number } | null>(null);
   const [viewerSize, setViewerSize] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
   const viewerRef = useRef<HTMLDivElement | null>(null);
-  const galleryRef = useRef<HTMLDivElement | null>(null);
   const isPhone = useMediaQuery("(max-width:768px)");
-  // iPad mini portrait is 768px, so "tablet and above" = sm breakpoint
-  const isTabletUp = useMediaQuery("(min-width:769px)");
+  const isDesktop = useMediaQuery("(min-width:960px)");
 
   const canZoomOut = zoomLevel > MIN_ZOOM;
   const canZoomIn = zoomLevel < MAX_ZOOM;
 
-  // Lock body scroll when dialog open
   useEffect(() => {
     if (!activeCertificate) return;
     const previousBodyOverflow = document.body.style.overflow;
@@ -44,7 +41,6 @@ export default function CertificatesGallery() {
     };
   }, [activeCertificate]);
 
-  // Load natural image size for dialog zoom
   useEffect(() => {
     if (!activeCertificate) return;
     let isMounted = true;
@@ -57,7 +53,6 @@ export default function CertificatesGallery() {
     return () => { isMounted = false; };
   }, [activeCertificate]);
 
-  // Track dialog viewer size
   useEffect(() => {
     if (!activeCertificate) return;
     const viewerNode = viewerRef.current;
@@ -112,75 +107,128 @@ export default function CertificatesGallery() {
 
   return (
     <Box
-      ref={galleryRef}
       sx={{
-        display: "flex",
-        flexDirection: "column",
+        width: "100%",
         height: "100%",
         minHeight: 0,
-        width: "100%",
+        display: "flex",
+        flexDirection: "column",
         overflow: "hidden",
       }}
     >
-      <Box
-        sx={{
-          flex: 1,
-          minHeight: 0,
-          display: "grid",
-          // Phone: 1 column, tablet+: 2 columns
-          gridTemplateColumns: isTabletUp ? "1fr 1fr" : "1fr",
-          // Phone: auto rows, tablet+: split height evenly across 2 rows
-          gridTemplateRows: isTabletUp ? "1fr 1fr" : "auto",
-          gap: "clamp(0.5rem, 1vw, 1rem)",
-          p: { xs: 1, sm: 1.5, md: 2 },
-          alignItems: "stretch",
-          justifyItems: "center",
-        }}
-      >
-        {CERTIFICATES.map((certificate) => (
-          <Box
-            key={certificate.src}
-            component="button"
-            type="button"
-            onClick={() => handleOpen(certificate)}
-            sx={{
-              border: "none",
-              background: "transparent",
-              color: "inherit",
-              p: 0,
-              width: "100%",
-              height: "100%",
-              minHeight: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              transition: "transform 0.22s linear",
-              "&:hover": {
-                transform: "scale(1.03)",
-              },
-            }}
-          >
+      {isDesktop ? (
+        // ── DESKTOP (md+): all 4 certificates in a single row ──
+        // The container already has a fixed height from DocsPillar (flex: 1, minHeight: 0)
+        // so we just need to fill it and let images scale naturally via maxHeight: 100%
+        <Box
+          sx={{
+            flex: 1,
+            minHeight: 0,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "2rem",
+            px: { md: "2rem", lg: "3rem", xl: "4rem", xxl: "5rem", xxxl: "7rem" },
+            py: "1.5rem",
+            overflow: "hidden",
+          }}
+        >
+          {CERTIFICATES.map((certificate) => (
             <Box
-              component="img"
-              src={certificate.src}
-              alt={certificate.title}
-              loading="lazy"
-              decoding="async"
+              key={certificate.src}
+              component="button"
+              type="button"
+              onClick={() => handleOpen(certificate)}
               sx={{
-                // On phone: constrain by viewport height per item
-                // On tablet+: fill the grid cell, constrained by both dimensions
-                maxWidth: "100%",
-                maxHeight: "100%",
-                width: "auto",
-                height: isTabletUp ? "100%" : "22vh",
-                objectFit: "contain",
-                display: "block",
+                border: "none",
+                background: "transparent",
+                color: "inherit",
+                p: 0,
+                // Equal share of the row width, never overflows
+                flex: "1 1 0",
+                minWidth: 0,
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                transition: "transform 0.22s linear",
+                "&:hover": { transform: "scale(1.04)" },
               }}
-            />
-          </Box>
-        ))}
-      </Box>
+            >
+              <Box
+                component="img"
+                src={certificate.src}
+                alt={certificate.title}
+                loading="lazy"
+                decoding="async"
+                sx={{
+                  display: "block",
+                  // max constraints keep it inside its flex cell at any viewport size
+                  maxWidth: "100%",
+                  maxHeight: "100%",
+                  width: "auto",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
+              />
+            </Box>
+          ))}
+        </Box>
+      ) : (
+        // ── MOBILE / NARROW TABLET: vertical stack, scrollable ──
+        <Box
+          sx={{
+            flex: 1,
+            minHeight: 0,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "1.25rem",
+            px: "1rem",
+            py: "1rem",
+            overflowY: "auto",
+          }}
+        >
+          {CERTIFICATES.map((certificate) => (
+            <Box
+              key={certificate.src}
+              component="button"
+              type="button"
+              onClick={() => handleOpen(certificate)}
+              sx={{
+                border: "none",
+                background: "transparent",
+                color: "inherit",
+                p: 0,
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                transition: "transform 0.22s linear",
+                "&:hover": { transform: "scale(1.03)" },
+              }}
+            >
+              <Box
+                component="img"
+                src={certificate.src}
+                alt={certificate.title}
+                loading="lazy"
+                decoding="async"
+                sx={{
+                  display: "block",
+                  maxWidth: "100%",
+                  height: "auto",
+                  maxHeight: "22vh",
+                  objectFit: "contain",
+                }}
+              />
+            </Box>
+          ))}
+        </Box>
+      )}
 
       <Dialog
         open={Boolean(activeCertificate)}
@@ -198,7 +246,6 @@ export default function CertificatesGallery() {
         }}
       >
         <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-          {/* Dialog header */}
           <Box
             sx={{
               p: 1.5,
@@ -256,7 +303,6 @@ export default function CertificatesGallery() {
             </Box>
           </Box>
 
-          {/* Dialog image viewer */}
           <Box ref={viewerRef} sx={{ flex: 1, overflow: "auto", bgcolor: "#f8f8f8" }}>
             <Box
               sx={{
@@ -279,7 +325,6 @@ export default function CertificatesGallery() {
                     maxWidth: "100%",
                     maxHeight: "100%",
                     height: "auto",
-                    border: "1px solid #d0d0d0",
                     bgcolor: "#ffffff",
                     transition: "width 0.2s linear",
                   }}

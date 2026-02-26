@@ -17,10 +17,10 @@ const PrivacyPolicy = lazy(() => import("./pages/compliance/PrivacyPolicy"));
 const TermsOfUse = lazy(() => import("./pages/compliance/TermsOfUse"));
 const Accessibility = lazy(() => import("./pages/compliance/Accessibility"));
 const Docs = lazy(() => import("./pages/Docs"));
+const Contact = lazy(() => import("./pages/Contact"));
 // import Calculator from "./pages/Calculator";
 // import Documentation from "./pages/Documentation";
 // import CaseStudyCluj from "./pages/CaseStudyCluj";
-// import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -41,13 +41,13 @@ function App() {
               <Route path="applications" element={<Applications />} />
               <Route path="docs" element={<Docs />} />
               <Route path="press" element={<Press />} />
+              <Route path="contact" element={<Contact />} />
               <Route path="privacy-policy" element={<PrivacyPolicy />} />
               <Route path="terms-of-use" element={<TermsOfUse />} />
               <Route path="accessibility" element={<Accessibility />} />
               {/* <Route path="calculator" element={<Calculator />} /> */}
               {/* <Route path="documentation" element={<Documentation />} /> */}
               {/* <Route path="case-study-cluj" element={<CaseStudyCluj />} /> */}
-              {/* <Route path="contact" element={<Contact />} /> */}
             </Route>
           </Routes>
         </Suspense>

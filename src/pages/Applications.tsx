@@ -7,15 +7,6 @@ import B2GTrack from "./B2GTrack";
 import B2BTrack from "./B2BTrack";
 
 export type Mode = "B2G" | "B2B";
-export type SectionKey = "overview" | "caseStudies" | "specs";
-export type SectionMap = Record<SectionKey, React.RefObject<HTMLDivElement | null>>;
-
-// Minimal refs object so tracks can render without internal scroll wiring from this page.
-const EMPTY_REFS: SectionMap = {
-  overview: { current: null } as React.RefObject<HTMLDivElement | null>,
-  caseStudies: { current: null } as React.RefObject<HTMLDivElement | null>,
-  specs: { current: null } as React.RefObject<HTMLDivElement | null>,
-};
 
 export default function Applications() {
   const [mode, setMode] = useState<Mode>("B2G");
@@ -143,7 +134,7 @@ export default function Applications() {
               transition={{ duration: 0.38, ease: "easeInOut" }}
               style={{ willChange: "transform, opacity" }}
             >
-              {isB2G ? <B2GTrack refs={EMPTY_REFS} /> : <B2BTrack refs={EMPTY_REFS} />}
+              {isB2G ? <B2GTrack /> : <B2BTrack />}
             </motion.div>
           </AnimatePresence>
         </Box>

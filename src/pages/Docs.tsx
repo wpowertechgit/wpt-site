@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Box, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
 
 import BrandPillarContent from "../components/docs/BrandPillarContent";
 import CertificatesGallery from "../components/docs/CertificatesGallery";
@@ -54,6 +55,7 @@ function renderPillarContent(id: PillarId) {
 }
 
 export default function Docs() {
+  const [searchParams] = useSearchParams();
   const [activePillar, setActivePillar] = useState<PillarId>("blue");
   const [desktopOrder, setDesktopOrder] = useState<PillarId[]>(["blue", "gray", "red"]);
   const [transitionPhase, setTransitionPhase] = useState<"idle" | "moving" | "expanding">("idle");
@@ -124,6 +126,18 @@ export default function Docs() {
     setActivePillar(pillarId);
     startTextAndContentRevealTimers();
   };
+
+  useEffect(() => {
+    const pillarParam = searchParams.get("pillar")?.toLowerCase();
+    if (pillarParam !== "brand") return;
+
+    clearTransitionTimers();
+    setTransitionPhase("idle");
+    setShowActiveContent(true);
+    setShowPillarTexts(true);
+    setActivePillar("red");
+    setDesktopOrder((currentOrder) => ["red", ...currentOrder.filter((id) => id !== "red")]);
+  }, [searchParams]);
 
   const desktopColumns =
     transitionPhase === "moving"

@@ -1,23 +1,34 @@
 ﻿import { useRef } from "react";
 import { motion } from "framer-motion";
+import { useLayoutEffect } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import TechnologyScrollRig from "../components/TechnologyScrollRig";
 import TechnologyDescriptionScroll from "../components/TechnologyDescriptionScroll";
 
 export default function Technology() {
   const { t } = useTranslation();
+  const { key: routeEntryKey } = useLocation();
   const rigRef = useRef<HTMLDivElement>(null);
   const wheelLockRef = useRef(false);
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    const raf = window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    });
+    return () => window.cancelAnimationFrame(raf);
+  }, [routeEntryKey]);
 
   const handleHeroWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     if (event.deltaY <= 0 || wheelLockRef.current) return;
     event.preventDefault();
     wheelLockRef.current = true;
-    rigRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    rigRef.current?.scrollIntoView({ behavior: "auto", block: "start" });
     window.setTimeout(() => {
       wheelLockRef.current = false;
-    }, 820);
+    }, 160);
   };
 
   return (
@@ -134,7 +145,7 @@ export default function Technology() {
       </Box>
 
       <Box ref={rigRef} sx={{ borderTop: "0.25rem solid #000000" }}>
-        <TechnologyScrollRig />
+        <TechnologyScrollRig key={routeEntryKey} />
       </Box>
 
       <TechnologyDescriptionScroll />

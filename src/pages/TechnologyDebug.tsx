@@ -3,6 +3,7 @@ import { Box, Button, Divider, MenuItem, Stack, TextField, Typography } from "@m
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
+import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import AssemblyCompressedModel from "../components/AssemblyCompressedModel";
 
 type Vec3Tuple = [number, number, number];
@@ -27,7 +28,6 @@ type AnchorSet = {
 };
 
 type SnapRequest = {
-  id: number;
   pose: PoseData;
   fov: number;
 };
@@ -112,7 +112,7 @@ function DebugScene({
 }) {
   const { camera } = useThree();
   const modelRef = useRef<THREE.Group>(null);
-  const controlsRef = useRef<any>(null);
+  const controlsRef = useRef<OrbitControlsImpl | null>(null);
   const pressedRef = useRef({
     ArrowUp: false,
     ArrowDown: false,
@@ -125,9 +125,9 @@ function DebugScene({
     [],
   );
   const fallbackPoint = useMemo(() => new THREE.Vector3(), []);
-  const forward = useMemo(() => new THREE.Vector3(), []);
-  const right = useMemo(() => new THREE.Vector3(), []);
-  const moveVector = useMemo(() => new THREE.Vector3(), []);
+  const forwardRef = useRef(new THREE.Vector3());
+  const rightRef = useRef(new THREE.Vector3());
+  const moveVectorRef = useRef(new THREE.Vector3());
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -156,10 +156,6 @@ function DebugScene({
     camera.position.set(...snapRequest.pose.position);
     camera.rotation.set(...snapRequest.pose.rotation);
 
-    const perspectiveCamera = camera as THREE.PerspectiveCamera;
-    perspectiveCamera.fov = snapRequest.fov;
-    perspectiveCamera.updateProjectionMatrix();
-
     if (controlsRef.current) {
       const lookDir = new THREE.Vector3(0, 0, -1).applyEuler(camera.rotation).normalize();
       const nextTarget = camera.position.clone().add(lookDir.multiplyScalar(10));
@@ -172,10 +168,13 @@ function DebugScene({
     if (controlsRef.current) {
       const moveSpeed = 7 * delta;
       const orbitTarget = controlsRef.current.target as THREE.Vector3;
+      const forward = forwardRef.current;
+      const right = rightRef.current;
+      const moveVector = moveVectorRef.current;
       moveVector.set(0, 0, 0);
 
       camera.getWorldDirection(forward);
-      forward.y = 0;
+      forward.set(forward.x, 0, forward.z);
       if (forward.lengthSq() > 0) forward.normalize();
 
       right.crossVectors(forward, camera.up).normalize();
@@ -266,7 +265,7 @@ export default function TechnologyDebug() {
   const [widthInput, setWidthInput] = useState("768");
   const [activeSection, setActiveSection] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [snapRequest, setSnapRequest] = useState<SnapRequest | null>(null);
+  const [manualSnapPose, setManualSnapPose] = useState<PoseData | null>(null);
   const [saveSection, setSaveSection] = useState("1");
   const [savedPoses, setSavedPoses] = useState<Record<string, Record<string, PoseData>>>({});
   const [panelVisible, setPanelVisible] = useState(true);
@@ -278,6 +277,11 @@ export default function TechnologyDebug() {
   const parsedWidth = useMemo(() => parseWidth(widthInput), [widthInput]);
   const closestAnchor = useMemo(() => getClosestAnchor(parsedWidth), [parsedWidth]);
   const activePose = closestAnchor.poses[activeSection];
+  const snapPose = manualSnapPose ?? activePose;
+  const snapRequest = useMemo<SnapRequest>(() => ({
+    pose: snapPose,
+    fov: closestAnchor.fov,
+  }), [closestAnchor.fov, snapPose]);
 
   const clampPanelPosition = useCallback((nextX: number, nextY: number): PanelPosition => {
     const panelWidth = panelRef.current?.offsetWidth ?? Math.min(window.innerWidth * 0.92, 540);
@@ -292,16 +296,9 @@ export default function TechnologyDebug() {
   }, []);
 
   useEffect(() => {
-    setSnapRequest({
-      id: Date.now(),
-      pose: activePose,
-      fov: closestAnchor.fov,
-    });
-  }, [activePose, closestAnchor.fov]);
-
-  useEffect(() => {
     if (!isPlaying) return;
     const timer = window.setInterval(() => {
+      setManualSnapPose(null);
       setActiveSection((prev) => (prev + 1) % closestAnchor.poses.length);
     }, 1250);
     return () => {
@@ -349,6 +346,7 @@ export default function TechnologyDebug() {
   const savedJson = useMemo(() => JSON.stringify(savedPoses, null, 2), [savedPoses]);
 
   const handleJumpToScene = (index: number) => {
+    setManualSnapPose(null);
     setActiveSection(index);
   };
 
@@ -371,16 +369,16 @@ export default function TechnologyDebug() {
     const saved = savedPoses[widthKey]?.[saveSection];
     if (!saved) return;
     setActiveSection(Math.max(0, Math.min(8, Number.parseInt(saveSection, 10) - 1)));
-    setSnapRequest({
-      id: Date.now(),
-      pose: saved,
-      fov: closestAnchor.fov,
+    setManualSnapPose({
+      position: [...saved.position] as Vec3Tuple,
+      rotation: [...saved.rotation] as Vec3Tuple,
     });
   };
 
   return (
     <Box sx={{ width: "100%", minHeight: "100vh", bgcolor: "#ffffff", position: "relative" }}>
       <Canvas
+        key={`${closestAnchor.width}-${closestAnchor.fov}`}
         dpr={[1, 1]}
         gl={{ antialias: false, powerPreference: "low-power" }}
         camera={{ position: [5, 5, 5], fov: closestAnchor.fov }}
@@ -499,7 +497,10 @@ export default function TechnologyDebug() {
                 <Button
                   variant="outlined"
                   size="small"
-                  onClick={() => setActiveSection((prev) => (prev - 1 + 9) % 9)}
+                  onClick={() => {
+                    setManualSnapPose(null);
+                    setActiveSection((prev) => (prev - 1 + 9) % 9);
+                  }}
                   sx={{ borderColor: "#000000", color: "#000000" }}
                 >
                   Prev
@@ -507,7 +508,10 @@ export default function TechnologyDebug() {
                 <Button
                   variant="outlined"
                   size="small"
-                  onClick={() => setActiveSection((prev) => (prev + 1) % 9)}
+                  onClick={() => {
+                    setManualSnapPose(null);
+                    setActiveSection((prev) => (prev + 1) % 9);
+                  }}
                   sx={{ borderColor: "#000000", color: "#000000" }}
                 >
                   Next
@@ -516,6 +520,7 @@ export default function TechnologyDebug() {
                   variant="outlined"
                   size="small"
                   onClick={() => {
+                    setManualSnapPose(null);
                     setActiveSection(0);
                     setIsPlaying(true);
                   }}

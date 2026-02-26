@@ -1,82 +1,101 @@
-# React + TypeScript + Vite
+# WPT Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Current implementation snapshot for the `wpt-site` codebase.
 
-## Quality gates
+Status date: 2026-02-26
 
-- `npm run test:e2e` runs Playwright smoke tests.
-- `npm run test:a11y` runs axe checks on core routes.
-- `npm run perf:lighthouse` runs Lighthouse CI assertions.
-- `npm run ci:quality` runs build + E2E + Lighthouse.
+## What This README Covers
 
-Currently, two official plugins are available:
+This document describes what is implemented in code right now, including
+live routes, integrated modules, and known gaps.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
 
-## React Compiler
+- Vite + React 19 + TypeScript
+- React Router
+- Material UI + TailwindCSS
+- Framer Motion
+- `@react-three/fiber` + `@react-three/drei` (3D technical scene)
+- `react-i18next` for translations
+- Playwright + axe-core + Lighthouse CI
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Local Commands
 
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
+npm run build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Quality commands:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run lint
+npm run test:e2e
+npm run test:a11y
+npm run perf:lighthouse
+npm run ci:quality
 ```
+
+## Implemented Routes
+
+- `/`
+  - Home hero, brand sections in `Waste -> Power -> Technology` order
+  - Case study block and applications block
+  - Embedded impact calculator section
+- `/technology`
+  - Intro section
+  - Scroll-linked 3D system walkthrough (`TechnologyScrollRig`)
+  - Multi-section technical explanation (`TechnologyDescriptionScroll`)
+- `/applications`
+  - Toggle between B2G and B2B tracks
+  - Dedicated content blocks for overview, case studies, and specifications
+- `/docs`
+  - Interactive three-pillar document view
+  - Certificates gallery with zoom dialog
+  - Links to brochures and brand book
+- `/press`
+  - Source-indexed press listing with external links
+- `/about/history`
+  - Timeline view with animated progression
+- `/privacy-policy`
+- `/terms-of-use`
+- `/accessibility`
+- `/technology-debug`
+- `/technology-body-debug`
+
+## Assets Currently Wired
+
+- Brand logos in `public/`
+- Press images in `public/`
+- Technical vectors in `public/vectors/`
+- PDFs and certificates in `public/docs/`
+- 3D model: `src/assets/assembly/machinecluj-transformed.glb`
+- Local fonts: Stack Sans and Figtree in `src/assets/fonts/`
+
+## Current Gaps and In-Progress Areas
+
+- Navigation links exist for routes that are not defined:
+  - `/contact`
+  - `/calculator`
+  - `/case-studies`
+- Language selector UI lists multiple locales, but only `en` translations are
+  loaded in `src/i18n/index.ts`.
+- Compliance pages read translation keys that are not present in
+  `src/i18n/locales/en.json`.
+- The impact calculator logic is currently embedded in
+  `src/components/ImpactCalculator.tsx`; there is no separate
+  `/utils/calculator.ts` module yet.
+
+## Quality/CI Setup
+
+- Playwright smoke tests: `tests/smoke.spec.ts`
+- Playwright accessibility checks (axe): `tests/a11y.spec.ts`
+- Lighthouse assertions configured in `lighthouserc.json`
+- GitHub Actions workflow: `.github/workflows/quality.yml`
+
+## Deployment Notes
+
+- `vercel.json` defines security headers, including CSP, HSTS, and
+  `X-Frame-Options`.

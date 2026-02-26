@@ -253,6 +253,8 @@ function Scene({
   const scroll = useScroll();
   const sectionRef = useRef(-1);
   const lastOffsetRef = useRef(0);
+  const offsetPrimedRef = useRef(false);
+  const startResetRef = useRef(false);
   const scrollAccumulatorRef = useRef(0);
   const cooldownRef = useRef(0);
   const targetEulerRef = useRef(new THREE.Euler());
@@ -263,7 +265,22 @@ function Scene({
   const lookAtRef = useRef(new THREE.Vector3());
   const lookMatrixRef = useRef(new THREE.Matrix4());
 
+  useEffect(() => {
+    offsetPrimedRef.current = false;
+    startResetRef.current = false;
+    sectionRef.current = -1;
+    lastOffsetRef.current = 0;
+    scrollAccumulatorRef.current = 0;
+    cooldownRef.current = 0;
+    onSectionChange(0);
+  }, [onSectionChange, sectionPoses]);
+
   useFrame((state, delta) => {
+    if (!offsetPrimedRef.current) {
+      lastOffsetRef.current = scroll.offset;
+      offsetPrimedRef.current = true;
+    }
+
     const setTargetQuaternion = (rotation: Vec3Tuple, cameraPosition: Vec3Tuple) => {
       targetEulerRef.current.set(...rotation);
 
@@ -278,6 +295,28 @@ function Scene({
       lookMatrixRef.current.lookAt(lookFromRef.current, lookAtRef.current, state.camera.up);
       targetQuatRef.current.setFromRotationMatrix(lookMatrixRef.current);
     };
+
+    if (!startResetRef.current) {
+      const firstPose = sectionPoses[0];
+      const scrollElement = (scroll as unknown as { el?: HTMLElement }).el;
+      if (scrollElement) {
+        scrollElement.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      }
+
+      sectionRef.current = 0;
+      offsetPrimedRef.current = false;
+      lastOffsetRef.current = 0;
+      scrollAccumulatorRef.current = 0;
+      cooldownRef.current = 0;
+      onSectionChange(0);
+
+      targetPosRef.current.set(...firstPose.position);
+      state.camera.position.copy(targetPosRef.current);
+      setTargetQuaternion(firstPose.rotation, firstPose.position);
+      state.camera.quaternion.copy(targetQuatRef.current);
+      startResetRef.current = true;
+      return;
+    }
 
     if (useExactSmallScreenPose) {
       const { section } = getSectionProgress(scroll.offset, sectionPoses.length);
@@ -510,6 +549,7 @@ export default function TechnologyScrollRig() {
   const cameraFov = useMemo(() => {
     return getClosestFov(viewportSize.width);
   }, [viewportSize.width]);
+  const firstPose = sectionPoses[0];
   const usePhoneStyleOverlay = viewportSize.width < 1030;
   const levelHorizon = isSmallScreen;
 
@@ -555,7 +595,14 @@ export default function TechnologyScrollRig() {
         },
       }}
     >
-      <Canvas dpr={[1, 1]} gl={{ antialias: false, powerPreference: "low-power" }} camera={{ position: [5, 5, 5], fov: cameraFov }}>
+      <Canvas
+        dpr={[1, 1]}
+        gl={{ antialias: false, powerPreference: "low-power" }}
+        camera={{ position: firstPose.position, fov: cameraFov }}
+        onCreated={({ camera }) => {
+          camera.rotation.set(...firstPose.rotation);
+        }}
+      >
         <ScrollControls pages={sectionPoses.length} damping={0.18} style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
           <Scene
             sectionPoses={sectionPoses}

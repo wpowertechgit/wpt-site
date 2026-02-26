@@ -10,21 +10,21 @@ const NAV_ITEMS = [
     { label: "Applications", to: "/applications" },
     { label: "Docs", to: "/docs" },
     { label: "Press", to: "/press" },
-    { label: "Contact", to: "/contact" },
     { label: "History", to: "/about/history" },
+    { label: "Contact", to: "/contact" },
 ];
 
 const LOCALES = [
     ["en", "/us.png", "English"],
-    ["ro", "/ro.png", "RomÃ¢nÄƒ"],
+    ["ro", "/ro.png", "Română"],
     ["hu", "/hu.png", "Magyar"],
     ["de", "/de.png", "Deutsch"],
-    ["fr", "/fr.png", "FranÃ§ais"],
+    ["fr", "/fr.png", "Français"],
     ["it", "/it.png", "Italiano"],
-    ["gr", "/gr.png", "Î•Î»Î»Î·Î½Î¹ÎºÎ¬"],
-    ["tr", "/tr.png", "TÃ¼rkÃ§e"],
-    ["zh", "/zh.png", "ä¸­æ–‡"],
-    ["es", "/es.png", "EspaÃ±ol"],
+    ["gr", "/gr.png", "Ελληνικά"],
+    ["tr", "/tr.png", "Türkçe"],
+    ["zh", "/zh.png", "中文"],
+    ["es", "/es.png", "Español"],
     ["pl", "/pl.png", "Polski"]
 ];
 
@@ -104,8 +104,9 @@ export default function Navbar() {
                         {NAV_ITEMS.map((item) => (
                             <Button
                                 key={item.to}
-                                component={RouterLink}
-                                to={item.to}
+                                component={item.to === "/technology" ? "a" : RouterLink}
+                                href={item.to === "/technology" ? item.to : undefined}
+                                to={item.to === "/technology" ? undefined : item.to}
                                 sx={{
                                     color: "#000",
                                     textTransform: "none",
@@ -131,14 +132,15 @@ export default function Navbar() {
                         <IconButton
                             onClick={handleLocaleClick}
                             sx={{
+                                "--IconButton-hoverBg": "transparent",
                                 color: "#000",
                                 ml: "clamp(0.5rem, 0.8vw, 1.2rem)",
                                 p: { xs: "0.5rem", xxl: "0.7rem", xxxl: "0.95rem" },
-                                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                                 "& svg": {
                                     fontSize: { xs: "clamp(1.7rem, 1.2vw, 2.5rem)", xxl: "3rem", xxxl: "4rem" }
                                 },
                                 "&:hover": {
+                                    bgcolor: "transparent",
                                     color: "#ED1C24"
                                 }
                             }}

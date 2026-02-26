@@ -1,6 +1,6 @@
+import { useRef, type RefObject } from "react";
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next"; // assumes react-i18next setup
-import type { SectionMap } from "./Applications";
 
 const THEME = {
     bg: "#FFFFFF",
@@ -10,11 +10,10 @@ const THEME = {
     accent: "#111111",
 };
 
-interface Props {
-    refs: SectionMap;
-}
+type SectionKey = "overview" | "caseStudies" | "specs";
+type SectionRefs = Record<SectionKey, RefObject<HTMLDivElement | null>>;
 
-const subNavItems: { key: keyof SectionMap; labelKey: string }[] = [
+const subNavItems: { key: SectionKey; labelKey: string }[] = [
     { key: "overview", labelKey: "b2g.subnav.cityIntegration" },
     { key: "caseStudies", labelKey: "b2g.subnav.caseStudies" },
     { key: "specs", labelKey: "b2g.subnav.certifications" },
@@ -50,11 +49,19 @@ function PlaceholderImage({
     );
 }
 
-export default function B2GTrack({ refs }: Props) {
+export default function B2GTrack() {
     const { t } = useTranslation();
+    const overviewRef = useRef<HTMLDivElement | null>(null);
+    const caseStudiesRef = useRef<HTMLDivElement | null>(null);
+    const specsRef = useRef<HTMLDivElement | null>(null);
+    const sectionRefs: SectionRefs = {
+        overview: overviewRef,
+        caseStudies: caseStudiesRef,
+        specs: specsRef,
+    };
 
-    const jumpTo = (key: keyof SectionMap) => {
-        refs[key].current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const jumpTo = (key: SectionKey) => {
+        sectionRefs[key].current?.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
     return (
@@ -96,7 +103,7 @@ export default function B2GTrack({ refs }: Props) {
             </Stack>
 
             {/* ── Overview ── */}
-            <Box ref={refs.overview} sx={{ mb: 5 }}>
+            <Box ref={overviewRef} sx={{ mb: 5 }}>
                 <Typography
                     sx={{
                         fontFamily: "'Stack Sans Headline', 'Syne', sans-serif",
@@ -128,7 +135,7 @@ export default function B2GTrack({ refs }: Props) {
             <Divider sx={{ borderColor: THEME.border, mb: 4 }} />
 
             {/* ── Case Studies ── */}
-            <Box ref={refs.caseStudies} sx={{ mb: 5 }}>
+            <Box ref={caseStudiesRef} sx={{ mb: 5 }}>
                 <Typography
                     sx={{
                         fontFamily: "'Stack Sans Headline', 'Syne', sans-serif",
@@ -201,7 +208,7 @@ export default function B2GTrack({ refs }: Props) {
             <Divider sx={{ borderColor: THEME.border, mb: 4 }} />
 
             {/* ── Specs / Certifications ── */}
-            <Box ref={refs.specs} sx={{ mb: 5 }}>
+            <Box ref={specsRef} sx={{ mb: 5 }}>
                 <Typography
                     sx={{
                         fontFamily: "'Stack Sans Headline', 'Syne', sans-serif",

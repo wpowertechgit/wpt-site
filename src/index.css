@@ -130,7 +130,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+button:not(.MuiButtonBase-root) {
   border-radius: 0;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -142,12 +142,12 @@ button {
   transition: border-color 0.25s;
 }
 
-button:hover {
+button:not(.MuiButtonBase-root):hover {
   border-color: #646cff;
 }
 
-button:focus,
-button:focus-visible {
+button:not(.MuiButtonBase-root):focus,
+button:not(.MuiButtonBase-root):focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -158,7 +158,7 @@ button:focus-visible {
     background-color: #242424;
   }
 
-  button {
+  button:not(.MuiButtonBase-root) {
     background-color: #1a1a1a;
   }
 }
