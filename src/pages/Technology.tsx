@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
@@ -29,8 +29,8 @@ export default function Technology() {
           height: "100vh",
           display: "flex",
           alignItems: "center",
-          px: { xs: 2, sm: 3, md: 4, lg: 6, xl: 10, xxxl: 20 },
-          py: { xs: 8, sm: 9, md: 10, lg: 12, xl: 14, xxxl: 20 },
+          px: { xs: 2, sm: 3, md: 4, lg: 6, xl: 10, xxl: 10, xxxl: 20 },
+          py: { xs: 8, sm: 9, md: 10, lg: 12, xl: 14, xxl: 14, xxxl: 20 },
         }}
       >
         <Container maxWidth={false} sx={{ width: "100%", maxWidth: "120rem" }}>
@@ -42,8 +42,8 @@ export default function Technology() {
             <Box
               sx={{
                 display: "grid",
-                gridTemplateColumns: { xs: "1fr", sm: "1fr", md: "1.1fr 1fr", lg: "1.15fr 1fr", xl: "1.2fr 1fr", xxxl: "1.2fr 1fr" },
-                gap: { xs: 4, sm: 4, md: 5, lg: 6, xl: 8, xxxl: 10 },
+                gridTemplateColumns: { xs: "1fr", sm: "1fr", md: "1.1fr 1fr", lg: "1.15fr 1fr", xl: "1.2fr 1fr", xxl: "1.2fr 1fr", xxxl: "1.2fr 1fr" },
+                gap: { xs: 4, sm: 4, md: 5, lg: 6, xl: 8, xxl: 8, xxxl: 10 },
                 alignItems: "center",
               }}
             >
@@ -53,10 +53,10 @@ export default function Technology() {
                   sx={{
                     fontFamily: "Stack Sans Headline",
                     fontWeight: 700,
-                    fontSize: { xs: "2rem", sm: "2.4rem", md: "3rem", lg: "3.6rem", xl: "4.4rem", xxxl: "6rem" },
+                    fontSize: { xs: "2rem", sm: "2.4rem", md: "3rem", lg: "3.6rem", xl: "4.4rem", xxl: "4.4rem", xxxl: "6rem" },
                     lineHeight: 1.15,
                     maxWidth: "24ch",
-                    mb: { xs: 2, sm: 2, md: 3, lg: 3, xl: 4, xxxl: 5 },
+                    mb: { xs: 2, sm: 2, md: 3, lg: 3, xl: 4, xxl: 4, xxxl: 5 },
                   }}
                 >
                   {t("tech-title")}
@@ -64,7 +64,7 @@ export default function Technology() {
                 <Typography
                   sx={{
                     color: "#4b4b4b",
-                    fontSize: { xs: "1rem", sm: "1.05rem", md: "1.1rem", lg: "1.18rem", xl: "1.3rem", xxxl: "1.8rem" },
+                    fontSize: { xs: "1rem", sm: "1.05rem", md: "1.1rem", lg: "1.18rem", xl: "1.3rem", xxl: "1.3rem", xxxl: "1.8rem" },
                     lineHeight: 1.6,
                     maxWidth: "70ch",
                     whiteSpace: "pre-line",
@@ -89,7 +89,7 @@ export default function Technology() {
                   onContextMenu={(e) => e.preventDefault()}
                   sx={{
                     width: "100%",
-                    maxWidth: { md: "30rem", lg: "32rem", xxxl: "48rem" },
+                    maxWidth: { md: "30rem", lg: "32rem", xxl: "32rem", xxxl: "48rem" },
                     aspectRatio: "1072 / 1088",
                     mx: "auto",
                     display: { xs: "none", md: "block" },
@@ -141,3 +141,5 @@ export default function Technology() {
     </Box>
   );
 }
+
+

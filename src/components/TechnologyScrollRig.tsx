@@ -1,4 +1,4 @@
-import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
+﻿import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Box, Fade, ThemeProvider, Typography, createTheme, useMediaQuery } from "@mui/material";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Center, ScrollControls, useScroll } from "@react-three/drei";
@@ -437,7 +437,7 @@ function Overlay({
                     fontFamily: "Stack Sans Headline, sans-serif",
                     fontWeight: 700,
                     textAlign: "left",
-                    fontSize: { xs: "1.25rem", sm: "1.45rem", md: "1.8rem", lg: "2.15rem", xl: "2.4rem", xxxl: "3rem" },
+                    fontSize: { xs: "1.25rem", sm: "1.45rem", md: "1.8rem", lg: "2.15rem", xl: "2.4rem", xxl: "2.4rem", xxxl: "3rem" },
                     "@media (min-width:2560px)": { fontSize: "2.8rem" },
                     lineHeight: 1.08,
                     letterSpacing: "-0.015em",
@@ -451,7 +451,7 @@ function Overlay({
                     fontFamily: "Figtree, sans-serif",
                     textAlign: "left",
                     fontWeight: 400,
-                    fontSize: { xs: "0.9rem", sm: "0.98rem", md: "1.08rem", lg: "1.2rem", xl: "1.32rem", xxxl: "2rem" },
+                    fontSize: { xs: "0.9rem", sm: "0.98rem", md: "1.08rem", lg: "1.2rem", xl: "1.32rem", xxl: "1.32rem", xxxl: "2rem" },
                     "@media (min-width:2560px)": { fontSize: "1.55rem" },
                     lineHeight: 1.45,
                     color: "rgba(0,0,0,0.82)",
@@ -573,3 +573,4 @@ export default function TechnologyScrollRig() {
     </Box>
   );
 }
+

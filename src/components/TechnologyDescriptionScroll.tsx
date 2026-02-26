@@ -1,12 +1,8 @@
-import { useMemo, useRef } from "react";
-import { motion } from "framer-motion";
+﻿import { useMemo, useRef } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { Box, ButtonBase, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { MdFactory, MdOutlineElectricalServices, MdOutlineFactCheck, MdOutlineFilter } from "react-icons/md";
-import { LuArrowDown, LuArrowRight, LuCog, LuGauge, LuThermometer } from "react-icons/lu";
-import { GiCannister, GiMolecule } from "react-icons/gi";
-import { BsSnow } from "react-icons/bs";
-import { TbLayersIntersect } from "react-icons/tb";
+import { MdFactory, MdOutlineElectricalServices, MdOutlineFactCheck } from "react-icons/md";
 import { FaTrashAlt } from "react-icons/fa";
 
 type SectionItem = {
@@ -53,7 +49,6 @@ const SECTION_ITEMS: SectionItem[] = [
   {
     titleKey: "tech-body-page-4-title",
     bodyKey: "",
-    sectionDividerOnly: true,
     processStepKeys: [
       { textKey: "tech-body-page-4-step-1", icon: "snow-thermo" },
       { textKey: "tech-body-page-4-step-2", icon: "filter-layers" },
@@ -96,10 +91,28 @@ const SECTION_ITEMS: SectionItem[] = [
   },
 ];
 
+const PROCESS_ICON_SOURCES: Record<NonNullable<SectionItem["processStepKeys"]>[number]["icon"], string> = {
+  factory: "/vectors/factory-line.svg",
+  thermometer: "/vectors/temperature.svg",
+  molecule: "/vectors/molecule.svg",
+  gas: "/vectors/gas-tank.svg",
+  "snow-thermo": "/vectors/snowflaketemperature.svg",
+  "filter-layers": "/vectors/dust.svg",
+  gauge: "/vectors/pressuremeter.svg",
+  engine: "/vectors/generator.svg",
+};
+
 export default function TechnologyDescriptionScroll() {
   const { t } = useTranslation();
+  const wrapperRef = useRef<HTMLElement | null>(null);
   const sectionRefs = useRef<Array<HTMLElement | null>>([]);
   const sections = useMemo(() => SECTION_ITEMS, []);
+  const { scrollYProgress } = useScroll({
+    target: wrapperRef,
+    offset: ["start 90%", "start 20%"],
+  });
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 60, damping: 22 });
+  const pageBgColor = useTransform(smoothProgress, [0, 1], ["#FFFFFF", "#303192"]);
 
   const jumpToSection = (index: number) => {
     const target = sectionRefs.current[index];
@@ -108,7 +121,12 @@ export default function TechnologyDescriptionScroll() {
   };
 
   return (
-    <Box sx={{ bgcolor: "#303192", color: "#FFFFFF" }}>
+    <Box
+      component={motion.section}
+      ref={wrapperRef}
+      style={{ backgroundColor: pageBgColor }}
+      sx={{ color: "#FFFFFF" }}
+    >
       {sections.map((section, index) => {
         const hasPrev = index > 0 && t(section.prevKey || "").trim().length > 0;
         const hasNext = index < sections.length - 1 && t(section.nextKey).trim().length > 0;
@@ -124,7 +142,7 @@ export default function TechnologyDescriptionScroll() {
               minHeight: "100vh",
               display: "flex",
               alignItems: "center",
-              px: { xs: 2, sm: 3, md: 4, lg: 6, xl: 10, xxxl: 20 },
+              px: { xs: 2, sm: 3, md: 4, lg: 6, xl: 10, xxl: 10, xxxl: 20 },
               py: { xs: 5, sm: 6, md: 8, xl: 9 },
             }}
           >
@@ -141,7 +159,7 @@ export default function TechnologyDescriptionScroll() {
                     src="/wpt-black-full-length-logo.svg"
                     alt="Waste Power Tech"
                     sx={{
-                      width: { xs: "min(76vw, 280px)", sm: "340px", md: "420px", xl: "520px", xxxl: "660px" },
+                      width: { xs: "min(76vw, 280px)", sm: "340px", md: "420px", xl: "520px", xxl: "520px", xxxl: "660px" },
                       height: "auto",
                       display: "block",
                     }}
@@ -151,14 +169,14 @@ export default function TechnologyDescriptionScroll() {
                   </Typography>
                 </Box>
 
-                <Box sx={{ borderTop: "2px solid #FFFFFF", borderBottom: "2px solid #FFFFFF", py: { xs: 4, md: 5 } }}>
+                <Box sx={{ borderTop: "2px solid #FFFFFF", borderBottom: "2px solid #FFFFFF", py: { xs: 4, md: 5 }, minHeight: { xs: "auto", md: "72vh" } }}>
                   {title.trim().length > 0 && (
                     <Typography
                       variant="h2"
                       sx={{
                         fontFamily: "Stack Sans Headline, sans-serif",
                         fontWeight: 700,
-                        fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.4rem", lg: "2.8rem", xl: "3.4rem", xxxl: "4.4rem" },
+                        fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.4rem", lg: "2.8rem", xl: "3.4rem", xxl: "3.4rem", xxxl: "4.4rem" },
                         lineHeight: 1.12,
                         mb: { xs: 2.2, md: 2.5, xl: 3 },
                         maxWidth: "28ch",
@@ -172,12 +190,41 @@ export default function TechnologyDescriptionScroll() {
                   )}
 
                   {section.videoEmbedUrl ? (
-                    <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1.1fr 0.9fr" }, gap: { xs: 2.2, md: 2.8, xl: 3.2 }, mb: { xs: 3, md: 3.6 } }}>
-                      <Typography sx={{ fontFamily: "Figtree, sans-serif", fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxxl: "1.9rem" }, lineHeight: 1.72, maxWidth: "80ch", whiteSpace: "pre-line" }}>
-                        {t(section.bodyKey)}
-                      </Typography>
-                      <Box sx={{ border: "1px solid rgba(255,255,255,0.8)", p: { xs: 1, md: 1.2, xl: 1.4 } }}>
-                        <Typography sx={{ fontFamily: "Stack Sans Headline, sans-serif", fontWeight: 700, fontSize: { xs: "0.9rem", md: "0.98rem", xl: "1.12rem" }, mb: { xs: 0.8, md: 1 } }}>
+                    <Box
+                      sx={{
+                        display: "grid",
+                        gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+                        gap: { xs: 1.2, md: 1.5, xl: 2 },
+                        mb: { xs: 3, md: 3.6 },
+                        alignItems: "stretch",
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          px: { xs: 1.2, md: 1.6, xl: 2 },
+                          py: { xs: 1.2, md: 1.6, xl: 2 },
+                          minHeight: { xs: "auto", md: "30rem", xl: "34rem" },
+                          display: "flex",
+                          alignItems: "flex-start",
+                        }}
+                      >
+                        <Typography sx={{ fontFamily: "Figtree, sans-serif", fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxl: "1.35rem", xxxl: "1.9rem" }, lineHeight: 1.72, whiteSpace: "pre-line" }}>
+                          {t(section.bodyKey)}
+                        </Typography>
+                      </Box>
+
+                      <Box
+                        sx={{
+                          px: { xs: 1.2, md: 1.6, xl: 2 },
+                          py: { xs: 1.2, md: 1.6, xl: 2 },
+                          minHeight: { xs: "auto", md: "30rem", xl: "34rem" },
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "stretch",
+                          justifyContent: "flex-start",
+                        }}
+                      >
+                        <Typography sx={{ fontFamily: "Stack Sans Headline, sans-serif", fontWeight: 700, fontSize: { xs: "0.9rem", md: "0.98rem", xl: "1.12rem" }, mt: 0, mb: { xs: 0.8, md: 1 } }}>
                           {t(section.videoTitleKey || "")}
                         </Typography>
                         <Box
@@ -188,12 +235,49 @@ export default function TechnologyDescriptionScroll() {
                           referrerPolicy="strict-origin-when-cross-origin"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           allowFullScreen
-                          sx={{ width: "100%", aspectRatio: "16 / 9", border: "1px solid rgba(255,255,255,0.7)", display: "block" }}
+                          sx={{ width: "100%", aspectRatio: "16 / 9", border: "none", display: "block" }}
                         />
                       </Box>
                     </Box>
+                  ) : section.infraTiles && section.bodyKey.trim().length > 0 ? (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: { xs: 2, md: 2.6, xl: 3.1 },
+                        mb: { xs: 3, md: 3.6 },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: "100%",
+                          maxWidth: { md: "44rem", xl: "48rem" },
+                          display: "grid",
+                          gridTemplateColumns: { xs: "repeat(2, minmax(0, 1fr))", md: "repeat(4, minmax(0, 1fr))" },
+                          gap: 0,
+                          bgcolor: "#0000FF",
+                        }}
+                      >
+                        {section.infraTiles.map((tile, tileIndex) => (
+                          <Box key={`${tile.textKey}-${tileIndex}`} sx={{ bgcolor: tile.bgColor, minHeight: { xs: "6rem", md: "7.1rem", xl: "7.8rem" }, display: "flex", alignItems: "center", justifyContent: "center", px: { xs: 0.6, md: 0.75, xl: 0.9 } }}>
+                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: { xs: 0.45, md: 0.6, xl: 0.8 } }}>
+                              {tile.icon === "waste" && <FaTrashAlt style={{ fontSize: "clamp(1.9rem, 2.4vw, 2.6rem)", color: "#FFFFFF" }} />}
+                              {tile.icon === "grid" && <MdOutlineElectricalServices style={{ fontSize: "clamp(1.9rem, 2.4vw, 2.6rem)", color: "#FFFFFF" }} />}
+                              {tile.icon === "surface" && <MdFactory style={{ fontSize: "clamp(1.9rem, 2.4vw, 2.6rem)", color: "#FFFFFF" }} />}
+                              {tile.icon === "permits" && <MdOutlineFactCheck style={{ fontSize: "clamp(1.9rem, 2.4vw, 2.6rem)", color: "#FFFFFF" }} />}
+                              <Typography sx={{ fontFamily: "Stack Sans Headline, sans-serif", fontWeight: 700, color: "#FFFFFF", fontSize: { xs: "0.64rem", sm: "0.7rem", md: "0.74rem", xl: "0.82rem", xxl: "0.82rem", xxxl: "0.92rem" }, lineHeight: 1.15, textAlign: "center", whiteSpace: "pre-line" }}>
+                                {t(tile.textKey)}
+                              </Typography>
+                            </Box>
+                          </Box>
+                        ))}
+                      </Box>
+                      <Typography sx={{ fontFamily: "Figtree, sans-serif", fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxl: "1.35rem", xxxl: "1.9rem" }, lineHeight: 1.72, whiteSpace: "pre-line", maxWidth: "80ch" }}>
+                        {t(section.bodyKey)}
+                      </Typography>
+                    </Box>
                   ) : section.bodyKey.trim().length > 0 && (
-                    <Typography sx={{ fontFamily: "Figtree, sans-serif", fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxxl: "1.9rem" }, lineHeight: 1.72, maxWidth: "80ch", whiteSpace: "pre-line", mb: { xs: 3, md: 3.6 } }}>
+                    <Typography sx={{ fontFamily: "Figtree, sans-serif", fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxl: "1.35rem", xxxl: "1.9rem" }, lineHeight: 1.72, maxWidth: "80ch", whiteSpace: "pre-line", mb: { xs: 3, md: 3.6 } }}>
                       {t(section.bodyKey)}
                     </Typography>
                   )}
@@ -207,9 +291,9 @@ export default function TechnologyDescriptionScroll() {
                           {section.timelineTicks.map((tickKey, tickIndex) => {
                             const leftPositions = ["22%", "56%", "86%"];
                             return (
-                              <Box key={tickKey} sx={{ position: "absolute", top: 0, left: leftPositions[tickIndex], transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", width: { xs: "8rem", sm: "10rem", md: "12rem", xl: "15rem", xxxl: "18rem" } }}>
+                              <Box key={tickKey} sx={{ position: "absolute", top: 0, left: leftPositions[tickIndex], transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", width: { xs: "8rem", sm: "10rem", md: "12rem", xl: "15rem", xxl: "15rem", xxxl: "18rem" } }}>
                                 <Box sx={{ width: "2px", height: { xs: "1rem", md: "1.25rem", xl: "1.45rem" }, bgcolor: "#FFFFFF" }} />
-                                <Typography sx={{ mt: { xs: 0.7, md: 0.9, xl: 1.1 }, fontFamily: "Figtree, sans-serif", fontWeight: 600, fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem", xl: "1.18rem", xxxl: "1.55rem" }, lineHeight: 1.35, textAlign: "center", whiteSpace: "pre-line" }}>
+                                <Typography sx={{ mt: { xs: 0.7, md: 0.9, xl: 1.1 }, fontFamily: "Figtree, sans-serif", fontWeight: 600, fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem", xl: "1.18rem", xxl: "1.18rem", xxxl: "1.55rem" }, lineHeight: 1.35, textAlign: "center", whiteSpace: "pre-line" }}>
                                   {t(tickKey)}
                                 </Typography>
                               </Box>
@@ -220,17 +304,17 @@ export default function TechnologyDescriptionScroll() {
                     </Box>
                   )}
 
-                  {section.infraTiles && (
-                    <Box sx={{ mt: { xs: 2.2, md: 2.8, xl: 3.2 }, maxWidth: "98ch" }}>
-                      <Box sx={{ display: "grid", gridTemplateColumns: { xs: "repeat(2, minmax(0, 1fr))", md: "repeat(4, minmax(0, 1fr))" }, gap: 0 }}>
+                  {section.infraTiles && !section.bodyKey.trim().length && (
+                    <Box sx={{ mt: { xs: 2.2, md: 2.8, xl: 3.2 }, maxWidth: { md: "34rem", xl: "40rem" } }}>
+                      <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "repeat(4, minmax(0, 1fr))" }, gap: { xs: 0.4, md: 0.5 } }}>
                         {section.infraTiles.map((tile, tileIndex) => (
-                          <Box key={`${tile.textKey}-${tileIndex}`} sx={{ bgcolor: tile.bgColor, minHeight: { xs: "8rem", sm: "9rem", md: "10rem", xl: "12rem", xxxl: "14rem" }, display: "flex", alignItems: "center", justifyContent: "center", px: { xs: 1, md: 1.4, xl: 1.8 } }}>
+                          <Box key={`${tile.textKey}-${tileIndex}`} sx={{ bgcolor: tile.bgColor, aspectRatio: "1.35 / 1", minHeight: { xs: "5.5rem", md: "6.3rem", xl: "7rem" }, display: "flex", alignItems: "center", justifyContent: "center", px: { xs: 0.7, md: 0.9, xl: 1.1 } }}>
                             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: { xs: 0.8, md: 1, xl: 1.2 } }}>
                               {tile.icon === "waste" && <FaTrashAlt style={{ fontSize: "clamp(1.5rem, 2.1vw, 2.8rem)", color: "#FFFFFF" }} />}
                               {tile.icon === "grid" && <MdOutlineElectricalServices style={{ fontSize: "clamp(1.6rem, 2.2vw, 3rem)", color: "#FFFFFF" }} />}
                               {tile.icon === "surface" && <MdFactory style={{ fontSize: "clamp(1.6rem, 2.2vw, 3rem)", color: "#FFFFFF" }} />}
                               {tile.icon === "permits" && <MdOutlineFactCheck style={{ fontSize: "clamp(1.6rem, 2.2vw, 3rem)", color: "#FFFFFF" }} />}
-                              <Typography sx={{ fontFamily: "Stack Sans Headline, sans-serif", fontWeight: 700, color: "#FFFFFF", fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem", lg: "1.2rem", xl: "1.38rem", xxxl: "1.9rem" }, lineHeight: 1.25, textAlign: "center", whiteSpace: "pre-line" }}>
+                              <Typography sx={{ fontFamily: "Stack Sans Headline, sans-serif", fontWeight: 700, color: "#FFFFFF", fontSize: { xs: "0.72rem", sm: "0.76rem", md: "0.82rem", lg: "0.86rem", xl: "0.92rem", xxl: "0.92rem", xxxl: "1rem" }, lineHeight: 1.15, textAlign: "center", whiteSpace: "pre-line" }}>
                                 {t(tile.textKey)}
                               </Typography>
                             </Box>
@@ -240,45 +324,48 @@ export default function TechnologyDescriptionScroll() {
                     </Box>
                   )}
 
-                  {(section.sectionTitleKey || section.sectionDividerOnly) && section.processStepKeys && (
+                  {(section.sectionTitleKey || section.sectionDividerOnly || section.processShowArrows === false) && section.processStepKeys && (
                     <Box sx={{ mb: { xs: 3, sm: 3.2, md: 3.6, lg: 4.2 } }}>
                       {section.sectionTitleKey && (
-                        <Typography sx={{ fontFamily: "Stack Sans Headline, sans-serif", fontWeight: 700, fontSize: { xs: "1.05rem", sm: "1.15rem", md: "1.3rem", lg: "1.5rem", xl: "1.85rem", xxxl: "2.5rem" }, lineHeight: 1.2, mb: { xs: 1.4, md: 2, xl: 2.4 } }}>
+                        <Typography sx={{ fontFamily: "Stack Sans Headline, sans-serif", fontWeight: 700, fontSize: { xs: "1.05rem", sm: "1.15rem", md: "1.3rem", lg: "1.5rem", xl: "1.85rem", xxl: "1.85rem", xxxl: "2.5rem" }, lineHeight: 1.2, mb: { xs: 1.4, md: 2, xl: 2.4 } }}>
                           {t(section.sectionTitleKey)}
                         </Typography>
                       )}
                       {section.sectionDividerOnly && <Box sx={{ borderTop: "2px solid #FFFFFF", mb: { xs: 2, sm: 2.4, md: 3, xl: 3.5 } }} />}
-                      <Box sx={{ display: "grid", gridTemplateColumns: section.processShowArrows === false ? { xs: "1fr", sm: "repeat(2, minmax(0, 1fr))", md: "repeat(4, minmax(0, 1fr))" } : { xs: "1fr", md: "repeat(7, minmax(0, auto))" }, alignItems: "stretch", justifyContent: { md: section.processShowArrows === false ? "space-between" : "start" }, rowGap: { xs: 1.2, md: 0 }, columnGap: { md: 1.2, xl: 1.8, xxxl: 2.2 } }}>
+                      <Box sx={{ display: "grid", gridTemplateColumns: section.processShowArrows === false ? { xs: "repeat(2, minmax(0, 1fr))", md: "repeat(4, minmax(0, 1fr))" } : { xs: "1fr", md: "repeat(7, minmax(0, auto))" }, alignItems: "stretch", justifyContent: { md: section.processShowArrows === false ? "start" : "start" }, rowGap: 0, columnGap: section.processShowArrows === false ? 0 : { md: 0 }, width: section.processShowArrows === false ? "100%" : "auto", maxWidth: section.processShowArrows === false ? { md: "44rem", xl: "48rem" } : "none", bgcolor: "transparent" }}>
                         {section.processStepKeys.map((step, stepIndex) => {
-                          const Icon = step.icon === "factory" ? MdFactory : step.icon === "thermometer" ? LuThermometer : step.icon === "molecule" ? GiMolecule : step.icon === "gas" ? GiCannister : step.icon === "gauge" ? LuGauge : step.icon === "engine" ? LuCog : step.icon === "filter-layers" ? MdOutlineFilter : null;
                           const isLast = stepIndex === section.processStepKeys!.length - 1;
 
                           return (
                             <Box key={step.textKey} sx={{ display: "contents" }}>
-                              <Box sx={{ px: { xs: 1.3, sm: 1.6, md: 1.8, xl: 2.2, xxxl: 2.8 }, py: { xs: 1.25, sm: 1.45, md: 1.6, xl: 1.9, xxxl: 2.4 }, minWidth: { md: "12rem", xl: "14rem", xxxl: "16.5rem" } }}>
+                              <Box sx={{ px: section.processShowArrows === false ? { xs: 0.6, md: 0.75, xl: 0.9 } : { xs: 1.3, sm: 1.6, md: 1.8, xl: 2.2, xxl: 2.2, xxxl: 2.8 }, py: section.processShowArrows === false ? { xs: 0.9, md: 1.1, xl: 1.2 } : { xs: 1.25, sm: 1.45, md: 1.6, xl: 1.9, xxl: 1.9, xxxl: 2.4 }, minWidth: section.processShowArrows === false ? "auto" : { md: "12rem", xl: "14rem", xxl: "14rem", xxxl: "16.5rem" }, minHeight: section.processShowArrows === false ? { xs: "6rem", md: "7.1rem", xl: "7.8rem" } : "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: section.processShowArrows === false ? "center" : "flex-start" }}>
                                 <Box sx={{ mb: { xs: 0.8, md: 1.05, xl: 1.25 } }}>
-                                  {step.icon === "snow-thermo" ? (
-                                    <Box sx={{ display: "inline-flex", alignItems: "center", gap: 0.8 }}>
-                                      <BsSnow style={{ fontSize: "clamp(3.6rem, 4vw, 6rem)", color: "#FFFFFF" }} />
-                                      <LuThermometer style={{ fontSize: "clamp(3.6rem, 4vw, 6rem)", color: "#FFFFFF" }} />
-                                    </Box>
-                                  ) : step.icon === "filter-layers" ? (
-                                    <Box sx={{ display: "inline-flex", alignItems: "center", gap: 0.8 }}>
-                                      <MdOutlineFilter style={{ fontSize: "clamp(3.6rem, 4vw, 6rem)", color: "#FFFFFF" }} />
-                                      <TbLayersIntersect style={{ fontSize: "clamp(3.6rem, 4vw, 6rem)", color: "#FFFFFF" }} />
-                                    </Box>
-                                  ) : (
-                                    Icon && <Icon style={{ fontSize: "clamp(3.6rem, 4vw, 6rem)", color: "#FFFFFF" }} />
-                                  )}
+                                  <Box component="img" src={PROCESS_ICON_SOURCES[step.icon]} alt="" aria-hidden="true" sx={{ height: section.processShowArrows === false ? "clamp(2.6rem, 3.2vw, 3.6rem)" : "clamp(4rem, 4.8vw, 6.2rem)", width: "auto", maxHeight: "100px", display: "block", mx: section.processShowArrows === false ? "auto" : 0, filter: "brightness(0) invert(1)" }} />
                                 </Box>
-                                <Typography sx={{ fontFamily: "Figtree, sans-serif", fontWeight: 600, fontSize: { xs: "0.96rem", sm: "1rem", md: "1.08rem", lg: "1.14rem", xl: "1.35rem", xxxl: "1.9rem" }, lineHeight: 1.45, maxWidth: { md: "20ch" } }}>
+                                <Typography sx={{ fontFamily: "Figtree, sans-serif", fontWeight: 600, fontSize: section.processShowArrows === false ? { xs: "0.64rem", sm: "0.7rem", md: "0.74rem", xl: "0.82rem", xxl: "0.82rem", xxxl: "0.92rem" } : { xs: "0.96rem", sm: "1rem", md: "1.08rem", lg: "1.14rem", xl: "1.35rem", xxl: "1.35rem", xxxl: "1.9rem" }, lineHeight: section.processShowArrows === false ? 1.15 : 1.45, maxWidth: section.processShowArrows === false ? "14ch" : { md: "20ch" }, textAlign: section.processShowArrows === false ? "center" : "left", whiteSpace: "pre-line" }}>
                                   {t(step.textKey)}
                                 </Typography>
                               </Box>
                               {section.processShowArrows !== false && !isLast && (
-                                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", py: { xs: 0.4, md: 0 } }}>
-                                  <Box sx={{ display: { xs: "inline-flex", md: "none" }, color: "#FFFFFF" }}><LuArrowDown size={22} /></Box>
-                                  <Box sx={{ display: { xs: "none", md: "inline-flex" }, color: "#FFFFFF" }}><LuArrowRight size={24} /></Box>
+                                <Box sx={{ display: "flex", alignItems: "stretch", justifyContent: "stretch", minHeight: { xs: "2.2rem", md: "100%" } }}>
+                                  <Box
+                                    sx={{
+                                      display: { xs: "block", md: "none" },
+                                      width: "100%",
+                                      height: "2.2rem",
+                                      bgcolor: "rgba(255,255,255,0.12)",
+                                      clipPath: "polygon(0 0,100% 0,100% 65%,50% 100%,0 65%)",
+                                    }}
+                                  />
+                                  <Box
+                                    sx={{
+                                      display: { xs: "none", md: "block" },
+                                      width: "3.2rem",
+                                      minHeight: "100%",
+                                      bgcolor: "rgba(255,255,255,0.12)",
+                                      clipPath: "polygon(0 0,72% 0,100% 50%,72% 100%,0 100%,20% 50%)",
+                                    }}
+                                  />
                                 </Box>
                               )}
                             </Box>
@@ -286,8 +373,8 @@ export default function TechnologyDescriptionScroll() {
                         })}
                       </Box>
                       {section.postProcessBodyKey && (
-                        <Box sx={{ mt: { xs: 2.2, md: 2.8, xl: 3.2 }, pt: { xs: 2.2, md: 2.8, xl: 3.2 }, borderTop: "2px solid #FFFFFF", px: { xs: 0, md: 2, xl: 3 } }}>
-                          <Typography sx={{ fontFamily: "Figtree, sans-serif", fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxxl: "1.9rem" }, lineHeight: 1.72, maxWidth: "80ch", whiteSpace: "pre-line" }}>
+                        <Box sx={{ mt: { xs: 2.2, md: 2.8, xl: 3.2 }, px: { xs: 0, md: 0 } }}>
+                          <Typography sx={{ fontFamily: "Figtree, sans-serif", fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxl: "1.35rem", xxxl: "1.9rem" }, lineHeight: 1.72, maxWidth: "80ch", whiteSpace: "pre-line" }}>
                             {t(section.postProcessBodyKey)}
                           </Typography>
                         </Box>
@@ -323,4 +410,5 @@ export default function TechnologyDescriptionScroll() {
     </Box>
   );
 }
+
 

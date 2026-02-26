@@ -16,6 +16,7 @@ const TechnologyBodyDebug = lazy(() => import("./pages/TechnologyBodyDebug"));
 const PrivacyPolicy = lazy(() => import("./pages/compliance/PrivacyPolicy"));
 const TermsOfUse = lazy(() => import("./pages/compliance/TermsOfUse"));
 const Accessibility = lazy(() => import("./pages/compliance/Accessibility"));
+const Docs = lazy(() => import("./pages/Docs"));
 // import Calculator from "./pages/Calculator";
 // import Documentation from "./pages/Documentation";
 // import CaseStudyCluj from "./pages/CaseStudyCluj";
@@ -38,6 +39,7 @@ function App() {
               <Route path="about/history" element={<History />} />
               <Route path="technology" element={<Technology />} />
               <Route path="applications" element={<Applications />} />
+              <Route path="docs" element={<Docs />} />
               <Route path="press" element={<Press />} />
               <Route path="privacy-policy" element={<PrivacyPolicy />} />
               <Route path="terms-of-use" element={<TermsOfUse />} />

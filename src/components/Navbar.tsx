@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Menu, MenuItem, Container, Link as MuiLink, IconButton } from "@mui/material";
+﻿import { AppBar, Box, Button, Menu, MenuItem, Container, Link as MuiLink, IconButton } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -16,15 +16,15 @@ const NAV_ITEMS = [
 
 const LOCALES = [
     ["en", "/us.png", "English"],
-    ["ro", "/ro.png", "Română"],
+    ["ro", "/ro.png", "RomÃ¢nÄƒ"],
     ["hu", "/hu.png", "Magyar"],
     ["de", "/de.png", "Deutsch"],
-    ["fr", "/fr.png", "Français"],
+    ["fr", "/fr.png", "FranÃ§ais"],
     ["it", "/it.png", "Italiano"],
-    ["gr", "/gr.png", "Ελληνικά"],
-    ["tr", "/tr.png", "Türkçe"],
-    ["zh", "/zh.png", "中文"],
-    ["es", "/es.png", "Español"],
+    ["gr", "/gr.png", "Î•Î»Î»Î·Î½Î¹ÎºÎ¬"],
+    ["tr", "/tr.png", "TÃ¼rkÃ§e"],
+    ["zh", "/zh.png", "ä¸­æ–‡"],
+    ["es", "/es.png", "EspaÃ±ol"],
     ["pl", "/pl.png", "Polski"]
 ];
 
@@ -59,7 +59,7 @@ export default function Navbar() {
             <Container
                 maxWidth={false}
                 sx={{
-                    px: { md: "2rem !important", xl: "3rem !important" },
+                    px: { md: "2rem !important", xl: "3rem !important", xxl: "4rem !important" },
                     width: "100%",
                     maxWidth: "120rem",
                 }}
@@ -69,7 +69,7 @@ export default function Navbar() {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-between",
-                        height: { xs: "clamp(4.5rem, 4vw, 6rem)", xxxl: "10vh" }
+                        height: { xs: "clamp(4.5rem, 4vw, 6rem)", xxl: "7.25rem", xxxl: "10vh" }
                     }}
                 >
                     {/* LOGO */}
@@ -93,7 +93,7 @@ export default function Navbar() {
                             decoding="async"
                             fetchPriority="high"
                             sx={{
-                                height: { xs: "clamp(4.75rem, 3.4vw, 4rem)", xxxl: "8vh" },
+                                height: { xs: "clamp(4.75rem, 3.4vw, 4rem)", xxl: "7.2rem", xxxl: "8vh" },
                                 width: "auto"
                             }}
                         />
@@ -109,7 +109,7 @@ export default function Navbar() {
                                 sx={{
                                     color: "#000",
                                     textTransform: "none",
-                                    fontSize: { xs: "clamp(1rem, 0.95vw, 1.4rem)", xxxl: "2.7rem" },
+                                    fontSize: { xs: "clamp(1rem, 0.95vw, 1.4rem)", xxl: "1.55rem", xxxl: "2.7rem" },
                                     fontFamily: "Figtree",
                                     fontWeight: 600,
                                     px: "clamp(1rem, 1.2vw, 2rem)",
@@ -133,10 +133,10 @@ export default function Navbar() {
                             sx={{
                                 color: "#000",
                                 ml: "clamp(0.5rem, 0.8vw, 1.2rem)",
-                                p: { xs: "0.5rem", xxxl: "0.95rem" },
+                                p: { xs: "0.5rem", xxl: "0.7rem", xxxl: "0.95rem" },
                                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                                 "& svg": {
-                                    fontSize: { xs: "clamp(1.7rem, 1.2vw, 2.5rem)", xxxl: "4rem" }
+                                    fontSize: { xs: "clamp(1.7rem, 1.2vw, 2.5rem)", xxl: "3rem", xxxl: "4rem" }
                                 },
                                 "&:hover": {
                                     color: "#ED1C24"
@@ -156,8 +156,8 @@ export default function Navbar() {
                                     bgcolor: "#ffffff",
                                     border: "1px solid #ddd",
                                     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-                                    minWidth: { xs: "12.5rem", lg: "14rem", xxxl: "22rem" },
-                                    py: { xs: "0.3rem", xxxl: "0.7rem" }
+                                    minWidth: { xs: "12.5rem", lg: "14rem", xxl: "14rem", xxxl: "22rem" },
+                                    py: { xs: "0.3rem", xxl: "0.3rem", xxxl: "0.7rem" }
                                 }
                             }}
                         >
@@ -169,12 +169,12 @@ export default function Navbar() {
                                     sx={{
                                         fontFamily: "Figtree",
                                         fontSize: { xs: "clamp(1rem, 0.95vw, 1.2rem)", xxxl: "2rem" },
-                                        minHeight: { xs: "2.6rem", xxxl: "4.2rem" },
+                                        minHeight: { xs: "2.6rem", xxl: "2.6rem", xxxl: "4.2rem" },
                                         color: "#000",
                                         display: "flex",
                                         alignItems: "center",
-                                        gap: { xs: "0.75rem", xxxl: "1.2rem" },
-                                        px: { xs: "0.9rem", xxxl: "1.4rem" },
+                                        gap: { xs: "0.75rem", xxl: "0.75rem", xxxl: "1.2rem" },
+                                        px: { xs: "0.9rem", xxl: "0.9rem", xxxl: "1.4rem" },
                                         "&:hover": {
                                             bgcolor: "#f5f5f5"
                                         },
@@ -194,8 +194,8 @@ export default function Navbar() {
                                         decoding="async"
                                         fetchPriority="low"
                                         sx={{
-                                            width: { xs: "2rem", lg: "2.25rem", xxxl: "4.5rem" },
-                                            height: { xs: "1.35rem", lg: "1.5rem", xxxl: "3rem" },
+                                            width: { xs: "2rem", lg: "2.25rem", xxl: "2.25rem", xxxl: "4.5rem" },
+                                            height: { xs: "1.35rem", lg: "1.5rem", xxl: "1.5rem", xxxl: "3rem" },
                                             objectFit: "contain"
                                         }}
                                     />
@@ -209,3 +209,4 @@ export default function Navbar() {
         </AppBar>
     );
 }
+

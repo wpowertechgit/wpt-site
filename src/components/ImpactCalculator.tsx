@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+﻿import { useMemo, useState } from "react";
 import { Box, Container, Slider, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -49,7 +49,7 @@ function ImpactCard({ value, label, sub, color, icon: Icon }: ImpactCardProps) {
       </Box>
       <Typography
         sx={{
-          fontSize: { xs: "1.6rem", xl: "2rem", xxxl: "2.5rem" },
+          fontSize: { xs: "1.6rem", xl: "2rem", xxl: "2rem", xxxl: "2.5rem" },
           fontWeight: 800,
           lineHeight: 1,
           mb: "0.5rem",
@@ -59,7 +59,7 @@ function ImpactCard({ value, label, sub, color, icon: Icon }: ImpactCardProps) {
       </Typography>
       <Typography
         sx={{
-          fontSize: { xs: "0.8rem", xl: "0.95rem", xxxl: "1.1rem" },
+          fontSize: { xs: "0.8rem", xl: "0.95rem", xxl: "0.95rem", xxxl: "1.1rem" },
           fontWeight: 700,
           textTransform: "uppercase",
           letterSpacing: "0.1em",
@@ -70,7 +70,7 @@ function ImpactCard({ value, label, sub, color, icon: Icon }: ImpactCardProps) {
       </Typography>
       <Typography
         sx={{
-          fontSize: { xs: "0.78rem", xl: "0.9rem", xxxl: "1rem" },
+          fontSize: { xs: "0.78rem", xl: "0.9rem", xxl: "0.9rem", xxxl: "1rem" },
           opacity: 0.8,
         }}
       >
@@ -138,13 +138,13 @@ export default function ImpactCalculator() {
           py: { xs: "5rem", xl: "10rem" },
           bgcolor: "#f9f9f9",
           borderLeft: { xs: "0.5rem solid #0000FF", xl: "1.5rem solid #0000FF" },
-          px: { xs: "1.5rem", xl: "4%", xxxl: "6%" },
+          px: { xs: "1.5rem", xl: "4%", xxl: "4%", xxxl: "6%" },
           "&::before": {
             content: '""',
             position: "absolute",
             top: 0,
-            left: { xs: "1.5rem", xl: "4%", xxxl: "6%" },
-            right: { xs: "1.5rem", xl: "4%", xxxl: "6%" },
+            left: { xs: "1.5rem", xl: "4%", xxl: "4%", xxxl: "6%" },
+            right: { xs: "1.5rem", xl: "4%", xxl: "4%", xxxl: "6%" },
             borderTop: "0.25rem solid #000000",
           },
         }}
@@ -185,7 +185,7 @@ export default function ImpactCalculator() {
                   alt="Waste Power Tech logo"
                   sx={{
                     display: { xs: "none", sm: "block" },
-                    width: { sm: "85rem", lg: "10rem", xl: "15rem", xxxl: "20rem" },
+                    width: { sm: "85rem", lg: "10rem", xl: "15rem", xxl: "15rem", xxxl: "20rem" },
                     height: "auto",
                   }}
                 />
@@ -195,7 +195,7 @@ export default function ImpactCalculator() {
                     fontFamily: "Stack Sans Headline, sans-serif",
                     fontWeight: 700,
                     mb: 0,
-                    fontSize: { xs: "2.5rem", md: "3rem", xl: "4.5rem", xxxl: "6rem" },
+                    fontSize: { xs: "2.5rem", md: "3rem", xl: "4.5rem", xxl: "4.5rem", xxxl: "6rem" },
                     lineHeight: 1.1,
                   }}
                 >
@@ -208,7 +208,7 @@ export default function ImpactCalculator() {
                   sx={{
                     mb: "2rem",
                     fontWeight: 600,
-                    fontSize: { xs: "1.25rem", xl: "2rem", xxxl: "2.5rem" },
+                    fontSize: { xs: "1.25rem", xl: "2rem", xxl: "2rem", xxxl: "2.5rem" },
                   }}
                 >
                   {tonsPerHour.toFixed(1)} t/h
@@ -239,7 +239,7 @@ export default function ImpactCalculator() {
                   sx={{
                     mt: "2rem",
                     color: "#666",
-                    fontSize: { xs: "1rem", xl: "1.5rem", xxxl: "2rem" },
+                    fontSize: { xs: "1rem", xl: "1.5rem", xxl: "1.5rem", xxxl: "2rem" },
                     lineHeight: 1.6,
                   }}
                 >
@@ -247,7 +247,7 @@ export default function ImpactCalculator() {
                 </Typography>
               </Box>
 
-              <Box sx={{ fontSize: { xs: "1.1rem", xl: "1.75rem", xxxl: "2.2rem" } }}>
+              <Box sx={{ fontSize: { xs: "1.1rem", xl: "1.75rem", xxl: "1.75rem", xxxl: "2.2rem" } }}>
                 <Link
                   to="/calculator"
                   style={{
@@ -286,3 +286,4 @@ export default function ImpactCalculator() {
     </motion.div>
   );
 }
+

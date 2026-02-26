@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+﻿import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Box, ButtonBase, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
@@ -148,7 +148,7 @@ export default function TechnologyDescription() {
         color: "#FFFFFF",
         display: "flex",
         alignItems: "center",
-        px: { xs: 2, sm: 3, md: 4, lg: 6, xl: 10, xxxl: 20 },
+        px: { xs: 2, sm: 3, md: 4, lg: 6, xl: 10, xxl: 10, xxxl: 20 },
       }}
     >
       <Container maxWidth={false} sx={{ width: "100%", maxWidth: "120rem" }}>
@@ -158,9 +158,9 @@ export default function TechnologyDescription() {
             src="/wpt-black-full-length-logo.svg"
             alt="Waste Power Tech"
             sx={{
-              height: { xs: "2rem", sm: "2.3rem", md: "2.6rem", xl: "3.2rem", xxxl: "4rem" },
+              height: { xs: "2rem", sm: "2.3rem", md: "2.6rem", xl: "3.2rem", xxl: "3.2rem", xxxl: "4rem" },
               width: "auto",
-              maxWidth: { xs: "min(76vw, 280px)", sm: "340px", md: "420px", xl: "520px", xxxl: "660px" },
+              maxWidth: { xs: "min(76vw, 280px)", sm: "340px", md: "420px", xl: "520px", xxl: "520px", xxxl: "660px" },
               display: "block",
             }}
           />
@@ -182,7 +182,7 @@ export default function TechnologyDescription() {
           sx={{
             borderTop: "2px solid #FFFFFF",
             borderBottom: "2px solid #FFFFFF",
-            py: { xs: 5, sm: 6, md: 4, lg: 4.5, xl: 5, xxxl: 6 },
+            py: { xs: 5, sm: 6, md: 4, lg: 4.5, xl: 5, xxl: 5, xxxl: 6 },
             minHeight: { xs: "62vh", md: "86vh" },
             height: { xs: "auto", md: "86vh" },
             maxHeight: { xs: "none", md: "86vh" },
@@ -215,7 +215,7 @@ export default function TechnologyDescription() {
                   sx={{
                     fontFamily: "Stack Sans Headline, sans-serif",
                     fontWeight: 700,
-                    fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.2rem", lg: "2.5rem", xl: "3rem", xxxl: "4rem" },
+                    fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.2rem", lg: "2.5rem", xl: "3rem", xxl: "3rem", xxxl: "4rem" },
                     lineHeight: 1.12,
                     mb: { xs: 2.5, sm: 2.8, md: 2.2, lg: 2.5, xl: 3 },
                     maxWidth: "28ch",
@@ -241,7 +241,7 @@ export default function TechnologyDescription() {
                     <Typography
                       sx={{
                         fontFamily: "Figtree, sans-serif",
-                        fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxxl: "1.9rem" },
+                        fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxl: "1.35rem", xxxl: "1.9rem" },
                         lineHeight: 1.72,
                         maxWidth: "80ch",
                         whiteSpace: "pre-line",
@@ -293,7 +293,7 @@ export default function TechnologyDescription() {
                 <Typography
                   sx={{
                     fontFamily: "Figtree, sans-serif",
-                    fontSize: { xs: "1rem", sm: "1.05rem", md: "0.98rem", lg: "1.04rem", xl: "1.16rem", xxxl: "1.5rem" },
+                    fontSize: { xs: "1rem", sm: "1.05rem", md: "0.98rem", lg: "1.04rem", xl: "1.16rem", xxl: "1.16rem", xxxl: "1.5rem" },
                     lineHeight: { xs: 1.72, md: 1.6 },
                     maxWidth: "80ch",
                     whiteSpace: "pre-line",
@@ -315,7 +315,7 @@ export default function TechnologyDescription() {
                         left: 0,
                         fontFamily: "Stack Sans Headline, sans-serif",
                         fontWeight: 700,
-                        fontSize: { xs: "0.95rem", sm: "1rem", md: "1.08rem", xl: "1.28rem", xxxl: "1.75rem" },
+                        fontSize: { xs: "0.95rem", sm: "1rem", md: "1.08rem", xl: "1.28rem", xxl: "1.28rem", xxxl: "1.75rem" },
                         textAlign: "left",
                       }}
                     >
@@ -338,7 +338,7 @@ export default function TechnologyDescription() {
                               display: "flex",
                               flexDirection: "column",
                               alignItems: "center",
-                              width: { xs: "8rem", sm: "10rem", md: "12rem", xl: "15rem", xxxl: "18rem" },
+                              width: { xs: "8rem", sm: "10rem", md: "12rem", xl: "15rem", xxl: "15rem", xxxl: "18rem" },
                             }}
                           >
                             <Box sx={{ width: "2px", height: { xs: "1rem", md: "1.25rem", xl: "1.45rem" }, bgcolor: "#FFFFFF" }} />
@@ -347,7 +347,7 @@ export default function TechnologyDescription() {
                                 mt: { xs: 0.7, md: 0.9, xl: 1.1 },
                                 fontFamily: "Figtree, sans-serif",
                                 fontWeight: 600,
-                                fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem", xl: "1.18rem", xxxl: "1.55rem" },
+                                fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem", xl: "1.18rem", xxl: "1.18rem", xxxl: "1.55rem" },
                                 lineHeight: 1.35,
                                 textAlign: "center",
                                 whiteSpace: "pre-line",
@@ -377,7 +377,7 @@ export default function TechnologyDescription() {
                         key={`${tile.textKey}-${index}`}
                         sx={{
                           bgcolor: tile.bgColor,
-                          minHeight: { xs: "8rem", sm: "9rem", md: "10rem", xl: "12rem", xxxl: "14rem" },
+                          minHeight: { xs: "8rem", sm: "9rem", md: "10rem", xl: "12rem", xxl: "12rem", xxxl: "14rem" },
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -394,7 +394,7 @@ export default function TechnologyDescription() {
                             fontFamily: "Stack Sans Headline, sans-serif",
                             fontWeight: 700,
                             color: "#FFFFFF",
-                            fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem", lg: "1.2rem", xl: "1.38rem", xxxl: "1.9rem" },
+                            fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem", lg: "1.2rem", xl: "1.38rem", xxl: "1.38rem", xxxl: "1.9rem" },
                             lineHeight: 1.25,
                             textAlign: "center",
                             whiteSpace: "pre-line",
@@ -416,7 +416,7 @@ export default function TechnologyDescription() {
                       sx={{
                         fontFamily: "Stack Sans Headline, sans-serif",
                         fontWeight: 700,
-                        fontSize: { xs: "1.05rem", sm: "1.15rem", md: "1.3rem", lg: "1.5rem", xl: "1.85rem", xxxl: "2.5rem" },
+                        fontSize: { xs: "1.05rem", sm: "1.15rem", md: "1.3rem", lg: "1.5rem", xl: "1.85rem", xxl: "1.85rem", xxxl: "2.5rem" },
                         lineHeight: 1.2,
                         mb: { xs: 1.4, md: 2, xl: 2.4 },
                         textAlign: "left",
@@ -439,7 +439,7 @@ export default function TechnologyDescription() {
                       alignItems: "stretch",
                       justifyContent: { md: activePage.processShowArrows === false ? "space-between" : "start" },
                       rowGap: { xs: 1.2, md: 0 },
-                      columnGap: { md: 1.2, xl: 1.8, xxxl: 2.2 },
+                      columnGap: { md: 1.2, xl: 1.8, xxl: 1.8, xxxl: 2.2 },
                     }}
                   >
                     {activePage.processStepKeys.map((step, index) => {
@@ -469,9 +469,9 @@ export default function TechnologyDescription() {
                         >
                           <Box
                             sx={{
-                              px: { xs: 1.3, sm: 1.6, md: 1.8, xl: 2.2, xxxl: 2.8 },
-                              py: { xs: 1.25, sm: 1.45, md: 1.6, xl: 1.9, xxxl: 2.4 },
-                              minWidth: { md: "12rem", xl: "14rem", xxxl: "16.5rem" },
+                              px: { xs: 1.3, sm: 1.6, md: 1.8, xl: 2.2, xxl: 2.2, xxxl: 2.8 },
+                              py: { xs: 1.25, sm: 1.45, md: 1.6, xl: 1.9, xxl: 1.9, xxxl: 2.4 },
+                              minWidth: { md: "12rem", xl: "14rem", xxl: "14rem", xxxl: "16.5rem" },
                             }}
                           >
                             <Box sx={{ mb: { xs: 0.8, md: 1.05, xl: 1.25 } }}>
@@ -500,7 +500,7 @@ export default function TechnologyDescription() {
                               sx={{
                                 fontFamily: "Figtree, sans-serif",
                                 fontWeight: 600,
-                                fontSize: { xs: "0.96rem", sm: "1rem", md: "1.08rem", lg: "1.14rem", xl: "1.35rem", xxxl: "1.9rem" },
+                                fontSize: { xs: "0.96rem", sm: "1rem", md: "1.08rem", lg: "1.14rem", xl: "1.35rem", xxl: "1.35rem", xxxl: "1.9rem" },
                                 lineHeight: 1.45,
                                 textAlign: "left",
                                 maxWidth: { md: "20ch" },
@@ -544,7 +544,7 @@ export default function TechnologyDescription() {
                       <Typography
                         sx={{
                           fontFamily: "Figtree, sans-serif",
-                          fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxxl: "1.9rem" },
+                          fontSize: { xs: "1rem", sm: "1.05rem", md: "1.12rem", lg: "1.2rem", xl: "1.35rem", xxl: "1.35rem", xxxl: "1.9rem" },
                           lineHeight: 1.72,
                           maxWidth: "80ch",
                           whiteSpace: "pre-line",
@@ -654,3 +654,4 @@ export default function TechnologyDescription() {
     </Box>
   );
 }
+

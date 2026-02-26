@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+﻿import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {
   VerticalTimeline,
@@ -8,7 +8,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 
-// ─── Growing spring line ──────────────────────────────────────────────────────
+// â”€â”€â”€ Growing spring line â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const GrowingLine = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -119,10 +119,10 @@ const History = () => {
       sx={{
         minHeight: "100vh",
         color: "#FFFFFF",
-        pt: { xs: "6rem", md: "8rem", xxxl: "12rem" },
-        pb: { xs: "6rem", md: "8rem", xxxl: "12rem" },
+        pt: { xs: "6rem", md: "8rem", xxl: "8rem", xxxl: "12rem" },
+        pb: { xs: "6rem", md: "8rem", xxl: "8rem", xxxl: "12rem" },
         overflowX: "hidden",
-        // ── Override vertical-timeline library styles ──
+        // â”€â”€ Override vertical-timeline library styles â”€â”€
         "& .vertical-timeline-element-icon": {
           background: "#FFFFFF !important",
           color: "#ED1C24 !important",
@@ -156,7 +156,7 @@ const History = () => {
           color: "#FFFFFF !important",
           fontFamily: "Stack Sans Headline, sans-serif",
           fontWeight: 700,
-          fontSize: { xs: "1rem", md: "1.15rem", xxxl: "1.65rem" },
+          fontSize: { xs: "1rem", md: "1.15rem", xxl: "1.15rem", xxxl: "1.65rem" },
           opacity: "1 !important",
           paddingTop: "0 !important",
         },
@@ -165,15 +165,15 @@ const History = () => {
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: { xs: "100%", lg: "1320px", xl: "1680px", xxxl: "2200px" },
-          px: { xs: "1.5rem", md: "3.5rem", lg: "5rem", xxxl: "8rem" },
+          maxWidth: { xs: "100%", lg: "1320px", xl: "1680px", xxl: "1680px", xxxl: "2200px" },
+          px: { xs: "1.5rem", md: "3.5rem", lg: "5rem", xxl: "5rem", xxxl: "8rem" },
         }}
       >
-        {/* ── Parallax Header ───────────────────────────── */}
+        {/* â”€â”€ Parallax Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <motion.div style={{ y: heroY, opacity: heroOpacity }}>
           <Box
             sx={{
-              mb: { xs: "5rem", md: "7rem", xxxl: "11rem" },
+              mb: { xs: "5rem", md: "7rem", xxl: "7rem", xxxl: "11rem" },
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -188,12 +188,12 @@ const History = () => {
                   width: {
                     xs: "min(88vw, 400px)",
                     md: "480px",
-                    xl: "600px",
+                    xl: "600px", xxl: "600px",
                     xxxl: "820px",
                   },
                   height: "auto",
                   display: "block",
-                  mb: { xs: "1.25rem", md: "1.75rem", xxxl: "2.5rem" },
+                  mb: { xs: "1.25rem", md: "1.75rem", xxl: "1.75rem", xxxl: "2.5rem" },
                 }}
               />
             
@@ -205,7 +205,7 @@ const History = () => {
                   fontSize: {
                     xs: "2.4rem",
                     md: "3.5rem",
-                    xl: "4.5rem",
+                    xl: "4.5rem", xxl: "4.5rem",
                     xxxl: "6rem",
                   },
                   lineHeight: 1.0,
@@ -219,7 +219,7 @@ const History = () => {
           </Box>
         </motion.div>
 
-        {/* ── Timeline ──────────────────────────────────── */}
+        {/* â”€â”€ Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         {/*
           Relative wrapper so GrowingLine can sit exactly over
           the library's static ::before line.
@@ -250,7 +250,7 @@ const History = () => {
                         fontSize: {
                           xs: "0.95rem",
                           md: "1.05rem",
-                          xl: "1.15rem",
+                          xl: "1.15rem", xxl: "1.15rem",
                           xxxl: "1.55rem",
                         },
                         lineHeight: 1.6,
@@ -273,3 +273,5 @@ const History = () => {
 };
 
 export default History;
+
+

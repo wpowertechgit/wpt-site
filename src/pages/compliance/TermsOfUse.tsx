@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+﻿import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 export default function TermsOfUse() {
@@ -54,7 +54,7 @@ export default function TermsOfUse() {
           sx={{
             fontFamily: "Stack Sans Headline, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "2rem", md: "2.6rem", xxxl: "4rem" },
+            fontSize: { xs: "2rem", md: "2.6rem", xxl: "2.6rem", xxxl: "4rem" },
             mb: 1,
             textAlign: "left",
           }}
@@ -71,7 +71,7 @@ export default function TermsOfUse() {
               sx={{
                 fontFamily: "Stack Sans Headline, sans-serif",
                 fontWeight: 700,
-                fontSize: { xs: "1.15rem", md: "1.35rem", xxxl: "2.2rem" },
+                fontSize: { xs: "1.15rem", md: "1.35rem", xxl: "1.35rem", xxxl: "2.2rem" },
                 mb: 1,
                 textAlign: "left",
               }}
@@ -81,7 +81,7 @@ export default function TermsOfUse() {
             <Typography
               sx={{
                 fontFamily: "Figtree, sans-serif",
-                fontSize: { xs: "1rem", md: "1.05rem", xxxl: "1.7rem" },
+                fontSize: { xs: "1rem", md: "1.05rem", xxl: "1.05rem", xxxl: "1.7rem" },
                 lineHeight: 1.7,
                 color: "#1f1f1f",
                 maxWidth: "80ch",
@@ -96,3 +96,4 @@ export default function TermsOfUse() {
     </Box>
   );
 }
+

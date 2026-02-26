@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { useTransform, useScroll, motion } from "framer-motion";
 import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
@@ -52,7 +52,7 @@ export default function Home() {
                         sx={{
                             width: "100%",
                             // Slightly reduced maxWidth to take up less vertical height
-                            maxWidth: { md: "30rem", lg: "32rem", xxxl: "48rem" },
+                            maxWidth: { md: "30rem", lg: "32rem", xxl: "32rem", xxxl: "48rem" },
                             aspectRatio: "1072 / 1088",
                             mb: "1rem", // Reduced margin from 2rem
                             mx: "auto",
@@ -100,7 +100,7 @@ export default function Home() {
                         sx={{
                             fontFamily: "Stack Sans Headline, sans-serif",
                             fontWeight: 700,
-                            fontSize: { xs: "1.75rem", md: "3.5rem", lg: "4rem", xl: "6rem", xxxl: "9rem" },
+                            fontSize: { xs: "1.75rem", md: "3.5rem", lg: "4rem", xl: "6rem", xxl: "6rem", xxxl: "9rem" },
                             lineHeight: 1.2,
                             mb: "0.75rem",
                             color: "#000",
@@ -112,9 +112,9 @@ export default function Home() {
 
                     <Typography
                         sx={{
-                            fontSize: { xs: "1rem", md: "1.125rem", lg: "1.25rem", xl: "2rem", xxxl: "3rem" },
+                            fontSize: { xs: "1rem", md: "1.125rem", lg: "1.25rem", xl: "2rem", xxl: "2rem", xxxl: "3rem" },
                             color: "#666",
-                            maxWidth: { xs: "20rem", md: "30rem", lg: "40rem", xl: "60rem", xxxl: "80rem" },
+                            maxWidth: { xs: "20rem", md: "30rem", lg: "40rem", xl: "60rem", xxl: "60rem", xxxl: "80rem" },
                             mx: 0,
                             lineHeight: 1.6
                         }}
@@ -213,7 +213,7 @@ export default function Home() {
                                     sx={{
                                         fontFamily: "Stack Sans Headline",
                                         fontWeight: 700,
-                                        fontSize: { xs: "1.5rem", md: "1.75rem", lg: "2rem", xl: "4rem", xxxl: "4rem" },
+                                        fontSize: { xs: "1.5rem", md: "1.75rem", lg: "2rem", xl: "4rem", xxl: "4rem", xxxl: "4rem" },
                                         mb: "0.5rem",
                                         color: pillar.color,
 
@@ -222,7 +222,7 @@ export default function Home() {
                                     {pillar.title}
                                 </Typography>
 
-                                <Typography sx={{ fontSize: { xs: "0.95rem", md: "1rem", lg: "1.125rem", xl: "3rem", xxxl: "3rem" }, color: "#666", lineHeight: 1.4 }}>
+                                <Typography sx={{ fontSize: { xs: "0.95rem", md: "1rem", lg: "1.125rem", xl: "3rem", xxl: "3rem", xxxl: "3rem" }, color: "#666", lineHeight: 1.4 }}>
                                     {pillar.subtext}
                                 </Typography>
                             </Box>
@@ -242,7 +242,7 @@ export default function Home() {
                         minHeight: { xs: "auto", xl: "100vh" },
                         display: "flex",
                         alignItems: "center",
-                        py: { xs: "5rem", xl: "8rem", xxxl: "12rem" },
+                        py: { xs: "5rem", xl: "8rem", xxl: "8rem", xxxl: "12rem" },
                         bgcolor: "#ffffff",
                     }}
                 >
@@ -250,17 +250,17 @@ export default function Home() {
                     <Container
                         maxWidth={false}
                         sx={{
-                            px: { xs: "1.5rem", md: "2rem", xl: "4%", xxxl: "6%" }
+                            px: { xs: "1.5rem", md: "2rem", xl: "4%", xxl: "4%", xxxl: "6%" }
                         }}
                     >
                         <Box
                             sx={{
                                 display: "grid",
                                 gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-                                gap: { xs: "3rem", xl: "6rem", xxxl: "10rem" },
+                                gap: { xs: "3rem", xl: "6rem", xxl: "6rem", xxxl: "10rem" },
                                 alignItems: "center",
                                 borderTop: "0.25rem solid #000000",
-                                p: { xs: "2rem 0", xl: "4rem 0", xxxl: "6rem 0" }
+                                p: { xs: "2rem 0", xl: "4rem 0", xxl: "4rem 0", xxxl: "6rem 0" }
                             }}
                         >
                             {/* LEFT COLUMN: TEXT CONTENT */}
@@ -276,7 +276,7 @@ export default function Home() {
                                             xs: "2.25rem",
                                             md: "2.5rem",
                                             lg: "3rem",
-                                            xl: "4.5rem",
+                                            xl: "4.5rem", xxl: "4.5rem",
                                             xxxl: "6rem"
                                         },
                                         lineHeight: 1.1,
@@ -293,11 +293,11 @@ export default function Home() {
                                         fontSize: {
                                             xs: "1.1rem",
                                             md: "1.2rem",
-                                            xl: "1.75rem",
+                                            xl: "1.75rem", xxl: "1.75rem",
                                             xxxl: "2.4rem"
                                         },
                                         lineHeight: 1.5,
-                                        maxWidth: { xl: "90%", xxxl: "85%" }
+                                        maxWidth: { xl: "90%", xxl: "90%", xxxl: "85%" }
                                     }}
                                 >
                                     {t("case-study-description")}
@@ -307,7 +307,7 @@ export default function Home() {
                                     sx={{
                                         fontSize: {
                                             xs: "1.1rem",
-                                            xl: "1.6rem",
+                                            xl: "1.6rem", xxl: "1.6rem",
                                             xxxl: "2.2rem"
                                         }
                                     }}
@@ -325,7 +325,7 @@ export default function Home() {
                                             paddingBottom: "4px"
                                         }}
                                     >
-                                        {t("learn-more")} →
+                                        {t("learn-more")}
                                     </Link>
                                 </Box>
                             </Box>
@@ -345,7 +345,7 @@ export default function Home() {
                                         height: {
                                             xs: "25rem",
                                             md: "30rem",
-                                            xl: "45rem",
+                                            xl: "45rem", xxl: "45rem",
                                             xxxl: "55rem"
                                         },
                                         objectFit: "cover",
@@ -381,7 +381,7 @@ export default function Home() {
                     <Container
                         maxWidth={false}
                         sx={{
-                            px: { xs: "1.5rem", md: "2rem", xl: "4%", xxxl: "6%" }
+                            px: { xs: "1.5rem", md: "2rem", xl: "4%", xxl: "4%", xxxl: "6%" }
                         }}
                     >
                         <Box
@@ -405,7 +405,7 @@ export default function Home() {
                                         p: {
                                             xs: "2rem",
                                             md: "4rem 3rem",
-                                            xl: "6rem 4rem",
+                                            xl: "6rem 4rem", xxl: "6rem 4rem",
                                             xxxl: "8rem 6rem"
                                         },
                                         display: "flex",
@@ -425,7 +425,7 @@ export default function Home() {
                                                     xs: "2rem",
                                                     md: "2.25rem",
                                                     lg: "2.5rem",
-                                                    xl: "4rem",
+                                                    xl: "4rem", xxl: "4rem",
                                                     xxxl: "5.5rem"
                                                 },
                                                 lineHeight: 1.1,
@@ -441,11 +441,11 @@ export default function Home() {
                                                 fontSize: {
                                                     xs: "1rem",
                                                     md: "1.1rem",
-                                                    xl: "1.6rem",
+                                                    xl: "1.6rem", xxl: "1.6rem",
                                                     xxxl: "2.2rem"
                                                 },
                                                 lineHeight: 1.5,
-                                                maxWidth: { xl: "80%", xxxl: "70%" }
+                                                maxWidth: { xl: "80%", xxl: "80%", xxxl: "70%" }
                                             }}
                                         >
                                             {t(`app-${app.name}-description`)}
@@ -466,7 +466,7 @@ export default function Home() {
                                                 height: {
                                                     xs: "18rem",
                                                     md: "22rem",
-                                                    xl: "35rem",
+                                                    xl: "35rem", xxl: "35rem",
                                                     xxxl: "48rem"
                                                 },
                                                 objectFit: "cover",
@@ -483,7 +483,7 @@ export default function Home() {
                                             sx={{
                                                 fontSize: {
                                                     xs: "1.1rem",
-                                                    xl: "1.5rem",
+                                                    xl: "1.5rem", xxl: "1.5rem",
                                                     xxxl: "2.2rem"
                                                 },
                                                 fontWeight: 500
@@ -501,7 +501,7 @@ export default function Home() {
                                                     paddingBottom: "4px"
                                                 }}
                                             >
-                                                {t("explore")} →
+                                                {t("explore")}
                                             </Link>
                                         </Box>
                                     </Box>
@@ -515,6 +515,8 @@ export default function Home() {
         </Box>
     );
 }
+
+
 
 
 
