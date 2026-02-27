@@ -35,6 +35,8 @@ type FovAnchor = {
   fov: number;
 };
 
+const FALLBACK_SECTION_COUNT = 9;
+
 const OVERLAY_THEME = createTheme({
   typography: {
     fontFamily: "Figtree, sans-serif",
@@ -508,11 +510,62 @@ function Overlay({
   );
 }
 
+function supportsTechnologyRig() {
+  if (typeof window === "undefined") return true;
+  if (typeof document === "undefined") return true;
+  const canvas = document.createElement("canvas");
+  const hasWebGL =
+    !!window.WebGLRenderingContext &&
+    (!!canvas.getContext("webgl") || !!canvas.getContext("experimental-webgl"));
+  return hasWebGL;
+}
+
+function TechnologyFallbackSequence() {
+  const isMobile = useMediaQuery("(max-width:767px)");
+  const imagePrefix = isMobile ? "/fallbackMobile/tech-phone" : "/fallbackDesktop/tech-desktop";
+  const images = useMemo(
+    () => Array.from({ length: FALLBACK_SECTION_COUNT }, (_, index) => `${imagePrefix}-${index + 1}.png`),
+    [imagePrefix],
+  );
+
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        bgcolor: "#ffffff",
+        borderTop: "1px solid #d9d9d9",
+        borderBottom: "1px solid #d9d9d9",
+      }}
+    >
+      {images.map((src, index) => (
+        <Box
+          key={src}
+          component="img"
+          src={src}
+          alt={`Technology process section ${index + 1}`}
+          loading={index === 0 ? "eager" : "lazy"}
+          sx={{
+            display: "block",
+            width: "100%",
+            height: "auto",
+            borderBottom: index < images.length - 1 ? "1px solid #d9d9d9" : "none",
+          }}
+        />
+      ))}
+    </Box>
+  );
+}
+
 export default function TechnologyScrollRig() {
   const isMobile = useMediaQuery("(max-width:767px)");
   const is4k = useMediaQuery("(min-width:2560px)");
   const [activeSection, setActiveSection] = useState(0);
   const [viewportSize, setViewportSize] = useState<ViewportSize>(() => getCurrentViewport());
+  const [hasRigSupport, setHasRigSupport] = useState(true);
+
+  useEffect(() => {
+    setHasRigSupport(supportsTechnologyRig());
+  }, []);
 
   useEffect(() => {
     const updateViewport = () => {
@@ -552,6 +605,10 @@ export default function TechnologyScrollRig() {
   const firstPose = sectionPoses[0];
   const usePhoneStyleOverlay = viewportSize.width < 1030;
   const levelHorizon = isSmallScreen;
+
+  if (!hasRigSupport) {
+    return <TechnologyFallbackSequence />;
+  }
 
   const handleRigWheelCapture = useCallback(
     (event: React.WheelEvent<HTMLDivElement>) => {

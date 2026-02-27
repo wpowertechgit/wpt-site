@@ -125,13 +125,14 @@ export default function Home() {
             </Box>
 
             {/* PILLARS SECTION - Three Equal Columns with Full Height Images */}
+            {/* PILLARS SECTION - Three Equal Columns with Full Height Images */}
             <Box
                 sx={{
                     display: "flex",
                     flexDirection: { xs: "column", md: "row" },
-                    height: { xs: "auto", md: "100vh" },
+                    height: "auto",
                     bgcolor: "#ffffff",
-                    overflow: { xs: "visible", md: "hidden" },
+                    overflow: "visible",
                     width: "100%",
                 }}
             >
@@ -166,9 +167,9 @@ export default function Home() {
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.15, duration: 0.6 }}
                         sx={{
-                            flex: { xs: "1 1 auto", md: "1 1 33.333%" },
-                            height: { xs: "28rem", md: "auto" },
+                            flex: { xs: "1 1 auto", md: "1 1 0" },
                             position: "relative",
+                            borderLeft: `0.5rem solid ${pillar.color}`,
                         }}
                     >
                         <Box
@@ -177,35 +178,29 @@ export default function Home() {
                                 flexDirection: "column",
                                 bgcolor: "#ffffff",
                                 height: "100%",
-                                borderLeft: `0.5rem solid ${pillar.color}`,
-                                overflow: "hidden",
+                                overflow: "visible",
                                 position: "relative",
                             }}
                         >
                             {/* Image */}
-                            <motion.img
-                                src={`/${pillar.image}`}
-                                alt={pillar.title}
-                                loading={i === 0 ? "eager" : "lazy"}
-                                decoding="async"
-                                fetchPriority={i === 0 ? "high" : "auto"}
-                                style={{ y }}
-                                className="absolute inset-0 w-full h-[60%] object-cover"
-                            />
+                            <Box sx={{ overflow: "hidden", height: 320, flexShrink: 0 }}>
+                                <motion.img
+                                    src={`/${pillar.image}`}
+                                    alt={pillar.title}
+                                    loading={i === 0 ? "eager" : "lazy"}
+                                    decoding="async"
+                                    fetchPriority={i === 0 ? "high" : "auto"}
+                                    style={{ y, height: "110%", width: "100%", objectFit: "cover" }}
+                                />
+                            </Box>
 
                             {/* Content */}
                             <Box
                                 sx={{
-                                    position: "absolute",
-                                    bottom: 0,
-                                    left: 0,
-                                    width: "100%",
-                                    height: "40%",
                                     bgcolor: "#ffffff",
-                                    p: "2rem",
+                                    p: { xs: "1.25rem", md: "1.5rem", lg: "2rem" },
                                     display: "flex",
                                     flexDirection: "column",
-                                    justifyContent: "center",
                                     zIndex: 2,
                                 }}
                             >
@@ -213,16 +208,15 @@ export default function Home() {
                                     sx={{
                                         fontFamily: "Stack Sans Headline",
                                         fontWeight: 700,
-                                        fontSize: { xs: "1.5rem", md: "1.75rem", lg: "2rem", xl: "4rem", xxl: "4rem", xxxl: "4rem" },
+                                        fontSize: { xs: "1.5rem", md: "1.75rem", lg: "2rem", xl: "2.25rem", xxl: "2.25rem", xxxl: "2.5rem" },
                                         mb: "0.5rem",
                                         color: pillar.color,
-
                                     }}
                                 >
                                     {pillar.title}
                                 </Typography>
 
-                                <Typography sx={{ fontSize: { xs: "0.95rem", md: "1rem", lg: "1.125rem", xl: "3rem", xxl: "3rem", xxxl: "3rem" }, color: "#666", lineHeight: 1.4 }}>
+                                <Typography sx={{ fontSize: { xs: "0.95rem", md: "1rem", lg: "1.125rem", xl: "1.125rem", xxl: "1.125rem", xxxl: "1.25rem" }, color: "#666", lineHeight: 1.45 }}>
                                     {pillar.subtext}
                                 </Typography>
                             </Box>
@@ -325,7 +319,7 @@ export default function Home() {
                                             paddingBottom: "4px"
                                         }}
                                     >
-                                        {t("learn-more")}
+                                        {t("view-case")}
                                     </Link>
                                 </Box>
                             </Box>
@@ -490,7 +484,7 @@ export default function Home() {
                                             }}
                                         >
                                             <Link
-                                                to="/applications"
+                                                to={app.name === "b2g" ? "/applications?mode=b2g" : "/applications?mode=b2b"}
                                                 style={{
                                                     textDecoration: "none",
                                                     color: "#000",

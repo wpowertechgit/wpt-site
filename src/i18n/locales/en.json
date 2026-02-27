@@ -2,19 +2,20 @@
     "hero-title": "Waste Powertech",
     "hero-subtitle": "Transforming waste into power through technology",
     "pillar-waste": "Waste",
-    "pillar-waste-description": "Efficient waste processing and management systems designed for modern sustainability.",
-    "pillar-power": "Power",
-    "pillar-power-description": "Converting waste to energy with zero CO2 emissions through advanced technology.",
-    "pillar-technology": "Technology",
-    "pillar-technology-description": "Cutting-edge molecular disintegration and processing innovation.",
+    "pillar-waste-title": "Waste",
+    "pillar-waste-description": "WPT processes varied waste streams—including municipal, industrial, and organic fractions—through a controlled, parametric system that maintains operational stability despite material heterogeneity. This method integrates diverse waste typologies into a single technological flow, converting variable inputs into predictable feedstock for energy recovery.",
+    "pillar-power-title": "Power",
+    "pillar-power-description": "The system converts the organic fraction of waste into synthesis gas (Syngas), achieving an electrical output of up to 1.1–1.15 MWh per processed ton through gas-engine generators. This process enables continuous grid injection or dedicated industrial supply, using automated monitoring to ensure stability and alignment with European energy standards.",
+    "pillar-tech-title": "Tech",
+    "pillar-tech-description": "Molecular disintegration is a thermochemical process that fragments the chemical bonds of complex organic structures in a controlled, oxygen-free environment to produce synthesis gas. Unlike direct combustion, this method reduces waste to its elemental components, resulting in a filtered energy carrier and a stabilized mineral residue suitable for industrial reuse.",
     "learn-more": "Learn more",
-    "cluj-title": "Reference Implementation: Cluj",
-    "cluj-description": "Our flagship installation in Cluj demonstrates the full potential of our waste-to-energy technology. This implementation serves as a benchmark for sustainable power generation in Eastern Europe.",
-    "view-case": "View case study",
+    "case-study-title": "Operational Reference: Cluj Molecular Disintegration Station",
+    "case-study-description": "The Cluj Molecular Disintegration Station serves as the primary functional reference for WPT technology in an active environment. This implementation demonstrates the feasibility of the molecular disintegration method at an operational scale, providing a validated and documented foundation for structural replication across other municipal and industrial sites.",
+    "view-case": "View Implementation Details",
     "institutional-b2g": "Institutional (B2G)",
-    "industrial-b2i": "Industrial (B2I)",
-    "app-b2g-description": "Government and institutional partnerships enabling sustainable waste management at municipal scales.",
-    "app-b2i-description": "Industrial applications for waste management and energy recovery in manufacturing sectors.",
+    "industrial-b2i": "Industrial (B2I) / Business (B2B)",
+    "app-b2g-description": "WPT provides public authorities with a certified framework for municipal waste management that replaces traditional landfilling with controlled energy recovery. The process operates through molecular disintegration—a non-combustion thermochemical method—ensuring full compatibility with European environmental regulations and providing a verifiable, auditable solution for regional waste-to-energy targets.",
+    "app-b2i-description": "The WPT system enables industrial operators to convert heterogeneous waste streams into stable electrical and thermal energy assets on-site. Designed for operational scalability, the technology integrates with existing industrial infrastructure to process complex residues, delivering a measurable increase in resource efficiency and reducing systemic dependence on external power supplies.",
     "explore": "Explore applications",
     "documentation": "Documentation",
     "technology-brochure": "Technology Brochure",
@@ -164,101 +165,97 @@
         }
     },
     "b2g": {
+        "hero": {
+            "title": "Government and Institutional (B2G)",
+            "body": "Technical solutions for municipal waste management and energy resilience. Designed for regulatory compliance, risk mitigation, and verifiable recovery targets.",
+            "imageAlt": "Institutional municipal infrastructure overview"
+        },
         "subnav": {
-            "cityIntegration": "City Integration",
-            "caseStudies": "Public Case Studies",
-            "certifications": "Certifications \u0026 Health"
+            "diversion": "Waste Diversion",
+            "compliance": "Emission Control",
+            "resilience": "Energy Resilience",
+            "impact": "Regional Impact",
+            "refraction": "Refraction Principles"
         },
-        "overview": {
-            "title": "Institutional (B2G)",
-            "imageAlt": "City waste infrastructure overview",
-            "body": "Controlled molecular disintegration supports city-level waste handling with auditable operation windows, predictable output, and infrastructure-compatible integration for urban planning programs."
-        },
-        "caseStudies": {
-            "title": "Public Case Studies",
-            "card1": {
-                "imageAlt": "Municipal sanitation deployment",
-                "title": "Municipal Sanitation Agencies",
-                "body": "City sanitation agencies deploying modular lines for mixed municipal waste streams with continuous throughput visibility."
+        "sections": {
+            "diversion": {
+                "title": "1. Strategic Waste Diversion \u0026 Landfill Mitigation",
+                "imageAlt": "Facility exterior and input versus residual output comparison",
+                "body": "WPT provides a technical solution for the systematic reduction of municipal waste volumes, diverting up to 95% of processed materials from landfilling. By addressing hard-to-recycle and contaminated fractions at the chemical level, the system enables local authorities to meet mandatory European targets for waste recovery and circular economy integration."
             },
-            "card2": {
-                "imageAlt": "Regional hub power output",
-                "title": "Regional Power \u0026 Waste Hubs",
-                "body": "Regional hubs combining waste reduction and stable power output to reduce landfill dependency and improve service continuity."
+            "compliance": {
+                "title": "2. Emission Control \u0026 Regulatory Compliance",
+                "imageAlt": "SCADA monitoring interface and gas filtration assembly",
+                "body": "The molecular disintegration process operates as a closed-loop system, utilizing multi-stage gas cleaning to prevent uncontrolled atmospheric emissions. All operational parameters are monitored via PLC/SCADA systems, ensuring documented compliance with ISO 14001 standards and European Union Industrial Emissions Directives (IED)."
+            },
+            "resilience": {
+                "title": "3. Decentralized Energy Resilience",
+                "imageAlt": "Power generation module and waste to grid diagram",
+                "body": "Through the conversion of municipal waste into synthesis gas, WPT installations generate approximately 9,120 MWh of electricity annually. This allows municipalities to establish localized, predictable energy sources, reducing dependence on external grid volatility and contributing to regional energy security frameworks."
+            },
+            "impact": {
+                "title": "4. Regional Economic Impact \u0026 Skill Development",
+                "imageAlt": "Technician operating control panel in pretreatment area",
+                "body": "Each WPT implementation functions as an economic driver, creating direct specialized roles for the operation of advanced thermochemical systems. These projects support local technical skill development through structured training programs and stimulate indirect employment in logistics, maintenance, and auxiliary municipal services."
             }
         },
-        "specs": {
-            "title": "Certifications and Public Health",
-            "imageAlt": "Compliance and certification documentation",
-            "spec1": "Compliance-aligned reporting with traceable operating parameters and quality checkpoints.",
-            "spec2": "Closed-process architecture designed for controlled operation in dense urban contexts.",
-            "spec3": "Scalable module planning for phased municipal infrastructure upgrades."
+        "refraction": {
+            "title": "B2G \"Refraction\" Principles",
+            "intro": "Institutional principle: WPT operates as a technical authority rather than a commercial vendor. In the public sector, clarity is a responsibility and transparency is a functional requirement.",
+            "principle1": "Method over promise: Verifiable data is provided for energy yields (1.1 to 1.15 MWh per ton) rather than generalized performance claims.",
+            "principle2": "Non-combustion verification: Molecular disintegration is explicitly defined as a thermochemical fragmentation process, distinct from incineration for regulatory and public clarity.",
+            "principle3": "Risk mitigation: Each installation is a replicable modular system designed for stable integration into existing municipal logistical chains."
         }
     },
     "b2b": {
+        "hero": {
+            "title": "Industrial and Commercial (B2I/B2B)",
+            "body": "High-yield resource recovery infrastructure for manufacturing and energy sectors. Designed for operational stability, process scalability, and measurable financial performance.",
+            "imageAlt": "Industrial infrastructure overview"
+        },
         "subnav": {
-            "roi": "ROI Framework",
-            "deployments": "Industrial Deployments",
-            "modularSpecs": "Modular Specifications"
+            "operational": "Operational Integration & Workflow Stability",
+            "caloric": "Caloric Extraction & Waste-to-Asset Conversion",
+            "scalability": "Infrastructure Scalability & Modular Architecture",
+            "roi": "Financial Predictability & Investment ROI",
+            "refraction": "Refraction Principles"
         },
-        "overview": {
-            "title": "Industrial and Commercial (B2B/B2I)",
-            "imageAlt": "Industrial waste-to-energy facility",
-            "body": "Industrial programs prioritize throughput, ROI, and uptime. The system supports complex waste streams, site-adjacent deployment, and predictable energy recovery within a controlled technical envelope."
-        },
-        "caseStudies": {
-            "title": "Industrial Deployments",
-            "card1": {
-                "imageAlt": "Manufacturing campus on-site module",
-                "title": "Multi-Line Manufacturing Campuses",
-                "body": "Multi-line manufacturing campuses using on-site modules to reduce transport cost and stabilize energy offsets."
+        "sections": {
+            "operational": {
+                "title": "1. Operational Integration & Workflow Stability",
+                "imageAlt": "Facility exterior and input versus residual output comparison",
+                "body": "WPT modules are engineered for on-site deployment within existing manufacturing ecosystems. The system is capable of processing varied industrial residues—including polymers, elastomers, and lignocellulosic materials—without disrupting core production cycles. By treating waste at the molecular level, the technology ensures a continuous, automated supply of electricity or thermal energy for internal industrial use."
             },
-            "card2": {
-                "imageAlt": "Logistics facility waste integration",
-                "title": "Logistics-Intensive Facilities",
-                "body": "Logistics-intensive facilities integrating near-site operation to cut handling latency and improve waste accountability."
+            "caloric": {
+                "title": "2. Caloric Extraction & Waste-to-Asset Conversion",
+                "imageAlt": "SCADA monitoring interface and gas filtration assembly",
+                "body": "Beyond traditional mechanical recycling, molecular disintegration extracts the maximum energy potential from contaminated or mixed waste streams. Generating up to 1.15 MWh of electricity per ton processed, the WPT system recalibrates industrial waste from a logistical cost center into a strategic raw material. This shift reduces the volatility of energy procurement and eliminates high-cost disposal fees."
+            },
+            "scalability": {
+                "title": "3. Infrastructure Scalability & Modular Architecture",
+                "imageAlt": "Power generation module and waste to grid diagram",
+                "body": "WPT technology is built on a modular, plug-and-play architecture that allows for phased deployment and capacity expansion. Each unit is a standardized technological module, making the infrastructure highly replicable across different geographic or industrial sites. This modularity reduces construction lead times and allows for localized scaling based on fluctuating waste availability or energy demand."
+            },
+            "roi": {
+                "title": "4. Financial Predictability & Investment ROI",
+                "imageAlt": "Technician operating control panel in pretreatment area",
+                "body": "WPT projects are grounded in the real economy, offering a dual-revenue model: waste treatment fees and energy sales. With an estimated ROI of 4 to 6 years, the infrastructure provides long-term financial stability protected by the constant nature of waste generation. The system’s high level of automation (PLC/SCADA) ensures low operational overhead and verifiable performance data for investors."
             }
         },
-        "specs": {
-            "title": "Modular Specifications and ROI",
-            "imageAlt": "Modular unit specifications diagram",
-            "spec1": "Predictable module scaling from pilot installation to full industrial throughput.",
-            "spec2": "Operational dashboards for uptime, conversion efficiency, and maintenance forecasting.",
-            "spec3": "Financial modeling based on waste handling savings, energy recovery, and utilization rates."
+        "refraction": {
+            "title": "B2B/B2I \"Refraction\" Principles",
+            "intro": "Industrial/Investment Principle: Performance is a functional duty. In the private sector, authority is derived from measurable outcomes and operational reliability",
+            "principle1": "Technical Clarity: We prioritize chemical process transparency over narrative shortcuts",
+            "principle2": "Measurable Outcomes: Every project is benchmarked against real-time conversion efficiency and downtime metrics.",
+            "principle3": "Systemic Integration: WPT is presented as a component of a larger industrial or financial system, not as a standalone curiosity."
         }
     },
-    "b2i": {
-        "subnav": {
-            "hubs": "Regional Hubs",
-            "deployments": "Infrastructure Deployments",
-            "specs": "Network Specifications"
-        },
-        "overview": {
-            "title": "Infrastructure (B2I)",
-            "imageAlt": "Regional infrastructure hub",
-            "body": "B2I deployments prioritize long-term regional service continuity. Molecular disintegration modules are integrated into distributed utility frameworks with measurable throughput and controlled operating windows."
-        },
-        "caseStudies": {
-            "title": "Infrastructure Deployments",
-            "card1": {
-                "imageAlt": "District-level waste power node",
-                "title": "District Utility Nodes",
-                "body": "District-level nodes aggregate municipal and industrial streams to support stable regional capacity planning and predictable energy recovery."
-            },
-            "card2": {
-                "imageAlt": "Interconnected infrastructure corridor",
-                "title": "Interconnected Corridor Installations",
-                "body": "Multi-site corridor installations coordinate waste handling, transport balancing, and output dispatch for high-availability service zones."
-            }
-        },
-        "specs": {
-            "title": "Network Specifications",
-            "imageAlt": "Infrastructure technical sheet",
-            "spec1": "Designed for phased expansion across regional infrastructure programs with synchronized module commissioning.",
-            "spec2": "Supports integration with distributed energy systems and utility telemetry layers for continuous monitoring.",
-            "spec3": "Built for long-life operation with maintenance scheduling aligned to infrastructure reliability targets."
-        }
-    },
+    "accessibility_title": "Accessibility",
+    "accessibility_text": "We want everyone to be able to use our website easily. Some parts may not be fully accessible yet, but we're working on it and welcome suggestions from visitors.",
+    "privacy_policy_title": "Privacy & Cookies Policy",
+    "privacy_policy_text": "At Waste Powertech SRL, we respect your privacy and we also like to keep things simple. We don't track visitors, log personal data, or run analytics. We have no hidden databases or forms that collect your information. Some pages include content from YouTube or Google Maps, which may set cookies for their own functionality. We don't control or access those cookies. If you contact us by email, we'll read and reply, but we don't store or share your messages. We use secure hosting and HTTPS to keep this site safe. There's no tracking, profiling, or secret data collection. If this ever changes, we'll update this page. Until then, there's nothing to accept, reject, or delete because we simply don't keep any personal data. Waste Powertech SRL - respecting privacy without tracking you first.",
+    "terms_of_use_title": "Terms of Use",
+    "terms_of_use_text": "This website and its contents are provided by Waste Powertech SRL for general informational purposes only. While we strive to keep information accurate and up to date, we make no warranties regarding its completeness or reliability. By using this site, you agree that Waste Powertech SRL shall not be held responsible for any damages resulting from its use or from reliance on the information presented. All content, including text and images, is protected by copyright and may not be reproduced without permission.",
     "blank": "‎ ",
     "year-1": 2009,
     "year-1-element-1": "Initiation of the Concept",

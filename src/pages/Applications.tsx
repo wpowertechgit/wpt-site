@@ -1,16 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useSearchParams } from "react-router-dom";
 
-import B2GTrack from "./B2GTrack";
-import B2BTrack from "./B2BTrack";
+import B2GTrackScroll from "./B2GTrackScroll";
+import B2BTrackScroll from "./B2BTrackScroll";
 
 export type Mode = "B2G" | "B2B";
 
 export default function Applications() {
+  const [searchParams] = useSearchParams();
   const [mode, setMode] = useState<Mode>("B2G");
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const requestedMode = searchParams.get("mode")?.toLowerCase();
+    setMode(requestedMode === "b2b" ? "B2B" : "B2G");
+  }, [searchParams]);
 
   const isB2G = mode === "B2G";
 
@@ -27,8 +34,8 @@ export default function Applications() {
         maxWidth={false}
         sx={{
           width: "100%",
-          maxWidth: "120rem",
-          px: { xs: "1rem", md: "2rem", xl: "3rem" },
+          // Remove the restrictive maxWidth — let it fill the viewport at all sizes
+          px: { xs: "1rem", md: "2rem", xl: "3rem", xxl: "4rem", xxxl: "5rem" },
           pt: { xs: "5.5rem", md: "1.75rem" },
           pb: { xs: "1.25rem", md: "1.75rem" },
         }}
@@ -48,13 +55,13 @@ export default function Applications() {
                 border: "none",
                 outline: "none",
                 boxShadow: "none",
-                minWidth: { xs: "11rem", md: "14rem", xl: "17rem" },
+                minWidth: { xs: "11rem", md: "14rem", xl: "17rem", xxl: "20rem", xxxl: "26rem" },
                 bgcolor: isB2G ? "#FFFFFF" : "#000000",
                 color: isB2G ? "#000000" : "#FFFFFF",
                 fontFamily: "Stack Sans Headline",
                 fontWeight: 700,
                 letterSpacing: "0.04em",
-                px: { xs: 2.3, md: 3 },
+                px: { xs: 2.3, md: 3, xxl: 3.5, xxxl: 4 },
                 textTransform: "none",
                 "&:hover": { bgcolor: isB2G ? "#FFFFFF" : "#000000" },
                 "&:focus": { outline: "none", boxShadow: "none" },
@@ -64,10 +71,25 @@ export default function Applications() {
               }}
             >
               <Stack spacing={0.2} alignItems="flex-start">
-                <Typography sx={{ fontFamily: "Stack Sans Headline", fontWeight: 700, fontSize: { xs: "0.95rem", md: "1.05rem" }, lineHeight: 1.1 }}>
+                <Typography
+                  sx={{
+                    fontFamily: "Stack Sans Headline",
+                    fontWeight: 700,
+                    fontSize: { xs: "0.95rem", md: "1.05rem", xxl: "2rem", xxxl: "2.8rem" },
+                    lineHeight: 1.1,
+                  }}
+                >
                   {t("tabs.b2g.label", { defaultValue: "B2G" })}
                 </Typography>
-                <Typography sx={{ fontFamily: "Figtree", fontWeight: 500, fontSize: { xs: "0.66rem", md: "0.74rem" }, lineHeight: 1.1, opacity: 0.9 }}>
+                <Typography
+                  sx={{
+                    fontFamily: "Figtree",
+                    fontWeight: 500,
+                    fontSize: { xs: "0.66rem", md: "0.74rem", xxl: "1.85rem", xxxl: "2.7rem" },
+                    lineHeight: 1.1,
+                    opacity: 0.9,
+                  }}
+                >
                   {t("tabs.b2g.sublabel", { defaultValue: "Business to Government" })}
                 </Typography>
               </Stack>
@@ -81,14 +103,14 @@ export default function Applications() {
                 border: "none",
                 outline: "none",
                 boxShadow: "none",
-                minWidth: { xs: "11rem", md: "14rem", xl: "17rem" },
+                minWidth: { xs: "11rem", md: "14rem", xl: "17rem", xxl: "20rem", xxxl: "26rem" },
                 bgcolor: !isB2G ? "#FFFFFF" : "#000000",
                 color: !isB2G ? "#000000" : "#FFFFFF",
                 fontFamily: "Stack Sans Headline",
                 fontWeight: 700,
                 letterSpacing: "0.04em",
-                px: { xs: 2.3, md: 3 },
-                py: { xs: 0.9, md: 1.05 },
+                px: { xs: 2.3, md: 3, xxl: 3.5, xxxl: 4 },
+                py: { xs: 0.9, md: 1.05, xxl: 1.3, xxxl: 1.6 },
                 textTransform: "none",
                 "&:hover": { bgcolor: !isB2G ? "#FFFFFF" : "#000000" },
                 "&:focus": { outline: "none", boxShadow: "none" },
@@ -98,10 +120,25 @@ export default function Applications() {
               }}
             >
               <Stack spacing={0.2} alignItems="flex-start">
-                <Typography sx={{ fontFamily: "Stack Sans Headline", fontWeight: 700, fontSize: { xs: "0.95rem", md: "1.05rem" }, lineHeight: 1.1 }}>
+                <Typography
+                  sx={{
+                    fontFamily: "Stack Sans Headline",
+                    fontWeight: 700,
+                    fontSize: { xs: "0.95rem", md: "1.05rem", xxl: "2rem", xxxl: "2.8rem" },
+                    lineHeight: 1.1,
+                  }}
+                >
                   {t("tabs.b2b.label", { defaultValue: "B2B" })}
                 </Typography>
-                <Typography sx={{ fontFamily: "Figtree", fontWeight: 500, fontSize: { xs: "0.66rem", md: "0.74rem" }, lineHeight: 1.1, opacity: 0.9 }}>
+                <Typography
+                  sx={{
+                    fontFamily: "Figtree",
+                    fontWeight: 500,
+                    fontSize: { xs: "0.66rem", md: "0.74rem", xxl: "1.85rem", xxxl: "2.7rem" },
+                    lineHeight: 1.1,
+                    opacity: 0.9,
+                  }}
+                >
                   {t("tabs.b2b.sublabel", { defaultValue: "Business to Business" })}
                 </Typography>
               </Stack>
@@ -134,7 +171,7 @@ export default function Applications() {
               transition={{ duration: 0.38, ease: "easeInOut" }}
               style={{ willChange: "transform, opacity" }}
             >
-              {isB2G ? <B2GTrack /> : <B2BTrack />}
+              {isB2G ? <B2GTrackScroll /> : <B2BTrackScroll />}
             </motion.div>
           </AnimatePresence>
         </Box>

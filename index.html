@@ -21,6 +21,79 @@
 </head>
 
 <body>
+  <noscript>
+    <style>
+      #root {
+        display: none !important;
+      }
+
+      .tech-noscript-fallback {
+        background: #ffffff;
+        color: #000000;
+        margin: 0;
+        font-family: Figtree, sans-serif;
+      }
+
+      .tech-noscript-fallback__header {
+        margin: 0;
+        padding: 16px;
+        border-top: 1px solid #d9d9d9;
+        border-bottom: 1px solid #d9d9d9;
+        font-family: "Stack Sans Headline", sans-serif;
+        font-size: 1.125rem;
+        line-height: 1.2;
+        text-align: left;
+      }
+
+      .tech-noscript-fallback__list {
+        margin: 0;
+        padding: 0;
+      }
+
+      .tech-noscript-fallback__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #d9d9d9;
+      }
+
+      @media (max-width: 767px) {
+        .tech-noscript-fallback__desktop {
+          display: none !important;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .tech-noscript-fallback__mobile {
+          display: none !important;
+        }
+      }
+    </style>
+    <main class="tech-noscript-fallback">
+      <h1 class="tech-noscript-fallback__header">Technology fallback view</h1>
+      <div class="tech-noscript-fallback__list">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__desktop" src="/fallbackDesktop/tech-desktop-1.png" alt="Technology process section 1" loading="eager">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__desktop" src="/fallbackDesktop/tech-desktop-2.png" alt="Technology process section 2" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__desktop" src="/fallbackDesktop/tech-desktop-3.png" alt="Technology process section 3" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__desktop" src="/fallbackDesktop/tech-desktop-4.png" alt="Technology process section 4" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__desktop" src="/fallbackDesktop/tech-desktop-5.png" alt="Technology process section 5" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__desktop" src="/fallbackDesktop/tech-desktop-6.png" alt="Technology process section 6" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__desktop" src="/fallbackDesktop/tech-desktop-7.png" alt="Technology process section 7" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__desktop" src="/fallbackDesktop/tech-desktop-8.png" alt="Technology process section 8" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__desktop" src="/fallbackDesktop/tech-desktop-9.png" alt="Technology process section 9" loading="lazy">
+
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__mobile" src="/fallbackMobile/tech-phone-1.png" alt="Technology process section 1" loading="eager">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__mobile" src="/fallbackMobile/tech-phone-2.png" alt="Technology process section 2" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__mobile" src="/fallbackMobile/tech-phone-3.png" alt="Technology process section 3" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__mobile" src="/fallbackMobile/tech-phone-4.png" alt="Technology process section 4" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__mobile" src="/fallbackMobile/tech-phone-5.png" alt="Technology process section 5" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__mobile" src="/fallbackMobile/tech-phone-6.png" alt="Technology process section 6" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__mobile" src="/fallbackMobile/tech-phone-7.png" alt="Technology process section 7" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__mobile" src="/fallbackMobile/tech-phone-8.png" alt="Technology process section 8" loading="lazy">
+        <img class="tech-noscript-fallback__image tech-noscript-fallback__mobile" src="/fallbackMobile/tech-phone-9.png" alt="Technology process section 9" loading="lazy">
+      </div>
+    </main>
+  </noscript>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

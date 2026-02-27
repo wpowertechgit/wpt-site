@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Box, Button, Dialog, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, ButtonBase, Dialog, Typography, useMediaQuery } from "@mui/material";
 
 type Certificate = {
   src: string;
@@ -13,7 +13,7 @@ const CERTIFICATES: Certificate[] = [
   { src: "/docs/certificate3.png", title: "Certificate 3" },
 ];
 
-const MIN_ZOOM = 0.6;
+const MIN_ZOOM = 0.2;
 const MAX_ZOOM = 3.4;
 const ZOOM_STEP = 0.2;
 
@@ -135,10 +135,8 @@ export default function CertificatesGallery() {
           }}
         >
           {CERTIFICATES.map((certificate) => (
-            <Box
+            <ButtonBase
               key={certificate.src}
-              component="button"
-              type="button"
               onClick={() => handleOpen(certificate)}
               sx={{
                 border: "none",
@@ -173,7 +171,7 @@ export default function CertificatesGallery() {
                   objectFit: "contain",
                 }}
               />
-            </Box>
+            </ButtonBase>
           ))}
         </Box>
       ) : (
@@ -192,10 +190,8 @@ export default function CertificatesGallery() {
           }}
         >
           {CERTIFICATES.map((certificate) => (
-            <Box
+            <ButtonBase
               key={certificate.src}
-              component="button"
-              type="button"
               onClick={() => handleOpen(certificate)}
               sx={{
                 border: "none",
@@ -225,7 +221,7 @@ export default function CertificatesGallery() {
                   objectFit: "contain",
                 }}
               />
-            </Box>
+            </ButtonBase>
           ))}
         </Box>
       )}

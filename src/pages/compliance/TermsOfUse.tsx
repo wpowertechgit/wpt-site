@@ -1,82 +1,43 @@
-﻿import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 export default function TermsOfUse() {
   const { t } = useTranslation();
-  const sections = [
-    {
-      key: "terms-of-use-section-1",
-      title: t("terms-of-use-section-1-title"),
-      body: t("terms-of-use-section-1-body"),
-    },
-    {
-      key: "terms-of-use-section-2",
-      title: t("terms-of-use-section-2-title"),
-      body: t("terms-of-use-section-2-body"),
-    },
-    {
-      key: "terms-of-use-section-3",
-      title: t("terms-of-use-section-3-title"),
-      body: t("terms-of-use-section-3-body"),
-    },
-    {
-      key: "terms-of-use-section-4",
-      title: t("terms-of-use-section-4-title"),
-      body: t("terms-of-use-section-4-body"),
-    },
-    {
-      key: "terms-of-use-section-5",
-      title: t("terms-of-use-section-5-title"),
-      body: t("terms-of-use-section-5-body"),
-    },
-    {
-      key: "terms-of-use-section-6",
-      title: t("terms-of-use-section-6-title"),
-      body: t("terms-of-use-section-6-body"),
-    },
-    {
-      key: "terms-of-use-section-7",
-      title: t("terms-of-use-section-7-title"),
-      body: t("terms-of-use-section-7-body"),
-    },
-    {
-      key: "terms-of-use-section-8",
-      title: t("terms-of-use-section-8-title"),
-      body: t("terms-of-use-section-8-body"),
-    },
-  ];
 
   return (
     <Box sx={{ bgcolor: "#ffffff", minHeight: "100%", py: { xs: 12, md: 14 } }}>
       <Container maxWidth="lg">
-        <Typography
-          variant="h3"
+        <Box
           sx={{
-            fontFamily: "Stack Sans Headline, sans-serif",
-            fontWeight: 700,
-            fontSize: { xs: "2rem", md: "2.6rem", xxl: "2.6rem", xxxl: "4rem" },
-            mb: 1,
-            textAlign: "left",
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "auto 1fr" },
+            gap: { xs: 2.5, md: 3.5 },
+            alignItems: "start",
           }}
         >
-          {t("terms-of-use-title")}
-        </Typography>
-        <Typography sx={{ mb: 5, color: "#4a4a4a", textAlign: "left" }}>
-          {t("terms-of-use-last-updated")}
-        </Typography>
+          <Box
+            component="img"
+            src="/wpt-black-compact-logo.svg"
+            alt="Waste Power Tech"
+            sx={{
+              width: { xs: "120px", md: "140px", xxxl: "220px" },
+              height: "auto",
+              display: "block",
+            }}
+          />
 
-        {sections.map((section) => (
-          <Box key={section.key} sx={{ mb: 4 }}>
+          <Box>
             <Typography
+              variant="h3"
               sx={{
                 fontFamily: "Stack Sans Headline, sans-serif",
                 fontWeight: 700,
-                fontSize: { xs: "1.15rem", md: "1.35rem", xxl: "1.35rem", xxxl: "2.2rem" },
-                mb: 1,
+                fontSize: { xs: "2rem", md: "2.6rem", xxl: "2.6rem", xxxl: "4rem" },
+                mb: 3,
                 textAlign: "left",
               }}
             >
-              {section.title}
+              {t("terms_of_use_title")}
             </Typography>
             <Typography
               sx={{
@@ -88,12 +49,11 @@ export default function TermsOfUse() {
                 textAlign: "left",
               }}
             >
-              {section.body}
+              {t("terms_of_use_text")}
             </Typography>
           </Box>
-        ))}
+        </Box>
       </Container>
     </Box>
   );
 }
-
