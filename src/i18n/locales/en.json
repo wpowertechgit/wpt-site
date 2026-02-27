@@ -1,6 +1,12 @@
 {
     "hero-title": "Waste Powertech",
     "hero-subtitle": "Transforming waste into power through technology",
+    "nav.technology": "Technology",
+    "nav.applications": "Applications",
+    "nav.docs": "Docs",
+    "nav.press": "Press",
+    "nav.history": "History",
+    "nav.contact": "Contact",
     "pillar-waste": "Waste",
     "pillar-waste-title": "Waste",
     "pillar-waste-description": "WPT processes varied waste streams—including municipal, industrial, and organic fractions—through a controlled, parametric system that maintains operational stability despite material heterogeneity. This method integrates diverse waste typologies into a single technological flow, converting variable inputs into predictable feedstock for energy recovery.",
@@ -153,11 +159,11 @@
     "tabs": {
         "b2g": {
             "label": "B2G",
-            "sublabel": "Government \u0026 Institutional"
+            "sublabel": "Government & Institutional"
         },
         "b2b": {
             "label": "B2B / B2I",
-            "sublabel": "Industrial \u0026 Commercial"
+            "sublabel": "Industrial & Commercial"
         },
         "b2i": {
             "sublabel": "Infrastructure",
@@ -179,12 +185,12 @@
         },
         "sections": {
             "diversion": {
-                "title": "1. Strategic Waste Diversion \u0026 Landfill Mitigation",
+                "title": "1. Strategic Waste Diversion & Landfill Mitigation",
                 "imageAlt": "Facility exterior and input versus residual output comparison",
                 "body": "WPT provides a technical solution for the systematic reduction of municipal waste volumes, diverting up to 95% of processed materials from landfilling. By addressing hard-to-recycle and contaminated fractions at the chemical level, the system enables local authorities to meet mandatory European targets for waste recovery and circular economy integration."
             },
             "compliance": {
-                "title": "2. Emission Control \u0026 Regulatory Compliance",
+                "title": "2. Emission Control & Regulatory Compliance",
                 "imageAlt": "SCADA monitoring interface and gas filtration assembly",
                 "body": "The molecular disintegration process operates as a closed-loop system, utilizing multi-stage gas cleaning to prevent uncontrolled atmospheric emissions. All operational parameters are monitored via PLC/SCADA systems, ensuring documented compliance with ISO 14001 standards and European Union Industrial Emissions Directives (IED)."
             },
@@ -194,7 +200,7 @@
                 "body": "Through the conversion of municipal waste into synthesis gas, WPT installations generate approximately 9,120 MWh of electricity annually. This allows municipalities to establish localized, predictable energy sources, reducing dependence on external grid volatility and contributing to regional energy security frameworks."
             },
             "impact": {
-                "title": "4. Regional Economic Impact \u0026 Skill Development",
+                "title": "4. Regional Economic Impact & Skill Development",
                 "imageAlt": "Technician operating control panel in pretreatment area",
                 "body": "Each WPT implementation functions as an economic driver, creating direct specialized roles for the operation of advanced thermochemical systems. These projects support local technical skill development through structured training programs and stimulate indirect employment in logistics, maintenance, and auxiliary municipal services."
             }

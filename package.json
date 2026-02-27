@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "fix:locale-encoding": "node scripts/fix-locale-encoding.mjs",
     "test:e2e": "playwright test",
     "test:a11y": "playwright test tests/a11y.spec.ts",
     "perf:lighthouse": "lhci autorun --config=./lighthouserc.json",

@@ -1,0 +1,299 @@
+{
+    "hero-title": "Waste Powertech",
+    "hero-subtitle": "Transformarea deșeurilor în energie prin tehnologie",
+    "nav.technology": "Tehnologie",
+    "nav.applications": "Aplicații",
+    "nav.docs": "Documentație",
+    "nav.press": "Presă",
+    "nav.history": "Istoric",
+    "nav.contact": "Contact",
+    "pillar-waste": "Deșeuri",
+    "pillar-waste-title": "Deșeuri",
+    "pillar-waste-description": "WPT procesează fluxuri variate de deșeuri — inclusiv fracții municipale, industriale și organice — printr-un sistem parametric controlat care menține stabilitatea operațională în ciuda eterogenității materialelor. Această metodă integrează diverse tipologii de deșeuri într-un singur flux tehnologic, transformând intrările variabile în materie primă previzibilă pentru valorificare energetică.",
+    "pillar-power-title": "Energie",
+    "pillar-power-description": "Sistemul transformă fracția organică a deșeurilor în gaz de sinteză (Syngas), obținând o producție de energie electrică de până la 1.1–1.15 MWh per tonă procesată prin intermediul generatoarelor cu motoare pe gaz. Acest proces permite injecția continuă în rețea sau alimentarea industrială dedicată, utilizând monitorizarea automată pentru a asigura stabilitatea și alinierea la standardele energetice europene.",
+    "pillar-tech-title": "Tehnic",
+    "pillar-tech-description": "Dezintegrarea moleculară este un proces termochimic care fragmentează legăturile chimice ale structurilor organice complexe într-un mediu controlat, fără oxigen, pentru a produce gaz de sinteză. Spre deosebire de arderea directă, această metodă reduce deșeurile la componentele lor elementare, rezultând un purtător de energie filtrat și un reziduu mineral stabilizat, potrivit pentru reutilizare industrială.",
+    "learn-more": "Află mai multe",
+    "case-study-title": "Referință operațională: Stația de Dezintegrare Moleculară Cluj",
+    "case-study-description": "Stația de Dezintegrare Moleculară Cluj servește drept principală referință funcțională pentru tehnologia WPT într-un mediu activ. Această implementare demonstrează fezabilitatea metodei de dezintegrare moleculară la scară operațională, oferind o bază validată și documentată pentru replicarea structurală în alte locații municipale și industriale.",
+    "view-case": "Vezi detaliile implementării",
+    "institutional-b2g": "Instituțional (B2G)",
+    "industrial-b2i": "Industrial (B2I) / Business (B2B)",
+    "app-b2g-description": "WPT oferă autorităților publice un cadru certificat pentru managementul deșeurilor municipale care înlocuiește depozitarea tradițională cu o valorificare energetică controlată. Procesul funcționează prin dezintegrare moleculară — o metodă termochimică fără combustie — asigurând compatibilitate deplină cu reglementările de mediu europene și oferind o soluție verificabilă și auditabilă pentru obiectivele regionale de transformare a deșeurilor în energie.",
+    "app-b2i-description": "Sistemul WPT permite operatorilor industriali să transforme fluxurile de deșeuri eterogene în active stabile de energie electrică și termică la fața locului. Concepută pentru scalabilitate operațională, tehnologia se integrează cu infrastructura industrială existentă pentru a procesa reziduuri complexe, oferind o creștere măsurabilă a eficienței resurselor și reducând dependența sistemică de sursele externe de energie.",
+    "explore": "Explorează aplicațiile",
+    "documentation": "Documentație",
+    "technology-brochure": "Broșura tehnologiei",
+    "method-summary": "Rezumatul metodei",
+    "press-kit": "Kit de presă",
+    "all-documents": "Toate documentele",
+    "document3": "Acord de mediu - Nr.6/01.08.2024 Vâlcea",
+    "document4": "Autorizație de mediu - Nr.188/19.12.2022 Jidvei",
+    "document5": "Autorizație de mediu - Nr.61/03.04.2024 Târnăveni",
+    "document6": "Acord de mediu - Nr.421/01.04.2024 Satu Mare",
+    "document7": "Acord de mediu - Nr.194/18.08.2023 Cluj",
+    "document8": "Autorizație de construire - Nr.330/07.08.2024 Cluj",
+    "press.heroTitle": "Presă și acoperire externă",
+    "press.heroDescription": "Această secțiune enumeră referințele media ale terților și comunicările instituționale publice despre Waste Powertech. Conținutul este organizat ca înregistrări bazate pe surse, nu ca declarații promoționale.",
+    "press.readSource": "Citește sursa",
+    "learn-brand": "Află mai multe despre standardele brandului",
+    "press.imageAltPrefix": "Imagine articol de presă",
+    "news8": {
+        "title": "Raportare privind continuitatea operațională",
+        "paragraph": "Raportările din mass-media subliniază rolul infrastructurii de dezintegrare moleculară în scenariile de continuitate municipală. Acoperirea se concentrează pe fiabilitatea procesului, relevanța producției de energie și reziliența sistemului local."
+    },
+    "news7": {
+        "title": "Comunicare publică la nivel județean",
+        "paragraph": "Comunicarea instituțională publică prezintă stadiul implementării și impactul utilitar așteptat. Raportul încadrează dezintegrarea moleculară ca o metodă tehnică controlată pentru integrarea deșeurilor în energie."
+    },
+    "news6": {
+        "title": "Actualizare privind progresul construcției",
+        "paragraph": "Actualizările publicate documentează progresul fizic al implementării, inclusiv etapele inginerești și stadiile de execuție. Conținutul descrie punerea în funcțiune controlată în vederea pregătirii operaționale."
+    },
+    "news5": {
+        "title": "Comentariu privind expansiunea națională",
+        "paragraph": "Declarațiile la nivel național discută despre posibila replicare în alte regiuni unde sunt necesare gestionarea stabilă a deșeurilor și valorificarea energetică. Acoperirea menționează scalabilitatea și guvernanța tehnică."
+    },
+    "news4": {
+        "title": "Notificare privind etapele de implementare",
+        "paragraph": "O notificare instituțională subliniază o nouă etapă a proiectului în tranziția de la planificare la implementare. Aceasta pune accentul pe controlul măsurabil al procesului și pe funcționarea pe termen lung a sistemului."
+    },
+    "news3": {
+        "title": "Referință de raportare regională",
+        "paragraph": "Presa regională prezintă contextul proiectului, încadrarea investiției și impactul așteptat asupra serviciilor. Articolul poziționează dezintegrarea moleculară ca o metodă de infrastructură controlată."
+    },
+    "news2": {
+        "title": "Anunț privind semnarea contractului",
+        "paragraph": "Documentația publică confirmă formalizarea contractului pentru implementarea unei linii de tratare a deșeurilor municipale. Anunțul face referire la conformitate, responsabilitate și scopul implementării."
+    },
+    "news1": {
+        "title": "Înregistrare inițială a acoperirii pe piață",
+        "paragraph": "Presa de business remarcă prima implementare la Cluj și rezumă rezultatele operaționale așteptate. Raportarea se concentrează pe intenția de implementare și pe contextul de livrare tehnică."
+    },
+    "calculator-title": "Calculator de randament al sistemului",
+    "modules": "Module",
+    "mwh-year": "MWh/an",
+    "households": "Gospodării",
+    "city-coverage": "% din oraș",
+    "open-full-calculator": "Deschide calculatorul complet",
+    "footer-text": "WPT · Waste Powertech · România",
+    "contact-us": "Contactează-ne",
+    "tech-title": "Tehnologia WPT (Tech)",
+    "tech-intro": "Progresele în procesele termochimice și controlul molecular permit dezvoltarea unor metode capabile să trateze materialele la nivel structural, nu doar mecanic sau prin ardere.\n\nÎn acest cadru tehnologic apare dezintegrarea moleculară controlată - un proces care acționează asupra legăturilor dintre molecule, facilitând transformarea materiei într-o formă de energie stabilă și utilizabilă.\n\nWaste Power Tech dezvoltă și aplică această metodă ca o infrastructură tehnologică integrată, poziționându-se la intersecția dintre managementul deșeurilor și producția de energie.",
+    "tech-body-page-1-title": "",
+    "tech-body-page-1-body": "Managementul modern al deșeurilor și producția de energie nu mai pot fi abordate prin soluții unidimensionale. Tehnologia joacă un rol crucial în crearea unor sisteme integrate capabile să abordeze simultan eficiența materialelor, impactul asupra mediului și viabilitatea economică. Fără soluții tehnologice robuste, deșeurile rămân o problemă logistică, iar energia devine un punct de presiune asupra infrastructurii existente.\n\nTehnologiile clasice de tratare - fie că vorbim de depozitare, incinerare sau digestie anaerobă - au limitări clare în ceea ce privește eficiența energetică, controlul emisiilor sau tipurile de materiale pe care le pot procesa. În special pentru fracțiile mixte, contaminate sau greu de reciclat, este necesară o abordare care să intervină la nivel chimic, nu doar mecanic sau biologic.",
+    "tech-body-page-1-next": "Pe pagina următoare: Dezintegrarea Moleculară",
+    "tech-body-prev-link": "Pe pagina anterioară",
+    "tech-body-page-2-title": "Dezintegrarea moleculară - principiul tehnologic",
+    "tech-body-page-2-body": "Tehnologia WPT se bazează pe un proces termochimic controlat de dezintegrare moleculară a materialelor organice. Procesul are loc într-un mediu controlat, fără ardere directă și în absența oxigenului, evitând mecanismul clasic de incinerare.\n\nDezintegrarea moleculară răspunde acestei nevoi printr-un proces termochimic controlat care transformă fracția organică a deșeurilor în gaz de sinteză utilizabil energetic. Abordarea nu vizează simpla reducere volumetrică, ci conversia controlată a energiei chimice conținute în material. Prin automatizare, monitorizare continuă și o arhitectură modulară, tehnologia permite integrarea într-un sistem energetic existent, oferind predictibilitate operațională și adaptabilitate la fluxuri de materiale variabile.",
+    "tech-body-page-2-next": "Pe pagina următoare: De ce Dezintegrare Moleculară?",
+    "tech-body-page-2-prev": "Pe pagina anterioară: Managementul modern al deșeurilor și producția de energie",
+    "tech-body-page-3-title": "Ce este dezintegrarea moleculară?",
+    "tech-body-page-3-body": "Un proces tehnologic controlat prin care structurile organice complexe din deșeuri sunt descompuse în compuși mai simpli, fără ardere directă.",
+    "tech-body-page-3-subtitle": "Ce se întâmplă, de fapt?",
+    "tech-body-page-3-step-1": "Materialul este introdus într-un mediu controlat",
+    "tech-body-page-3-step-2": "Parametrii termici sunt stabilizați",
+    "tech-body-page-3-step-3": "Legăturile moleculare sunt fragmentate",
+    "tech-body-page-3-step-4": "Se produce un gaz combustibil (Syngas)",
+    "tech-body-page-3-next": "Ce se întâmplă cu gazul rezultat?",
+    "tech-body-page-3-prev": "Pe pagina anterioară: Dezintegrarea moleculară - principiul tehnologic",
+    "tech-body-page-4-title": "Ce se întâmplă\ncu gazul rezultat?",
+    "tech-body-page-4-step-1": "Este colectat din reactor și răcit",
+    "tech-body-page-4-step-2": "Filtrat de particule",
+    "tech-body-page-4-step-3": "Stabilizat în debit\nși presiune",
+    "tech-body-page-4-step-4": "Utilizat într-un motor\ncare produce\nenergie electrică",
+    "tech-body-page-4-body": "După procesul de dezintegrare moleculară, gazul rezultat este colectat din reactor, răcit și filtrat pentru a elimina particulele reziduale, apoi stabilizat din punct de vedere al debitului și presiunii. În această formă controlată, este utilizat pentru a alimenta un motor de cogenerare care transformă gazele combustibile în energie electrică.\n\nElectricitatea produsă este injectată în rețeaua națională și distribuită consumatorilor - fie orașe, infrastructură publică sau operatori industriali - integrând astfel deșeurile tratate în circuitul energetic real.",
+    "tech-body-page-4-next": "Ce\nrămâne după proces?",
+    "tech-body-page-4-prev": "Pe pagina anterioară: Ce este dezintegrarea moleculară?",
+    "tech-body-page-5-title": "Ce rămâne după proces?",
+    "tech-body-page-5-body": "Procesul reduce fracția organică la gaz de sinteză și stabilizează componenta minerală a deșeurilor. Rezultatul este un material inert cu potențial de reutilizare în aplicații industriale și de infrastructură, reducând semnificativ cantitatea trimisă la depozitare.",
+    "tech-body-page-5-timeline-label": "DEȘEURI",
+    "tech-body-page-5-tick-1": "80-90% energie",
+    "tech-body-page-5-tick-2": "5-10% agregat mineral\nreutilizabil",
+    "tech-body-page-5-tick-3": "metale recuperate",
+    "tech-body-page-5-next": "Pe pagina următoare: Care este configurația fizică a instalației?",
+    "tech-body-page-5-prev": "Pe pagina anterioară: Ce se întâmplă cu gazul rezultat?",
+    "tech-body-page-6-title": "Care este configurația fizică\na instalației?",
+    "tech-body-page-6-body": "Instalația WPT este construită într-o configurație modulară și include zona de recepție și stocare, reactorul de dezintegrare moleculară, sistemele de răcire și condiționare a gazelor, unitatea de cogenerare și linia de manipulare a reziduurilor minerale.\n\nPentru o prezentare detaliată a configurației instalației, vizionați materialul video explicativ.",
+    "tech-body-page-6-video-title": "Video explicativ al instalației",
+    "tech-body-page-6-next": "Pe pagina următoare: Ce condiții sunt necesare pentru instalare?",
+    "tech-body-page-6-prev": "Pe pagina anterioară: Ce rămâne după proces?",
+    "tech-body-page-7-title": "Ce condiții sunt necesare pentru instalare?",
+    "tech-body-page-7-body": "Instalarea unei unități WPT necesită un flux constant și predictibil de materiale, acces la infrastructura electrică pentru integrarea energiei produse și o platformă industrială adecvată din punct de vedere logistic și operațional. În plus, proiectul trebuie să se alinieze cadrului de reglementare aplicabil, inclusiv autorizarea de mediu și integrarea în infrastructura locală.\n\nConfigurația modulară permite adaptarea instalației la condițiile specifice ale fiecărui amplasament, asigurând compatibilitatea tehnică și operațională cu contextul existent.",
+    "tech-body-page-7-tile-1": "Acces la un flux de\ndeșeuri constant",
+    "tech-body-page-7-tile-2": "Conexiune la\nrețeaua electrică",
+    "tech-body-page-7-tile-3": "Suprafață industrială\nadecvată",
+    "tech-body-page-7-tile-4": "Autorizații de mediu\nși integrare în\ninfrastructura locală",
+    "tech-body-page-7-next": "",
+    "tech-body-page-7-prev": "Pe pagina anterioară: Care este configurația fizică a instalației?",
+    "tech-diagram-title": "Secvența Procesului",
+    "tech-step-feedstock-title": "1. Condiționarea materiei prime",
+    "tech-step-feedstock-desc": "Fluxurile de intrare sunt pre-caracterizate și stabilizate pentru condiții constante de dezintegrare moleculară și un randament auditabil.",
+    "tech-step-reactor-desc": "Modulul reactorului aplică parametri termici și mecanici controlați pentru a dezintegra structurile complexe de materiale într-o anvelopă de proces închisă.",
+    "tech-step-energy-title": "3. Conversia și monitorizarea energiei",
+    "tech-step-energy-desc": "Producția recuperată este transformată în energie utilizabilă, în timp ce sistemele de control înregistrează performanța, disponibilitatea și metricile de conformitate în timp real.",
+    "tech-control-title": "Nivelul de control și siguranță",
+    "tech-control-desc": "Comportamentul sistemului este guvernat prin ferestre de operare limitate, redundanță a senzorilor și interblocări procedurale concepute pentru funcționare continuă.",
+    "tech-output-title": "Nivelul de producție și verificare",
+    "tech-output-desc": "Calitatea producției și eficiența sistemului sunt validate prin puncte de măsurare repetabile, aliniate la cerințele de raportare tehnică.",
+    "tech-step-reactor-title": "2. Dezintegrarea moleculară controlată",
+    "tech-scroll-1-title": "Tocător primar",
+    "tech-scroll-1-body": "Deșeurile intră în sistem prin tocătorul primar. Această unitate reduce materialele solide voluminoase în fragmente mai mici pentru o dimensionare consecventă în etapele următoare.",
+    "tech-scroll-2-title": "Tocător secundar",
+    "tech-scroll-2-body": "Tocătorul secundar procesează mai departe deșeurile menajere și mixte până la dimensiunea particulelor necesară pentru conversia termică. Un buncăr de mare capacitate susține un randament mai mare și o încărcare mai ușoară.",
+    "tech-scroll-3-title": "Depozitare temporară pentru materialul tocat",
+    "tech-scroll-3-body": "După tocare, materialul este păstrat într-o unitate de depozitare temporară. Această etapă tampon oferă un debit de alimentare constant și controlat către procesarea termică.",
+    "tech-scroll-4-title": "Sistem de alimentare",
+    "tech-scroll-4-body": "Din depozitare, materialul este transportat în camera centrală a reactorului. Sistemul de alimentare automatizat reglează fluxul de intrare pentru a menține condiții de funcționare stabile.",
+    "tech-scroll-5-title": "Reactor de piroliză",
+    "tech-scroll-5-body": "Materialul este supus dezintegrării moleculare la temperatură înaltă în absența oxigenului. Fără aer, nu are loc arderea. Procesul descompune termic deșeurile în gaz de sinteză (syngas) și un reziduu solid bogat în carbon.",
+    "tech-scroll-6-title": "Subprodus solid (Cărbune / Reziduu de carbon)",
+    "tech-scroll-6-body": "Este generat un subprodus solid bogat în carbon. Acest reziduu poate fi utilizat în aplicații industriale secundare, inclusiv în materiale de construcții și alte produse pe bază de carbon.",
+    "tech-scroll-7-title": "Filtrarea și condiționarea gazului",
+    "tech-scroll-7-body": "Gazul produs trece prin etape de filtrare și curățare. Particulele și contaminanții sunt îndepărtați pentru a produce un gaz de sinteză mai curat pentru generarea de energie.",
+    "tech-scroll-8-title": "Rezervoare de stocare a gazului",
+    "tech-scroll-8-body": "Gazul curățat este stocat în rezervoare sub presiune pentru a regla fluxul și a menține o alimentare constantă către unitățile de generare. În funcție de configurația sistemului, gazul poate fi stocat sub formă comprimată sau parțial lichefiată.",
+    "tech-scroll-9-title": "Generarea de energie",
+    "tech-scroll-9-body": "Gazul de sinteză condiționat alimentează unitățile generatoare pentru producerea de energie electrică. Fiecare sistem WP1000 utilizează cinci generatoare de 350 kVA, cu o producție electrică de aproximativ 1 MW pe oră de funcționare, în funcție de condițiile de sarcină.",
+    "tabs": {
+        "b2g": {
+            "label": "B2G",
+            "sublabel": "Guvernamental & Instituțional"
+        },
+        "b2b": {
+            "label": "B2B / B2I",
+            "sublabel": "Industrial & Comercial"
+        },
+        "b2i": {
+            "sublabel": "Infrastructură",
+            "label": "B2I"
+        }
+    },
+    "b2g": {
+        "hero": {
+            "title": "Guvernamental și Instituțional (B2G)",
+            "body": "Soluții tehnice pentru managementul deșeurilor municipale și reziliență energetică. Concepute pentru conformitate cu reglementările, atenuarea riscurilor și obiective de recuperare verificabile.",
+            "imageAlt": "Prezentare generală a infrastructurii municipale instituționale"
+        },
+        "subnav": {
+            "diversion": "Devierea deșeurilor",
+            "compliance": "Controlul emisiilor",
+            "resilience": "Reziliență energetică",
+            "impact": "Impact regional",
+            "refraction": "Principiile de refracție"
+        },
+        "sections": {
+            "diversion": {
+                "title": "1. Devierea strategică a deșeurilor și reducerea depozitării la groapă",
+                "imageAlt": "Exteriorul instalației și comparație între intrări și randamentul rezidual",
+                "body": "WPT oferă o soluție tehnică pentru reducerea sistematică a volumelor de deșeuri municipale, deviind până la 95% din materialele procesate de la depozitarea la groapă. Abordând fracțiile greu de reciclat și contaminate la nivel chimic, sistemul permite autorităților locale să îndeplinească țintele europene obligatorii pentru recuperarea deșeurilor și integrarea în economia circulară."
+            },
+            "compliance": {
+                "title": "2. Controlul emisiilor și conformitatea cu reglementările",
+                "imageAlt": "Interfață de monitorizare SCADA și ansamblu de filtrare a gazelor",
+                "body": "Procesul de dezintegrare moleculară funcționează ca un sistem în buclă închisă, utilizând curățarea gazelor în mai multe etape pentru a preveni emisiile atmosferice necontrolate. Toți parametrii operaționali sunt monitorizați prin sisteme PLC/SCADA, asigurând o conformitate documentată cu standardele ISO 14001 și Directivele Uniunii Europene privind Emisiile Industriale (IED)."
+            },
+            "resilience": {
+                "title": "3. Reziliență energetică descentralizată",
+                "imageAlt": "Modul de generare a energiei și diagrama circuitului de la deșeuri la rețea",
+                "body": "Prin transformarea deșeurilor municipale în gaz de sinteză, instalațiile WPT generează aproximativ 9.120 MWh de energie electrică anual. Acest lucru permite municipalităților să stabilească surse de energie localizate, predictibile, reducând dependența de volatilitatea rețelei externe și contribuind la cadrele regionale de securitate energetică."
+            },
+            "impact": {
+                "title": "4. Impact economic regional și dezvoltarea abilităților",
+                "imageAlt": "Tehnician operând panoul de control în zona de pretratare",
+                "body": "Fiecare implementare WPT funcționează ca un motor economic, creând roluri de specialitate directe pentru operarea sistemelor termochimice avansate. Aceste proiecte sprijină dezvoltarea abilităților tehnice locale prin programe de instruire structurate și stimulează ocuparea forței de muncă indirecte în logistică, mentenanță și servicii municipale auxiliare."
+            }
+        },
+        "refraction": {
+            "title": "Principiile de „Refracție” B2G",
+            "intro": "Principiu instituțional: WPT funcționează mai degrabă ca o autoritate tehnică decât ca un furnizor comercial. În sectorul public, claritatea este o responsabilitate, iar transparența este o cerință funcțională.",
+            "principle1": "Metoda primează în fața promisiunii: Sunt furnizate date verificabile pentru randamentele energetice (1,1 până la 1,15 MWh pe tonă), nu afirmații generale de performanță.",
+            "principle2": "Verificare fără combustie: Dezintegrarea moleculară este definită explicit ca un proces de fragmentare termochimică, distinct de incinerare, pentru claritate reglementară și publică.",
+            "principle3": "Atenuarea riscurilor: Fiecare instalație este un sistem modular replicabil, conceput pentru integrarea stabilă în lanțurile logistice municipale existente."
+        }
+    },
+    "b2b": {
+        "hero": {
+            "title": "Industrial și Comercial (B2I/B2B)",
+            "body": "Infrastructură de recuperare a resurselor cu randament ridicat pentru sectoarele de producție și energie. Concepută pentru stabilitate operațională, scalabilitatea proceselor și performanță financiară măsurabilă.",
+            "imageAlt": "Prezentare generală a infrastructurii industriale"
+        },
+        "subnav": {
+            "operational": "Integrare operațională & stabilitatea fluxului de lucru",
+            "caloric": "Extracție calorică & conversia deșeurilor în active",
+            "scalability": "Scalabilitatea infrastructurii & arhitectură modulară",
+            "roi": "Predictibilitate financiară & ROI-ul investiției",
+            "refraction": "Principiile de refracție"
+        },
+        "sections": {
+            "operational": {
+                "title": "1. Integrare operațională & stabilitatea fluxului de lucru",
+                "imageAlt": "Exteriorul instalației și comparație între intrări și randamentul rezidual",
+                "body": "Modulele WPT sunt proiectate pentru implementare la fața locului în ecosistemele de producție existente. Sistemul este capabil să proceseze diverse reziduuri industriale — inclusiv polimeri, elastomeri și materiale lignocelulozice — fără a perturba ciclurile de producție de bază. Tratând deșeurile la nivel molecular, tehnologia asigură o aprovizionare continuă, automatizată, cu energie electrică sau termică pentru uz intern industrial."
+            },
+            "caloric": {
+                "title": "2. Extracție calorică & conversia deșeurilor în active",
+                "imageAlt": "Interfață de monitorizare SCADA și ansamblu de filtrare a gazelor",
+                "body": "Dincolo de reciclarea mecanică tradițională, dezintegrarea moleculară extrage potențialul energetic maxim din fluxurile de deșeuri contaminate sau mixte. Generând până la 1,15 MWh de energie electrică pe tonă procesată, sistemul WPT recalibrează deșeurile industriale dintr-un centru de costuri logistice într-o materie primă strategică. Această schimbare reduce volatilitatea achizițiilor de energie și elimină taxele ridicate de eliminare a deșeurilor."
+            },
+            "scalability": {
+                "title": "3. Scalabilitatea infrastructurii & arhitectură modulară",
+                "imageAlt": "Modul de generare a energiei și diagrama circuitului de la deșeuri la rețea",
+                "body": "Tehnologia WPT este construită pe o arhitectură modulară, tip plug-and-play, care permite implementarea în etape și extinderea capacității. Fiecare unitate este un modul tehnologic standardizat, făcând infrastructura extrem de replicabilă în diferite locații geografice sau industriale. Această modularitate reduce timpii de construcție și permite o scalare localizată în funcție de fluctuațiile disponibilității deșeurilor sau ale cererii de energie."
+            },
+            "roi": {
+                "title": "4. Predictibilitate financiară & ROI-ul investiției",
+                "imageAlt": "Tehnician operând panoul de control în zona de pretratare",
+                "body": "Proiectele WPT sunt ancorate în economia reală, oferind un model cu dublă sursă de venit: taxe de tratare a deșeurilor și vânzarea de energie. Cu un ROI estimat la 4 până la 6 ani, infrastructura oferă stabilitate financiară pe termen lung, protejată de natura constantă a generării deșeurilor. Nivelul ridicat de automatizare al sistemului (PLC/SCADA) asigură cheltuieli operaționale reduse și date de performanță verificabile pentru investitori."
+            }
+        },
+        "refraction": {
+            "title": "Principiile de „Refracție” B2B/B2I",
+            "intro": "Principiu industrial/investițional: Performanța este o datorie funcțională. În sectorul privat, autoritatea derivă din rezultate măsurabile și fiabilitate operațională.",
+            "principle1": "Claritate tehnică: Prioritizăm transparența procesului chimic în fața scurtăturilor narative.",
+            "principle2": "Rezultate măsurabile: Fiecare proiect este evaluat în funcție de eficiența conversiei în timp real și de metricile timpilor de nefuncționare.",
+            "principle3": "Integrare sistemică: WPT este prezentat ca o componentă a unui sistem industrial sau financiar mai mare, nu ca o curiozitate izolată."
+        }
+    },
+    "accessibility_title": "Accesibilitate",
+    "accessibility_text": "Ne dorim ca oricine să poată utiliza site-ul nostru cu ușurință. Unele secțiuni ar putea să nu fie încă complet accesibile, dar lucrăm la acest aspect și primim cu drag sugestii din partea vizitatorilor.",
+    "privacy_policy_title": "Politica de Confidențialitate & Cookies",
+    "privacy_policy_text": "La Waste Powertech SRL, respectăm confidențialitatea dvs. și ne place, de asemenea, să păstrăm lucrurile simple. Nu urmărim vizitatorii, nu stocăm date personale și nu rulăm analitice. Nu avem baze de date ascunse sau formulare care colectează informațiile dvs. Unele pagini includ conținut de pe YouTube sau Google Maps, care pot plasa cookie-uri pentru propria lor funcționalitate. Nu controlăm și nu accesăm acele cookie-uri. Dacă ne contactați prin e-mail, vom citi și vă vom răspunde, dar nu vă stocăm și nu vă distribuim mesajele. Folosim găzduire securizată și HTTPS pentru a menține acest site în siguranță. Nu există urmărire, profilare sau colectare secretă de date. Dacă acest lucru se va schimba vreodată, vom actualiza această pagină. Până atunci, nu aveți nimic de acceptat, de respins sau de șters, pentru că pur și simplu nu păstrăm date personale. Waste Powertech SRL - respectăm confidențialitatea fără a vă urmări mai întâi.",
+    "terms_of_use_title": "Termeni de Utilizare",
+    "terms_of_use_text": "Acest site web și conținutul său sunt furnizate de Waste Powertech SRL exclusiv în scopuri informaționale generale. Deși ne străduim să menținem informațiile corecte și la zi, nu oferim nicio garanție cu privire la exhaustivitatea sau fiabilitatea acestora. Prin utilizarea acestui site, sunteți de acord că Waste Powertech SRL nu va fi responsabilă pentru niciun fel de daune rezultate din utilizarea sa sau din bazarea pe informațiile prezentate. Tot conținutul, inclusiv textul și imaginile, este protejat de drepturi de autor și nu poate fi reprodus fără permisiune.",
+    "blank": "‎ ",
+    "year-1": 2009,
+    "year-1-element-1": "Inițierea conceptului",
+    "year-1-element-2": "Este concepută ideea dezvoltării unei tehnologii inovatoare pentru valorificarea deșeurilor, având ca scop transformarea acestora în produse și subproduse cu valoare adăugată, deschizând calea pentru soluții sustenabile de gestionare a deșeurilor.",
+    "year-2": 2010,
+    "year-2-element-1": "Designul inițial și colaborările internaționale",
+    "year-2-element-2": "Este finalizat primul design al tehnologiei.",
+    "year-2-element-3": "Începe colaborarea cu parteneri strategici din Statele Unite și India pentru a integra expertiza internațională și a valida conceptul tehnologic.",
+    "year-3": 2014,
+    "year-3-element-1": "Finalizarea prototipului",
+    "year-3-element-2": "Încheierea fazei inițiale de dezvoltare a prototipului, marcând un pas crucial în procesul de testare și rafinare.",
+    "year-4": 2016,
+    "year-4-element-1": "Dezvoltarea prototipului",
+    "year-4-element-2": "Îmbunătățirea și optimizarea continuă a prototipului, abordând feedback-ul din faza de testare și pregătind tehnologia pentru implementarea în producție.",
+    "year-5": 2017,
+    "year-5-element-1": "Înființarea SC Waste Powertech SRL",
+    "year-5-element-2": "Se înființează SC Waste Powertech SRL, marcând începutul oficial al companiei.",
+    "year-5-element-3": "Sunt stabilite primele colaborări și diverse sarcini sunt externalizate pentru a sprijini dezvoltarea și implementarea tehnologiei.",
+    "year-6": 2019,
+    "year-6-element-1": "Finalizarea prototipului la Waste Powertech",
+    "year-6-element-2": "Prototipul tehnologic este complet finalizat și integrat în cadrul SC Waste Powertech SRL, pregătind compania pentru următoarele etape de certificare și comercializare.",
+    "year-7": 2021,
+    "year-7-element-1": "Waste Powertech devine un brand internațional.",
+    "year-8": 2022,
+    "year-8-element-1": "Certificare și cerere de brevet",
+    "year-8-element-2": "Se obține certificatul european de conformitate, confirmând standardele înalte de calitate și siguranță ale tehnologiei.",
+    "year-8-element-3": "Se depune cererea de brevet pentru protejarea drepturilor de proprietate intelectuală. În același an, este primită prima comandă de la un client, marcând începutul comercializării tehnologiei.",
+    "year-9": 2023,
+    "year-9-element-1": "Certificări ISO și începerea producției",
+    "year-9-element-2": "Sunt obținute standardele ISO pentru producție, asigurând conformitatea cu cele mai înalte standarde internaționale de calitate.",
+    "year-9-element-3": "Începe construcția de mașini pentru diferite tipuri de deșeuri organice, patru mașini fiind deja în funcțiune pentru diferiți clienți.",
+    "year-10": 2024,
+    "year-10-element-1": "Contract strategic cu CMID",
+    "year-10-element-2": "Se semnează primul contract major cu un Centru de Management Integrat al Deșeurilor (CMID) din cadrul Consiliului Județean Cluj, consolidând poziția SC Waste Powertech SRL pe piața soluțiilor de gestionare a deșeurilor și marcând un pas semnificativ în extinderea companiei."
+}

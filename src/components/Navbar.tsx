@@ -1,17 +1,18 @@
 ﻿import { AppBar, Box, Button, Menu, MenuItem, Container, Link as MuiLink, IconButton } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { IoLanguage } from "react-icons/io5";
 import { MdLanguage } from "react-icons/md";
+import { useUIStore } from "../store/uiStore";
 
 const NAV_ITEMS = [
-    { label: "Technology", to: "/technology" },
-    { label: "Applications", to: "/applications" },
-    { label: "Docs", to: "/docs" },
-    { label: "Press", to: "/press" },
-    { label: "History", to: "/about/history" },
-    { label: "Contact", to: "/contact" },
+    { labelKey: "nav.technology", to: "/technology" },
+    { labelKey: "nav.applications", to: "/applications" },
+    { labelKey: "nav.docs", to: "/docs" },
+    { labelKey: "nav.press", to: "/press" },
+    { labelKey: "nav.history", to: "/about/history" },
+    { labelKey: "nav.contact", to: "/contact" },
 ];
 
 const LOCALES = [
@@ -29,7 +30,9 @@ const LOCALES = [
 ];
 
 export default function Navbar() {
-    const { i18n } = useTranslation();
+    const { t } = useTranslation();
+    const currentLanguage = useUIStore((state) => state.language);
+    const setLanguage = useUIStore((state) => state.setLanguage);
     const [localeAnchor, setLocaleAnchor] = useState<null | HTMLElement>(null);
 
     const handleLocaleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -41,7 +44,7 @@ export default function Navbar() {
     };
 
     const handleLanguageChange = (lng: string) => {
-        i18n.changeLanguage(lng);
+        setLanguage(lng);
         handleLocaleClose();
     };
 
@@ -124,7 +127,7 @@ export default function Navbar() {
                                     }
                                 }}
                             >
-                                {item.label}
+                                {t(item.labelKey)}
                             </Button>
                         ))}
 
@@ -167,7 +170,7 @@ export default function Navbar() {
                                 <MenuItem
                                     key={code}
                                     onClick={() => handleLanguageChange(code)}
-                                    selected={i18n.language === code}
+                                    selected={currentLanguage === code}
                                     sx={{
                                         fontFamily: "Figtree",
                                         fontSize: { xs: "clamp(1rem, 0.95vw, 1.2rem)", xxxl: "2rem" },
@@ -211,4 +214,6 @@ export default function Navbar() {
         </AppBar>
     );
 }
+
+
 

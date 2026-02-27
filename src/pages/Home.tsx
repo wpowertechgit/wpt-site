@@ -307,7 +307,7 @@ export default function Home() {
                                     }}
                                 >
                                     <Link
-                                        to="/case-studies"
+                                        to="/case-study-cluj"
                                         style={{
                                             textDecoration: "none",
                                             color: "#000",
