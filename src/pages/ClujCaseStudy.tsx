@@ -143,7 +143,7 @@ function DesktopCaseStudy() {
   // React state only for re-rendering the UI
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [locked, setLocked] = useState(true);
+  const [, setLocked] = useState(true);
 
   const goTo = (next: number) => {
     if (next === indexRef.current) return;
