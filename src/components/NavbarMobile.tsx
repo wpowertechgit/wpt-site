@@ -36,6 +36,7 @@ const NavbarMobile = () => {
   const menuOpen = useUIStore((state) => state.mobileMenuOpen);
   const languageDrawerOpen = useUIStore((state) => state.mobileLanguageDrawerOpen);
   const isNavbarCollapsed = useUIStore((state) => state.mobileNavbarCollapsed);
+  const currentLanguage = useUIStore((state) => state.language);
   const setLanguage = useUIStore((state) => state.setLanguage);
   const toggleDrawer = useUIStore((state) => state.toggleMobileMenu);
   const closeDrawer = useUIStore((state) => state.closeMobileMenu);
@@ -47,6 +48,11 @@ const NavbarMobile = () => {
     setLanguage(lng);
     closeLanguageDrawer();
   };
+
+  const brochureHref =
+    currentLanguage === "ro"
+      ? "/docs/wpt- brosura-ro.pdf"
+      : "/docs/wpt- brosura-en.pdf";
 
   return (
     <>
@@ -160,15 +166,6 @@ const NavbarMobile = () => {
             {[
               ['en', '/us.png', 'English'],
               ['ro', '/ro.png', 'Română'],
-              ['hu', '/hu.png', 'Magyar'],
-              ['de', '/de.png', 'Deutsch'],
-              ['fr', '/fr.png', 'FranÃ§ais'],
-              ['it', '/it.png', 'Italiano'],
-              ['gr', '/gr.png', 'Î•Î»Î»Î·Î½Î¹ÎºÎ¬'],
-              ['tr', '/tr.png', 'TÃ¼rkÃ§e'],
-              ['zh', '/zh.png', 'ä¸­æ–‡'],
-              ['es', '/es.png', 'EspaÃ±ol'],
-              ['pl', '/pl.png', 'Polski']
             ].map(([code, flag, label], i) => (
               <React.Fragment key={code}>
                 <ListItem onClick={() => handleLanguageChange(code)} disablePadding sx={{ m: 0 }}>
@@ -190,7 +187,7 @@ const NavbarMobile = () => {
                 </ListItem>
 
                 {/* Divider except for last item */}
-                {i !== 10 && <Divider sx={{ borderColor: COLORS.divider, m: 0 }} />}
+                {i !== 1 && <Divider sx={{ borderColor: COLORS.divider, m: 0 }} />}
               </React.Fragment>
             ))}
           </List>
@@ -209,9 +206,15 @@ const NavbarMobile = () => {
         <Box sx={{ width: "100%", p: 0, color: COLORS.text }}>
           <List sx={{ p: 0, m: 0 }}>
             {/* Technology */}
-            <ListItem component="a" href="/technology" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
+            <ListItem component={Link} to="/technology" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
               <ListItemButton sx={{ backgroundColor: '#0000FF', color: '#FFFFFF' }}>
                 <ListItemText primary={t("nav.technology")} primaryTypographyProps={{ fontFamily: 'Stack Sans Headline', fontWeight: 700 }} />
+              </ListItemButton>
+            </ListItem>
+
+            <ListItem component={Link} to="/calculator" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
+              <ListItemButton sx={{ backgroundColor: '#FFFFFF', color: '#000' }}>
+                <ListItemText primary={t("nav.calculator")} />
               </ListItemButton>
             </ListItem>
 
@@ -235,6 +238,15 @@ const NavbarMobile = () => {
 
             <Divider sx={{ borderColor: COLORS.divider, m: 0 }} />
 
+            {/* Brochure */}
+            <ListItem component="a" href={brochureHref} target="_blank" rel="noreferrer" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
+              <ListItemButton sx={{ backgroundColor: '#0000FF', color: '#FFFFFF' }}>
+                <ListItemText primary={t("technology-brochure")} primaryTypographyProps={{ fontFamily: 'Stack Sans Headline', fontWeight: 700 }} />
+              </ListItemButton>
+            </ListItem>
+
+            <Divider sx={{ borderColor: COLORS.divider, m: 0 }} />
+
             {/* Press */}
             <ListItem component={Link} to="/press" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
               <ListItemButton sx={{ backgroundColor: '#FFFFFF', color: '#000000' }}>
@@ -243,7 +255,12 @@ const NavbarMobile = () => {
             </ListItem>
 
             <Divider sx={{ borderColor: COLORS.divider, m: 0 }} />
-
+            <ListItem component={Link} to="/about/history" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
+              <ListItemButton sx={{ backgroundColor: '#FFFFFF', color: '#000000' }}>
+                <ListItemText primary={t("nav.history")} />
+              </ListItemButton>
+            </ListItem>
+            <Divider sx={{ borderColor: COLORS.divider, m: 0 }} />
             {/* Contact */}
             <ListItem component={Link} to="/contact" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
               <ListItemButton sx={{ backgroundColor: '#FFFFFF', color: '#000000' }}>

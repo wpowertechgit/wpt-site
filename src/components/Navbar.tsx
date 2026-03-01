@@ -7,7 +7,6 @@ import { MdLanguage } from "react-icons/md";
 import { useUIStore } from "../store/uiStore";
 
 const NAV_ITEMS = [
-    { labelKey: "nav.technology", to: "/technology" },
     { labelKey: "nav.applications", to: "/applications" },
     { labelKey: "nav.docs", to: "/docs" },
     { labelKey: "nav.press", to: "/press" },
@@ -18,15 +17,6 @@ const NAV_ITEMS = [
 const LOCALES = [
     ["en", "/us.png", "English"],
     ["ro", "/ro.png", "Română"],
-    ["hu", "/hu.png", "Magyar"],
-    ["de", "/de.png", "Deutsch"],
-    ["fr", "/fr.png", "Français"],
-    ["it", "/it.png", "Italiano"],
-    ["gr", "/gr.png", "Ελληνικά"],
-    ["tr", "/tr.png", "Türkçe"],
-    ["zh", "/zh.png", "中文"],
-    ["es", "/es.png", "Español"],
-    ["pl", "/pl.png", "Polski"]
 ];
 
 export default function Navbar() {
@@ -34,6 +24,10 @@ export default function Navbar() {
     const currentLanguage = useUIStore((state) => state.language);
     const setLanguage = useUIStore((state) => state.setLanguage);
     const [localeAnchor, setLocaleAnchor] = useState<null | HTMLElement>(null);
+    const brochureHref =
+        currentLanguage === "ro"
+            ? "/docs/wpt- brosura-ro.pdf"
+            : "/docs/wpt- brosura-en.pdf";
 
     const handleLocaleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setLocaleAnchor(event.currentTarget);
@@ -104,12 +98,105 @@ export default function Navbar() {
 
                     {/* NAV ITEMS */}
                     <Box sx={{ display: "flex", alignItems: "center", gap: "0.5rem", ml: "auto" }}>
+                            <Box
+                                sx={{
+                                    position: "relative",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    alignSelf: "stretch",
+                                    "&:hover .tech-chevron": {
+                                        transform: "rotate(225deg) translateY(1px)",
+                                    },
+                                    "&:hover .tech-submenu": {
+                                        opacity: 1,
+                                        pointerEvents: "auto",
+                                    },
+                                }}
+                            >
+                            <Button
+                                component={RouterLink}
+                                to="/technology"
+                                sx={{
+                                    color: "#000",
+                                    textTransform: "none",
+                                    fontSize: { xs: "clamp(1rem, 0.95vw, 1.4rem)", xxl: "1.55rem", xxxl: "2.7rem" },
+                                    fontFamily: "Figtree",
+                                    fontWeight: 600,
+                                    px: "clamp(1rem, 1.2vw, 2rem)",
+                                    py: "clamp(0.6rem, 0.8vw, 1rem)",
+                                    position: "relative",
+                                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                    "&:hover": {
+                                        bgcolor: "#000",
+                                        color: "#fff",
+                                    }
+                                }}
+                            >
+                                {t("nav.technology")}
+                                <Box
+                                    component="span"
+                                    className="tech-chevron"
+                                    sx={{
+                                        ml: "0.45rem",
+                                        width: "0.45rem",
+                                        height: "0.45rem",
+                                        display: "inline-block",
+                                        borderRight: "2px solid currentColor",
+                                        borderBottom: "2px solid currentColor",
+                                        transform: "rotate(45deg) translateY(-1px)",
+                                        transformOrigin: "center",
+                                        transition: "transform 0.2s ease",
+                                        flexShrink: 0,
+                                    }}
+                                />
+                            </Button>
+                            <Box
+                                className="tech-submenu"
+                                sx={{
+                                    position: "absolute",
+                                    top: "calc(100% - 1px)",
+                                    left: 0,
+                                    width: "100%",
+                                    minWidth: "100%",
+                                    bgcolor: "#fff",
+                                    border: "1px solid #ddd",
+                                    boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+                                    opacity: 0,
+                                    pointerEvents: "none",
+                                    transition: "opacity 0.2s ease",
+                                    zIndex: 2,
+                                }}
+                            >
+                                <Button
+                                    component={RouterLink}
+                                    to="/calculator"
+                                    sx={{
+                                        width: "100%",
+                                        justifyContent: "flex-start",
+                                        color: "#000",
+                                        textTransform: "none",
+                                        fontFamily: "Figtree",
+                                        fontWeight: 600,
+                                        px: "0.8rem",
+                                        py: "0.55rem",
+                                        borderRadius: 0,
+                                        minHeight: 0,
+                                        "&:hover": {
+                                            bgcolor: "#000",
+                                            color: "#fff",
+                                        },
+                                    }}
+                                >
+                                    {t("nav.calculator")}
+                                </Button>
+                            </Box>
+                        </Box>
+
                         {NAV_ITEMS.map((item) => (
                             <Button
                                 key={item.to}
-                                component={item.to === "/technology" ? "a" : RouterLink}
-                                href={item.to === "/technology" ? item.to : undefined}
-                                to={item.to === "/technology" ? undefined : item.to}
+                                component={RouterLink}
+                                to={item.to}
                                 sx={{
                                     color: "#000",
                                     textTransform: "none",
@@ -130,6 +217,31 @@ export default function Navbar() {
                                 {t(item.labelKey)}
                             </Button>
                         ))}
+
+                        <Button
+                            component="a"
+                            href={brochureHref}
+                            target="_blank"
+                            rel="noreferrer"
+                            sx={{
+                                color: "#000",
+                                textTransform: "none",
+                                fontSize: { xs: "clamp(1rem, 0.95vw, 1.4rem)", xxl: "1.55rem", xxxl: "2.7rem" },
+                                fontFamily: "Figtree",
+                                fontWeight: 600,
+                                px: "clamp(1rem, 1.2vw, 2rem)",
+                                py: "clamp(0.6rem, 0.8vw, 1rem)",
+                                position: "relative",
+                                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                "&:hover": {
+                                    bgcolor: "#000",
+                                    color: "#fff",
+                                    transform: "translateY(-2px)"
+                                }
+                            }}
+                        >
+                            {t("technology-brochure")}
+                        </Button>
 
                         {/* LOCALE DROPDOWN */}
                         <IconButton

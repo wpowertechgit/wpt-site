@@ -3,13 +3,18 @@ import { useTransform, useScroll, motion } from "framer-motion";
 import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
-import ImpactCalculator from "../components/ImpactCalculator";
+import { useUIStore } from "../store/uiStore";
 
 export default function Home() {
     const { t } = useTranslation();
+    const currentLanguage = useUIStore((state) => state.language);
     const containerRef = useRef(null);
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 1000], [0, -48]);
+    const caseStudyVideoUrl =
+        currentLanguage === "ro"
+            ? "https://www.youtube-nocookie.com/embed/7vnExoAwfu8?si=F328Juhk0f6Jtf-x"
+            : "https://www.youtube-nocookie.com/embed/Lxk9Yu1eJYI?si=ok5kKliaBkjebA-u";
 
     return (
         <Box ref={containerRef} sx={{ bgcolor: "#ffffff" }}>
@@ -31,7 +36,11 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     style={{
-                        textAlign: "left",
+                        textAlign: "center",
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
                         // Pull the entire content block up slightly to favor the bottom text
                         marginTop: "-5vh"
                     }}
@@ -115,8 +124,9 @@ export default function Home() {
                             fontSize: { xs: "1rem", md: "1.125rem", lg: "1.25rem", xl: "2rem", xxl: "2rem", xxxl: "3rem" },
                             color: "#666",
                             maxWidth: { xs: "20rem", md: "30rem", lg: "40rem", xl: "60rem", xxl: "60rem", xxxl: "80rem" },
-                            mx: 0,
-                            lineHeight: 1.6
+                            mx: "auto",
+                            lineHeight: 1.6,
+                            textAlign: "center",
                         }}
                     >
                         {t("hero-subtitle")}
@@ -140,7 +150,7 @@ export default function Home() {
                     {
                         name: "waste",
                         color: "#8E8E8E",
-                        image: "waste.jpg",
+                        image: "waste-alternative.jpg",
                         title: t("pillar-waste-title"),
                         subtext: t("pillar-waste-description"),
                     },
@@ -154,7 +164,7 @@ export default function Home() {
                     {
                         name: "technology",
                         color: "#0000FF",
-                        image: "tech.jpg",
+                        image: "chip21.jpg",
                         title: t("pillar-tech-title"),
                         subtext: t("pillar-tech-description"),
                     },
@@ -297,6 +307,8 @@ export default function Home() {
                                     {t("case-study-description")}
                                 </Typography>
 
+                                {/* Cluj case-study link hidden until the page is ready. */}
+                                {/*
                                 <Box
                                     sx={{
                                         fontSize: {
@@ -322,29 +334,29 @@ export default function Home() {
                                         {t("view-case")}
                                     </Link>
                                 </Box>
+                                */}
                             </Box>
 
-                            {/* RIGHT COLUMN: IMAGE */}
+                            {/* RIGHT COLUMN: VIDEO */}
                             <Box sx={{ order: { xs: 1, md: 2 } }}>
                                 <Box
-                                    component="img"
-                                    src="/wp_statie.jpg"
-                                    alt="Cluj Case Study"
-                                    loading="lazy"
-                                    decoding="async"
-                                    fetchPriority="auto"
+                                    component="iframe"
+                                    src={caseStudyVideoUrl}
+                                    title="Cluj reference presentation"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
                                     sx={{
                                         width: "100%",
-                                        // Significant height increase for large viewports
-                                        height: {
-                                            xs: "25rem",
-                                            md: "30rem",
-                                            xl: "45rem", xxl: "45rem",
-                                            xxxl: "55rem"
+                                        aspectRatio: "16 / 9",
+                                        minHeight: {
+                                            xs: "15rem",
+                                            md: "20rem",
+                                            xl: "28rem", xxl: "28rem",
+                                            xxxl: "34rem"
                                         },
-                                        objectFit: "cover",
                                         display: "block",
-                                        borderRadius: { xs: "0", xl: "4px" }, // Optional slight rounding for premium feel
+                                        border: 0,
+                                        borderRadius: 0,
                                         boxShadow: "0 20px 40px rgba(0,0,0,0.05)"
                                     }}
                                 />
@@ -386,8 +398,8 @@ export default function Home() {
                             }}
                         >
                             {[
-                                { name: "b2g", title: t("institutional-b2g"), image: "b2g.jpg" },
-                                { name: "b2i", title: t("industrial-b2i"), image: "b2i.jpg" }
+                                { name: "b2g", title: t("institutional-b2g"), image: "facility1.jpg" },
+                                { name: "b2i", title: t("industrial-b2i"), image: "factory20.jpg" }
                             ].map((app) => (
                                 <Box
                                     key={app.name}
@@ -505,7 +517,6 @@ export default function Home() {
                     </Container>
                 </Box>
             </motion.div>
-            <ImpactCalculator />
         </Box>
     );
 }

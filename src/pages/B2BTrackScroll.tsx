@@ -357,8 +357,7 @@ export default function B2BTrackScroll() {
                         sx={{
                           width: "100%",
                           height: { xs: 240, md: 360, xl: 460, xxl: 580, xxxl: 760 },
-                          objectFit: "cover",
-                          border: "1px solid #000000",
+                          objectFit: "contain",
                           display: "block",
                         }}
                       />

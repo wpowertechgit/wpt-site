@@ -207,7 +207,9 @@ export default function Press() {
                     width: "100%",
                     aspectRatio: { xs: "16 / 10", sm: "16 / 10", md: "16 / 11", lg: "16 / 11", xl: "16 / 10", xxl: "16 / 10", xxxl: "16 / 9" },
                     overflow: "hidden",
-                    border: "1px solid #D9D9D9",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
                   <Box
@@ -220,7 +222,8 @@ export default function Press() {
                       display: "block",
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
+                      objectFit: "contain",
+                      objectPosition: "center",
                     }}
                   />
                 </Box>
@@ -232,4 +235,3 @@ export default function Press() {
     </Box>
   );
 }
-

@@ -34,6 +34,12 @@ const SECTION_ITEMS: SectionItem[] = [
   { titleKey: "tech-body-page-1-title", bodyKey: "tech-body-page-1-body", nextKey: "tech-body-page-1-next" },
   { titleKey: "tech-body-page-2-title", bodyKey: "tech-body-page-2-body", nextKey: "tech-body-page-2-next", prevKey: "tech-body-page-2-prev" },
   {
+    titleKey: "tech-body-page-why-title",
+    bodyKey: "tech-body-page-why-body",
+    nextKey: "tech-body-page-why-next",
+    prevKey: "tech-body-page-why-prev",
+  },
+  {
     titleKey: "tech-body-page-3-title",
     bodyKey: "tech-body-page-3-body",
     sectionTitleKey: "tech-body-page-3-subtitle",
@@ -73,7 +79,7 @@ const SECTION_ITEMS: SectionItem[] = [
     titleKey: "tech-body-page-6-title",
     bodyKey: "tech-body-page-6-body",
     videoTitleKey: "tech-body-page-6-video-title",
-    videoEmbedUrl: "https://www.youtube-nocookie.com/embed/p8VD26dwU14",
+    videoEmbedUrl: "https://www.youtube-nocookie.com/embed/Lxk9Yu1eJYI?si=ok5kKliaBkjebA-u",
     nextKey: "tech-body-page-6-next",
     prevKey: "tech-body-page-6-prev",
   },
