@@ -1,5 +1,17 @@
 # WPT Site
 
+Technical website for Waste Power Tech.
+The repository documents and implements the public web platform for
+the Waste -> Power -> Technology system narrative.
+
+## Repository Description
+
+This project contains the frontend code, public assets, and quality
+automation for the WPT website. The site explains waste intake,
+power output, and the supporting technology with a technical and
+documentation-first presentation. References to the process use the
+term `molecular disintegration`.
+
 Current implementation snapshot for the `wpt-site` codebase.
 
 Status date: 2026-02-26

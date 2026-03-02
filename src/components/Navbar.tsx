@@ -98,21 +98,21 @@ export default function Navbar() {
 
                     {/* NAV ITEMS */}
                     <Box sx={{ display: "flex", alignItems: "center", gap: "0.5rem", ml: "auto" }}>
-                            <Box
-                                sx={{
-                                    position: "relative",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    alignSelf: "stretch",
-                                    "&:hover .tech-chevron": {
-                                        transform: "rotate(225deg) translateY(1px)",
-                                    },
-                                    "&:hover .tech-submenu": {
-                                        opacity: 1,
-                                        pointerEvents: "auto",
-                                    },
-                                }}
-                            >
+                        <Box
+                            sx={{
+                                position: "relative",
+                                display: "flex",
+                                alignItems: "center",
+                                alignSelf: "stretch",
+                                "&:hover .tech-chevron": {
+                                    transform: "rotate(225deg) translateY(1px)",
+                                },
+                                "&:hover .tech-submenu": {
+                                    opacity: 1,
+                                    pointerEvents: "auto",
+                                },
+                            }}
+                        >
                             <Button
                                 component={RouterLink}
                                 to="/technology"
@@ -240,7 +240,7 @@ export default function Navbar() {
                                 }
                             }}
                         >
-                            {t("technology-brochure")}
+                            {t("commercial-presentation")}
                         </Button>
 
                         {/* LOCALE DROPDOWN */}

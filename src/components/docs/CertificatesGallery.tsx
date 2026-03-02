@@ -1,16 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Box, Button, ButtonBase, Dialog, Typography, useMediaQuery } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 type Certificate = {
   src: string;
-  title: string;
+  titleKey: string;
+  defaultTitle: string;
 };
 
 const CERTIFICATES: Certificate[] = [
-  { src: "/docs/certificate4.png", title: "Certificate 4" },
-  { src: "/docs/certificate1.png", title: "Certificate 1" },
-  { src: "/docs/certificate2.png", title: "Certificate 2" },
-  { src: "/docs/certificate3.png", title: "Certificate 3" },
+  { src: "/docs/certificate4.png", titleKey: "docs.certificates.title4", defaultTitle: "Certificate 4" },
+  { src: "/docs/certificate1.png", titleKey: "docs.certificates.title1", defaultTitle: "Certificate 1" },
+  { src: "/docs/certificate2.png", titleKey: "docs.certificates.title2", defaultTitle: "Certificate 2" },
+  { src: "/docs/certificate3.png", titleKey: "docs.certificates.title3", defaultTitle: "Certificate 3" },
 ];
 
 const MIN_ZOOM = 0.2;
@@ -18,6 +20,7 @@ const MAX_ZOOM = 3.4;
 const ZOOM_STEP = 0.2;
 
 export default function CertificatesGallery() {
+  const { t } = useTranslation();
   const [activeCertificate, setActiveCertificate] = useState<Certificate | null>(null);
   const [zoomLevel, setZoomLevel] = useState<number>(1);
   const [naturalSize, setNaturalSize] = useState<{ width: number; height: number } | null>(null);
@@ -28,6 +31,9 @@ export default function CertificatesGallery() {
 
   const canZoomOut = zoomLevel > MIN_ZOOM;
   const canZoomIn = zoomLevel < MAX_ZOOM;
+
+  const getCertificateTitle = (certificate: Certificate) =>
+    t(certificate.titleKey, { defaultValue: certificate.defaultTitle });
 
   useEffect(() => {
     if (!activeCertificate) return;
@@ -50,7 +56,9 @@ export default function CertificatesGallery() {
       if (!isMounted) return;
       setNaturalSize({ width: image.naturalWidth, height: image.naturalHeight });
     };
-    return () => { isMounted = false; };
+    return () => {
+      isMounted = false;
+    };
   }, [activeCertificate]);
 
   useEffect(() => {
@@ -117,9 +125,6 @@ export default function CertificatesGallery() {
       }}
     >
       {isDesktop ? (
-        // ── DESKTOP (md+): all 4 certificates in a single row ──
-        // The container already has a fixed height from DocsPillar (flex: 1, minHeight: 0)
-        // so we just need to fill it and let images scale naturally via maxHeight: 100%
         <Box
           sx={{
             flex: 1,
@@ -134,48 +139,53 @@ export default function CertificatesGallery() {
             overflow: "hidden",
           }}
         >
-          {CERTIFICATES.map((certificate) => (
-            <ButtonBase
-              key={certificate.src}
-              onClick={() => handleOpen(certificate)}
-              sx={{
-                border: "none",
-                background: "transparent",
-                color: "inherit",
-                p: 0,
-                // Equal share of the row width, never overflows
-                flex: "1 1 0",
-                minWidth: 0,
-                height: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                transition: "transform 0.22s linear",
-                "&:hover": { transform: "scale(1.04)" },
-              }}
-            >
-              <Box
-                component="img"
-                src={certificate.src}
-                alt={certificate.title}
-                loading="lazy"
-                decoding="async"
+          {CERTIFICATES.map((certificate) => {
+            const certificateTitle = getCertificateTitle(certificate);
+
+            return (
+              <ButtonBase
+                key={certificate.src}
+                onClick={() => handleOpen(certificate)}
+                aria-label={t("docs.certificates.open", {
+                  defaultValue: "Open {{title}}",
+                  title: certificateTitle,
+                })}
                 sx={{
-                  display: "block",
-                  // max constraints keep it inside its flex cell at any viewport size
-                  maxWidth: "100%",
-                  maxHeight: "100%",
-                  width: "auto",
-                  height: "auto",
-                  objectFit: "contain",
+                  border: "none",
+                  background: "transparent",
+                  color: "inherit",
+                  p: 0,
+                  flex: "1 1 0",
+                  minWidth: 0,
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                  transition: "transform 0.22s linear",
+                  "&:hover": { transform: "scale(1.04)" },
                 }}
-              />
-            </ButtonBase>
-          ))}
+              >
+                <Box
+                  component="img"
+                  src={certificate.src}
+                  alt={certificateTitle}
+                  loading="lazy"
+                  decoding="async"
+                  sx={{
+                    display: "block",
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
+                  }}
+                />
+              </ButtonBase>
+            );
+          })}
         </Box>
       ) : (
-        // ── MOBILE / NARROW TABLET: vertical stack, scrollable ──
         <Box
           sx={{
             flex: 1,
@@ -189,40 +199,48 @@ export default function CertificatesGallery() {
             overflowY: "auto",
           }}
         >
-          {CERTIFICATES.map((certificate) => (
-            <ButtonBase
-              key={certificate.src}
-              onClick={() => handleOpen(certificate)}
-              sx={{
-                border: "none",
-                background: "transparent",
-                color: "inherit",
-                p: 0,
-                width: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                transition: "transform 0.22s linear",
-                "&:hover": { transform: "scale(1.03)" },
-              }}
-            >
-              <Box
-                component="img"
-                src={certificate.src}
-                alt={certificate.title}
-                loading="lazy"
-                decoding="async"
+          {CERTIFICATES.map((certificate) => {
+            const certificateTitle = getCertificateTitle(certificate);
+
+            return (
+              <ButtonBase
+                key={certificate.src}
+                onClick={() => handleOpen(certificate)}
+                aria-label={t("docs.certificates.open", {
+                  defaultValue: "Open {{title}}",
+                  title: certificateTitle,
+                })}
                 sx={{
-                  display: "block",
-                  maxWidth: "100%",
-                  height: "auto",
-                  maxHeight: "22vh",
-                  objectFit: "contain",
+                  border: "none",
+                  background: "transparent",
+                  color: "inherit",
+                  p: 0,
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                  transition: "transform 0.22s linear",
+                  "&:hover": { transform: "scale(1.03)" },
                 }}
-              />
-            </ButtonBase>
-          ))}
+              >
+                <Box
+                  component="img"
+                  src={certificate.src}
+                  alt={certificateTitle}
+                  loading="lazy"
+                  decoding="async"
+                  sx={{
+                    display: "block",
+                    maxWidth: "100%",
+                    height: "auto",
+                    maxHeight: "22vh",
+                    objectFit: "contain",
+                  }}
+                />
+              </ButtonBase>
+            );
+          })}
         </Box>
       )}
 
@@ -261,12 +279,13 @@ export default function CertificatesGallery() {
                 color: "#000000",
               }}
             >
-              {activeCertificate?.title}
+              {activeCertificate ? getCertificateTitle(activeCertificate) : ""}
             </Typography>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <Button
                 onClick={handleZoomOut}
                 disabled={!canZoomOut}
+                aria-label={t("docs.certificates.zoomOut", { defaultValue: "Zoom out" })}
                 sx={{ minWidth: "2.2rem", px: 1, py: 0.6, bgcolor: "#f3f3f3", color: "#000000", "&:hover": { bgcolor: "#e9e9e9" } }}
               >
                 -
@@ -286,6 +305,7 @@ export default function CertificatesGallery() {
               <Button
                 onClick={handleZoomIn}
                 disabled={!canZoomIn}
+                aria-label={t("docs.certificates.zoomIn", { defaultValue: "Zoom in" })}
                 sx={{ minWidth: "2.2rem", px: 1, py: 0.6, bgcolor: "#f3f3f3", color: "#000000", "&:hover": { bgcolor: "#e9e9e9" } }}
               >
                 +
@@ -294,7 +314,7 @@ export default function CertificatesGallery() {
                 onClick={handleClose}
                 sx={{ minWidth: "4rem", px: 1.25, py: 0.6, bgcolor: "#000000", color: "#ffffff", "&:hover": { bgcolor: "#111111" } }}
               >
-                Close
+                {t("docs.certificates.close", { defaultValue: "Close" })}
               </Button>
             </Box>
           </Box>
@@ -314,7 +334,7 @@ export default function CertificatesGallery() {
                 <Box
                   component="img"
                   src={activeCertificate.src}
-                  alt={activeCertificate.title}
+                  alt={getCertificateTitle(activeCertificate)}
                   sx={{
                     display: "block",
                     width: displayWidth ? `${displayWidth}px` : "auto",

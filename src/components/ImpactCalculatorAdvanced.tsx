@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+﻿import { useCallback, useMemo, useState } from "react";
 import {
   Box,
   Button,
@@ -179,13 +179,13 @@ export default function ImpactCalculatorAdvanced() {
 
   const hoursCard: ImpactCardProps | null = totalAmountMode && stats.hoursToProcess !== null
     ? {
-        value: stats.hoursToProcess < 1 ? `${Math.round(stats.hoursToProcess * 60)} min` : `${stats.hoursToProcess.toFixed(1)} h`,
-        label: tStr(t, "calc.metric.processingTime", "Processing Time"),
-        sub: tStr(t, "calc.metric.processingTimeSub", "To process total amount"),
-        color: "#1a1a1a",
-        icon: FaClock,
-        highlight: true,
-      }
+      value: stats.hoursToProcess < 1 ? `${Math.round(stats.hoursToProcess * 60)} min` : `${stats.hoursToProcess.toFixed(1)} h`,
+      label: tStr(t, "calc.metric.processingTime", "Processing Time"),
+      sub: tStr(t, "calc.metric.processingTimeSub", "To process total amount"),
+      color: "#1a1a1a",
+      icon: FaClock,
+      highlight: true,
+    }
     : null;
 
   const handleExportPDF = useCallback(async () => {
@@ -315,7 +315,7 @@ export default function ImpactCalculatorAdvanced() {
                       [tStr(t, "calc.summary.electrical", "Electrical"), `${stats.mwhElectricPerHour} MWh/h`],
                     ].map(([label, value]) => (
                       <Box key={label as string}>
-                        <Typography sx={{ fontSize: "0.59rem", opacity: 0.4, textTransform: "uppercase", letterSpacing: "0.06em", mb: "0.1rem" }}>{label}</Typography>
+                        <Typography sx={{ fontSize: "0.59rem", textTransform: "uppercase", letterSpacing: "0.06em", mb: "0.1rem" }}>{label}</Typography>
                         <Typography sx={{ fontWeight: 800, fontSize: { xs: "0.85rem", xl: "0.95rem" }, lineHeight: 1.2 }}>{value}</Typography>
                       </Box>
                     ))}
@@ -370,7 +370,7 @@ export default function ImpactCalculatorAdvanced() {
                             <Typography sx={{ fontWeight: 800, fontSize: "1rem", lineHeight: 1 }}>
                               {stats.hoursToProcess < 1 ? `${Math.round(stats.hoursToProcess * 60)} ${tStr(t, "unit.minutes", "minutes")}` : `${stats.hoursToProcess.toFixed(2)} ${tStr(t, "unit.hours", "hours")}`}
                             </Typography>
-                            <Typography sx={{ fontSize: "0.65rem", opacity: 0.55, mt: "0.15rem" }}>
+                            <Typography sx={{ fontSize: "0.65rem", opacity: 1, mt: "0.15rem" }}>
                               {tStr(t, "calc.totalAmount.result", "to process at current throughput rate")}
                             </Typography>
                           </Box>

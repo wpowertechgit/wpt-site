@@ -2,6 +2,7 @@
 import { Box, Fade, ThemeProvider, Typography, createTheme, useMediaQuery } from "@mui/material";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Center, ScrollControls, useScroll } from "@react-three/drei";
+import { motion } from "framer-motion";
 import { easing } from "maath";
 import * as THREE from "three";
 import { useTranslation } from "react-i18next";
@@ -510,6 +511,77 @@ function Overlay({
   );
 }
 
+function ScrollHintOverlay({
+  visible,
+}: {
+  visible: boolean;
+}) {
+  const { t } = useTranslation();
+
+  return (
+    <Fade in={visible} timeout={{ enter: 180, exit: 180 }} unmountOnExit>
+      <Box
+        sx={{
+          position: "absolute",
+          left: { xs: 16, md: 24 },
+          bottom: { xs: 20, md: 28 },
+          zIndex: 2,
+          pointerEvents: "none",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1.5,
+            px: { xs: 1.25, md: 1.5 },
+            py: { xs: 0.9, md: 1.1 },
+            bgcolor: "#ffffff",
+            border: "1px solid #000000",
+            boxShadow: "0 8px 18px rgba(0,0,0,0.06)",
+          }}
+        >
+          <Box
+            sx={{
+              position: "relative",
+              width: 18,
+              height: 34,
+              flexShrink: 0,
+              border: "1px solid #000000",
+              overflow: "hidden",
+            }}
+          >
+            <motion.div
+              animate={{ y: [0, 14, 0], opacity: [0.45, 1, 0.45] }}
+              transition={{ duration: 0.9, ease: "linear", repeat: Number.POSITIVE_INFINITY }}
+              style={{
+                position: "absolute",
+                top: 4,
+                left: 3,
+                right: 3,
+                height: 7,
+                background: "#0000FF",
+              }}
+            />
+          </Box>
+          <Typography
+            sx={{
+              fontFamily: "Figtree, sans-serif",
+              fontSize: { xs: "0.76rem", md: "0.82rem" },
+              fontWeight: 500,
+              lineHeight: 1.25,
+              letterSpacing: "0.01em",
+              color: "#000000",
+            }}
+          >
+            {t("tech-scroll-hint", { defaultValue: "Scroll to progress" })}
+          </Typography>
+        </Box>
+      </Box>
+    </Fade>
+  );
+}
+
 function supportsTechnologyRig() {
   if (typeof window === "undefined") return true;
   if (typeof document === "undefined") return true;
@@ -562,9 +634,22 @@ export default function TechnologyScrollRig() {
   const [activeSection, setActiveSection] = useState(0);
   const [viewportSize, setViewportSize] = useState<ViewportSize>(() => getCurrentViewport());
   const [hasRigSupport, setHasRigSupport] = useState(true);
+  const [showScrollHint, setShowScrollHint] = useState(false);
+  const rigContainerRef = useRef<HTMLDivElement | null>(null);
+  const hasShownScrollHintRef = useRef(false);
+  const hintTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     setHasRigSupport(supportsTechnologyRig());
+  }, []);
+
+  const dismissScrollHint = useCallback(() => {
+    if (hintTimeoutRef.current !== null) {
+      window.clearTimeout(hintTimeoutRef.current);
+      hintTimeoutRef.current = null;
+    }
+
+    setShowScrollHint(false);
   }, []);
 
   useEffect(() => {
@@ -585,6 +670,56 @@ export default function TechnologyScrollRig() {
       window.removeEventListener("resize", updateViewport);
       window.removeEventListener("orientationchange", updateViewport);
       window.visualViewport?.removeEventListener("resize", updateViewport);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!hasRigSupport) return;
+
+    const element = rigContainerRef.current;
+    if (!element) return;
+
+    const revealScrollHint = () => {
+      if (hasShownScrollHintRef.current) return;
+
+      hasShownScrollHintRef.current = true;
+      setShowScrollHint(true);
+      hintTimeoutRef.current = window.setTimeout(() => {
+        setShowScrollHint(false);
+        hintTimeoutRef.current = null;
+      }, 6000);
+    };
+
+    if (typeof window === "undefined" || typeof window.IntersectionObserver === "undefined") {
+      revealScrollHint();
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (!entry?.isIntersecting || entry.intersectionRatio < 0.45) return;
+
+        revealScrollHint();
+        observer.disconnect();
+      },
+      {
+        threshold: [0.45],
+      },
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [hasRigSupport]);
+
+  useEffect(() => {
+    return () => {
+      if (hintTimeoutRef.current !== null) {
+        window.clearTimeout(hintTimeoutRef.current);
+      }
     };
   }, []);
 
@@ -612,6 +747,8 @@ export default function TechnologyScrollRig() {
 
   const handleRigWheelCapture = useCallback(
     (event: React.WheelEvent<HTMLDivElement>) => {
+      dismissScrollHint();
+
       if (isMobile || isSmallScreen) return;
 
       const atLastSection = activeSection >= sectionPoses.length - 1;
@@ -626,12 +763,14 @@ export default function TechnologyScrollRig() {
         });
       }
     },
-    [activeSection, isMobile, isSmallScreen, sectionPoses.length],
+    [activeSection, dismissScrollHint, isMobile, isSmallScreen, sectionPoses.length],
   );
 
   return (
     <Box
+      ref={rigContainerRef}
       onWheelCapture={handleRigWheelCapture}
+      onTouchStartCapture={dismissScrollHint}
       sx={{
         width: "100%",
         height: isMobile ? "100dvh" : "100vh",
@@ -674,6 +813,7 @@ export default function TechnologyScrollRig() {
       </Canvas>
 
       <Overlay activePose={sectionPoses[activeSection]} activeSection={activeSection} isMobile={usePhoneStyleOverlay} />
+      <ScrollHintOverlay visible={showScrollHint} />
     </Box>
   );
 }

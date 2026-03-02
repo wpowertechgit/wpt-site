@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 import { BsFileEarmarkPdfFill } from "react-icons/bs";
 
 const DOCUMENT_KEYS = ["document3", "document4", "document5", "document6", "document7", "document8"] as const;
-const DIRECTIVES = [
-  "EU Directive: 2000/76 EG 2014/35/EU 2014/30/EU 2006/42/EC",
-  "SR EN ISO12100:2011",
-  "SR EN 60204 1:2007",
-  "SR EN 62061:2005",
-  "SR EN 842+A1:2009",
+const DIRECTIVE_KEYS = [
+  "docs.documents.directive1",
+  "docs.documents.directive2",
+  "docs.documents.directive3",
+  "docs.documents.directive4",
+  "docs.documents.directive5",
 ] as const;
 
 export default function DocumentsPillarContent() {
@@ -26,7 +26,9 @@ export default function DocumentsPillarContent() {
           maxWidth: "70ch",
         }}
       >
-        Agreements, approvals, and authorizations are listed in this module as documentation records.
+        {t("docs.documents.intro", {
+          defaultValue: "Agreements, approvals, and authorizations are listed in this module as documentation records.",
+        })}
       </Typography>
 
       <Box sx={{ minHeight: 0, overflow: "auto" }}>
@@ -37,9 +39,9 @@ export default function DocumentsPillarContent() {
             gridTemplateColumns: "1fr",
           }}
         >
-          {Array.from({ length: Math.max(DOCUMENT_KEYS.length, DIRECTIVES.length) }).map((_, index, rows) => {
+          {Array.from({ length: Math.max(DOCUMENT_KEYS.length, DIRECTIVE_KEYS.length) }).map((_, index, rows) => {
             const entryKey = DOCUMENT_KEYS[index];
-            const directive = DIRECTIVES[index];
+            const directiveKey = DIRECTIVE_KEYS[index];
             const isLastRow = index === rows.length - 1;
 
             return (
@@ -93,7 +95,7 @@ export default function DocumentsPillarContent() {
                     py: { xs: 0.7, md: 0.8, lg: 0.92, xl: 1.05, xxl: 1.25, xxxl: 1.5 },
                   }}
                 >
-                  {directive ? (
+                  {directiveKey ? (
                     <Typography
                       sx={{
                         fontFamily: "Figtree",
@@ -103,7 +105,7 @@ export default function DocumentsPillarContent() {
                         color: "#ffffff",
                       }}
                     >
-                      • {directive}
+                      {"\u2022"} {t(directiveKey)}
                     </Typography>
                   ) : null}
                 </Box>

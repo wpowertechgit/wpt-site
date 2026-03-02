@@ -241,7 +241,7 @@ const NavbarMobile = () => {
             {/* Brochure */}
             <ListItem component="a" href={brochureHref} target="_blank" rel="noreferrer" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
               <ListItemButton sx={{ backgroundColor: '#0000FF', color: '#FFFFFF' }}>
-                <ListItemText primary={t("technology-brochure")} primaryTypographyProps={{ fontFamily: 'Stack Sans Headline', fontWeight: 700 }} />
+                <ListItemText primary={t("commercial-presentation")} primaryTypographyProps={{ fontFamily: 'Stack Sans Headline', fontWeight: 700 }} />
               </ListItemButton>
             </ListItem>
 

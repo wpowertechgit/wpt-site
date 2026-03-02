@@ -1,12 +1,14 @@
 import { Box, Link, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const BRAND_FILES = [
-  { label: "Brochure (English)", href: "/docs/wpt-%20brosura-en.pdf", flag: "/us.png" },
-  { label: "Brochure (Romanian)", href: "/docs/wpt-%20brosura-ro.pdf", flag: "/ro.png" },
-  { label: "Brand Book", href: "/docs/wpt-brand-book.pdf", flag: null },
-];
+  { labelKey: "docs.brand.fileEn", defaultLabel: "Brochure (English)", href: "/docs/wpt-%20brosura-en.pdf", flag: "/us.png" },
+  { labelKey: "docs.brand.fileRo", defaultLabel: "Brochure (Romanian)", href: "/docs/wpt-%20brosura-ro.pdf", flag: "/ro.png" },
+] as const;
 
 export default function BrandPillarContent() {
+  const { t } = useTranslation();
+
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 1.25, md: 1.6, lg: 1.9, xl: 2.2, xxl: 2.7, xxxl: 3.2 }, height: "100%" }}>
       <Typography
@@ -19,7 +21,9 @@ export default function BrandPillarContent() {
           maxWidth: "62ch",
         }}
       >
-        Brochures and brand assets are published in this module in PDF format.
+        {t("docs.brand.intro", {
+          defaultValue: "Brochures and brand assets are published in this module in PDF format.",
+        })}
       </Typography>
 
       <Box sx={{ display: "grid", gap: 1 }}>
@@ -69,7 +73,7 @@ export default function BrandPillarContent() {
                   }}
                 />
               ) : null}
-              <span>{file.label}</span>
+              <span>{t(file.labelKey, { defaultValue: file.defaultLabel })}</span>
             </Box>
           </Link>
         ))}

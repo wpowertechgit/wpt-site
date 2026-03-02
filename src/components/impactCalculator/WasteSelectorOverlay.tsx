@@ -53,14 +53,14 @@ export default function WasteSelectorOverlay({
                   {tStr(t, "calc.selector.subtitle", "Click to add or remove from your mix")}
                 </Typography>
               </Box>
-              <Box sx={{ display: "flex", gap: { xs: "0.4rem", xxl: "0.5vw", xxxl: "0.6vw" }, alignItems: "center" }}>
+              <Box sx={{ display: "flex", gap: { xs: "0.3rem", xxl: "0.5vw", xxxl: "0.6vw" }, alignItems: "center" }}>
                 <Button
                   onClick={(event) => {
                     event.stopPropagation();
                     onOpenCustomBuilder();
                   }}
                   startIcon={<FaLayerGroup size={12} />}
-                  sx={{ bgcolor: "#0000FF", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "0.75rem", sm: "1rem", xxl: "0.95vw", xxxl: "1.1vw" }, py: { xs: "0.4rem", sm: "0.45rem", xxl: "0.42vw", xxxl: "0.5vw" }, fontSize: { xs: "0.68rem", sm: "0.78rem", xxl: "0.82vw", xxxl: "1vw" }, textTransform: "none", "&:hover": { bgcolor: "#0000cc" }, flexShrink: 0 }}
+                  sx={{ bgcolor: "#0000FF", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "0.5rem", sm: "1rem", xxl: "0.95vw", xxxl: "1.1vw" }, py: { xs: "0.35rem", sm: "0.45rem", xxl: "0.42vw", xxxl: "0.5vw" }, fontSize: { xs: "0.65rem", sm: "0.78rem", xxl: "0.82vw", xxxl: "1vw" }, textTransform: "none", "&:hover": { bgcolor: "#0000cc" }, whiteSpace: "normal", lineHeight: 1.3 }}
                 >
                   {tStr(t, "calc.selector.createCustom", "Create Custom Mix")}
                 </Button>
@@ -121,7 +121,7 @@ export default function WasteSelectorOverlay({
               </Typography>
               <Button
                 onClick={onClose}
-                sx={{ bgcolor: "#000", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "1rem", sm: "1.5rem", xxl: "1.2vw", xxxl: "1.4vw" }, py: { xs: "0.45rem", sm: "0.5rem", xxl: "0.42vw", xxxl: "0.5vw" }, fontSize: { xs: "0.78rem", sm: "0.85rem", xxl: "0.88vw", xxxl: "1.05vw" }, textTransform: "none", "&:hover": { bgcolor: "#0000FF" } }}
+                sx={{ bgcolor: "#000", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "0.75rem", sm: "1.5rem", xxl: "1.2vw", xxxl: "1.4vw" }, py: { xs: "0.4rem", sm: "0.5rem", xxl: "0.42vw", xxxl: "0.5vw" }, fontSize: { xs: "0.75rem", sm: "0.85rem", xxl: "0.88vw", xxxl: "1.05vw" }, textTransform: "none", whiteSpace: "normal", lineHeight: 1.3, "&:hover": { bgcolor: "#0000FF" } }}
               >
                 {tStr(t, "calc.selector.confirm", "Confirm selection")}
               </Button>

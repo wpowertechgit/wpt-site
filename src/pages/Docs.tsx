@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Box, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 
 import BrandPillarContent from "../components/docs/BrandPillarContent";
@@ -18,30 +19,6 @@ type PillarConfig = {
   textColor: string;
 };
 
-const PILLARS: PillarConfig[] = [
-  {
-    id: "blue",
-    title: "Core Certifications",
-    collapsedLabel: "Core Certifications",
-    backgroundColor: "#0000FF",
-    textColor: "#FFFFFF",
-  },
-  {
-    id: "gray",
-    title: "Documents, Agreements, Approvals, Authorizations",
-    collapsedLabel: "Documents, Agreements, Approvals, Authorizations",
-    backgroundColor: "#8E8E8E",
-    textColor: "#FFFFFF",
-  },
-  {
-    id: "red",
-    title: "Brochures and Brand Assets",
-    collapsedLabel: "Brochures and Brand Assets",
-    backgroundColor: "#ED1C24",
-    textColor: "#FFFFFF",
-  },
-];
-
 const MOBILE_STACK_ORDER: PillarId[] = ["blue", "gray", "red"];
 const MOVE_DURATION_MS = 320;
 const EXPAND_DURATION_MS = 560;
@@ -55,6 +32,7 @@ function renderPillarContent(id: PillarId) {
 }
 
 export default function Docs() {
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const [activePillar, setActivePillar] = useState<PillarId>("blue");
   const [desktopOrder, setDesktopOrder] = useState<PillarId[]>(["blue", "gray", "red"]);
@@ -65,6 +43,33 @@ export default function Docs() {
   const isTabletAndUp = useMediaQuery("(min-width:768px)");
   const isUnder1000 = useMediaQuery("(max-width:1000px)");
 
+  const pillars = useMemo<PillarConfig[]>(
+    () => [
+      {
+        id: "blue",
+        title: t("docs.pillar.blue", { defaultValue: "Core Certifications" }),
+        collapsedLabel: t("docs.pillar.blue", { defaultValue: "Core Certifications" }),
+        backgroundColor: "#0000FF",
+        textColor: "#FFFFFF",
+      },
+      {
+        id: "gray",
+        title: t("docs.pillar.gray", { defaultValue: "Documents, Agreements, Approvals, Authorizations" }),
+        collapsedLabel: t("docs.pillar.gray", { defaultValue: "Documents, Agreements, Approvals, Authorizations" }),
+        backgroundColor: "#8E8E8E",
+        textColor: "#FFFFFF",
+      },
+      {
+        id: "red",
+        title: t("docs.pillar.red", { defaultValue: "Brochures and Brand Assets" }),
+        collapsedLabel: t("docs.pillar.red", { defaultValue: "Brochures and Brand Assets" }),
+        backgroundColor: "#ED1C24",
+        textColor: "#FFFFFF",
+      },
+    ],
+    [t],
+  );
+
   useEffect(() => {
     return () => {
       transitionTimersRef.current.forEach((timerId) => window.clearTimeout(timerId));
@@ -74,9 +79,9 @@ export default function Docs() {
   const orderedPillars = useMemo(
     () =>
       desktopOrder
-        .map((pillarId) => PILLARS.find((pillar) => pillar.id === pillarId))
+        .map((pillarId) => pillars.find((pillar) => pillar.id === pillarId))
         .filter((pillar): pillar is PillarConfig => Boolean(pillar)),
-    [desktopOrder]
+    [desktopOrder, pillars]
   );
 
   const clearTransitionTimers = () => {
@@ -160,7 +165,7 @@ export default function Docs() {
         }}
       >
         {MOBILE_STACK_ORDER.map((pillarId) => {
-          const pillar = PILLARS.find((entry) => entry.id === pillarId);
+          const pillar = pillars.find((entry) => entry.id === pillarId);
           if (!pillar) return null;
           const isActive = activePillar === pillar.id;
 
