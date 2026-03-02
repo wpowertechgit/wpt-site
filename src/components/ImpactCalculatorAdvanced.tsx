@@ -38,7 +38,7 @@ import WasteInfoDialog from "./impactCalculator/WasteInfoDialog";
 import WasteSelectorOverlay from "./impactCalculator/WasteSelectorOverlay";
 
 export default function ImpactCalculatorAdvanced() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [activeKeys, setActiveKeys] = useState<string[]>([]);
   const [customTypes, setCustomTypes] = useState<WasteType[]>([]);
@@ -154,7 +154,7 @@ export default function ImpactCalculatorAdvanced() {
       hasInput: totalTonnesPerHour > 0,
       annualHours,
     };
-  }, [activeKeys, allTypes, i18n.language, t, totalAmountMode, totalAmountUnit, totalAmountValue, wasteInputs]);
+  }, [activeKeys, allTypes, t, totalAmountMode, totalAmountUnit, totalAmountValue, wasteInputs]);
 
   const ncvArMap = useMemo(() => {
     const map: Record<string, number> = {};
@@ -226,47 +226,47 @@ export default function ImpactCalculatorAdvanced() {
           id="calculator"
           sx={{
             position: "relative",
-            py: { xs: "4rem", xl: "8rem" },
+            py: { xs: "4rem", xl: "8rem", xxl: "9rem", xxxl: "10rem" },
             bgcolor: "#f9f9f9",
-            borderLeft: { xs: "0.4rem solid #0000FF", xl: "1.25rem solid #0000FF" },
-            px: { xs: "1.25rem", xl: "4%", xxl: "4%", xxxl: "6%" },
+            borderLeft: { xs: "0.4rem solid #0000FF", xl: "1.25rem solid #0000FF", xxl: "1.5rem solid #0000FF", xxxl: "1.75rem solid #0000FF" },
+            px: { xs: "1.25rem", xl: "4%", xxl: "3.5%", xxxl: "5%" },
             "&::before": {
               content: '""',
               position: "absolute",
               top: 0,
-              left: { xs: "1.25rem", xl: "4%", xxl: "4%", xxxl: "6%" },
-              right: { xs: "1.25rem", xl: "4%", xxl: "4%", xxxl: "6%" },
+              left: { xs: "1.25rem", xl: "4%", xxl: "3.5%", xxxl: "5%" },
+              right: { xs: "1.25rem", xl: "4%", xxl: "3.5%", xxxl: "5%" },
               borderTop: "0.2rem solid #000",
             },
           }}
         >
           <Container maxWidth={false}>
-            <Box sx={{ mb: { xs: "2.5rem", xl: "4rem" } }}>
+            <Box sx={{ mb: { xs: "2.5rem", xl: "4rem", xxl: "4.75rem", xxxl: "5.5rem" } }}>
               <Box sx={{ display: "flex", alignItems: "center", gap: "1.25rem", mb: "0.6rem", flexWrap: "wrap" }}>
-                <Box component="img" src="/wpt-black-compact-logo.svg" alt="Waste Powertech logo" sx={{ width: { xs: "6.5rem", xl: "10rem" }, height: "auto" }} />
-                <Typography variant="h2" sx={{ fontFamily: "Stack Sans Headline, sans-serif", fontWeight: 700, fontSize: { xs: "1.8rem", md: "2.5rem", xl: "3.75rem", xxxl: "5rem" }, lineHeight: 1.1, mb: 0 }}>
+                <Box component="img" src="/wpt-black-compact-logo.svg" alt="Waste Powertech logo" sx={{ width: { xs: "6.5rem", xl: "10rem", xxl: "13rem", xxxl: "15.5rem" }, height: "auto" }} />
+                <Typography variant="h2" sx={{ fontFamily: "Stack Sans Headline, sans-serif", fontWeight: 700, fontSize: { xs: "1.8rem", md: "2.5rem", xl: "3.75rem", xxl: "4.4rem", xxxl: "5.4rem" }, lineHeight: 1.1, mb: 0 }}>
                   {tStr(t, "calculator-title", "Impact Calculator")}
                 </Typography>
               </Box>
-              <Typography sx={{ color: "#999", fontSize: { xs: "0.82rem", xl: "0.95rem" }, maxWidth: "55ch" }}>
+              <Typography sx={{ color: "#999", fontSize: { xs: "0.82rem", xl: "0.95rem", xxl: "1.08rem", xxxl: "1.22rem" }, maxWidth: { xs: "55ch", xxl: "64ch", xxxl: "72ch" } }}>
                 {tStr(t, "calc.subtitle", "Build your waste mix — each type uses the")}{" "}
                 <strong style={{ color: "#333" }}>EN 14918</strong>{" "}
                 {tStr(t, "calc.subtitle2", "moisture correction formula for real energy yield.")}
               </Typography>
             </Box>
 
-            <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", lg: "5fr 7fr" }, gap: { xs: "2.5rem", xl: "4rem" }, alignItems: "flex-start" }}>
+            <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", lg: "5fr 7fr", xxl: "5fr 7.5fr", xxxl: "5fr 8fr" }, gap: { xs: "2.5rem", xl: "4rem", xxl: "4.75rem", xxxl: "5.5rem" }, alignItems: "flex-start" }}>
               <Box>
                 <Box sx={{ mb: "1.25rem", display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
                   <Button
                     onClick={() => setSelectorOpen(true)}
                     startIcon={<FaPlus size={12} />}
-                    sx={{ bgcolor: "#000", color: "#fff", fontWeight: 700, borderRadius: 0, px: "1.4rem", py: "0.65rem", fontSize: { xs: "0.85rem", xl: "0.95rem" }, textTransform: "none", "&:hover": { bgcolor: "#0000FF" }, transition: "background-color 0.15s" }}
+                    sx={{ bgcolor: "#000", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "1.4rem", xxl: "2rem", xxxl: "2.45rem" }, py: { xs: "0.65rem", xxl: "0.95rem", xxxl: "1.15rem" }, fontSize: { xs: "0.85rem", xl: "0.95rem", xxl: "1.2rem", xxxl: "1.42rem" }, textTransform: "none", "& .MuiButton-startIcon svg": { width: { xxl: "1rem", xxxl: "1.2rem" }, height: { xxl: "1rem", xxxl: "1.2rem" } }, "&:hover": { bgcolor: "#0000FF" }, transition: "background-color 0.15s" }}
                   >
                     {tStr(t, "calc.addWaste", "Choose Waste Types")}
                   </Button>
                   {activeKeys.length > 0 && (
-                    <Typography sx={{ fontSize: "0.75rem", color: "#aaa" }}>
+                    <Typography sx={{ fontSize: { xs: "0.75rem", xxl: "0.85rem", xxxl: "1rem" }, color: "#aaa" }}>
                       {activeKeys.length} {tStr(t, "calc.typesSelected", "type(s) selected")}
                     </Typography>
                   )}
@@ -274,12 +274,12 @@ export default function ImpactCalculatorAdvanced() {
 
                 {activeKeys.length === 0 ? (
                   <Box sx={{ p: "2rem 1.5rem", border: "2px dashed #ddd", bgcolor: "#fff", textAlign: "center", mb: "1.25rem" }}>
-                    <Typography sx={{ color: "#ccc", fontSize: "0.85rem", mb: "0.4rem" }}>{tStr(t, "calc.emptyTitle", "No waste types selected yet")}</Typography>
-                    <Typography sx={{ color: "#ddd", fontSize: "0.75rem" }}>{tStr(t, "calc.emptyHint", 'Click "Choose Waste Types" to begin')}</Typography>
+                    <Typography sx={{ color: "#ccc", fontSize: { xs: "0.85rem", xxl: "0.98rem", xxxl: "1.12rem" }, mb: "0.4rem" }}>{tStr(t, "calc.emptyTitle", "No waste types selected yet")}</Typography>
+                    <Typography sx={{ color: "#ddd", fontSize: { xs: "0.75rem", xxl: "0.86rem", xxxl: "1rem" } }}>{tStr(t, "calc.emptyHint", 'Click "Choose Waste Types" to begin')}</Typography>
                   </Box>
                 ) : (
                   <Box sx={{ mb: "1.25rem" }}>
-                    <Typography sx={{ fontWeight: 700, fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#bbb", mb: "0.55rem" }}>
+                    <Typography sx={{ fontWeight: 700, fontSize: { xs: "0.7rem", xxl: "0.8rem", xxxl: "0.94rem" }, textTransform: "uppercase", letterSpacing: "0.1em", color: "#bbb", mb: "0.55rem" }}>
                       {tStr(t, "calc.mixLabel", "Waste mix — throughput & moisture")}
                     </Typography>
                     <AnimatePresence mode="popLayout">
@@ -308,25 +308,25 @@ export default function ImpactCalculatorAdvanced() {
                 )}
 
                 {stats.hasInput && (
-                  <Box sx={{ mb: "1.25rem", p: "1rem 1.25rem", bgcolor: "#000", color: "#fff", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.75rem" }}>
+                  <Box sx={{ mb: "1.25rem", p: { xs: "1rem 1.25rem", xxl: "1.2rem 1.5rem", xxxl: "1.4rem 1.8rem" }, bgcolor: "#000", color: "#fff", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: { xs: "0.75rem", xxl: "1rem", xxxl: "1.2rem" } }}>
                     {[
                       [tStr(t, "calc.summary.totalInput", "Total input"), `${stats.totalTonnesPerHour.toFixed(2)} ${tStr(t, "calc.summary.tph", "tonnes of waste/hour")}`],
                       [tStr(t, "calc.summary.thermal", "Thermal"), `${(stats.totalEnergyMJPerHour / 1000).toFixed(2)} GJ/h`],
                       [tStr(t, "calc.summary.electrical", "Electrical"), `${stats.mwhElectricPerHour} MWh/h`],
                     ].map(([label, value]) => (
                       <Box key={label as string}>
-                        <Typography sx={{ fontSize: "0.59rem", textTransform: "uppercase", letterSpacing: "0.06em", mb: "0.1rem" }}>{label}</Typography>
-                        <Typography sx={{ fontWeight: 800, fontSize: { xs: "0.85rem", xl: "0.95rem" }, lineHeight: 1.2 }}>{value}</Typography>
+                        <Typography sx={{ fontSize: { xs: "0.59rem", xxl: "0.68rem", xxxl: "0.8rem" }, textTransform: "uppercase", letterSpacing: "0.06em", mb: "0.1rem" }}>{label}</Typography>
+                        <Typography sx={{ fontWeight: 800, fontSize: { xs: "0.85rem", xl: "0.95rem", xxl: "1.08rem", xxxl: "1.24rem" }, lineHeight: 1.2 }}>{value}</Typography>
                       </Box>
                     ))}
                   </Box>
                 )}
 
                 <Box sx={{ mb: "1rem", border: "1px solid #e0e0e0", bgcolor: "#fff" }}>
-                  <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: "1rem", py: "0.65rem" }}>
+                  <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: { xs: "1rem", xxl: "1.25rem", xxxl: "1.5rem" }, py: { xs: "0.65rem", xxl: "0.85rem", xxxl: "1rem" } }}>
                     <Box sx={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
                       <FaClock size={11} color="#888" />
-                      <Typography sx={{ fontWeight: 700, fontSize: "0.73rem", textTransform: "uppercase", letterSpacing: "0.09em", color: "#555" }}>
+                      <Typography sx={{ fontWeight: 700, fontSize: { xs: "0.73rem", xxl: "0.84rem", xxxl: "0.98rem" }, textTransform: "uppercase", letterSpacing: "0.09em", color: "#555" }}>
                         {tStr(t, "calc.totalAmount.label", "Calculate processing time")}
                       </Typography>
                     </Box>
@@ -334,12 +334,12 @@ export default function ImpactCalculatorAdvanced() {
                       size="small"
                       checked={totalAmountMode}
                       onChange={(event) => setTotalAmountMode(event.target.checked)}
-                      sx={{ "& .MuiSwitch-thumb": { bgcolor: totalAmountMode ? "#0000FF" : "#ccc" }, "& .MuiSwitch-track": { bgcolor: totalAmountMode ? "#0000FF50" : "#e0e0e0" } }}
+                      sx={{ transform: { xxl: "scale(1.18)", xxxl: "scale(1.35)" }, transformOrigin: "right center", "& .MuiSwitch-thumb": { bgcolor: totalAmountMode ? "#0000FF" : "#ccc" }, "& .MuiSwitch-track": { bgcolor: totalAmountMode ? "#0000FF50" : "#e0e0e0" } }}
                     />
                   </Box>
                   <Collapse in={totalAmountMode}>
-                    <Box sx={{ px: "1rem", pb: "1rem", borderTop: "1px solid #f2f2f2" }}>
-                      <Typography sx={{ fontSize: "0.72rem", color: "#888", mt: "0.65rem", mb: "0.75rem" }}>
+                    <Box sx={{ px: { xs: "1rem", xxl: "1.25rem", xxxl: "1.5rem" }, pb: { xs: "1rem", xxl: "1.25rem", xxxl: "1.5rem" }, borderTop: "1px solid #f2f2f2" }}>
+                      <Typography sx={{ fontSize: { xs: "0.72rem", xxl: "0.82rem", xxxl: "0.96rem" }, color: "#888", mt: "0.65rem", mb: "0.75rem" }}>
                         {tStr(t, "calc.totalAmount.hint", "Enter the total amount of waste to process")}
                       </Typography>
                       <Box sx={{ display: "flex", gap: "0.6rem", alignItems: "center" }}>
@@ -357,27 +357,27 @@ export default function ImpactCalculatorAdvanced() {
                           value={totalAmountUnit}
                           onChange={(_, value) => value && setTotalAmountUnit(value)}
                           size="small"
-                          sx={{ "& .MuiToggleButton-root": { borderRadius: 0, fontWeight: 700, fontSize: "0.75rem", px: "0.75rem", border: "1px solid #ddd", "&.Mui-selected": { bgcolor: "#000", color: "#fff", "&:hover": { bgcolor: "#333" } } } }}
+                          sx={{ "& .MuiToggleButton-root": { borderRadius: 0, fontWeight: 700, fontSize: { xs: "0.75rem", xxl: "0.96rem", xxxl: "1.14rem" }, px: { xs: "0.75rem", xxl: "1.15rem", xxxl: "1.4rem" }, py: { xxl: "0.45rem", xxxl: "0.6rem" }, minHeight: { xxl: "3rem", xxxl: "3.5rem" }, border: "1px solid #ddd", "&.Mui-selected": { bgcolor: "#000", color: "#fff", "&:hover": { bgcolor: "#333" } } } }}
                         >
                           <ToggleButton value="t">t</ToggleButton>
                           <ToggleButton value="kg">kg</ToggleButton>
                         </ToggleButtonGroup>
                       </Box>
                       {stats.hoursToProcess !== null && (
-                        <Box sx={{ mt: "0.75rem", p: "0.6rem", bgcolor: "#000", color: "#fff", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                        <Box sx={{ mt: "0.75rem", p: { xs: "0.6rem", xxl: "0.8rem", xxxl: "1rem" }, bgcolor: "#000", color: "#fff", display: "flex", alignItems: "center", gap: { xs: "0.6rem", xxl: "0.8rem", xxxl: "1rem" } }}>
                           <FaClock size={14} />
                           <Box>
-                            <Typography sx={{ fontWeight: 800, fontSize: "1rem", lineHeight: 1 }}>
+                            <Typography sx={{ fontWeight: 800, fontSize: { xs: "1rem", xxl: "1.14rem", xxxl: "1.32rem" }, lineHeight: 1 }}>
                               {stats.hoursToProcess < 1 ? `${Math.round(stats.hoursToProcess * 60)} ${tStr(t, "unit.minutes", "minutes")}` : `${stats.hoursToProcess.toFixed(2)} ${tStr(t, "unit.hours", "hours")}`}
                             </Typography>
-                            <Typography sx={{ fontSize: "0.65rem", opacity: 1, mt: "0.15rem" }}>
+                            <Typography sx={{ fontSize: { xs: "0.65rem", xxl: "0.74rem", xxxl: "0.88rem" }, opacity: 1, mt: "0.15rem" }}>
                               {tStr(t, "calc.totalAmount.result", "to process at current throughput rate")}
                             </Typography>
                           </Box>
                         </Box>
                       )}
                       {!stats.hasInput && totalAmountMode && (
-                        <Typography sx={{ fontSize: "0.7rem", color: "#ccc", mt: "0.5rem" }}>
+                        <Typography sx={{ fontSize: { xs: "0.7rem", xxl: "0.8rem", xxxl: "0.94rem" }, color: "#ccc", mt: "0.5rem" }}>
                           {tStr(t, "calc.totalAmount.noMix", "Add waste types with throughput to calculate")}
                         </Typography>
                       )}
@@ -386,10 +386,10 @@ export default function ImpactCalculatorAdvanced() {
                 </Box>
 
                 <Box sx={{ mb: "0.75rem", border: "1px solid #e0e0e0", bgcolor: "#fff" }}>
-                  <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: "1rem", py: "0.7rem", cursor: "pointer", userSelect: "none" }} onClick={() => setAdvancedOpen((prev) => !prev)}>
+                  <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: { xs: "1rem", xxl: "1.25rem", xxxl: "1.5rem" }, py: { xs: "0.7rem", xxl: "0.9rem", xxxl: "1.05rem" }, cursor: "pointer", userSelect: "none" }} onClick={() => setAdvancedOpen((prev) => !prev)}>
                     <Box sx={{ display: "flex", alignItems: "center", gap: "0.45rem" }}>
                       <FaFlask size={11} color="#999" />
-                      <Typography sx={{ fontWeight: 700, fontSize: "0.73rem", textTransform: "uppercase", letterSpacing: "0.09em", color: "#666" }}>
+                      <Typography sx={{ fontWeight: 700, fontSize: { xs: "0.73rem", xxl: "0.84rem", xxxl: "0.98rem" }, textTransform: "uppercase", letterSpacing: "0.09em", color: "#666" }}>
                         {tStr(t, "calc.methodology.title", "Moisture correction — EN 14918")}
                       </Typography>
                     </Box>
@@ -397,14 +397,14 @@ export default function ImpactCalculatorAdvanced() {
                   </Box>
                   <Collapse in={advancedOpen}>
                     <Box sx={{ px: "1rem", pb: "1rem", borderTop: "1px solid #f2f2f2" }}>
-                      <Box sx={{ mt: "0.75rem", p: "0.65rem", bgcolor: "#f5f5f5", fontFamily: "monospace", fontSize: "0.75rem", color: "#222", borderLeft: "3px solid #0000FF" }}>
+                      <Box sx={{ mt: "0.75rem", p: "0.65rem", bgcolor: "#f5f5f5", fontFamily: "monospace", fontSize: { xs: "0.75rem", xxl: "0.86rem", xxxl: "1rem" }, color: "#222", borderLeft: "3px solid #0000FF" }}>
                         NCV_ar = HHV_dry × (1 − M/100) − 2.443 × (M/100)
                       </Box>
-                      <Typography sx={{ fontSize: "0.73rem", color: "#666", lineHeight: 1.65, mt: "0.6rem" }}>
+                      <Typography sx={{ fontSize: { xs: "0.73rem", xxl: "0.84rem", xxxl: "0.98rem" }, color: "#666", lineHeight: 1.65, mt: "0.6rem" }}>
                         <strong>M</strong> = {tStr(t, "calc.methodology.moisture", "moisture %")}. <strong>2.443 MJ/kg</strong> = {tStr(t, "calc.methodology.latentHeat", "latent heat of vaporisation at 25°C")}.{" "}
                         {tStr(t, "calc.methodology.explanation", "Two loss mechanisms: (1) mass dilution by inert water, (2) evaporation energy during combustion. Non-linear — wet waste loses disproportionately more.")}
                       </Typography>
-                      <Typography sx={{ fontSize: "0.68rem", color: "#bbb", mt: "0.6rem" }}>
+                      <Typography sx={{ fontSize: { xs: "0.68rem", xxl: "0.78rem", xxxl: "0.9rem" }, color: "#bbb", mt: "0.6rem" }}>
                         η = 21.18% — {tStr(t, "calc.methodology.calibration", "WP1000 ref: 1 t/h biomass @ HHV 17 MJ/kg → 1 MWh electrical")}
                       </Typography>
                     </Box>
@@ -415,17 +415,17 @@ export default function ImpactCalculatorAdvanced() {
                   <Button
                     onClick={() => void handleExportPDF()}
                     startIcon={<FaFilePdf size={13} />}
-                    sx={{ bgcolor: "#000", color: "#fff", fontWeight: 700, borderRadius: 0, px: "1.25rem", py: "0.55rem", fontSize: { xs: "0.82rem", xl: "0.9rem" }, textTransform: "none", "&:hover": { bgcolor: "#0000FF" } }}
+                    sx={{ bgcolor: "#000", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "1.25rem", xxl: "1.8rem", xxxl: "2.2rem" }, py: { xs: "0.55rem", xxl: "0.85rem", xxxl: "1rem" }, fontSize: { xs: "0.82rem", xl: "0.9rem", xxl: "1.14rem", xxxl: "1.34rem" }, textTransform: "none", "& .MuiButton-startIcon svg": { width: { xxl: "1.05rem", xxxl: "1.25rem" }, height: { xxl: "1.05rem", xxxl: "1.25rem" } }, "&:hover": { bgcolor: "#0000FF" } }}
                   >
                     {tStr(t, "calc.exportPdf", "Export PDF Report")}
                   </Button>
                 </Box>
               </Box>
 
-              <Box sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: "1rem", xxl: "1.2rem", xxxl: "1.4rem" } }}>
                 {!stats.hasInput && (
                   <Box sx={{ p: "2rem", border: "2px dashed #ddd", textAlign: "center" }}>
-                    <Typography sx={{ color: "#d0d0d0", fontSize: "0.85rem" }}>
+                    <Typography sx={{ color: "#d0d0d0", fontSize: { xs: "0.85rem", xxl: "0.98rem", xxxl: "1.12rem" } }}>
                       {tStr(t, "calc.emptyResults", "Configure your waste mix to see annual impact projections")}
                     </Typography>
                   </Box>
@@ -437,7 +437,7 @@ export default function ImpactCalculatorAdvanced() {
                   </Box>
                 )}
 
-                <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: { xs: "0.55rem", xl: "0.7rem" } }}>
+                <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: { xs: "0.55rem", xl: "0.7rem", xxl: "0.9rem", xxxl: "1.1rem" } }}>
                   {metrics.map((metric) => (
                     <ImpactCard key={metric.label} {...metric} />
                   ))}
@@ -446,7 +446,7 @@ export default function ImpactCalculatorAdvanced() {
                 {stats.breakdown.length > 0 && (
                   <Box sx={{ border: "1px solid #e0e0e0", bgcolor: "#fff" }}>
                     <Box sx={{ px: "1rem", py: "0.6rem", borderBottom: "1px solid #f0f0f0" }}>
-                      <Typography sx={{ fontWeight: 700, fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.09em", color: "#888" }}>
+                      <Typography sx={{ fontWeight: 700, fontSize: { xs: "0.7rem", xxl: "0.8rem", xxxl: "0.94rem" }, textTransform: "uppercase", letterSpacing: "0.09em", color: "#888" }}>
                         {tStr(t, "calc.breakdown.title", "Energy contribution by type")}
                       </Typography>
                     </Box>
@@ -463,11 +463,11 @@ export default function ImpactCalculatorAdvanced() {
                           <Box key={row.key} sx={{ mb: "0.6rem" }}>
                             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: "0.18rem" }}>
                               <Box sx={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                                <Box component="img" src={wasteType.image} alt={row.label} sx={{ width: 18, height: 18, objectFit: "cover", flexShrink: 0 }} onError={(event) => { (event.target as HTMLImageElement).style.display = "none"; }} />
-                                <Typography sx={{ fontSize: "0.74rem", fontWeight: 600, color: "#222" }}>{row.label}</Typography>
-                                <Typography sx={{ fontSize: "0.62rem", color: "#ccc", fontFamily: "monospace" }}>{row.tonnes.toFixed(2)} t/h · {row.ncvArVal.toFixed(1)} MJ/kg</Typography>
+                                <Box component="img" src={wasteType.image} alt={row.label} sx={{ width: { xs: 18, xxl: 22, xxxl: 26 }, height: { xs: 18, xxl: 22, xxxl: 26 }, objectFit: "cover", flexShrink: 0 }} onError={(event) => { (event.target as HTMLImageElement).style.display = "none"; }} />
+                                <Typography sx={{ fontSize: { xs: "0.74rem", xxl: "0.84rem", xxxl: "0.98rem" }, fontWeight: 600, color: "#222" }}>{row.label}</Typography>
+                                <Typography sx={{ fontSize: { xs: "0.62rem", xxl: "0.72rem", xxxl: "0.84rem" }, color: "#ccc", fontFamily: "monospace" }}>{row.tonnes.toFixed(2)} t/h · {row.ncvArVal.toFixed(1)} MJ/kg</Typography>
                               </Box>
-                              <Typography sx={{ fontSize: "0.74rem", fontWeight: 700, color: wasteType.color, ml: "0.5rem", flexShrink: 0 }}>{pct.toFixed(1)}%</Typography>
+                              <Typography sx={{ fontSize: { xs: "0.74rem", xxl: "0.84rem", xxxl: "0.98rem" }, fontWeight: 700, color: wasteType.color, ml: "0.5rem", flexShrink: 0 }}>{pct.toFixed(1)}%</Typography>
                             </Box>
                             <Box sx={{ height: 3, bgcolor: "#f0f0f0" }}>
                               <Box sx={{ height: "100%", width: `${pct}%`, bgcolor: wasteType.color, transition: "width 0.3s ease" }} />
@@ -482,17 +482,17 @@ export default function ImpactCalculatorAdvanced() {
                 <Box sx={{ border: "1px solid #e0e0e0", bgcolor: "#fff" }}>
                   <Box sx={{ display: "flex", alignItems: "center", gap: "0.45rem", px: "1rem", py: "0.65rem", cursor: "pointer", userSelect: "none" }} onClick={() => setDisclaimerOpen((prev) => !prev)}>
                     <FaInfoCircle size={12} color="#aaa" />
-                    <Typography sx={{ fontWeight: 600, fontSize: "0.75rem", color: "#666", flex: 1 }}>
+                    <Typography sx={{ fontWeight: 600, fontSize: { xs: "0.75rem", xxl: "0.98rem", xxxl: "1.18rem" }, color: "#666", flex: 1 }}>
                       {tStr(t, "calc.disclaimer.trigger", "Estimates based on the Cluj – CMID project")}
                     </Typography>
                     {disclaimerOpen ? <FaChevronUp size={10} color="#ccc" /> : <FaChevronDown size={10} color="#ccc" />}
                   </Box>
                   <Collapse in={disclaimerOpen}>
                     <Box sx={{ px: "1rem", pb: "1rem", borderTop: "1px solid #f5f5f5" }}>
-                      <Typography sx={{ fontSize: "0.73rem", color: "#666", lineHeight: 1.7, mt: "0.7rem" }}>
+                      <Typography sx={{ fontSize: { xs: "0.73rem", xxl: "0.96rem", xxxl: "1.16rem" }, color: "#666", lineHeight: 1.7, mt: "0.7rem" }}>
                         {tStr(t, "calc.disclaimer.body", "All figures are approximate estimates based on the Cluj – CMID reference installation: 2× WP1500 units, 70 t/day, 25,550 t/year, 24/7 operation with maintenance on ~10 major holidays")} ({CONSTANTS.uptimePct}% {tStr(t, "calc.disclaimer.uptime", "uptime")}, {CONSTANTS.annualHours} h/yr).
                       </Typography>
-                      <Typography sx={{ fontSize: "0.73rem", color: "#ED1C24", fontWeight: 700, lineHeight: 1.7, mt: "0.4rem" }}>
+                      <Typography sx={{ fontSize: { xs: "0.73rem", xxl: "0.96rem", xxxl: "1.16rem" }, color: "#ED1C24", fontWeight: 700, lineHeight: 1.7, mt: "0.4rem" }}>
                         ⚠ {tStr(t, "calc.disclaimer.warning", "Output depends on HHV, moisture, ash content, and particle size. Adjust per-type moisture in each row.")}
                       </Typography>
                       <Box sx={{ mt: "0.7rem", pt: "0.7rem", borderTop: "1px solid #f0f0f0", display: "flex", flexDirection: "column", gap: "0.25rem" }}>
@@ -503,12 +503,12 @@ export default function ImpactCalculatorAdvanced() {
                           [tStr(t, "calc.disclaimer.src.cars", "Cars removed"), "107 g/km × 12,000 km/yr · EEA 2023"],
                           [tStr(t, "calc.disclaimer.src.trees", "Trees equiv."), "45 trees/t CO2/yr · US EPA 2024"],
                         ].map(([label, source]) => (
-                          <Typography key={label} sx={{ fontSize: "0.68rem", color: "#aaa", lineHeight: 1.5 }}>
+                          <Typography key={label} sx={{ fontSize: { xs: "0.68rem", xxl: "0.88rem", xxxl: "1.05rem" }, color: "#aaa", lineHeight: 1.5 }}>
                             <strong style={{ color: "#555" }}>{label}:</strong> {source}
                           </Typography>
                         ))}
                       </Box>
-                      <Typography sx={{ fontSize: "0.66rem", color: "#ddd", mt: "0.5rem" }}>
+                      <Typography sx={{ fontSize: { xs: "0.66rem", xxl: "0.84rem", xxxl: "1rem" }, color: "#ddd", mt: "0.5rem" }}>
                         {tStr(t, "calc.disclaimer.footer", "Not a binding commercial proposal")} · Waste Powertech SRL · wpowertech.ro
                       </Typography>
                     </Box>

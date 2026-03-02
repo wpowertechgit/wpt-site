@@ -1,6 +1,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Box, Button, TextField, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import {
     IoIosCheckmarkCircle,
     IoIosHourglass,
@@ -31,6 +32,7 @@ const CONTACT_BODY_FONT_SIZE = {
 };
 
 const ContactForm = () => {
+    const { t } = useTranslation();
     const formRef = useRef<HTMLFormElement | null>(null);
     const [status, setStatus] = useState<SubmitStatus>(null);
 
@@ -171,7 +173,7 @@ const ContactForm = () => {
 
                 <TextField
                     fullWidth
-                    label="Your Name"
+                    label={t("contact.form.name")}
                     name="user_name"
                     variant="outlined"
                     sx={{
@@ -191,7 +193,7 @@ const ContactForm = () => {
 
                 <TextField
                     fullWidth
-                    label="Your Email"
+                    label={t("contact.form.email")}
                     name="user_email"
                     type="email"
                     required
@@ -213,7 +215,7 @@ const ContactForm = () => {
 
                 <TextField
                     fullWidth
-                    label="Your Message"
+                    label={t("contact.form.message")}
                     name="message"
                     multiline
                     rows={5}
@@ -249,7 +251,7 @@ const ContactForm = () => {
                         },
                     }}
                 >
-                    Send Message
+                    {t("contact.form.submit")}
                 </Button>
             </form>
 

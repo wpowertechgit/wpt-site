@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -10,14 +9,9 @@ import B2BTrackScroll from "./B2BTrackScroll";
 export type Mode = "B2G" | "B2B";
 
 export default function Applications() {
-  const [searchParams] = useSearchParams();
-  const [mode, setMode] = useState<Mode>("B2G");
+  const [searchParams, setSearchParams] = useSearchParams();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const requestedMode = searchParams.get("mode")?.toLowerCase();
-    setMode(requestedMode === "b2b" ? "B2B" : "B2G");
-  }, [searchParams]);
+  const mode: Mode = searchParams.get("mode")?.toLowerCase() === "b2b" ? "B2B" : "B2G";
 
   const isB2G = mode === "B2G";
 
@@ -48,7 +42,7 @@ export default function Applications() {
         >
           <Stack direction="row" spacing={0} sx={{ alignItems: "stretch" }}>
             <Button
-              onClick={() => setMode("B2G")}
+              onClick={() => setSearchParams({ mode: "b2g" })}
               disableRipple
               sx={{
                 borderRadius: 0,
@@ -96,7 +90,7 @@ export default function Applications() {
             </Button>
 
             <Button
-              onClick={() => setMode("B2B")}
+              onClick={() => setSearchParams({ mode: "b2b" })}
               disableRipple
               sx={{
                 borderRadius: 0,

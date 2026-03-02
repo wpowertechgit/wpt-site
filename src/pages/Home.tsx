@@ -179,7 +179,13 @@ export default function Home() {
                         sx={{
                             flex: { xs: "1 1 auto", md: "1 1 0" },
                             position: "relative",
-                            borderLeft: `0.5rem solid ${pillar.color}`,
+                            borderLeftStyle: "solid",
+                            borderLeftColor: pillar.color,
+                            borderLeftWidth: {
+                                xs: "0.5rem",
+                                xxl: "0.75rem",
+                                xxxl: "1rem",
+                            },
                         }}
                     >
                         <Box
@@ -218,7 +224,7 @@ export default function Home() {
                                     sx={{
                                         fontFamily: "Stack Sans Headline",
                                         fontWeight: 700,
-                                        fontSize: { xs: "1.5rem", md: "1.75rem", lg: "2rem", xl: "2.25rem", xxl: "2.25rem", xxxl: "2.5rem" },
+                                        fontSize: { xs: "1.5rem", md: "1.75rem", lg: "2rem", xl: "2.25rem", xxl: "2.8rem", xxxl: "3rem" },
                                         mb: "0.5rem",
                                         color: pillar.color,
                                     }}
@@ -226,7 +232,12 @@ export default function Home() {
                                     {pillar.title}
                                 </Typography>
 
-                                <Typography sx={{ fontSize: { xs: "0.95rem", md: "1rem", lg: "1.125rem", xl: "1.125rem", xxl: "1.125rem", xxxl: "1.25rem" }, color: "#666", lineHeight: 1.45 }}>
+                                <Typography sx={{
+                                    fontSize: {
+                                        xs: "0.95rem", md: "1rem", lg: "1.125rem", xl: "1.125rem", xxl: "2rem",
+                                        xxxl: "2.3rem"
+                                    }, color: "#666", lineHeight: 1.45
+                                }}>
                                     {pillar.subtext}
                                 </Typography>
                             </Box>

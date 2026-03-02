@@ -34,14 +34,18 @@ function renderPillarContent(id: PillarId) {
 export default function Docs() {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
-  const [activePillar, setActivePillar] = useState<PillarId>("blue");
-  const [desktopOrder, setDesktopOrder] = useState<PillarId[]>(["blue", "gray", "red"]);
+  const initialPillar: PillarId =
+    searchParams.get("pillar")?.toLowerCase() === "brand" ? "red" : "blue";
+  const [activePillar, setActivePillar] = useState<PillarId>(() => initialPillar);
+  const [desktopOrder, setDesktopOrder] = useState<PillarId[]>(() =>
+    initialPillar === "red" ? ["red", "blue", "gray"] : ["blue", "gray", "red"]
+  );
   const [transitionPhase, setTransitionPhase] = useState<"idle" | "moving" | "expanding">("idle");
   const [showActiveContent, setShowActiveContent] = useState<boolean>(true);
   const [showPillarTexts, setShowPillarTexts] = useState<boolean>(true);
   const transitionTimersRef = useRef<number[]>([]);
   const isTabletAndUp = useMediaQuery("(min-width:768px)");
-  const isUnder1000 = useMediaQuery("(max-width:1000px)");
+  const isUnder1000 = useMediaQuery("(max-width:1099px)");
 
   const pillars = useMemo<PillarConfig[]>(
     () => [
@@ -131,18 +135,6 @@ export default function Docs() {
     setActivePillar(pillarId);
     startTextAndContentRevealTimers();
   };
-
-  useEffect(() => {
-    const pillarParam = searchParams.get("pillar")?.toLowerCase();
-    if (pillarParam !== "brand") return;
-
-    clearTransitionTimers();
-    setTransitionPhase("idle");
-    setShowActiveContent(true);
-    setShowPillarTexts(true);
-    setActivePillar("red");
-    setDesktopOrder((currentOrder) => ["red", ...currentOrder.filter((id) => id !== "red")]);
-  }, [searchParams]);
 
   const desktopColumns =
     transitionPhase === "moving"

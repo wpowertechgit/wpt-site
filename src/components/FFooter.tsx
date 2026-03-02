@@ -15,7 +15,7 @@ export default function FFooter() {
       textDecoration: "none",
     },
     "@media (min-width:2000px)": {
-      fontSize: "3rem",
+      fontSize: "2rem",
     },
   } as const;
 
@@ -75,7 +75,7 @@ export default function FFooter() {
               fontWeight: 700,
               mb: "0.5rem",
               "@media (min-width:2000px)": {
-                fontSize: "3rem",
+                fontSize: "2rem",
               },
             }}
           >
@@ -86,7 +86,7 @@ export default function FFooter() {
             sx={{
               mt: "0.25rem",
               "@media (min-width:2000px)": {
-                fontSize: "3rem",
+                fontSize: "2rem",
               },
             }}
           >
@@ -100,7 +100,7 @@ export default function FFooter() {
               alignItems: "center",
               gap: "0.5rem",
               "@media (min-width:2000px)": {
-                fontSize: "3rem",
+                fontSize: "2rem",
               },
             }}
           >
@@ -174,7 +174,7 @@ export default function FFooter() {
               wordBreak: "break-word",
             }}
           >
-            Accessibility Notice
+            {t("accessibility_title")}
           </Link>
 
           <Link
@@ -188,7 +188,7 @@ export default function FFooter() {
               wordBreak: "break-word",
             }}
           >
-            Privacy Policy
+            {t("privacy_policy_title", "Privacy Policy")}
           </Link>
 
           <Link
@@ -202,7 +202,7 @@ export default function FFooter() {
               wordBreak: "break-word",
             }}
           >
-            Terms of Use
+            {t('terms_of_use_title', 'Terms of Use')}
           </Link>
         </Grid>
       </Grid>
@@ -218,7 +218,7 @@ export default function FFooter() {
           maxWidth: "1200px",
           "@media (min-width:2000px)": {
             maxWidth: "2000px",
-            fontSize: "2.4rem",
+            fontSize: "2rem",
           },
         }}
       >
@@ -234,7 +234,7 @@ export default function FFooter() {
           fontSize: "0.85rem",
           px: 2,
           "@media (min-width:2000px)": {
-            fontSize: "3rem",
+            fontSize: "2rem",
           },
         }}
       >

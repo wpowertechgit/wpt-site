@@ -8,8 +8,6 @@ import "react-vertical-timeline-component/style.min.css";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 
-// â”€â”€â”€ Growing spring line â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
 const GrowingLine = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -156,7 +154,7 @@ const History = () => {
           color: "#FFFFFF !important",
           fontFamily: "Stack Sans Headline, sans-serif",
           fontWeight: 700,
-          fontSize: { xs: "1rem", md: "1.15rem", xxl: "1.15rem", xxxl: "1.65rem" },
+          fontSize: { xs: "1rem", md: "1.15rem", xxl: "1.15rem", xxxl: "2.85rem" },
           opacity: "1 !important",
           paddingTop: "0 !important",
         },
@@ -169,7 +167,6 @@ const History = () => {
           px: { xs: "1.5rem", md: "3.5rem", lg: "5rem", xxl: "5rem", xxxl: "8rem" },
         }}
       >
-        {/* â”€â”€ Parallax Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <motion.div style={{ y: heroY, opacity: heroOpacity }}>
           <Box
             sx={{
@@ -180,52 +177,45 @@ const History = () => {
               width: "fit-content",
             }}
           >
-              <Box
-                component="img"
-                src="/wpt-black-full-length-logo.svg"
-                alt="Waste Power Tech"
-                sx={{
-                  width: {
-                    xs: "min(88vw, 400px)",
-                    md: "480px",
-                    xl: "600px", xxl: "600px",
-                    xxxl: "820px",
-                  },
-                  height: "auto",
-                  display: "block",
-                  mb: { xs: "1.25rem", md: "1.75rem", xxl: "1.75rem", xxxl: "2.5rem" },
-                }}
-              />
-            
-              <Typography
-                sx={{
-                  color: "#FFFFFF",
-                  fontFamily: "Stack Sans Headline, sans-serif",
-                  fontWeight: 700,
-                  fontSize: {
-                    xs: "2.4rem",
-                    md: "3.5rem",
-                    xl: "4.5rem", xxl: "4.5rem",
-                    xxxl: "6rem",
-                  },
-                  lineHeight: 1.0,
-                  textTransform: "lowercase",
-                  letterSpacing: "-0.03em",
-                }}
-              >
-                {t("roadmap")}
-              </Typography>
-            
+            <Box
+              component="img"
+              src="/wpt-black-full-length-logo.svg"
+              alt="Waste Power Tech"
+              sx={{
+                width: {
+                  xs: "min(88vw, 400px)",
+                  md: "480px",
+                  xl: "600px", xxl: "600px",
+                  xxxl: "820px",
+                },
+                height: "auto",
+                display: "block",
+                mb: { xs: "1.25rem", md: "1.75rem", xxl: "1.75rem", xxxl: "2.5rem" },
+              }}
+            />
+
+            <Typography
+              sx={{
+                color: "#FFFFFF",
+                fontFamily: "Stack Sans Headline, sans-serif",
+                fontWeight: 700,
+                fontSize: {
+                  xs: "2.4rem",
+                  md: "3.5rem",
+                  xl: "4.5rem", xxl: "4.5rem",
+                  xxxl: "6rem",
+                },
+                lineHeight: 1.0,
+                textTransform: "lowercase",
+                letterSpacing: "-0.03em",
+              }}
+            >
+              {t("roadmap")}
+            </Typography>
+
           </Box>
         </motion.div>
 
-        {/* â”€â”€ Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-        {/*
-          Relative wrapper so GrowingLine can sit exactly over
-          the library's static ::before line.
-          We dim the library line to ~18% opacity and let the
-          spring-animated fill be the bright white the user sees.
-        */}
         <Box sx={{ position: "relative" }}>
           <GrowingLine />
           <VerticalTimeline lineColor="rgba(255,255,255,0.18)">

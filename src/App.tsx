@@ -19,7 +19,7 @@ const TermsOfUse = lazy(() => import("./pages/compliance/TermsOfUse"));
 const Accessibility = lazy(() => import("./pages/compliance/Accessibility"));
 const Docs = lazy(() => import("./pages/Docs"));
 const Contact = lazy(() => import("./pages/Contact"));
-const ClujCaseStudy = lazy(() => import("./pages/ClujCaseStudy"));
+//const ClujCaseStudy = lazy(() => import("./legacy/ClujCaseStudy"));
 const Calculator = lazy(() => import("./pages/Calculator"));
 // import Documentation from "./pages/Documentation";
 // import CaseStudyCluj from "./pages/CaseStudyCluj";
@@ -45,7 +45,7 @@ function App() {
               <Route path="docs" element={<Docs />} />
               <Route path="press" element={<Press />} />
               <Route path="contact" element={<Contact />} />
-              <Route path="case-study-cluj" element={<ClujCaseStudy />} />
+              {/*<Route path="case-study-cluj" element={<ClujCaseStudy />} />*/}
               <Route path="calculator" element={<Calculator />} />
               <Route path="privacy-policy" element={<PrivacyPolicy />} />
               <Route path="terms-of-use" element={<TermsOfUse />} />

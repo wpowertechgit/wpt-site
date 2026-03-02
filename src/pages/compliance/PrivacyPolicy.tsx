@@ -46,6 +46,7 @@ export default function PrivacyPolicy() {
                 lineHeight: 1.7,
                 color: "#1f1f1f",
                 maxWidth: "80ch",
+                whiteSpace: "pre-line",
                 textAlign: "left",
               }}
             >

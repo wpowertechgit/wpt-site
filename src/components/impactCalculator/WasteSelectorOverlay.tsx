@@ -42,7 +42,7 @@ export default function WasteSelectorOverlay({
             exit={{ opacity: 0, y: 16, scale: 0.97 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             onClick={(event) => event.stopPropagation()}
-            style={{ background: "#fff", width: "min(100%, 92vw)", maxWidth: "min(96rem, 86vw)", maxHeight: "88vh", display: "flex", flexDirection: "column", overflow: "hidden" }}
+              style={{ background: "#fff", width: "min(100%, 94vw)", maxWidth: "min(112rem, 90vw)", maxHeight: "88vh", display: "flex", flexDirection: "column", overflow: "hidden" }}
           >
             <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: { xs: "1rem", sm: "1.5rem", xxl: "1.4vw", xxxl: "1.6vw" }, py: { xs: "0.9rem", sm: "1.1rem", xxl: "1vw", xxxl: "1.1vw" }, borderBottom: "2px solid #000", flexShrink: 0 }}>
               <Box sx={{ minWidth: 0 }}>
@@ -60,11 +60,11 @@ export default function WasteSelectorOverlay({
                     onOpenCustomBuilder();
                   }}
                   startIcon={<FaLayerGroup size={12} />}
-                  sx={{ bgcolor: "#0000FF", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "0.5rem", sm: "1rem", xxl: "0.95vw", xxxl: "1.1vw" }, py: { xs: "0.35rem", sm: "0.45rem", xxl: "0.42vw", xxxl: "0.5vw" }, fontSize: { xs: "0.65rem", sm: "0.78rem", xxl: "0.82vw", xxxl: "1vw" }, textTransform: "none", "&:hover": { bgcolor: "#0000cc" }, whiteSpace: "normal", lineHeight: 1.3 }}
+                  sx={{ bgcolor: "#0000FF", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "0.5rem", sm: "1rem", xxl: "1.15vw", xxxl: "1.35vw" }, py: { xs: "0.35rem", sm: "0.45rem", xxl: "0.62vw", xxxl: "0.75vw" }, fontSize: { xs: "0.65rem", sm: "0.78rem", xxl: "0.96vw", xxxl: "1.16vw" }, textTransform: "none", "& .MuiButton-startIcon svg": { width: { xxl: "0.95vw", xxxl: "1.12vw" }, height: { xxl: "0.95vw", xxxl: "1.12vw" } }, "&:hover": { bgcolor: "#0000cc" }, whiteSpace: "normal", lineHeight: 1.3 }}
                 >
                   {tStr(t, "calc.selector.createCustom", "Create Custom Mix")}
                 </Button>
-                <IconButton onClick={onClose} size="small" sx={{ border: "2px solid #000", borderRadius: 0, p: { xs: "0.25rem", sm: "0.3rem", xxl: "0.3vw", xxxl: "0.35vw" } }}>
+                <IconButton onClick={onClose} size="small" sx={{ border: "2px solid #000", borderRadius: 0, p: { xs: "0.25rem", sm: "0.3rem", xxl: "0.5vw", xxxl: "0.62vw" }, minWidth: { xxl: "2.9vw", xxxl: "3.35vw" }, minHeight: { xxl: "2.9vw", xxxl: "3.35vw" }, "& svg": { width: { xxl: "1vw", xxxl: "1.18vw" }, height: { xxl: "1vw", xxxl: "1.18vw" } } }}>
                   <FaTimes size={14} />
                 </IconButton>
               </Box>
@@ -121,7 +121,7 @@ export default function WasteSelectorOverlay({
               </Typography>
               <Button
                 onClick={onClose}
-                sx={{ bgcolor: "#000", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "0.75rem", sm: "1.5rem", xxl: "1.2vw", xxxl: "1.4vw" }, py: { xs: "0.4rem", sm: "0.5rem", xxl: "0.42vw", xxxl: "0.5vw" }, fontSize: { xs: "0.75rem", sm: "0.85rem", xxl: "0.88vw", xxxl: "1.05vw" }, textTransform: "none", whiteSpace: "normal", lineHeight: 1.3, "&:hover": { bgcolor: "#0000FF" } }}
+                sx={{ bgcolor: "#000", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "0.75rem", sm: "1.5rem", xxl: "1.45vw", xxxl: "1.7vw" }, py: { xs: "0.4rem", sm: "0.5rem", xxl: "0.68vw", xxxl: "0.82vw" }, fontSize: { xs: "0.75rem", sm: "0.85rem", xxl: "1vw", xxxl: "1.22vw" }, textTransform: "none", whiteSpace: "normal", lineHeight: 1.3, "&:hover": { bgcolor: "#0000FF" } }}
               >
                 {tStr(t, "calc.selector.confirm", "Confirm selection")}
               </Button>

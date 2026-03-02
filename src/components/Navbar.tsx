@@ -1,4 +1,4 @@
-﻿import { AppBar, Box, Button, Menu, MenuItem, Container, Link as MuiLink, IconButton } from "@mui/material";
+﻿import { AppBar, Box, Button, Menu, MenuItem, Container, Link as MuiLink } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -24,6 +24,8 @@ export default function Navbar() {
     const currentLanguage = useUIStore((state) => state.language);
     const setLanguage = useUIStore((state) => state.setLanguage);
     const [localeAnchor, setLocaleAnchor] = useState<null | HTMLElement>(null);
+    const technologySiteLabel =
+        currentLanguage === "ro" ? "Tehnologia WPT" : "WPT Technology";
     const brochureHref =
         currentLanguage === "ro"
             ? "/docs/wpt- brosura-ro.pdf"
@@ -114,8 +116,6 @@ export default function Navbar() {
                             }}
                         >
                             <Button
-                                component={RouterLink}
-                                to="/technology"
                                 sx={{
                                     color: "#000",
                                     textTransform: "none",
@@ -156,8 +156,12 @@ export default function Navbar() {
                                     position: "absolute",
                                     top: "calc(100% - 1px)",
                                     left: 0,
-                                    width: "100%",
-                                    minWidth: "100%",
+                                    minWidth: {
+                                        md: "14rem",
+                                        xl: "16rem",
+                                        xxl: "19rem",
+                                        xxxl: "30rem",
+                                    },
                                     bgcolor: "#fff",
                                     border: "1px solid #ddd",
                                     boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
@@ -169,6 +173,42 @@ export default function Navbar() {
                             >
                                 <Button
                                     component={RouterLink}
+                                    to="/technology"
+                                    sx={{
+                                        width: "100%",
+                                        justifyContent: "flex-start",
+                                        color: "#000",
+                                        textTransform: "none",
+                                        fontFamily: "Figtree",
+                                        fontWeight: 600,
+                                        fontSize: {
+                                            xs: "clamp(1rem, 0.95vw, 1.4rem)",
+                                            xxl: "1.55rem",
+                                            xxxl: "2.7rem",
+                                        },
+                                        px: {
+                                            xs: "0.8rem",
+                                            xxl: "1rem",
+                                            xxxl: "1.4rem",
+                                        },
+                                        py: {
+                                            xs: "0.55rem",
+                                            xxl: "0.75rem",
+                                            xxxl: "1rem",
+                                        },
+                                        borderRadius: 0,
+                                        minHeight: 0,
+                                        whiteSpace: "nowrap",
+                                        "&:hover": {
+                                            bgcolor: "#000",
+                                            color: "#fff",
+                                        },
+                                    }}
+                                >
+                                    {technologySiteLabel}
+                                </Button>
+                                <Button
+                                    component={RouterLink}
                                     to="/calculator"
                                     sx={{
                                         width: "100%",
@@ -177,10 +217,24 @@ export default function Navbar() {
                                         textTransform: "none",
                                         fontFamily: "Figtree",
                                         fontWeight: 600,
-                                        px: "0.8rem",
-                                        py: "0.55rem",
+                                        fontSize: {
+                                            xs: "clamp(1rem, 0.95vw, 1.4rem)",
+                                            xxl: "1.55rem",
+                                            xxxl: "2.7rem",
+                                        },
+                                        px: {
+                                            xs: "0.8rem",
+                                            xxl: "1rem",
+                                            xxxl: "1.4rem",
+                                        },
+                                        py: {
+                                            xs: "0.55rem",
+                                            xxl: "0.75rem",
+                                            xxxl: "1rem",
+                                        },
                                         borderRadius: 0,
                                         minHeight: 0,
+                                        whiteSpace: "nowrap",
                                         "&:hover": {
                                             bgcolor: "#000",
                                             color: "#fff",
@@ -233,6 +287,13 @@ export default function Navbar() {
                                 py: "clamp(0.6rem, 0.8vw, 1rem)",
                                 position: "relative",
                                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                "& svg": {
+                                    fontSize: {
+                                        xs: "clamp(2rem, 1.45vw, 2.8rem)",
+                                        xxl: "3.2rem",
+                                        xxxl: "4.4rem",
+                                    },
+                                },
                                 "&:hover": {
                                     bgcolor: "#000",
                                     color: "#fff",
@@ -244,25 +305,54 @@ export default function Navbar() {
                         </Button>
 
                         {/* LOCALE DROPDOWN */}
-                        <IconButton
+                        <Button
                             onClick={handleLocaleClick}
                             sx={{
-                                "--IconButton-hoverBg": "transparent",
                                 color: "#000",
-                                ml: "clamp(0.5rem, 0.8vw, 1.2rem)",
-                                p: { xs: "0.5rem", xxl: "0.7rem", xxxl: "0.95rem" },
-                                "& svg": {
-                                    fontSize: { xs: "clamp(1.7rem, 1.2vw, 2.5rem)", xxl: "3rem", xxxl: "4rem" }
-                                },
+                                textTransform: "none",
+                                fontSize: { xs: "clamp(1rem, 0.95vw, 1.4rem)", xxl: "1.55rem", xxxl: "2.7rem" },
+                                fontFamily: "Figtree",
+                                fontWeight: 600,
+                                px: "clamp(1rem, 1.2vw, 2rem)",
+                                py: "clamp(0.6rem, 0.8vw, 1rem)",
+                                position: "relative",
+                                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                                 "&:hover": {
-                                    bgcolor: "transparent",
-                                    color: "#ED1C24"
+                                    bgcolor: "#000",
+                                    color: "#fff",
+                                    transform: "translateY(-2px)"
                                 }
                             }}
                         >
-                            <IoLanguage />
-                            <MdLanguage />
-                        </IconButton>
+                            <Box sx={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+                                <Box
+                                    component={IoLanguage}
+                                    sx={{
+                                        fontSize: {
+                                            xs: "1.5rem",
+                                            md: "1.7rem",
+                                            lg: "1.9rem",
+                                            xl: "2.2rem",
+                                            xxl: "2.8rem",
+                                            xxxl: "3.6rem",
+                                        },
+                                    }}
+                                />
+                                <Box
+                                    component={MdLanguage}
+                                    sx={{
+                                        fontSize: {
+                                            xs: "1.5rem",
+                                            md: "1.7rem",
+                                            lg: "1.9rem",
+                                            xl: "2.2rem",
+                                            xxl: "2.8rem",
+                                            xxxl: "3.6rem",
+                                        },
+                                    }}
+                                />
+                            </Box>
+                        </Button>
                         <Menu
                             anchorEl={localeAnchor}
                             open={Boolean(localeAnchor)}
@@ -273,8 +363,17 @@ export default function Navbar() {
                                     bgcolor: "#ffffff",
                                     border: "1px solid #ddd",
                                     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-                                    minWidth: { xs: "12.5rem", lg: "14rem", xxl: "14rem", xxxl: "22rem" },
-                                    py: { xs: "0.3rem", xxl: "0.3rem", xxxl: "0.7rem" }
+                                    minWidth: {
+                                        xs: "12.5rem",
+                                        lg: "14rem",
+                                        xxl: "18rem",
+                                        xxxl: "28rem",
+                                    },
+                                    py: {
+                                        xs: "0.3rem",
+                                        xxl: "0.5rem",
+                                        xxxl: "0.8rem",
+                                    }
                                 }
                             }}
                         >
@@ -285,13 +384,29 @@ export default function Navbar() {
                                     selected={currentLanguage === code}
                                     sx={{
                                         fontFamily: "Figtree",
-                                        fontSize: { xs: "clamp(1rem, 0.95vw, 1.2rem)", xxxl: "2rem" },
-                                        minHeight: { xs: "2.6rem", xxl: "2.6rem", xxxl: "4.2rem" },
+                                        fontSize: {
+                                            xs: "clamp(1rem, 0.95vw, 1.2rem)",
+                                            xxl: "1.55rem",
+                                            xxxl: "2.7rem",
+                                        },
+                                        minHeight: {
+                                            xs: "2.6rem",
+                                            xxl: "3.6rem",
+                                            xxxl: "5.25rem",
+                                        },
                                         color: "#000",
                                         display: "flex",
                                         alignItems: "center",
-                                        gap: { xs: "0.75rem", xxl: "0.75rem", xxxl: "1.2rem" },
-                                        px: { xs: "0.9rem", xxl: "0.9rem", xxxl: "1.4rem" },
+                                        gap: {
+                                            xs: "0.75rem",
+                                            xxl: "1rem",
+                                            xxxl: "1.35rem",
+                                        },
+                                        px: {
+                                            xs: "0.9rem",
+                                            xxl: "1.2rem",
+                                            xxxl: "1.6rem",
+                                        },
                                         "&:hover": {
                                             bgcolor: "#f5f5f5"
                                         },
@@ -311,8 +426,18 @@ export default function Navbar() {
                                         decoding="async"
                                         fetchPriority="low"
                                         sx={{
-                                            width: { xs: "2rem", lg: "2.25rem", xxl: "2.25rem", xxxl: "4.5rem" },
-                                            height: { xs: "1.35rem", lg: "1.5rem", xxl: "1.5rem", xxxl: "3rem" },
+                                            width: {
+                                                xs: "2rem",
+                                                lg: "2.25rem",
+                                                xxl: "3rem",
+                                                xxxl: "4.5rem",
+                                            },
+                                            height: {
+                                                xs: "1.35rem",
+                                                lg: "1.5rem",
+                                                xxl: "2rem",
+                                                xxxl: "3rem",
+                                            },
                                             objectFit: "contain"
                                         }}
                                     />
@@ -326,6 +451,3 @@ export default function Navbar() {
         </AppBar>
     );
 }
-
-
-

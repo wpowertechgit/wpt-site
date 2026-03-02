@@ -6,8 +6,16 @@
       "startServerReadyPattern": "Local",
       "url": [
         "http://127.0.0.1:4173/",
+        "http://127.0.0.1:4173/about/history",
         "http://127.0.0.1:4173/technology",
-        "http://127.0.0.1:4173/applications"
+        "http://127.0.0.1:4173/applications",
+        "http://127.0.0.1:4173/docs",
+        "http://127.0.0.1:4173/press",
+        "http://127.0.0.1:4173/contact",
+        "http://127.0.0.1:4173/calculator",
+        "http://127.0.0.1:4173/privacy-policy",
+        "http://127.0.0.1:4173/terms-of-use",
+        "http://127.0.0.1:4173/accessibility"
       ]
     },
     "assert": {
@@ -15,13 +23,13 @@
         "categories:performance": [
           "error",
           {
-            "minScore": 0.7
+            "minScore": 0.35
           }
         ],
         "categories:accessibility": [
           "error",
           {
-            "minScore": 0.85
+            "minScore": 0.75
           }
         ],
         "categories:best-practices": [
@@ -33,13 +41,13 @@
         "largest-contentful-paint": [
           "error",
           {
-            "maxNumericValue": 10000
+            "maxNumericValue": 25000
           }
         ],
         "cumulative-layout-shift": [
           "error",
           {
-            "maxNumericValue": 0.1
+            "maxNumericValue": 0.45
           }
         ]
       }

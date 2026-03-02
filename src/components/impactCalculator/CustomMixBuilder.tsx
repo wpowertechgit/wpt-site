@@ -1,6 +1,6 @@
 import { Box, Button, IconButton, InputAdornment, Slider, TextField, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaLayerGroup, FaTimes } from "react-icons/fa";
 import DonutChart from "./DonutChart";
@@ -34,6 +34,7 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
     moisture: 15,
   });
   const [nameError, setNameError] = useState("");
+  const customMixIdRef = useRef(0);
 
   const totalPct = Object.values(draft.composition).reduce((sum, value) => sum + value, 0);
   const remaining = Math.max(0, 100 - totalPct);
@@ -61,7 +62,7 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
   }, []);
 
   const handleSave = () => {
-    const trimmedName = draft.name.trim().replace(/[^a-zA-Z0-9 _\-]/g, "");
+    const trimmedName = draft.name.trim().replace(/[^a-zA-Z0-9 _-]/g, "");
 
     if (!trimmedName) {
       setNameError(tStr(t, "calc.customMix.nameRequired", "Please enter a name"));
@@ -73,8 +74,10 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
     }
 
     const { hhvDry: blendHhv } = computeWeightedHhvAndMoisture(draft.composition);
+    const nextCustomKey = `custom-${customMixIdRef.current}`;
+    customMixIdRef.current += 1;
     const custom: WasteType = {
-      key: `custom-${Date.now()}`,
+      key: nextCustomKey,
       displayName: trimmedName,
       image: "/wasteTypes/custom.png",
       hhvDry: parseFloat(blendHhv.toFixed(2)),
@@ -114,7 +117,7 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
         exit={{ opacity: 0, y: 18, scale: 0.97 }}
         transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
         onClick={(event) => event.stopPropagation()}
-        style={{ background: "#fff", width: "100%", maxWidth: "860px", maxHeight: "90vh", display: "flex", flexDirection: "column", overflow: "hidden" }}
+        style={{ background: "#fff", width: "100%", maxWidth: "1040px", maxHeight: "90vh", display: "flex", flexDirection: "column", overflow: "hidden" }}
       >
         <Box sx={{ display: "flex", alignItems: { xs: "flex-start", md: "center" }, justifyContent: "space-between", gap: "0.75rem", px: "1.5rem", py: "1rem", borderBottom: "2px solid #000", flexShrink: 0 }}>
           <Box sx={{ minWidth: 0 }}>
@@ -128,7 +131,7 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
               {tStr(t, "calc.customMix.subtitle", "Define the composition of 1 tonne of mixed waste")}
             </Typography>
           </Box>
-          <IconButton onClick={onClose} size="small" sx={{ border: "2px solid #000", borderRadius: 0, p: "0.3rem" }}>
+          <IconButton onClick={onClose} size="small" sx={{ border: "2px solid #000", borderRadius: 0, p: { xs: "0.3rem", xxl: "0.55rem", xxxl: "0.7rem" }, minWidth: { xxl: "2.8rem", xxxl: "3.25rem" }, minHeight: { xxl: "2.8rem", xxxl: "3.25rem" }, "& svg": { width: { xxl: "1rem", xxxl: "1.2rem" }, height: { xxl: "1rem", xxxl: "1.2rem" } } }}>
             <FaTimes size={13} />
           </IconButton>
         </Box>
@@ -205,7 +208,7 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
                       max={100}
                       step={0.5}
                       onChange={(_, value) => setCompositionKey(wasteType.key, String(Array.isArray(value) ? value[0] : value))}
-                      sx={{ color: wasteType.color, py: "4px", minWidth: 0, "& .MuiSlider-thumb": { width: 12, height: 12, bgcolor: wasteType.color }, "& .MuiSlider-rail": { opacity: 0.15 } }}
+                      sx={{ color: wasteType.color, py: { xs: "4px", xxl: "7px", xxxl: "9px" }, minWidth: 0, "& .MuiSlider-thumb": { width: { xs: 12, xxl: 18, xxxl: 22 }, height: { xs: 12, xxl: 18, xxxl: 22 }, bgcolor: wasteType.color }, "& .MuiSlider-rail": { opacity: 0.15, height: { xxl: 5, xxxl: 6 } }, "& .MuiSlider-track": { height: { xxl: 5, xxxl: 6 } } }}
                     />
                     <TextField
                       size="small"
@@ -216,11 +219,11 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
-                            <Typography sx={{ fontSize: "0.65rem", color: "#aaa" }}>%</Typography>
+                            <Typography sx={{ fontSize: { xs: "0.65rem", xxl: "0.74rem", xxxl: "0.86rem" }, color: "#aaa" }}>%</Typography>
                           </InputAdornment>
                         ),
                       }}
-                      sx={{ "& .MuiOutlinedInput-root": { borderRadius: 0, "& fieldset": { borderColor: pct > 0 ? `${wasteType.color}80` : "#ddd" } }, minWidth: 0, "& input": { textAlign: "center", fontWeight: 700, fontSize: "0.82rem", padding: "4px 2px" } }}
+                      sx={{ "& .MuiOutlinedInput-root": { borderRadius: 0, "& fieldset": { borderColor: pct > 0 ? `${wasteType.color}80` : "#ddd" } }, minWidth: 0, "& input": { textAlign: "center", fontWeight: 700, fontSize: { xs: "0.82rem", xxl: "0.94rem", xxxl: "1.08rem" }, padding: { xs: "4px 2px", xxl: "6px 2px", xxxl: "8px 2px" } } }}
                     />
                   </Box>
                 );
@@ -241,7 +244,7 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
                 max={60}
                 step={0.5}
                 onChange={(_, value) => setDraft((prev) => ({ ...prev, moisture: Array.isArray(value) ? value[0] : value }))}
-                sx={{ color: "#555", "& .MuiSlider-thumb": { bgcolor: "#555" }, "& .MuiSlider-rail": { opacity: 0.15 } }}
+                sx={{ color: "#555", py: { xxl: "7px", xxxl: "9px" }, "& .MuiSlider-thumb": { bgcolor: "#555", width: { xxl: 18, xxxl: 22 }, height: { xxl: 18, xxxl: 22 } }, "& .MuiSlider-rail": { opacity: 0.15, height: { xxl: 5, xxxl: 6 } }, "& .MuiSlider-track": { height: { xxl: 5, xxxl: 6 } } }}
               />
             </Box>
           </Box>
@@ -295,13 +298,13 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
             )}
           </Box>
           <Box sx={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: { xs: "stretch", sm: "flex-end" } }}>
-            <Button onClick={onClose} sx={{ color: "#888", fontWeight: 600, borderRadius: 0, px: "1rem", textTransform: "none", fontSize: { xs: "0.8rem", xxl: "0.9rem", xxxl: "1.05rem" }, "&:hover": { bgcolor: "#f5f5f5" } }}>
+            <Button onClick={onClose} sx={{ color: "#888", fontWeight: 600, borderRadius: 0, px: { xs: "1rem", xxl: "1.4rem", xxxl: "1.7rem" }, py: { xxl: "0.5rem", xxxl: "0.65rem" }, textTransform: "none", fontSize: { xs: "0.8rem", xxl: "1rem", xxxl: "1.18rem" }, "&:hover": { bgcolor: "#f5f5f5" } }}>
               {tStr(t, "common.cancel", "Cancel")}
             </Button>
             <Button
               onClick={handleSave}
               disabled={totalPct < 99.5 || totalPct > 100.5}
-              sx={{ bgcolor: totalPct >= 99.5 && totalPct <= 100.5 ? "#000" : "#ddd", color: "#fff", fontWeight: 700, borderRadius: 0, px: "1.5rem", py: "0.5rem", fontSize: { xs: "0.82rem", xxl: "0.94rem", xxxl: "1.1rem" }, textTransform: "none", "&:hover": { bgcolor: totalPct >= 99.5 ? "#0000FF" : "#ddd" }, "&.Mui-disabled": { color: "#aaa" } }}
+              sx={{ bgcolor: totalPct >= 99.5 && totalPct <= 100.5 ? "#000" : "#ddd", color: "#fff", fontWeight: 700, borderRadius: 0, px: { xs: "1.5rem", xxl: "2rem", xxxl: "2.4rem" }, py: { xs: "0.5rem", xxl: "0.8rem", xxxl: "1rem" }, fontSize: { xs: "0.82rem", xxl: "1.08rem", xxxl: "1.28rem" }, textTransform: "none", "&:hover": { bgcolor: totalPct >= 99.5 ? "#0000FF" : "#ddd" }, "&.Mui-disabled": { color: "#aaa" } }}
             >
               {tStr(t, "calc.customMix.saveButton", "Save Custom Mix")}
             </Button>

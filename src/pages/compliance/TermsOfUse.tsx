@@ -44,6 +44,7 @@ export default function TermsOfUse() {
                 fontFamily: "Figtree, sans-serif",
                 fontSize: { xs: "1rem", md: "1.05rem", xxl: "1.05rem", xxxl: "1.7rem" },
                 lineHeight: 1.7,
+                whiteSpace: "pre-line",
                 color: "#1f1f1f",
                 maxWidth: "80ch",
                 textAlign: "left",

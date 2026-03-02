@@ -25,13 +25,43 @@ export default function DonutChart({ segments, size = 160 }: DonutChartProps) {
           justifyContent: "center",
         }}
       >
-        <Typography sx={{ fontSize: "0.7rem", color: "#ccc" }}>0%</Typography>
+        <Typography sx={{ fontSize: { xs: "0.7rem", xxl: "0.82rem", xxxl: "0.96rem" }, color: "#ccc" }}>0%</Typography>
       </Box>
     );
   }
 
   const circumference = 2 * Math.PI * radius;
-  let offset = 0;
+  const chartSegments = segments
+    .filter((segment) => segment.pct > 0)
+    .reduce<{
+      items: {
+        key: string;
+        color: string;
+        dash: number;
+        gap: number;
+        offset: number;
+      }[];
+      offset: number;
+    }>(
+      (acc, segment) => {
+        const dash = (segment.pct / 100) * circumference;
+
+        return {
+          items: [
+            ...acc.items,
+            {
+              key: segment.key,
+              color: segment.color,
+              dash,
+              gap: circumference - dash,
+              offset: acc.offset,
+            },
+          ],
+          offset: acc.offset + dash,
+        };
+      },
+      { items: [], offset: 0 }
+    ).items;
 
   return (
     <Box sx={{ position: "relative", width: size, height: size }}>
@@ -44,28 +74,20 @@ export default function DonutChart({ segments, size = 160 }: DonutChartProps) {
           stroke="#f0f0f0"
           strokeWidth={strokeWidth}
         />
-        {segments
-          .filter((segment) => segment.pct > 0)
-          .map((segment) => {
-            const dash = (segment.pct / 100) * circumference;
-            const gap = circumference - dash;
-            const element = (
-              <circle
-                key={segment.key}
-                cx={centerX}
-                cy={centerY}
-                r={radius}
-                fill="none"
-                stroke={segment.color}
-                strokeWidth={strokeWidth}
-                strokeDasharray={`${dash} ${gap}`}
-                strokeDashoffset={-offset}
-                style={{ transition: "stroke-dasharray 0.3s ease, stroke-dashoffset 0.3s ease" }}
-              />
-            );
-            offset += dash;
-            return element;
-          })}
+        {chartSegments.map((segment) => (
+          <circle
+            key={segment.key}
+            cx={centerX}
+            cy={centerY}
+            r={radius}
+            fill="none"
+            stroke={segment.color}
+            strokeWidth={strokeWidth}
+            strokeDasharray={`${segment.dash} ${segment.gap}`}
+            strokeDashoffset={-segment.offset}
+            style={{ transition: "stroke-dasharray 0.3s ease, stroke-dashoffset 0.3s ease" }}
+          />
+        ))}
       </svg>
       <Box
         sx={{
@@ -77,10 +99,10 @@ export default function DonutChart({ segments, size = 160 }: DonutChartProps) {
           justifyContent: "center",
         }}
       >
-        <Typography sx={{ fontWeight: 800, fontSize: size * 0.135, lineHeight: 1, color: "#1a1a1a" }}>
+        <Typography sx={{ fontWeight: 800, fontSize: { xs: size * 0.135, xxl: size * 0.15, xxxl: size * 0.165 }, lineHeight: 1, color: "#1a1a1a" }}>
           {Math.round(total)}%
         </Typography>
-        <Typography sx={{ fontSize: size * 0.075, color: "#aaa", mt: "0.1rem" }}>of 100%</Typography>
+        <Typography sx={{ fontSize: { xs: size * 0.075, xxl: size * 0.085, xxxl: size * 0.095 }, color: "#aaa", mt: "0.1rem" }}>of 100%</Typography>
       </Box>
     </Box>
   );

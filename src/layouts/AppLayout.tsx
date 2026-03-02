@@ -11,7 +11,7 @@ type AppLayoutProps = {
 };
 
 export default function AppLayout({ children }: AppLayoutProps) {
-    const isMobile = useMediaQuery("(max-width:900px)");
+    const isMobile = useMediaQuery("(max-width:1099px)");
     const { pathname } = useLocation();
 
     useEffect(() => {

@@ -419,10 +419,12 @@ function Overlay({
   activePose,
   activeSection,
   isMobile,
+  showScrollHint,
 }: {
   activePose: SectionPose;
   activeSection: number;
   isMobile: boolean;
+  showScrollHint: boolean;
 }) {
   const { t } = useTranslation();
   const pos = sectionOverlayPosition(activeSection);
@@ -434,10 +436,10 @@ function Overlay({
         <Box
           sx={{
             position: "absolute",
-            width: isMobile ? "100%" : { xs: "calc(100% - 32px)", sm: 420, md: 500, lg: 580, xl: 640 },
-            maxWidth: isMobile ? "100%" : "90vw",
-            px: isMobile ? { xs: 2, sm: 2.5 } : { xs: 2, md: 2.5, lg: 3 },
-            py: isMobile ? { xs: 2, sm: 2.5 } : { xs: 1.5, md: 2, lg: 2.5 },
+            width: isMobile ? "100%" : { xs: "calc(100% - 32px)", sm: 420, md: 500, lg: 580, xl: 640, xxl: 1260, xxxl: 1920 },
+            maxWidth: isMobile ? "100%" : { xs: "90vw", xxl: "48vw", xxxl: "50vw" },
+            px: isMobile ? { xs: 2, sm: 2.5 } : { xs: 2, md: 2.5, lg: 3, xxl: 6, xxxl: 8 },
+            py: isMobile ? { xs: 2, sm: 2.5 } : { xs: 1.5, md: 2, lg: 2.5, xxl: 5, xxxl: 7 },
             bgcolor: "#ffffff",
             border: isMobile ? "none" : "1px solid #000000",
             boxShadow: isMobile ? "none" : "0 10px 26px rgba(0,0,0,0.08)",
@@ -456,6 +458,14 @@ function Overlay({
                 transform: "none",
               }
               : pos),
+            "@media (min-width:2560px)": {
+              width: 960,
+              maxWidth: "48vw",
+            },
+            "@media (min-width:3000px)": {
+              width: 1260,
+              maxWidth: "48vw",
+            },
           }}
         >
           <Fade in key={activeSection} timeout={300}>
@@ -463,8 +473,8 @@ function Overlay({
               <Box
                 sx={{
                   flex: isMobile ? "none" : "0 0 46%",
-                  width: isMobile ? { xs: "76%", sm: "64%" } : "46%",
-                  pr: isMobile ? 0 : 2,
+                  width: isMobile ? { xs: "76%", sm: "64%", xxl: "50%" } : "46%",
+                  pr: isMobile ? 0 : { xs: 2, xxl: 4, xxxl: 6 },
                   mb: isMobile ? 1.5 : 0,
                   display: "flex",
                   alignItems: "center",
@@ -472,15 +482,17 @@ function Overlay({
               >
                 <Box component="img" src={logoSrc} alt="Waste Power Tech" sx={{ width: "100%", height: "auto", display: "block" }} />
               </Box>
-              <Box sx={{ flex: 1, pl: isMobile ? 0 : 2 }}>
+              <Box sx={{
+                flex: 1, pl: isMobile ? 0 : { xs: 2, xxl: 4, xxxl: 6 },
+              }}>
                 <Typography
                   variant="h2"
                   sx={{
                     fontFamily: "Stack Sans Headline, sans-serif",
                     fontWeight: 700,
                     textAlign: "left",
-                    fontSize: { xs: "1.25rem", sm: "1.45rem", md: "1.8rem", lg: "2.15rem", xl: "2.4rem", xxl: "2.4rem", xxxl: "3rem" },
-                    "@media (min-width:2560px)": { fontSize: "2.8rem" },
+                    fontSize: { xs: "1.25rem", sm: "1.45rem", md: "1.8rem", lg: "2.15rem", xl: "2.4rem", xxl: "3rem", xxxl: "4rem" },
+                    "@media (min-width:2560px)": { fontSize: "4rem" },
                     lineHeight: 1.08,
                     letterSpacing: "-0.015em",
                     mb: { xs: 0.65, md: 0.85 },
@@ -493,8 +505,9 @@ function Overlay({
                     fontFamily: "Figtree, sans-serif",
                     textAlign: "left",
                     fontWeight: 400,
-                    fontSize: { xs: "0.9rem", sm: "0.98rem", md: "1.08rem", lg: "1.2rem", xl: "1.32rem", xxl: "1.32rem", xxxl: "2rem" },
-                    "@media (min-width:2560px)": { fontSize: "1.55rem" },
+                    fontSize: { xs: "0.9rem", sm: "0.98rem", md: "1.08rem", lg: "1.2rem", xl: "1.32rem", xxl: "2.7rem", xxxl: "2.7rem" },
+                    "@media (min-width:2560px)": { fontSize: "2rem" },
+                    "@media (min-width:3840px)": { fontSize: "2.7rem" },
                     lineHeight: 1.45,
                     color: "rgba(0,0,0,0.82)",
                     maxWidth: "74ch",
@@ -502,6 +515,7 @@ function Overlay({
                 >
                   {t(activePose.bodyKey, { defaultValue: activePose.body })}
                 </Typography>
+                <ScrollHintOverlay visible={showScrollHint} isMobile={isMobile} />
               </Box>
             </Box>
           </Fade>
@@ -513,8 +527,10 @@ function Overlay({
 
 function ScrollHintOverlay({
   visible,
+  isMobile,
 }: {
   visible: boolean;
+  isMobile: boolean;
 }) {
   const { t } = useTranslation();
 
@@ -522,10 +538,8 @@ function ScrollHintOverlay({
     <Fade in={visible} timeout={{ enter: 180, exit: 180 }} unmountOnExit>
       <Box
         sx={{
-          position: "absolute",
-          left: { xs: 16, md: 24 },
-          bottom: { xs: 20, md: 28 },
-          zIndex: 2,
+          mt: { xs: 1.5, sm: 1.75, md: 2, lg: 2.2, xl: 2.5, xxl: 2.8, xxxl: 3.4 },
+          width: "fit-content",
           pointerEvents: "none",
         }}
       >
@@ -533,19 +547,19 @@ function ScrollHintOverlay({
           sx={{
             display: "flex",
             alignItems: "center",
-            gap: 1.5,
-            px: { xs: 1.25, md: 1.5 },
-            py: { xs: 0.9, md: 1.1 },
+            gap: { xs: 1.2, sm: 1.35, md: 1.5, lg: 1.7, xl: 1.9, xxl: 2.2, xxxl: 2.7 },
+            px: { xs: 1.35, sm: 1.5, md: 1.7, lg: 1.9, xl: 2.2, xxl: 2.5, xxxl: 3 },
+            py: { xs: 0.95, sm: 1.05, md: 1.15, lg: 1.3, xl: 1.45, xxl: 1.7, xxxl: 2.1 },
             bgcolor: "#ffffff",
-            border: "1px solid #000000",
-            boxShadow: "0 8px 18px rgba(0,0,0,0.06)",
+            border: isMobile ? "none" : "1px solid #000000",
+            boxShadow: isMobile ? "none" : "0 8px 18px rgba(0,0,0,0.06)",
           }}
         >
           <Box
             sx={{
               position: "relative",
-              width: 18,
-              height: 34,
+              width: { xs: 22, sm: 24, md: 26, lg: 30, xl: 34, xxl: 40, xxxl: 50 },
+              height: { xs: 40, sm: 44, md: 48, lg: 56, xl: 64, xxl: 74, xxxl: 92 },
               flexShrink: 0,
               border: "1px solid #000000",
               overflow: "hidden",
@@ -556,10 +570,10 @@ function ScrollHintOverlay({
               transition={{ duration: 0.9, ease: "linear", repeat: Number.POSITIVE_INFINITY }}
               style={{
                 position: "absolute",
-                top: 4,
-                left: 3,
-                right: 3,
-                height: 7,
+                top: "12%",
+                left: "18%",
+                right: "18%",
+                height: "22%",
                 background: "#0000FF",
               }}
             />
@@ -567,11 +581,12 @@ function ScrollHintOverlay({
           <Typography
             sx={{
               fontFamily: "Figtree, sans-serif",
-              fontSize: { xs: "0.76rem", md: "0.82rem" },
+              fontSize: { xs: "0.85rem", sm: "0.92rem", md: "1rem", lg: "1.08rem", xl: "1.18rem", xxl: "2.8rem", xxxl: "3rem" },
               fontWeight: 500,
               lineHeight: 1.25,
               letterSpacing: "0.01em",
               color: "#000000",
+              maxWidth: { xs: "20ch", sm: "24ch", md: "26ch", lg: "28ch", xl: "30ch" },
             }}
           >
             {t("tech-scroll-hint", { defaultValue: "Scroll to progress" })}
@@ -633,15 +648,11 @@ export default function TechnologyScrollRig() {
   const is4k = useMediaQuery("(min-width:2560px)");
   const [activeSection, setActiveSection] = useState(0);
   const [viewportSize, setViewportSize] = useState<ViewportSize>(() => getCurrentViewport());
-  const [hasRigSupport, setHasRigSupport] = useState(true);
+  const [hasRigSupport] = useState(() => supportsTechnologyRig());
   const [showScrollHint, setShowScrollHint] = useState(false);
   const rigContainerRef = useRef<HTMLDivElement | null>(null);
   const hasShownScrollHintRef = useRef(false);
   const hintTimeoutRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    setHasRigSupport(supportsTechnologyRig());
-  }, []);
 
   const dismissScrollHint = useCallback(() => {
     if (hintTimeoutRef.current !== null) {
@@ -687,7 +698,7 @@ export default function TechnologyScrollRig() {
       hintTimeoutRef.current = window.setTimeout(() => {
         setShowScrollHint(false);
         hintTimeoutRef.current = null;
-      }, 6000);
+      }, 10000);
     };
 
     if (typeof window === "undefined" || typeof window.IntersectionObserver === "undefined") {
@@ -741,30 +752,27 @@ export default function TechnologyScrollRig() {
   const usePhoneStyleOverlay = viewportSize.width < 1030;
   const levelHorizon = isSmallScreen;
 
+  const handleRigWheelCapture = (event: React.WheelEvent<HTMLDivElement>) => {
+    dismissScrollHint();
+
+    if (isMobile || isSmallScreen) return;
+
+    const atLastSection = activeSection >= sectionPoses.length - 1;
+    const atFirstSection = activeSection <= 0;
+
+    if ((atLastSection && event.deltaY > 0) || (atFirstSection && event.deltaY < 0)) {
+      event.preventDefault();
+      event.stopPropagation();
+      window.scrollBy({
+        top: event.deltaY,
+        behavior: "auto",
+      });
+    }
+  };
+
   if (!hasRigSupport) {
     return <TechnologyFallbackSequence />;
   }
-
-  const handleRigWheelCapture = useCallback(
-    (event: React.WheelEvent<HTMLDivElement>) => {
-      dismissScrollHint();
-
-      if (isMobile || isSmallScreen) return;
-
-      const atLastSection = activeSection >= sectionPoses.length - 1;
-      const atFirstSection = activeSection <= 0;
-
-      if ((atLastSection && event.deltaY > 0) || (atFirstSection && event.deltaY < 0)) {
-        event.preventDefault();
-        event.stopPropagation();
-        window.scrollBy({
-          top: event.deltaY,
-          behavior: "auto",
-        });
-      }
-    },
-    [activeSection, dismissScrollHint, isMobile, isSmallScreen, sectionPoses.length],
-  );
 
   return (
     <Box
@@ -812,8 +820,12 @@ export default function TechnologyScrollRig() {
         </ScrollControls>
       </Canvas>
 
-      <Overlay activePose={sectionPoses[activeSection]} activeSection={activeSection} isMobile={usePhoneStyleOverlay} />
-      <ScrollHintOverlay visible={showScrollHint} />
+      <Overlay
+        activePose={sectionPoses[activeSection]}
+        activeSection={activeSection}
+        isMobile={usePhoneStyleOverlay}
+        showScrollHint={showScrollHint}
+      />
     </Box>
   );
 }

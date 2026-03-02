@@ -23,7 +23,7 @@ Describe the desired result.
 - Route or page:
 - Component or file:
 - Content, UI, or workflow:
-
+- Screen size
 ## Constraints
 
 List any brand, language, accessibility, or technical constraints.

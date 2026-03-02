@@ -34,7 +34,7 @@ export default function FloatInput({
   };
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: "0.35rem", ...sx }}>
+    <Box sx={{ display: "flex", alignItems: "center", gap: { xs: "0.35rem", xxl: "0.45rem", xxxl: "0.55rem" }, ...sx }}>
       <IconButton
         size="small"
         onClick={() => {
@@ -42,7 +42,7 @@ export default function FloatInput({
           setLocalVal(nextValue === 0 ? "" : String(nextValue));
           onChange(nextValue);
         }}
-        sx={{ border: "1px solid #e0e0e0", borderRadius: 0, p: "2px", flexShrink: 0 }}
+        sx={{ border: "1px solid #e0e0e0", borderRadius: 0, p: { xs: "2px", xxl: "6px", xxxl: "8px" }, minWidth: { xxl: "2.75rem", xxxl: "3.25rem" }, minHeight: { xxl: "2.75rem", xxxl: "3.25rem" }, flexShrink: 0, "& svg": { width: { xxl: "0.95rem", xxxl: "1.15rem" }, height: { xxl: "0.95rem", xxxl: "1.15rem" } } }}
       >
         <FaMinus size={8} />
       </IconButton>
@@ -68,14 +68,14 @@ export default function FloatInput({
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <Typography sx={{ fontSize: "0.65rem", color: "#aaa", whiteSpace: "nowrap" }}>{unit}</Typography>
+              <Typography sx={{ fontSize: { xs: "0.65rem", xxl: "0.74rem", xxxl: "0.86rem" }, color: "#aaa", whiteSpace: "nowrap" }}>{unit}</Typography>
             </InputAdornment>
           ),
         }}
         sx={{
           flex: 1,
-          "& .MuiOutlinedInput-root": { borderRadius: 0 },
-          "& input": { textAlign: "center", fontWeight: 700, fontSize: "0.85rem", p: "4px 0" },
+          "& .MuiOutlinedInput-root": { borderRadius: 0, minHeight: { xxl: "3rem", xxxl: "3.5rem" } },
+          "& input": { textAlign: "center", fontWeight: 700, fontSize: { xs: "0.85rem", xxl: "1.12rem", xxxl: "1.32rem" }, p: { xs: "4px 0", xxl: "8px 0", xxxl: "10px 0" } },
         }}
       />
       <IconButton
@@ -85,7 +85,7 @@ export default function FloatInput({
           setLocalVal(String(nextValue));
           onChange(nextValue);
         }}
-        sx={{ border: "1px solid #e0e0e0", borderRadius: 0, p: "2px", flexShrink: 0 }}
+        sx={{ border: "1px solid #e0e0e0", borderRadius: 0, p: { xs: "2px", xxl: "6px", xxxl: "8px" }, minWidth: { xxl: "2.75rem", xxxl: "3.25rem" }, minHeight: { xxl: "2.75rem", xxxl: "3.25rem" }, flexShrink: 0, "& svg": { width: { xxl: "0.95rem", xxxl: "1.15rem" }, height: { xxl: "0.95rem", xxxl: "1.15rem" } } }}
       >
         <FaPlus size={8} />
       </IconButton>

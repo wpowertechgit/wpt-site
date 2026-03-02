@@ -1,10 +1,12 @@
-import { Box, Link, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FaEnvelope, FaFacebook, FaPhone, FaYoutube } from "react-icons/fa";
 import { HiBuildingOffice2 } from "react-icons/hi2";
 import { TbTournament } from "react-icons/tb";
 import ContactForm from "../components/ContactForm";
+
+const MOBILE_NAVBAR_OFFSET = "5rem";
 
 const CONTACT_ENTRY_FONT_SIZE = {
   xs: "1.5rem",
@@ -24,6 +26,7 @@ const fadeIn = (delay: number) => ({
 
 const Contact = () => {
   const { t } = useTranslation();
+  const isMobileLayout = useMediaQuery("(max-width:1099px)");
 
   return (
     <Box
@@ -34,7 +37,11 @@ const Contact = () => {
         color: "#000000",
       }}
     >
-      <Box component={motion.div} {...fadeIn(0.5)}>
+      <Box
+        component={motion.div}
+        {...fadeIn(0.5)}
+        sx={{ pt: isMobileLayout ? MOBILE_NAVBAR_OFFSET : 0 }}
+      >
         <Box
           sx={{
             width: "100%",

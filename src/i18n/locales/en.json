@@ -5,14 +5,14 @@
     "nav.calculator": "Calculator",
     "nav.applications": "Applications",
     "nav.docs": "Docs",
-    "nav.press": "Press",
+    "nav.press": "News",
     "nav.history": "History",
     "nav.contact": "Contact",
     "pillar-waste": "Waste",
     "pillar-waste-title": "Waste",
     "pillar-waste-description": "WPT processes varied waste streams—including municipal, industrial, and organic fractions—through a controlled, parametric system that maintains operational stability despite material heterogeneity. This method integrates diverse waste typologies into a single technological flow, converting variable inputs into predictable feedstock for energy recovery.",
     "pillar-power-title": "Power",
-    "pillar-power-description": "The system converts the organic fraction of waste into synthesis gas (Syngas), achieving an electrical output of up to 1.1–1.15 MWh per processed ton through gas-engine generators. This process enables continuous grid injection or dedicated industrial supply, using automated monitoring to ensure stability and alignment with European energy standards.",
+    "pillar-power-description": "The system converts waste into synthesis gas (syngas), which is subsequently used for electricity generation through high-efficiency internal combustion engines. At an average calorific value of approximately 14 MJ/kg, the process enables the production of around 1 MWh of electricity per tonne processed (depending on conversion efficiency), ensuring continuous operation and stable injection into the National Power System (NPS) through automated monitoring and control of operational parameters. Through this integration, the installation contributes to the stability and resilience of the local energy infrastructure.",
     "pillar-tech-title": "Tech",
     "pillar-tech-description": "Molecular disintegration is a thermochemical process that fragments the chemical bonds of complex organic structures in a controlled, oxygen-free environment to produce synthesis gas. Unlike direct combustion, this method reduces waste to its elemental components, resulting in a filtered energy carrier and a stabilized mineral residue suitable for industrial reuse.",
     "learn-more": "Learn more",
@@ -26,12 +26,10 @@
     "explore": "Explore applications",
     "documentation": "Documentation",
     "commercial-presentation": "Commercial Presentation",
-    "method-summary": "Method Summary",
-    "press-kit": "Press Kit",
     "all-documents": "All documents",
     "docs.pillar.blue": "Core Certifications",
     "docs.pillar.gray": "Documents, Agreements, Approvals, Authorizations",
-    "docs.pillar.red": "Brochures and Brand Assets",
+    "docs.pillar.red": "Commercial Presentations",
     "docs.documents.intro": "Agreements, approvals, and authorizations are listed in this module as documentation records.",
     "docs.documents.directive1": "EU Directive: 2000/76 EG 2014/35/EU 2014/30/EU 2006/42/EC",
     "docs.documents.directive2": "SR EN ISO12100:2011",
@@ -53,12 +51,11 @@
     "document4": "Environmental Authorization - Nr.188/19.12.2022 Jidvei",
     "document5": "Environmental Authorization - Nr.61/03.04.2024 Târnăveni",
     "document6": "Environmental Agreement - Nr.421/01.04.2024 Satu Mare",
-    "document7": "Environmental Agreement - Nr.194/18.08.2023 Cluj",
+    "document7": "Environmental Authorization - Nr.30/19.02.2026 Cluj",
     "document8": "Construction Authorization - Nr.330/07.08.2024 Cluj",
-    "press.heroTitle": "Press and External Coverage",
-    "press.heroDescription": "This section lists third-party media references and public institutional communication about Waste Powertech. Content is organized as source-based records, not promotional statements.",
+    "press.heroTitle": "News",
+    "press.heroDescription": "This section presents media references and public institutional communications issued by third parties regarding the Waste PowerTech technological solution. The content is organized as source-based records derived from publicly available and documented information, without promotional intent.",
     "press.readSource": "Read source",
-    "learn-brand": "Learn more about the brand standards",
     "press.imageAltPrefix": "Press item image",
     "news8": {
         "title": "A facility in Cluj could power the city in the event of a failure. Waste can be converted into electricity and heat",
@@ -93,6 +90,8 @@
         "paragraph": "The County Council's (CJ) investment in the first such municipal waste treatment facility amounts to 14 million euros. The president of the institution, Alin Tișe, signed with the winner of the tender, Waste Powertech, the design and execution contract for the molecular disintegration treatment facility for the energy recovery of municipal waste from the county. The awarded value of the contract is 60 million lei, excluding VAT. The financing is provided from CJ Cluj's own funds."
     },
     "calculator-title": "System Output Calculator",
+    "calc.pageTitle": "Waste Input Estimator",
+    "calc.pageIntro": "Select waste inputs, define your own custom input mix, test processing quantities, and generate estimated output figures in PDF document format.",
     "modules": "Modules",
     "mwh-year": "MWh/year",
     "households": "Households",
@@ -100,6 +99,10 @@
     "open-full-calculator": "Open full calculator",
     "footer-text": "WPT · Waste Powertech · Romania",
     "contact-us": "Contact us",
+    "contact.form.name": "Your Name",
+    "contact.form.email": "Your Email",
+    "contact.form.message": "Your Message",
+    "contact.form.submit": "Send Message",
     "tech-title": "WPT Technology (Tech)",
     "tech-intro": "Advances in thermochemical processes and molecular control enable the development of methods capable of treating materials at a structural level, not only mechanically or through combustion.\n\nWithin this technological framework emerges controlled molecular disintegration - a process that acts on the bonds between molecules, facilitating the conversion of matter into a stable and usable energy form.\n\nWaste Power Tech develops and applies this method as an integrated technological infrastructure, positioning itself at the intersection of waste management and energy production.",
     "tech-body-page-1-title": "",
@@ -145,7 +148,7 @@
     "tech-body-page-6-next": "On next page: What conditions are required for installation?",
     "tech-body-page-6-prev": "On previous page: What remains after the process?",
     "tech-body-page-7-title": "What conditions are required for installation?",
-    "tech-body-page-7-body": "Installing a WPT unit requires a constant and predictable material stream, access to electrical infrastructure for integrating the produced energy, and an industrial platform suitable from a logistical and operational standpoint. In addition, the project must align with the applicable regulatory framework, including environmental permitting and integration into the local infrastructure.\n\nThe modular configuration allows the installation to be adapted to the specific conditions of each site, ensuring technical and operational compatibility with the existing context.",
+    "tech-body-page-7-body": "The implementation of the Waste PowerTech technological solution requires ensuring a constant and predictable feedstock supply, access to electrical infrastructure for the integration of the generated energy, and the availability of an industrial platform suitable from a logistical and operational standpoint.\n\nThe project must be aligned with the applicable regulatory framework, including the obtaining of environmental permits and integration into the existing local infrastructure.\n\nThe modular configuration of the installation enables the adaptation of capacity and technical architecture to the specific conditions of each site, ensuring technical, operational, and regulatory compatibility with the local industrial and energy context.",
     "tech-body-page-7-tile-1": "Access to a\nconstant waste",
     "tech-body-page-7-tile-2": "Connection to the\nelectrical grid",
     "tech-body-page-7-tile-3": "Suitable industrial\nsurface",
@@ -171,16 +174,16 @@
     "tech-scroll-3-body": "After shredding, material is held in a temporary storage unit. This buffer stage provides a steady and controlled feed rate into thermal processing.",
     "tech-scroll-4-title": "Feed System",
     "tech-scroll-4-body": "From storage, material is conveyed into the core reactor chamber. The automated feed system regulates input flow to maintain stable operating conditions.",
-    "tech-scroll-5-title": "Pyrolysis Reactor",
+    "tech-scroll-5-title": "Reactor",
     "tech-scroll-5-body": "Material undergoes high-temperature molecular disintegration in the absence of oxygen. Without air, combustion does not occur. The process thermally decomposes waste into synthesis gas (syngas) and a solid residue.",
-    "tech-scroll-6-title": "Solid Byproduct (Char / Carbon Residue)",
-    "tech-scroll-6-body": "A solid byproduct is produced. This residue can be used in secondary industrial applications, including construction materials and other carbon-based products.",
+    "tech-scroll-6-title": "Solid Byproduct ( Ash / Inert material)",
+    "tech-scroll-6-body": "A solid byproduct is produced. This residue can be used in secondary industrial applications, including construction materials.",
     "tech-scroll-7-title": "Gas Filtration and Conditioning",
     "tech-scroll-7-body": "Produced gas passes through filtration and cleaning stages. Particulates and contaminants are removed to produce cleaner syngas for power generation.",
     "tech-scroll-8-title": "Gas Storage Tanks",
     "tech-scroll-8-body": "Cleaned gas is stored in pressurized tanks to regulate flow and maintain consistent supply to generation units. Depending on system configuration, gas can be stored in compressed or partially liquefied form.",
     "tech-scroll-9-title": "Power Generation",
-    "tech-scroll-9-body": "Conditioned syngas is fed to generator units for electricity production. Each WP1000 system uses five 350 kVA generators, with approximately 1 MW electrical output per operating hour depending on load conditions.",
+    "tech-scroll-9-body": "Conditioned syngas is fed to generator units for electricity production.",
     "tech-scroll-hint": "Scroll to progress",
     "tabs": {
         "b2g": {
@@ -223,7 +226,7 @@
             "resilience": {
                 "title": "3. Decentralized Energy Resilience",
                 "imageAlt": "Power generation module and waste to grid diagram",
-                "body": "Through the conversion of municipal waste into synthesis gas, WPT installations generate approximately 9,120 MWh of electricity annually. This allows municipalities to establish localized, predictable energy sources, reducing dependence on external grid volatility and contributing to regional energy security frameworks."
+                "body": "By converting municipal waste into synthesis gas, the WPT facilities within the CMID Cluj project generate approximately 18.500 MW of electricity annually. This allows municipalities to establish localized, predictable energy sources, reducing dependence on external grid volatility and contributing to regional energy security frameworks."
             },
             "impact": {
                 "title": "4. Regional Economic Impact & Skill Development",
@@ -234,9 +237,9 @@
         "refraction": {
             "title": "B2G \"Refraction\" Principles",
             "intro": "Institutional principle: WPT operates as a technical authority rather than a commercial vendor. In the public sector, clarity is a responsibility and transparency is a functional requirement.",
-            "principle1": "Method over promise: Verifiable data is provided for energy yields (1.1 to 1.15 MWh per ton) rather than generalized performance claims.",
-            "principle2": "Non-combustion verification: Molecular disintegration is explicitly defined as a thermochemical fragmentation process, distinct from incineration for regulatory and public clarity.",
-            "principle3": "Risk mitigation: Each installation is a replicable modular system designed for stable integration into existing municipal logistical chains."
+            "principle1": "Method over Promise: Performance is supported by verifiable data rather than general performance claims. Energy yield is clearly stated (approximately 1 MWh per tonne of waste processed at a calorific value of 14 MJ/kg), based on measured technical parameters.",
+            "principle2": "Technological and Regulatory Clarity: Molecular disintegration is explicitly defined as a controlled thermochemical fragmentation process, distinct from incineration, ensuring regulatory clarity and transparent public communication.",
+            "principle3": "Risk Mitigation through Integration: Each installation is designed as a modular, replicable system optimized for stable integration into existing municipal logistics chains, minimizing operational and deployment risks."
         }
     },
     "b2b": {
@@ -256,12 +259,12 @@
             "operational": {
                 "title": "1. Operational Integration & Workflow Stability",
                 "imageAlt": "Facility exterior and input versus residual output comparison",
-                "body": "WPT modules are engineered for on-site deployment within existing manufacturing ecosystems. The system is capable of processing varied industrial residues—including polymers, elastomers, and lignocellulosic materials—without disrupting core production cycles. By treating waste at the molecular level, the technology ensures a continuous, automated supply of electricity or thermal energy for internal industrial use."
+                "body": "The Waste PowerTech technological solution is designed for on-site implementation within existing production ecosystems. The system is capable of processing various industrial residues — including polymers, elastomers, and lignocellulosic materials — without disrupting core production cycles. By treating waste at the molecular level, the technology ensures a continuous, automated supply of electricity and/or thermal energy for internal industrial use."
             },
             "caloric": {
                 "title": "2. Caloric Extraction & Waste-to-Asset Conversion",
                 "imageAlt": "SCADA monitoring interface and gas filtration assembly",
-                "body": "Beyond traditional mechanical recycling, molecular disintegration extracts the maximum energy potential from contaminated or mixed waste streams. Generating up to 1.15 MWh of electricity per ton processed, the WPT system recalibrates industrial waste from a logistical cost center into a strategic raw material. This shift reduces the volatility of energy procurement and eliminates high-cost disposal fees."
+                "body": "Beyond traditional mechanical recycling, molecular disintegration unlocks the energy potential of contaminated or mixed waste streams. By generating approximately 1 MWh of electricity per tonne processed, at an average calorific value of 14 MJ/kg, the Waste PowerTech system transforms industrial waste from a logistical cost center into a predictable energy resource.This conversion reduces exposure to energy market volatility and lowers costs associated with waste disposal or landfilling."
             },
             "scalability": {
                 "title": "3. Infrastructure Scalability & Modular Architecture",
@@ -275,19 +278,19 @@
             }
         },
         "refraction": {
-            "title": "B2B/B2I \"Refraction\" Principles",
-            "intro": "Industrial/Investment Principle: Performance is a functional duty. In the private sector, authority is derived from measurable outcomes and operational reliability",
-            "principle1": "Technical Clarity: We prioritize chemical process transparency over narrative shortcuts",
-            "principle2": "Measurable Outcomes: Every project is benchmarked against real-time conversion efficiency and downtime metrics.",
-            "principle3": "Systemic Integration: WPT is presented as a component of a larger industrial or financial system, not as a standalone curiosity."
+            "title": "Industrial / Investment Principle",
+            "intro": "Performance is a functional obligation. In the private sector, authority is built on measurable results and demonstrated operational reliability.",
+            "principle1": "Technical Clarity : We prioritize transparency of the chemical process and operational parameters over narrative simplifications or unsubstantiated claims.",
+            "principle2": "Measurable Results : Each project is evaluated based on real-time conversion efficiency and availability metrics (uptime / downtime), with continuous performance monitoring.",
+            "principle3": "Systemic Integration : Waste PowerTech is designed as an integrated component of a broader industrial or financial system, not as an isolated solution, ensuring compatibility with existing infrastructure and the strategic objectives of partners."
         }
     },
     "accessibility_title": "Accessibility",
-    "accessibility_text": "We want everyone to be able to use our website easily. Some parts may not be fully accessible yet, but we're working on it and welcome suggestions from visitors.",
+    "accessibility_text": "1. STATEMENT OF INTENT: Waste Powertech SRL (the 'Entity') maintains an unwavering commitment to the principles of digital equity and the promotion of universal access across all facets of its digital ecosystem. We endeavor to ensure that our technical architecture remains inclusive and perceivable for the widest possible demographic of users, irrespective of sensory impairment, cognitive diversity, or technological constraints.\n\n2. TECHNICAL ADHERENCE AND REMEDIATION: The Entity proactively strives to align its interface and content delivery mechanisms with the Web Content Accessibility Guidelines (WCAG) 2.1, specifically targeting Level AA conformance. While we implement rigorous internal audits to facilitate interoperability with assistive technologies—including but not limited to screen readers, voice recognition software, and alternative input devices—we acknowledge that certain legacy elements or third-party integrations may currently exist in a state of ongoing optimization.\n\n3. ONGOING COMPLIANCE MONITORING: Accessibility is perceived by the Entity not as a static destination, but as a continuous cycle of technological remediation. We utilize a combination of automated diagnostic tools and manual qualitative assessments to identify and mitigate potential barriers to information access. Should any user encounter a perceived deficiency in the navigable structure or content accessibility of this Site, we formally invite a detailed submission of said barriers via our designated communication channels to facilitate expedited systemic review.",
     "privacy_policy_title": "Privacy & Cookies Policy",
-    "privacy_policy_text": "At Waste Powertech SRL, we respect your privacy and we also like to keep things simple. We don't track visitors, log personal data, or run analytics. We have no hidden databases or forms that collect your information. Some pages include content from YouTube or Google Maps, which may set cookies for their own functionality. We don't control or access those cookies. If you contact us by email, we'll read and reply, but we don't store or share your messages. We use secure hosting and HTTPS to keep this site safe. There's no tracking, profiling, or secret data collection. If this ever changes, we'll update this page. Until then, there's nothing to accept, reject, or delete because we simply don't keep any personal data. Waste Powertech SRL - respecting privacy without tracking you first.",
-    "terms_of_use_title": "Terms of Use",
-    "terms_of_use_text": "This website and its contents are provided by Waste Powertech SRL for general informational purposes only. While we strive to keep information accurate and up to date, we make no warranties regarding its completeness or reliability. By using this site, you agree that Waste Powertech SRL shall not be held responsible for any damages resulting from its use or from reliance on the information presented. All content, including text and images, is protected by copyright and may not be reproduced without permission.",
+    "privacy_policy_text": "1. PREAMBLE AND SCOPE OF APPLICATION: This Exhaustive Policy is founded upon the provisions of Regulation (EU) 2016/679 (commonly known under the acronym GDPR) and absolutely and irrevocably governs the manner in which Waste Powertech SRL (hereinafter referred to as the 'Data Controller') interacts with, processes, manages, or elects not to store your personal data. Accessing and navigating this Site constitutes an implicit acknowledgment that you have read, understood, and assimilated the entire conceptual and legal apparatus detailed in this section.\n\n2. THE PRINCIPLE OF MINIMIZATION AND ACTIVE COLLECTION: The Data Controller declares and warrants that its digital infrastructure has been designed in strict accordance with the fundamental principle of 'Privacy by Design'. Therefore, you are hereby advised that the Site does not utilize proprietary analytical scripts, does not query IP addresses for the purpose of creating user profiles, does not employ 'browser fingerprinting' techniques, and does not collect behavioral telemetry data. Any data provided directly and voluntarily by you, exclusively via electronic correspondence (e-mail), shall be processed strictly on the basis of the legitimate interest to formulate a response to your inquiry and shall not be alienated, commercialized, ceded, or otherwise included in databases destined for automated direct marketing.\n\n3. EXONERATION OF LIABILITY REGARDING COOKIE MODULES AND THIRD-PARTY TECHNOLOGIES: ALTHOUGH THE DATA CONTROLLER DOES NOT PLACE FIRST-PARTY TRACKING COOKIE MODULES, YOU ARE HEREBY INFORMED, AND EXPRESSLY UNDERSTAND AND ACCEPT THE FACT THAT THE SITE MAY INTEGRATE MULTIMEDIA CONTENT AND FUNCTIONALITIES PROVIDED BY THIRD-PARTY ENTITIES (E.G., YOUTUBE, GOOGLE MAPS, OR OTHER SIMILAR SERVICE PROVIDERS). THESE THIRD PARTIES MAY STORE, ACCESS, AND PROCESS THEIR OWN COOKIE MODULES, WEB BEACONS, OR OTHER SIMILAR TECHNOLOGIES ON YOUR TERMINAL EQUIPMENT. WASTE POWERTECH SRL DECLINES ANY RESPONSIBILITY, LEGAL OR OTHERWISE, REGARDING THE PRIVACY POLICIES, DATA COLLECTION PRACTICES, PROFILING ALGORITHMS, OR SECURITY BREACHES OF THESE THIRD PARTIES. THE UTILIZATION OF THESE INTEGRATED ELEMENTS FALLS STRICTLY UNDER THE PURVIEW OF THE TERMS AND CONDITIONS IMPOSED BY THE RESPECTIVE EXTERNAL SERVICE PROVIDERS.\n\n4. TECHNICAL AND ORGANIZATIONAL SECURITY MEASURES: In order to ensure a level of security commensurate with the risk, in accordance with Article 32 of the GDPR, the Data Controller has implemented and maintains data encryption protocols in transit through the utilization of SSL/TLS (HTTPS) security certificates. Notwithstanding the foregoing, you acknowledge the fact that the transmission of information via the public internet network is never completely secure, for which reason the Data Controller cannot and does not guarantee the absolute security of the data transmitted to the Site, any such transmission being executed entirely and exclusively at your own risk.\n\n5. RIGHTS OF THE DATA SUBJECT: To the extent mandated by applicable legislation and in relation to the infinitesimal quantity of data we process (limited strictly to voluntary correspondence), we hereby inform you that you benefit from a complex of inalienable rights, including but not limited to: the right of access to data, the right to rectification of inaccurate data, the right to erasure ('the right to be forgotten'), the right to restriction of processing, the right to data portability, the right to object, as well as the right not to be subject to a decision based solely on automated processing. To exercise these rights, you may contact us in writing, with the express caveat that, in the absence of actively stored identifiable data within our systems, the practical applicability of such requests may be technically null and void.\n\n6. UNILATERAL UPDATES: Waste Powertech SRL retains the exclusive, discretionary, and unconditional right to revise, expand, diminish, or completely rewrite this Privacy Policy in its entirety at any given moment, without the necessity of prior notification or explicit prior consent. It remains your exclusive responsibility to periodically revisit this section to ensure your continued compliance with and agreement to our operational practices.",
+    "terms_of_use_title": "Terms and Conditions of Use",
+    "terms_of_use_text": "1. ACCEPTANCE OF TERMS: By accessing, browsing, or otherwise utilizing the Waste Powertech SRL website (hereinafter referred to as the 'Site'), you irrevocably agree to be bound by these Comprehensive Terms and Conditions of Use, as well as all applicable laws and regulations. If you do not agree with any part of these terms, you are expressly prohibited from using or accessing this Site. \n\n2. MODIFICATION OF TERMS: Waste Powertech SRL reserves the absolute right, at its sole discretion, to modify, alter, or otherwise update these Terms of Use at any time without prior notice. Your continued use of the Site following the posting of modifications will constitute your acceptance of the revised terms. \n\n3. INTELLECTUAL PROPERTY RIGHTS: All content, including but not limited to text, graphics, logos, icons, images, audio clips, digital downloads, data compilations, software, technical specifications, and the overarching 'look and feel' of the Site, is the exclusive property of Waste Powertech SRL or its content suppliers and is protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws. No material from the Site may be copied, reproduced, republished, uploaded, posted, transmitted, or distributed in any way without our express, prior written permission. \n\n4. DISCLAIMER OF WARRANTIES: YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE SITE IS AT YOUR SOLE RISK. THE SITE AND ALL INFORMATION, CONTENT, MATERIALS, AND SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE SITE ARE PROVIDED BY WASTE POWERTECH SRL ON AN 'AS IS' AND 'AS AVAILABLE' BASIS. WASTE POWERTECH SRL MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE OPERATION OF THE SITE OR THE COMPLETENESS, ACCURACY, RELIABILITY, SUITABILITY, OR AVAILABILITY WITH RESPECT TO THE SITE OR THE INFORMATION CONTAINED THEREIN. TO THE FULL EXTENT PERMISSIBLE BY APPLICABLE LAW, WASTE POWERTECH SRL DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. \n\n5. LIMITATION OF LIABILITY: IN NO EVENT SHALL WASTE POWERTECH SRL, ITS DIRECTORS, OFFICERS, EMPLOYEES, AFFILIATES, AGENTS, CONTRACTORS, INTERNS, SUPPLIERS, SERVICE PROVIDERS, OR LICENSORS BE LIABLE FOR ANY INJURY, LOSS, CLAIM, OR ANY DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, SPECIAL, OR CONSEQUENTIAL DAMAGES OF ANY KIND, INCLUDING, WITHOUT LIMITATION, LOST PROFITS, LOST REVENUE, LOST SAVINGS, LOSS OF DATA, REPLACEMENT COSTS, OR ANY SIMILAR DAMAGES, WHETHER BASED IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, ARISING FROM YOUR USE OF ANY OF THE SERVICE OR ANY PRODUCTS PROCURED USING THE SERVICE, OR FOR ANY OTHER CLAIM RELATED IN ANY WAY TO YOUR USE OF THE SITE. \n\n6. INDEMNIFICATION: You agree to indemnify, defend, and hold harmless Waste Powertech SRL and our parent, subsidiaries, affiliates, partners, officers, directors, agents, contractors, licensors, service providers, subcontractors, suppliers, and employees, from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of your breach of these Terms of Use or the documents they incorporate by reference, or your violation of any law or the rights of a third party. \n\n7. GOVERNING LAW AND JURISDICTION: These Terms of Use and any separate agreements whereby we provide you services shall be governed by and construed in accordance with the laws of Romania, without regard to its conflict of law provisions. Any dispute arising out of or related to these Terms shall be subject to the exclusive jurisdiction of the competent courts located in Romania. \n\n8. SEVERABILITY: In the event that any provision of these Terms of Use is determined to be unlawful, void, or unenforceable, such provision shall nonetheless be enforceable to the fullest extent permitted by applicable law, and the unenforceable portion shall be deemed to be severed from these Terms of Use; such determination shall not affect the validity and enforceability of any other remaining provisions.\n\n9.Clause on the Indicative Nature of the Performance Calculator The Waste PowerTech system performance calculator is provided for indicative purposes only and serves exclusively as a preliminary reference tool to support the initiation of commercial discussions. The values generated do not constitute a binding offer, performance guarantee, or contractual commitment. The technical design of the Waste PowerTech solution shall be primarily based on the official analysis provided by the beneficiary regarding waste composition, calorific value, and other relevant material characteristics. Final performance parameters will be determined on the basis of these verified data and validated within the contractual technical documentation.",
     "blank": "‎ ",
     "year-1": 2009,
     "year-1-element-1": "Initiation of the Concept",

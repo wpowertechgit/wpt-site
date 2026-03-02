@@ -20,7 +20,7 @@ export default function DocumentsPillarContent() {
         sx={{
           fontFamily: "Figtree",
           fontWeight: 500,
-          fontSize: { xs: "0.98rem", md: "1.05rem", lg: "1.15rem", xl: "1.35rem", xxl: "1.65rem", xxxl: "2.1rem" },
+          fontSize: { xs: "0.98rem", md: "1.05rem", lg: "1.15rem", xl: "1.35rem", xxl: "2.5rem", xxxl: "3rem" },
           lineHeight: 1.55,
           color: "#ffffff",
           maxWidth: "70ch",
@@ -58,7 +58,7 @@ export default function DocumentsPillarContent() {
                     minWidth: 0,
                     borderRight: "1px solid rgba(255, 255, 255, 0.28)",
                     px: { xs: 0.8, md: 1, lg: 1.1, xl: 1.3, xxl: 1.55, xxxl: 1.9 },
-                    py: { xs: 0.7, md: 0.8, lg: 0.92, xl: 1.05, xxl: 1.25, xxxl: 1.5 },
+                    py: { xs: 0.7, md: 0.8, lg: 0.92, xl: 1.05, xxl: 1.5, xxxl: 2 },
                   }}
                 >
                   {entryKey ? (
@@ -77,7 +77,7 @@ export default function DocumentsPillarContent() {
                         sx={{
                           fontFamily: "Figtree",
                           fontWeight: 500,
-                          fontSize: { xs: "0.84rem", md: "0.9rem", lg: "0.98rem", xl: "1.15rem", xxl: "1.4rem", xxxl: "1.8rem" },
+                          fontSize: { xs: "0.84rem", md: "0.9rem", lg: "0.98rem", xl: "1.15rem", xxl: "2.5rem", xxxl: "3rem" },
                           lineHeight: 1.45,
                           color: "#ffffff",
                         }}
@@ -100,7 +100,7 @@ export default function DocumentsPillarContent() {
                       sx={{
                         fontFamily: "Figtree",
                         fontWeight: 500,
-                        fontSize: { xs: "0.82rem", md: "0.88rem", lg: "0.94rem", xl: "1.1rem", xxl: "1.35rem", xxxl: "1.72rem" },
+                        fontSize: { xs: "0.82rem", md: "0.88rem", lg: "0.94rem", xl: "1.1rem", xxl: "2.5rem", xxxl: "3rem" },
                         lineHeight: 1.45,
                         color: "#ffffff",
                       }}

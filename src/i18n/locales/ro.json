@@ -1,20 +1,20 @@
 {
     "hero-title": "Waste Powertech",
-    "hero-subtitle": "Transformarea deșeurilor în energie prin tehnologie",
+    "hero-subtitle": "Transformarea deșeurilor în energie prin dezintegrare moleculară",
     "nav.technology": "Tehnologie",
     "nav.calculator": "Calculator",
     "nav.applications": "Aplicații",
-    "nav.docs": "Documentație",
-    "nav.press": "Presă",
+    "nav.docs": "Documente",
+    "nav.press": "News",
     "nav.history": "Istoric",
     "nav.contact": "Contact",
     "pillar-waste": "Deșeuri",
-    "pillar-waste-title": "Deșeuri",
-    "pillar-waste-description": "WPT procesează fluxuri variate de deșeuri — inclusiv fracții municipale, industriale și organice — printr-un sistem parametric controlat care menține stabilitatea operațională în ciuda eterogenității materialelor. Această metodă integrează diverse tipologii de deșeuri într-un singur flux tehnologic, transformând intrările variabile în materie primă previzibilă pentru valorificare energetică.",
-    "pillar-power-title": "Energie",
-    "pillar-power-description": "Sistemul transformă fracția organică a deșeurilor în gaz de sinteză (Syngas), obținând o producție de energie electrică de până la 1.1–1.15 MWh per tonă procesată prin intermediul generatoarelor cu motoare pe gaz. Acest proces permite injecția continuă în rețea sau alimentarea industrială dedicată, utilizând monitorizarea automată pentru a asigura stabilitatea și alinierea la standardele energetice europene.",
-    "pillar-tech-title": "Tehnic",
-    "pillar-tech-description": "Dezintegrarea moleculară este un proces termochimic care fragmentează legăturile chimice ale structurilor organice complexe într-un mediu controlat, fără oxigen, pentru a produce gaz de sinteză. Spre deosebire de arderea directă, această metodă reduce deșeurile la componentele lor elementare, rezultând un purtător de energie filtrat și un reziduu mineral stabilizat, potrivit pentru reutilizare industrială.",
+    "pillar-waste-title": "Waste",
+    "pillar-waste-description": "WPT procesează fluxuri variate de deșeuri printr-un sistem controlat care menține stabilitatea operațională în ciuda eterogenității materialelor. Această metodă integrează diverse tipuri de deșeuri într-un singur flux tehnologic, transformând intrările variabile în materie primă previzibilă pentru valorificare energetică.",
+    "pillar-power-title": "Power",
+    "pillar-power-description": "Sistemul convertește deșeurile în gaz de sinteză (syngas), utilizat ulterior pentru producerea de energie electrică prin motoare cu ardere internă de înaltă eficiență. La o putere calorifică medie a materialului de aproximativ 14 MJ/kg, procesul permite obținerea a circa 1 MWh energie electrică per tonă procesată (în funcție de randamentul conversiei), asigurând funcționare continuă și injecție stabilă în Sistemul Energetic Național (SEN), prin monitorizare și control automatizat al parametrilor operaționali. Prin această integrare, instalația contribuie la stabilitatea și reziliența infrastructurii energetice locale.",
+    "pillar-tech-title": "Tech",
+    "pillar-tech-description": "Dezintegrarea moleculară este un proces termochimic controlat, desfășurat în absența oxigenului, prin care legăturile chimice ale structurilor organice complexe sunt fragmentate pentru a genera gaz de sinteză (syngas). Spre deosebire de arderea directă, procesul nu implică oxidare completă, ci conversie controlată, reducând materialul la componente elementare și producând un purtător energetic filtrat (syngas) și un reziduu mineral inert stabilizat (cenușă), adecvat pentru reutilizare industrial.",
     "learn-more": "Află mai multe",
     "case-study-title": "Referință operațională: Stația de Dezintegrare Moleculară Cluj",
     "case-study-description": "Stația de Dezintegrare Moleculară Cluj servește drept principală referință funcțională pentru tehnologia WPT într-un mediu activ. Această implementare demonstrează fezabilitatea metodei de dezintegrare moleculară la scară operațională, oferind o bază validată și documentată pentru replicarea structurală în alte locații municipale și industriale.",
@@ -26,12 +26,10 @@
     "explore": "Explorează aplicațiile",
     "documentation": "Documentație",
     "commercial-presentation": "Prezentarea comercială",
-    "method-summary": "Rezumatul metodei",
-    "press-kit": "Kit de presă",
     "all-documents": "Toate documentele",
-    "docs.pillar.blue": "Certificari de baza",
+    "docs.pillar.blue": "Certificări",
     "docs.pillar.gray": "Documente, acorduri, avize, aprobari, autorizatii",
-    "docs.pillar.red": "Brosuri si active de brand",
+    "docs.pillar.red": "Prezentări Comerciale",
     "docs.documents.intro": "Acordurile, avizele si autorizatiile sunt listate in acest modul ca inregistrari de documentatie.",
     "docs.documents.directive1": "Directiva UE: 2000/76 EG 2014/35/EU 2014/30/EU 2006/42/EC",
     "docs.documents.directive2": "SR EN ISO12100:2011",
@@ -53,12 +51,11 @@
     "document4": "Autorizație de mediu - Nr.188/19.12.2022 Jidvei",
     "document5": "Autorizație de mediu - Nr.61/03.04.2024 Târnăveni",
     "document6": "Acord de mediu - Nr.421/01.04.2024 Satu Mare",
-    "document7": "Acord de mediu - Nr.194/18.08.2023 Cluj",
+    "document7": "Autorizație de mediu - Nr.30/19.02.2026 Cluj",
     "document8": "Autorizație de construire - Nr.330/07.08.2024 Cluj",
-    "press.heroTitle": "Presă și acoperire externă",
-    "press.heroDescription": "Această secțiune enumeră referințele media ale terților și comunicările instituționale publice despre Waste Powertech. Conținutul este organizat ca înregistrări bazate pe surse, nu ca declarații promoționale.",
+    "press.heroTitle": "News",
+    "press.heroDescription": "Această secțiune prezintă referințe media și comunicări instituționale publice realizate de terți cu privire la soluția Waste PowerTech. Conținutul este organizat sub forma unor înregistrări bazate pe surse publice și documentate, fără caracter promotional.",
     "press.readSource": "Citește sursa",
-    "learn-brand": "Află mai multe despre standardele brandului",
     "press.imageAltPrefix": "Imagine articol de presă",
     "news8": {
         "title": "O instalație din Cluj ar putea alimenta orașul în caz de avarie. Deșeurile pot fi transformate în electricitate și căldură",
@@ -93,6 +90,8 @@
         "paragraph": "Investiția Consiliului Județean (CJ) în prima astfel de instalație de tratare a deșeurilor municipale se ridică la 14 milioane de euro.Președintele instituției Alin Tișe, a semnat cu câștigătorul licitației, Waste Powertech, contractul de proiectare și execuție a instalației de tratare prin dezintegrare moleculară pentru valorificarea energetică a deșeurilor municipale din județ. Valoarea adjudecată a contractului este de 60 milioane lei, fără TVA. Finanțarea este asigurată din fonduri proprii ale CJ Cluj."
     },
     "calculator-title": "Calculator de randament al sistemului",
+    "calc.pageTitle": "Estimator pentru intrările de deșeuri",
+    "calc.pageIntro": "Selectați intrările de deșeuri, definiți propriul mix personalizat, testați cantitățile de procesare și generați valori estimate în format document PDF.",
     "modules": "Module",
     "mwh-year": "MWh/an",
     "households": "Gospodării",
@@ -100,8 +99,12 @@
     "open-full-calculator": "Deschide calculatorul complet",
     "footer-text": "WPT · Waste Powertech · România",
     "contact-us": "Contactează-ne",
-    "tech-title": "Tehnologia WPT (Tech)",
-    "tech-intro": "Progresele în procesele termochimice și controlul molecular permit dezvoltarea unor metode capabile să trateze materialele la nivel structural, nu doar mecanic sau prin ardere.\n\nÎn acest cadru tehnologic apare dezintegrarea moleculară controlată - un proces care acționează asupra legăturilor dintre molecule, facilitând transformarea materiei într-o formă de energie stabilă și utilizabilă.\n\nWaste Power Tech dezvoltă și aplică această metodă ca o infrastructură tehnologică integrată, poziționându-se la intersecția dintre managementul deșeurilor și producția de energie.",
+    "contact.form.name": "Numele dumneavoastră",
+    "contact.form.email": "Emailul dumneavoastră",
+    "contact.form.message": "Mesajul dumneavoastră",
+    "contact.form.submit": "Trimite mesajul",
+    "tech-title": "Tehnologia WPT",
+    "tech-intro": "Progresul în domeniul proceselor termochimice și al controlului molecular permite dezvoltarea unor metode capabile să trateze materialele la nivel structural, nu doar la nivel mecanic sau combustiv. \n\nÎn acest cadru tehnologic apare dezintegrarea moleculară controlată – un proces care intervine asupra legăturilor dintre molecule, facilitând conversia materiei într-o formă energetică stabilă și utilizabilă. \n\nWaste Power Tech dezvoltă și aplică această metodă ca infrastructură tehnologică integrată, poziționându-se la intersecția dintre gestionarea deșeurilor și producția de energie.",
     "tech-body-page-1-title": "",
     "tech-body-page-1-body": "Gestionarea modernă a deșeurilor și producerea de energie nu mai pot fi abordate prin soluții unidimensionale. Tehnologia joacă un rol esențial în crearea unor sisteme integrate, capabile să trateze simultan eficiența materială, impactul asupra mediului și viabilitatea economică. În absența unor soluții tehnologice robuste, deșeurile rămân o problemă logistică, iar energia - o presiune asupra infrastructurii existente. \n\nTehnologiile clasice de tratare - fie că vorbim despre depozitare, incinerare sau digestie anaerobă - au limite clare în ceea ce privește eficiența energetică, controlul emisiilor sau tipologia materialelor acceptate. În special pentru fracțiile mixte, contaminate sau dificil de reciclat, este necesară o abordare care să intervină la nivel chimic, nu doar mecanic sau biologic. Dezintegrarea moleculară răspunde acestei nevoi printr-un proces termochimic controlat, care transformă fracția organică a deșeurilor în gaz de sinteză utilizabil energetic. Abordarea nu urmărește simpla reducere volumetrică, ci conversia controlată a energiei chimice conținute în material. Prin automatizare, monitorizare continuă și arhitectură modulară, tehnologia permite integrarea într-un sistem energetic existent, oferind predictibilitate operațională și adaptabilitate la fluxuri variabile de material.",
     "tech-body-page-1-next": "Pe pagina următoare: Dezintegrarea Moleculară",
@@ -145,7 +148,7 @@
     "tech-body-page-6-next": "Pe pagina următoare: Ce condiții sunt necesare pentru instalare?",
     "tech-body-page-6-prev": "Pe pagina anterioară: Ce rămâne după proces?",
     "tech-body-page-7-title": "Ce condiții sunt necesare pentru instalare?",
-    "tech-body-page-7-body": "Instalarea unei unități WPT presupune existența unui flux constant și predictibil de material, acces la infrastructura electrică pentru integrarea energiei produse, precum și o platformă industrială adecvată din punct de vedere logistic și operațional. În plus, proiectul trebuie aliniat cadrului de reglementare aplicabil, incluzând autorizarea de mediu și integrarea în infrastructura locală. Configurația modulară permite adaptarea instalației la condițiile specifice fiecărui amplasament, asigurând compatibilitate tehnică și operațională cu contextul existent.",
+    "tech-body-page-7-body": "Implementarea soluției tehnologice Waste PowerTech presupune asigurarea unui flux constant și predictibil de material, acces la infrastructura electrică pentru integrarea energiei produse și disponibilitatea unei platforme industriale adecvate din punct de vedere logistic și operațional. \n\nProiectul trebuie aliniat cadrului de reglementare aplicabil, incluzând obținerea autorizațiilor de mediu și integrarea în infrastructura locală existentă. \n\nConfigurația modulară a instalației permite adaptarea capacității și a arhitecturii tehnice la condițiile specifice fiecărui amplasament, asigurând compatibilitate tehnică, operațională și de conformitate cu contextul industrial și energetic local.",
     "tech-body-page-7-tile-1": "Acces la flux \nconstant de deșeuri",
     "tech-body-page-7-tile-2": "Conectare la\nrețea electrică",
     "tech-body-page-7-tile-3": "Suprafață industrială\nadecvată",
@@ -171,16 +174,16 @@
     "tech-scroll-3-body": "După tocare, materialul este păstrat într-o unitate de depozitare temporară. Această etapă tampon oferă un debit de alimentare constant și controlat către procesarea termică.",
     "tech-scroll-4-title": "Sistem de alimentare",
     "tech-scroll-4-body": "Din depozitare, materialul este transportat în camera centrală a reactorului. Sistemul de alimentare automatizat reglează fluxul de intrare pentru a menține condiții de funcționare stabile.",
-    "tech-scroll-5-title": "Reactor de piroliză",
+    "tech-scroll-5-title": "Reactor",
     "tech-scroll-5-body": "Materialul este supus dezintegrării moleculare la temperatură înaltă în absența oxigenului. Fără aer, nu are loc arderea. Procesul descompune termic deșeurile în gaz de sinteză (syngas) și un reziduu solid",
-    "tech-scroll-6-title": "Subprodus solid (Cărbune / Reziduu de carbon)",
+    "tech-scroll-6-title": "Subprodus solid (Cenușă / Material inert)",
     "tech-scroll-6-body": "Este generat un subprodus solid. Acest reziduu poate fi utilizat în aplicații industriale secundare, inclusiv în materiale de construcții.",
     "tech-scroll-7-title": "Filtrarea și condiționarea gazului",
     "tech-scroll-7-body": "Gazul produs trece prin etape de filtrare și curățare. Particulele și contaminanții sunt îndepărtați pentru a produce un gaz de sinteză mai curat pentru generarea de energie.",
     "tech-scroll-8-title": "Rezervoare de stocare a gazului",
     "tech-scroll-8-body": "Gazul curățat este stocat în rezervoare sub presiune pentru a regla fluxul și a menține o alimentare constantă către unitățile de generare. În funcție de configurația sistemului, gazul poate fi stocat sub formă comprimată sau parțial lichefiată.",
     "tech-scroll-9-title": "Generarea de energie",
-    "tech-scroll-9-body": "Gazul de sinteză condiționat alimentează unitățile generatoare pentru producerea de energie electrică. Fiecare sistem WP1000 utilizează cinci generatoare de 350 kVA, cu o producție electrică de aproximativ 1 MW pe oră de funcționare, în funcție de condițiile de sarcină.",
+    "tech-scroll-9-body": "Gazul de sinteză condiționat alimentează unitățile generatoare pentru producerea de energie electrică.",
     "tech-scroll-hint": "Deruleaza pentru progres",
     "tabs": {
         "b2g": {
@@ -223,7 +226,7 @@
             "resilience": {
                 "title": "3. Reziliență energetică descentralizată",
                 "imageAlt": "Modul de generare a energiei și diagrama circuitului de la deșeuri la rețea",
-                "body": "Prin transformarea deșeurilor municipale în gaz de sinteză, instalațiile WPT generează aproximativ 9.120 MWh de energie electrică anual. Acest lucru permite municipalităților să stabilească surse de energie localizate, predictibile, reducând dependența de volatilitatea rețelei externe și contribuind la cadrele regionale de securitate energetică."
+                "body": "Prin transformarea deșeurilor municipale în gaz de sinteză, instalațiile WPT din cadrul proiectului CMID Cluj , aproximativ 18.500 MW de energie electrică anual. Acest lucru permite municipalităților să stabilească surse de energie localizate, predictibile, reducând dependența de volatilitatea rețelei externe și contribuind la cadrele regionale de securitate energetică."
             },
             "impact": {
                 "title": "4. Impact economic regional și dezvoltarea abilităților",
@@ -234,9 +237,9 @@
         "refraction": {
             "title": "Principiile de „Refracție” B2G",
             "intro": "Principiu instituțional: WPT funcționează mai degrabă ca o autoritate tehnică decât ca un furnizor comercial. În sectorul public, claritatea este o responsabilitate, iar transparența este o cerință funcțională.",
-            "principle1": "Metoda primează în fața promisiunii: Sunt furnizate date verificabile pentru randamentele energetice (1,1 până la 1,15 MWh pe tonă), nu afirmații generale de performanță.",
-            "principle2": "Verificare fără combustie: Dezintegrarea moleculară este definită explicit ca un proces de fragmentare termochimică, distinct de incinerare, pentru claritate reglementară și publică.",
-            "principle3": "Atenuarea riscurilor: Fiecare instalație este un sistem modular replicabil, conceput pentru integrarea stabilă în lanțurile logistice municipale existente."
+            "principle1": "Metoda înaintea promisiunii : Performanța este susținută prin date verificabile, nu prin afirmații generale. Randamentul energetic este exprimat clar (aprox. 1 MWh per tonă de deșeu procesată, la o putere calorifică de 14 MJ/kg), pe baza parametrilor tehnici măsurați.",
+            "principle2": "Claritate tehnologică și reglementară : Dezintegrarea moleculară este definită explicit ca proces de conversie termochimică prin fragmentare controlată, distinct de incinerare, asigurând claritate în raport cu cadrul de reglementare și comunicarea publică.",
+            "principle3": "Integrare și reducerea riscului: Fiecare instalație este proiectată ca sistem modular replicabil, optimizat pentru integrare stabilă în lanțurile logistice municipale existente și pentru reducerea riscurilor operaționale."
         }
     },
     "b2b": {
@@ -256,12 +259,12 @@
             "operational": {
                 "title": "1. Integrare operațională & stabilitatea fluxului de lucru",
                 "imageAlt": "Exteriorul instalației și comparație între intrări și randamentul rezidual",
-                "body": "Modulele WPT sunt proiectate pentru implementare la fața locului în ecosistemele de producție existente. Sistemul este capabil să proceseze diverse reziduuri industriale — inclusiv polimeri, elastomeri și materiale lignocelulozice — fără a perturba ciclurile de producție de bază. Tratând deșeurile la nivel molecular, tehnologia asigură o aprovizionare continuă, automatizată, cu energie electrică sau termică pentru uz intern industrial."
+                "body": "Soluția tehnologică WPT ester proiectată pentru implementare la fața locului în ecosistemul de producție existent. Sistemul este capabil să proceseze diverse reziduuri industriale — inclusiv polimeri, elastomeri și materiale lignocelulozice — fără a perturba ciclurile de producție de bază. Tratând deșeurile la nivel molecular, tehnologia asigură o aprovizionare continuă, automatizată, cu energie electrică sau termică pentru uz intern industrial."
             },
             "caloric": {
                 "title": "2. Extracție calorică & conversia deșeurilor în active",
                 "imageAlt": "Interfață de monitorizare SCADA și ansamblu de filtrare a gazelor",
-                "body": "Dincolo de reciclarea mecanică tradițională, dezintegrarea moleculară extrage potențialul energetic maxim din fluxurile de deșeuri contaminate sau mixte. Generând până la 1,15 MWh de energie electrică pe tonă procesată, sistemul WPT recalibrează deșeurile industriale dintr-un centru de costuri logistice într-o materie primă strategică. Această schimbare reduce volatilitatea achizițiilor de energie și elimină taxele ridicate de eliminare a deșeurilor."
+                "body": "Dincolo de reciclarea mecanică tradițională, dezintegrarea moleculară valorifică potențialul energetic al fluxurilor de deșeuri contaminate sau mixte. Generând aproximativ 1 MWh de energie electrică per tonă procesată, la o putere calorifică medie de 14 MJ/kg, sistemul Waste PowerTech transformă deșeurile industriale dintr-un centru de costuri logistice într-o resursă energetică predictibilă. Această conversie reduce expunerea la volatilitatea pieței de energie și diminuează costurile asociate eliminării sau depozitării deșeurilor."
             },
             "scalability": {
                 "title": "3. Scalabilitatea infrastructurii & arhitectură modulară",
@@ -275,19 +278,19 @@
             }
         },
         "refraction": {
-            "title": "Principiile de „Refracție” B2B/B2I",
-            "intro": "Principiu industrial/investițional: Performanța este o datorie funcțională. În sectorul privat, autoritatea derivă din rezultate măsurabile și fiabilitate operațională.",
-            "principle1": "Claritate tehnică: Prioritizăm transparența procesului chimic în fața scurtăturilor narative.",
-            "principle2": "Rezultate măsurabile: Fiecare proiect este evaluat în funcție de eficiența conversiei în timp real și de metricile timpilor de nefuncționare.",
-            "principle3": "Integrare sistemică: WPT este prezentat ca o componentă a unui sistem industrial sau financiar mai mare, nu ca o curiozitate izolată."
+            "title": "Principiu industrial / investițional",
+            "intro": "Performanța este o obligație funcțională. În sectorul privat, autoritatea se construiește prin rezultate măsurabile și fiabilitate operațională",
+            "principle1": "Claritate tehnică: Prioritizăm transparența procesului chimic și a parametrilor operaționali, în detrimentul simplificărilor narative sau al afirmațiilor nefundamentate.",
+            "principle2": "Rezultate măsurabile : Fiecare proiect este evaluat pe baza eficienței conversiei în condiții reale de operare și a indicatorilor de disponibilitate (uptime / downtime), cu monitorizare continuă a performanței.",
+            "principle3": "Integrare sistemică : Waste PowerTech este conceput ca o componentă integrată a unui sistem industrial sau financiar mai amplu, nu ca o soluție izolată, asigurând compatibilitate cu infrastructura existentă și cu obiectivele strategice ale partenerilor."
         }
     },
     "accessibility_title": "Accesibilitate",
-    "accessibility_text": "Ne dorim ca oricine să poată utiliza site-ul nostru cu ușurință. Unele secțiuni ar putea să nu fie încă complet accesibile, dar lucrăm la acest aspect și primim cu drag sugestii din partea vizitatorilor.",
-    "privacy_policy_title": "Politica de Confidențialitate & Cookies",
-    "privacy_policy_text": "La Waste Powertech SRL, respectăm confidențialitatea dvs. și ne place, de asemenea, să păstrăm lucrurile simple. Nu urmărim vizitatorii, nu stocăm date personale și nu rulăm analitice. Nu avem baze de date ascunse sau formulare care colectează informațiile dvs. Unele pagini includ conținut de pe YouTube sau Google Maps, care pot plasa cookie-uri pentru propria lor funcționalitate. Nu controlăm și nu accesăm acele cookie-uri. Dacă ne contactați prin e-mail, vom citi și vă vom răspunde, dar nu vă stocăm și nu vă distribuim mesajele. Folosim găzduire securizată și HTTPS pentru a menține acest site în siguranță. Nu există urmărire, profilare sau colectare secretă de date. Dacă acest lucru se va schimba vreodată, vom actualiza această pagină. Până atunci, nu aveți nimic de acceptat, de respins sau de șters, pentru că pur și simplu nu păstrăm date personale. Waste Powertech SRL - respectăm confidențialitatea fără a vă urmări mai întâi.",
+    "accessibility_text": "1. DECLARAȚIE DE INTENȚIE: Waste Powertech SRL („Entitatea”) își menține un angajament neclintit față de principiile echității digitale și promovarea accesului universal în toate fațetele ecosistemului său digital. Ne străduim să ne asigurăm că arhitectura noastră tehnică rămâne incluzivă și perceptibilă pentru cel mai larg spectru demografic de utilizatori, indiferent de deficiențele senzoriale, diversitatea cognitivă sau constrângerile tehnologice.\n\n2. ADERAREA TEHNICĂ ȘI REMEDIEREA: Entitatea depune eforturi proactive pentru a-și alinia interfața și mecanismele de livrare a conținutului cu Ghidul de Accesibilitate pentru Conținut Web (WCAG) 2.1, vizând în mod specific conformitatea de Nivel AA. Deși implementăm audituri interne riguroase pentru a facilita interoperabilitatea cu tehnologiile de asistență — incluzând, dar fără a se limita la cititoare de ecran, software de recunoaștere vocală și dispozitive de intrare alternative — recunoaștem că anumite elemente de tip „legacy” sau integrări ale unor terțe părți pot exista în prezent într-o stare de optimizare continuă.\n\n3. MONITORIZAREA CONTINUĂ A CONFORMITĂȚII: Accesibilitatea este percepută de către Entitate nu ca o destinație statică, ci ca un ciclu continuu de remediere tehnologică. Utilizăm o combinație de instrumente de diagnosticare automatizate și evaluări calitative manuale pentru a identifica și atenua barierele potențiale în calea accesului la informații. În cazul în care orice utilizator întâmpină o deficiență percepută în structura navigabilă sau în accesibilitatea conținutului acestui Site, invităm formal transmiterea unei descrieri detaliate a barierelor menționate prin canalele noastre de comunicare desemnate, pentru a facilita o revizuire sistemică accelerată.",
+    "privacy_policy_title": "Politica de Confidențialitate",
+    "privacy_policy_text": "1. PREAMBUL ȘI DOMENIU DE APLICARE: Prezenta Politică Exhaustivă este fundamentată pe dispozițiile Regulamentului (UE) 2016/679 (cunoscut sub acronimul RGPD sau GDPR) și reglementează în mod absolut și irevocabil modalitatea în care Waste Powertech SRL (denumită în continuare „Operatorul”) interacționează, procesează, gestionează sau alege să nu stocheze datele dumneavoastră cu caracter personal. Accesarea și navigarea pe acest Site constituie o recunoaștere implicită a faptului că ați citit, ați înțeles și v-ați însușit întregul aparat conceptual și legal detaliat în prezenta secțiune.\n\n2. PRINCIPIUL MINIMIZĂRII ȘI COLECTAREA ACTIVĂ: Operatorul declară și garantează că infrastructura sa digitală a fost proiectată conform principiului fundamental „Privacy by Design” (Confidențialitate din stadiul de concepție). Prin urmare, vă aducem la cunoștință că Site-ul nu utilizează scripturi analitice proprietare, nu interoghează adrese IP în vederea creării de profiluri de utilizator, nu utilizează tehnici de tip „browser fingerprinting” și nu colectează date de telemetrie comportamentală. Datele furnizate în mod direct și voluntar de către dumneavoastră, exclusiv prin intermediul corespondenței electronice (e-mail), vor fi prelucrate strict în temeiul interesului legitim de a vă formula un răspuns la solicitarea dumneavoastră și nu vor fi înstrăinate, comercializate, cedate sau incluse în baze de date destinate marketingului direct automatizat.\n\n3. EXONERAREA DE RĂSPUNDERE PRIVIND MODULELE COOKIE ȘI TEHNOLOGIILE TERȚELOR PĂRȚI: DEȘI OPERATORUL NU PLASEAZĂ MODULE COOKIE DE URMĂRIRE FIRST-PARTY, PRIN PREZENTA SUNTEȚI INFORMAT, ÎNȚELEGEȚI ȘI ACCEPTAȚI ÎN MOD EXPRES FAPTUL CĂ SITE-UL POATE INTEGRA CONȚINUT MULTIMEDIA ȘI FUNCȚIONALITĂȚI FURNIZATE DE ENTITĂȚI TERȚE (EX: YOUTUBE, GOOGLE MAPS SAU ALȚI FURNIZORI DE SERVICII SIMILARI). ACEȘTI TERȚI POT STOCA, ACCESA ȘI PRELUCRA PROPRIILE LOR MODULE COOKIE, BEACON-URI WEB SAU ALTE TEHNOLOGII SIMILARE PE ECHIPAMENTUL DUMNEAVOASTRĂ TERMINAL. WASTE POWERTECH SRL DECLINĂ ORICE RESPONSABILITATE, LEGALĂ SAU DE ALTĂ NATURĂ, CU PRIVIRE LA POLITICILE DE CONFIDENȚIALITATE, PRACTICILE DE COLECTARE A DATELOR, ALGORITMII DE PROFILARE SAU BREȘELE DE SECURITATE ALE ACESTOR TERȚE PĂRȚI. UTILIZAREA ACESTOR ELEMENTE INTEGRATE SE FACE STRICT SUB INCIDENȚA TERMENILOR ȘI CONDIȚIILOR IMPUSE DE RESPECTIVII FURNIZORI DE SERVICII EXTERNI.\n\n4. MĂSURI TEHNICE ȘI ORGANIZATORICE DE SECURITATE: Pentru a asigura un nivel de securitate corespunzător riscului, în conformitate cu art. 32 din GDPR, Operatorul a implementat și menține protocoale de criptare a datelor în tranzit prin utilizarea certificatelor de securitate SSL/TLS (HTTPS). Cu toate acestea, recunoașteți faptul că transmiterea de informații prin intermediul rețelei publice de internet nu este niciodată complet sigură, motiv pentru care Operatorul nu poate garanta și nu garantează securitatea absolută a datelor transmise către Site, orice transmisie fiind efectuată exclusiv pe propriul dumneavoastră risc.\n\n5. DREPTURILE PERSOANEI VIZATE: În măsura în care legislația aplicabilă o impune și raportat la cantitatea infimă de date pe care o procesăm (limitată strict la corespondența voluntară), vă informăm că beneficiați de un complex de drepturi inalienabile, incluzând dar fără a se limita la: dreptul de acces la date, dreptul la rectificarea datelor inexacte, dreptul la ștergerea datelor („dreptul de a fi uitat”), dreptul la restricționarea prelucrării, dreptul la portabilitatea datelor, dreptul la opoziție, precum și dreptul de a nu face obiectul unei decizii bazate exclusiv pe prelucrarea automată. Pentru exercitarea acestor drepturi, ne puteți contacta în scris, cu mențiunea că, în absența unor date identificabile stocate activ în sistemele noastre, aplicabilitatea practică a acestor cereri poate fi tehnic nulă.\n\n6. ACTUALIZĂRI UNILATERALE: Waste Powertech SRL își menține dreptul exclusiv, discreționar și necondiționat de a revizui, extinde, diminua sau rescrie integral prezenta Politică de Confidențialitate în orice moment, fără necesitatea unei notificări sau a unui acord prealabil. Este responsabilitatea dumneavoastră exclusivă de a revizita periodic această secțiune pentru a vă asigura de conformitatea și acordul dumneavoastră continuu cu practicile noastre.",
     "terms_of_use_title": "Termeni de Utilizare",
-    "terms_of_use_text": "Acest site web și conținutul său sunt furnizate de Waste Powertech SRL exclusiv în scopuri informaționale generale. Deși ne străduim să menținem informațiile corecte și la zi, nu oferim nicio garanție cu privire la exhaustivitatea sau fiabilitatea acestora. Prin utilizarea acestui site, sunteți de acord că Waste Powertech SRL nu va fi responsabilă pentru niciun fel de daune rezultate din utilizarea sa sau din bazarea pe informațiile prezentate. Tot conținutul, inclusiv textul și imaginile, este protejat de drepturi de autor și nu poate fi reprodus fără permisiune.",
+    "terms_of_use_text": "1. ACCEPTAREA TERMENILOR: Prin accesarea, navigarea sau utilizarea în orice alt mod a site-ului web Waste Powertech SRL (denumit în continuare „Site-ul”), sunteți de acord în mod irevocabil să respectați acești Termeni și Condiții Complete de Utilizare, precum și toate legile și reglementările aplicabile. Dacă nu sunteți de acord cu orice parte a acestor termeni, vă este interzis în mod expres să utilizați sau să accesați acest Site.\n\n2. MODIFICAREA TERMENILOR: Waste Powertech SRL își rezervă dreptul absolut, la discreția sa exclusivă, de a modifica, altera sau actualiza în orice alt mod acești Termeni de Utilizare în orice moment, fără notificare prealabilă. Utilizarea continuă a Site-ului de către dumneavoastră după publicarea modificărilor va constitui acceptarea de către dumneavoastră a termenilor revizuiți.\n\n3. DREPTURI DE PROPRIETATE INTELECTUALĂ: Tot conținutul, incluzând dar fără a se limita la text, grafică, logo-uri, pictograme, imagini, clipuri audio, descărcări digitale, compilații de date, software, specificații tehnice și „aspectul și senzația” (look and feel) generală a Site-ului, reprezintă proprietatea exclusivă a Waste Powertech SRL sau a furnizorilor săi de conținut și este protejat de legile naționale și internaționale privind drepturile de autor, mărcile comerciale, brevetele, secretele comerciale și alte legi privind proprietatea intelectuală sau drepturile de proprietate. Niciun material de pe Site nu poate fi copiat, reprodus, republicat, încărcat, postat, transmis sau distribuit în niciun fel fără permisiunea noastră expresă, prealabilă și în scris.\n\n4. EXCLUDEREA GARANȚIILOR: ÎNȚELEGEȚI ȘI SUNTEȚI DE ACORD ÎN MOD EXPRES CĂ UTILIZAREA SITE-ULUI SE FACE PE PROPRIUL DUMNEAVOASTRĂ RISC. SITE-UL ȘI TOATE INFORMAȚIILE, CONȚINUTUL, MATERIALELE ȘI SERVICIILE INCLUSE PE SAU PUSE LA DISPOZIȚIE ÎN ALT MOD PRIN INTERMEDIUL SITE-ULUI SUNT FURNIZATE DE WASTE POWERTECH SRL „CA ATARE” (AS IS) ȘI „AȘA CUM SUNT DISPONIBILE” (AS AVAILABLE). WASTE POWERTECH SRL NU FACE NICIUN FEL DE DECLARAȚII SAU GARANȚII, EXPRESE SAU IMPLICITE, CU PRIVIRE LA FUNCȚIONAREA SITE-ULUI SAU LA EXHAUSTIVITATEA, ACURATEȚEA, FIABILITATEA, ADECVAREA SAU DISPONIBILITATEA ÎN CEEA CE PRIVEȘTE SITE-UL SAU INFORMAȚIILE CONȚINUTE DE ACESTA. ÎN MĂSURA MAXIMĂ PERMISĂ DE LEGISLAȚIA APLICABILĂ, WASTE POWERTECH SRL DECLINĂ TOATE GARANȚIILE, EXPRESE SAU IMPLICITE, INCLUSIV, DAR FĂRĂ A SE LIMITA LA, GARANȚIILE IMPLICITE DE VANDABILITATE ȘI ADECVARE PENTRU UN ANUMIT SCOP.\n\n5. LIMITAREA RĂSPUNDERII: ÎN NICIUN CAZ WASTE POWERTECH SRL, DIRECTORII, OFIȚERII, ANGAJAȚII, AFILIAȚII, AGENȚII, CONTRACTORII, STAGIARII, FURNIZORII, PRESTATORII DE SERVICII SAU LICENȚIATORII SĂI NU VOR FI RĂSPUNZĂTORI PENTRU NICIO VĂTĂMARE, PIERDERE, RECLAMAȚIE SAU ORICE DAUNE DIRECTE, INDIRECTE, INCIDENTALE, PUNITIVE, SPECIALE SAU CONSECVENȚIALE DE ORICE FEL, INCLUSIV, FĂRĂ LIMITARE, PIERDERI DE PROFIT, PIERDERI DE VENITURI, ECONOMII PIERDUTE, PIERDERI DE DATE, COSTURI DE ÎNLOCUIRE SAU ORICE DAUNE SIMILARE, INDIFERENT DACĂ SE BAZEAZĂ PE CONTRACT, DELICT (INCLUSIV NEGLIJENȚĂ), RĂSPUNDERE STRICTĂ SAU ALTCEVA, REZULTÂND DIN UTILIZAREA DE CĂTRE DUMNEAVOASTRĂ A ORICĂRUI SERVICIU SAU A ORICĂROR PRODUSE ACHIZIȚIONATE PRIN INTERMEDIUL SERVICIULUI, SAU PENTRU ORICE ALTĂ RECLAMAȚIE LEGATĂ ÎN ORICE MOD DE UTILIZAREA SITE-ULUI.\n\n6. DESPĂGUBIRE: Sunteți de acord să despăgubiți, să apărați și să exonerați de răspundere Waste Powertech SRL, precum și compania mamă, filialele, afiliații, partenerii, ofițerii, directorii, agenții, contractorii, licențiatorii, prestatorii de servicii, subcontractanții, furnizorii și angajații noștri, împotriva oricărei reclamații sau cereri, inclusiv onorariile rezonabile ale avocaților, formulate de orice terță parte din cauza sau ca urmare a încălcării de către dumneavoastră a acestor Termeni de Utilizare sau a documentelor pe care le încorporează prin referință, sau a încălcării de către dumneavoastră a oricărei legi sau a drepturilor unei terțe părți.\n\n7. LEGISLAȚIA APLICABILĂ ȘI JURISDICȚIA: Acești Termeni de Utilizare și orice acorduri separate prin care vă oferim servicii vor fi guvernate și interpretate în conformitate cu legile din România, fără a lua în considerare dispozițiile sale privind conflictele de legi. Orice litigiu care decurge din sau în legătură cu acești Termeni va fi supus jurisdicției exclusive a instanțelor competente din România.\n\n8. SEPARABILITATE: În cazul în care se stabilește că orice prevedere a acestor Termeni de Utilizare este ilegală, nulă sau inaplicabilă, respectiva prevedere va fi totuși aplicabilă în măsura maximă permisă de legea aplicabilă, iar partea inaplicabilă va fi considerată a fi separată de acești Termeni de Utilizare; o astfel de decizie nu va afecta valabilitatea și aplicabilitatea oricăror altor prevederi rămase.\n\n9.Clauză privind caracterul orientativ al calculatorului de randament : Calculatorul de randament al sistemului Waste PowerTech are caracter estimativ și este furnizat exclusiv în scop orientativ, pentru facilitarea inițierii discuțiilor comerciale preliminare. Valorile generate nu constituie ofertă fermă, garanție de performanță sau angajament contractual. Proiectarea tehnică a soluției Waste PowerTech se va fundamenta în mod prioritar pe analiza oficială furnizată de beneficiar privind compoziția, puterea calorifică și caracteristicile relevante ale deșeurilor ce urmează a fi procesate. Parametrii finali de performanță vor fi stabiliți în baza acestor date și validați în cadrul documentației tehnice contractuale.",
     "blank": "‎ ",
     "year-1": 2009,
     "year-1-element-1": "Inițierea conceptului",
