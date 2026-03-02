@@ -13,12 +13,12 @@ live routes, integrated modules, and known gaps.
 
 - Vite + React 19 + TypeScript
 - React Router
-- Material UI + TailwindCSS
+- Material UI
 - Framer Motion
 - `@react-three/fiber` + `@react-three/drei` (3D technical scene)
 - `react-i18next` for translations
 - Playwright + axe-core + Lighthouse CI
-
+- Zustand for global storing
 ## Local Commands
 
 ```bash
@@ -62,8 +62,8 @@ npm run ci:quality
 - `/privacy-policy`
 - `/terms-of-use`
 - `/accessibility`
-- `/technology-debug`
-- `/technology-body-debug`
+- `/calculator`
+- `/contact`
 
 ## Assets Currently Wired
 
@@ -71,22 +71,9 @@ npm run ci:quality
 - Press images in `public/`
 - Technical vectors in `public/vectors/`
 - PDFs and certificates in `public/docs/`
-- 3D model: `src/assets/assembly/machinecluj-transformed.glb`
+- Fallback Technology page for phone and desktop screen sizes `public/fallbackDesktop` & `public/fallbackMobile`
 - Local fonts: Stack Sans and Figtree in `src/assets/fonts/`
-
-## Current Gaps and In-Progress Areas
-
-- Navigation links exist for routes that are not defined:
-  - `/contact`
-  - `/calculator`
-  - `/case-studies`
-- Language selector UI lists multiple locales, but only `en` translations are
-  loaded in `src/i18n/index.ts`.
-- Compliance pages read translation keys that are not present in
-  `src/i18n/locales/en.json`.
-- The impact calculator logic is currently embedded in
-  `src/components/ImpactCalculator.tsx`; there is no separate
-  `/utils/calculator.ts` module yet.
+- Assets for waste types `public/wasteTypes`
 
 ## Quality/CI Setup
 
