@@ -1,0 +1,12 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/r97205wpow/public_html/
+    - /bin/cp -R dist/* $DEPLOYPATH/
+    - find $DEPLOYPATH -maxdepth 1 \( \
+        -name '.htaccess' -o \
+        -name 'robots.txt' -o \
+        -name 'manifest.json' -o \
+        -name 'sitemap.xml' -o \
+        -name 'sendemail.php' -o \
+        -name 'PHPMailer' \
+      \) -exec echo "Enjoying {}" \;
