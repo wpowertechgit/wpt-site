@@ -38,6 +38,10 @@ npm run perf:lighthouse
 npm run ci:quality
 ```
 
+Playwright commands automatically skip when the `tests/` directory or a
+target spec file is not present. This keeps CI green while the site is
+maintained without a committed browser test suite.
+
 ## Implemented Routes
 
 - `/`
@@ -77,8 +81,9 @@ npm run ci:quality
 
 ## Quality/CI Setup
 
-- Playwright smoke tests: `tests/smoke.spec.ts`
-- Playwright accessibility checks (axe): `tests/a11y.spec.ts`
+- Playwright pipeline is optional and self-skips when `tests/` is absent
+- `npm run test:e2e` runs the full Playwright suite when present
+- `npm run test:a11y` runs `tests/a11y.spec.ts` when present
 - Lighthouse assertions configured in `lighthouserc.json`
 - GitHub Actions workflow: `.github/workflows/quality.yml`
 

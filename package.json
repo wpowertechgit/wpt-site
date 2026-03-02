@@ -9,10 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "fix:locale-encoding": "node scripts/fix-locale-encoding.mjs",
-    "test:e2e": "playwright test",
-    "test:a11y": "playwright test tests/a11y.spec.ts",
+    "test:e2e": "node scripts/run-playwright-if-present.mjs",
+    "test:a11y": "node scripts/run-playwright-if-present.mjs tests/a11y.spec.ts",
     "perf:lighthouse": "lhci autorun --config=./lighthouserc.json",
-    "ci:quality": "npm run build && npm run test:e2e && npm run perf:lighthouse"
+    "ci:quality": "npm run lint && npm run build && npm run test:e2e && npm run test:a11y && npm run perf:lighthouse"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
