@@ -12,14 +12,15 @@ power output, and the supporting technology with a technical and
 documentation-first presentation. References to the process use the
 term `molecular disintegration`.
 
-Current implementation snapshot for the `wpt-site` codebase.
+The `wpt-site` implementation is complete and maintained in this repository.
 
-Status date: 2026-02-26
+Status: complete
+Status date: 2026-03-03
 
 ## What This README Covers
 
-This document describes what is implemented in code right now, including
-live routes, integrated modules, and known gaps.
+This document describes the completed site structure, live routes,
+integrated modules, and active maintenance tooling.
 
 ## Stack
 
