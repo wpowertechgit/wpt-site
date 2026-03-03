@@ -419,7 +419,7 @@
     "calc.emptyResults": "Configurați amestecul de deșeuri pentru a vedea proiecțiile de impact anual",
     "calc.breakdown.title": "Contribuția energetică după tip",
     "calc.disclaimer.trigger": "Estimări bazate pe proiectul Cluj – CMID",
-    "calc.disclaimer.body": "Toate cifrele sunt estimări aproximative bazate pe instalația de referință Cluj – CMID: 2 unități WP1000, 25.550 t/an, funcționare 24/7 cu mentenanță în ~10 sărbători majore",
+    "calc.disclaimer.body": "Toate cifrele sunt estimări aproximative bazate pe instalația de referință Cluj , 25.550 t/an, funcționare 24/7 cu mentenanță în ~10 sărbători majore",
     "calc.disclaimer.uptime": "timp de funcționare",
     "calc.disclaimer.warning": "Producția depinde de PCS (HHV), umiditate, conținutul de cenușă și dimensiunea particulelor. Ajustați umiditatea per tip pe fiecare rând.",
     "calc.disclaimer.src.moisture": "Formula umidității",

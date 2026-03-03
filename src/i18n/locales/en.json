@@ -426,7 +426,7 @@
     "calc.emptyResults": "Configure your waste mix to see annual impact projections",
     "calc.breakdown.title": "Energy contribution by type",
     "calc.disclaimer.trigger": "Estimates based on the Cluj – CMID project",
-    "calc.disclaimer.body": "All figures are approximate estimates based on the Cluj – CMID reference installation: 2× WP1000 units, 25,550 t/year, 24/7 operation with maintenance on ~10 major holidays",
+    "calc.disclaimer.body": "All figures are approximate estimates based on the Cluj – CMID reference installation:  25,550 t/year, 24/7 operation with maintenance on ~10 major holidays",
     "calc.disclaimer.uptime": "uptime",
     "calc.disclaimer.warning": "Output depends on HHV, moisture, ash content, and particle size. Adjust per-type moisture in each row.",
     "calc.disclaimer.src.moisture": "Moisture formula",

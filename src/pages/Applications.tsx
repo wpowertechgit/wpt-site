@@ -140,30 +140,15 @@ export default function Applications() {
           </Stack>
         </Box>
 
-        <Box sx={{ pt: { xs: 2, md: 3 }, perspective: "1400px" }}>
+        <Box sx={{ pt: { xs: 2, md: 3 } }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={mode}
-              initial={{
-                opacity: 0,
-                rotateY: isB2G ? -70 : 70,
-                x: isB2G ? -40 : 40,
-                transformOrigin: isB2G ? "left center" : "right center",
-              }}
-              animate={{
-                opacity: 1,
-                rotateY: 0,
-                x: 0,
-                transformOrigin: "center center",
-              }}
-              exit={{
-                opacity: 0,
-                rotateY: isB2G ? 70 : -70,
-                x: isB2G ? 40 : -40,
-                transformOrigin: isB2G ? "right center" : "left center",
-              }}
-              transition={{ duration: 0.38, ease: "easeInOut" }}
-              style={{ willChange: "transform, opacity" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, ease: "linear" }}
+              style={{ willChange: "opacity" }}
             >
               {isB2G ? <B2GTrackScroll /> : <B2BTrackScroll />}
             </motion.div>

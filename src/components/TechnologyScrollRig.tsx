@@ -83,24 +83,48 @@ const BASE_SECTION_POSES: SectionPose[] = [
     bodyKey: "tech-scroll-4-body",
   },
   {
-    position: [13.571, -0.193, -4.538],
-    rotation: [0.669, -1.535, 0.669],
+    position: [
+      13.924,
+      2.671,
+      -4.548
+    ],
+    rotation: [
+      -1.469,
+      -1.302,
+      -1.465
+    ],
     title: "Pyrolysis Reactor",
     body: "Material undergoes high-temperature molecular disintegration without oxygen.",
     titleKey: "tech-scroll-5-title",
     bodyKey: "tech-scroll-5-body",
   },
   {
-    position: [17.323, 3.118, -6.701],
-    rotation: [-0.935, -0.509, -0.584],
+    position: [
+      16.275,
+      3.174,
+      -5.178
+    ],
+    rotation: [
+      -0.84,
+      -0.533,
+      -0.516
+    ],
     title: "Solid Byproduct (Char / Carbon Residue)",
     body: "Carbon-rich residue is extracted for secondary industrial use.",
     titleKey: "tech-scroll-6-title",
     bodyKey: "tech-scroll-6-body",
   },
   {
-    position: [36.859, 1.182, -12.151],
-    rotation: [-3.001, 0.752, 3.045],
+    position: [
+      32.632,
+      1.182,
+      -12.794
+    ],
+    rotation: [
+      -3.001,
+      0.752,
+      3.045
+    ],
     title: "Gas Filtration and Conditioning",
     body: "Gas is filtered and conditioned into cleaner synthesis gas.",
     titleKey: "tech-scroll-7-title",
