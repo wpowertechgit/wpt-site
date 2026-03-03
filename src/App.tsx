@@ -12,7 +12,7 @@ const History = lazy(() => import("./pages/about/History"));
 const Technology = lazy(() => import("./pages/Technology"));
 const Applications = lazy(() => import("./pages/Applications"));
 const Press = lazy(() => import("./pages/Press"));
-// const TechnologyDebug = lazy(() => import("./pages/TechnologyDebug"));
+const TechnologyDebug = lazy(() => import("./legacy/TechnologyDebug"));
 // const TechnologyBodyDebug = lazy(() => import("./pages/TechnologyBodyDebug"));
 const PrivacyPolicy = lazy(() => import("./pages/compliance/PrivacyPolicy"));
 const TermsOfUse = lazy(() => import("./pages/compliance/TermsOfUse"));
@@ -32,8 +32,8 @@ function App() {
         <AppLanguageSync />
         <Suspense fallback={<Box sx={{ minHeight: "100vh", bgcolor: "#ffffff" }} />}>
           <Routes>
-            {/*<Route path="technology-debug" element={<TechnologyDebug />} />
-            <Route path="technology-body-debug" element={<TechnologyBodyDebug />} />*/}
+            <Route path="technology-debug" element={<TechnologyDebug />} />
+            {/*<Route path="technology-body-debug" element={<TechnologyBodyDebug />} />*/}
             <Route element={<AppLayout />}>
               {/* Root */}
               <Route index element={<Home />} />

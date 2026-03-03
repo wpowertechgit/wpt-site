@@ -56,7 +56,7 @@ export default function ActiveWasteRow({
               size="small"
               value={moisture}
               min={0}
-              max={60}
+              max={80}
               step={0.5}
               onChange={(_, value) => onMoistureChange(Array.isArray(value) ? value[0] : value)}
               sx={{ flex: 1, color: wasteType.color, py: { xs: "3px", xxl: "6px", xxxl: "8px" }, "& .MuiSlider-thumb": { width: { xs: 10, xxl: 16, xxxl: 20 }, height: { xs: 10, xxl: 16, xxxl: 20 }, bgcolor: wasteType.color }, "& .MuiSlider-rail": { opacity: 0.15, height: { xxl: 5, xxxl: 6 } }, "& .MuiSlider-track": { height: { xxl: 5, xxxl: 6 } } }}

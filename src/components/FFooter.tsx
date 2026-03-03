@@ -1,9 +1,6 @@
-﻿import { Box, Typography, Link } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import { FaEnvelope, FaFacebook, FaYoutube } from "react-icons/fa";
+import { Box, Link, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink } from "react-router-dom";
-import PrivacyMap from "./PrivacyMap";
 
 export default function FFooter() {
   const { t } = useTranslation();
@@ -24,7 +21,7 @@ export default function FFooter() {
       component="footer"
       className="mt-auto w-full bg-white text-black font-body"
       sx={{
-        py: "2.5rem",
+        py: { xs: "2rem", md: "2.5rem" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -36,131 +33,57 @@ export default function FFooter() {
         sx={{
           width: "100%",
           px: { xs: 2, md: 8, lg: 12 },
-          pb: 3,
+          pb: { xs: 2, md: 3 },
         }}
       >
         <Box sx={{ borderTop: "3px solid #000" }} />
       </Box>
 
-      <Grid
-        container
-        spacing={4}
+      <Box
         sx={{
           maxWidth: "1200px",
           width: "100%",
           margin: "auto",
-          px: { xs: 2, md: 0 },
+          px: { xs: 2, md: 4, lg: 0 },
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: { xs: "center", md: "center" },
+          justifyContent: "space-between",
+          gap: { xs: "1.5rem", md: "2rem" },
           "@media (min-width:2300px)": {
             maxWidth: "2160px",
           },
         }}
       >
-        <Grid
-          size={{ xs: 12, md: 4 }}
+        <Link
+          component={RouterLink}
+          to="/"
           sx={{
-            pl: { xs: 0, md: 20 },
-            display: "flex",
-            flexDirection: "column",
-            alignItems: { xs: "center", md: "flex-start" },
-            textAlign: { xs: "center", md: "left" },
-            "@media (min-width:2000px)": {
-              fontSize: "2rem",
-            },
-          }}
-        >
-          <Typography
-            variant="h5"
-            className="font-headline"
-            sx={{
-              fontWeight: 700,
-              mb: "0.5rem",
-              "@media (min-width:2000px)": {
-                fontSize: "2rem",
-              },
-            }}
-          >
-            {t("contact-us")}
-          </Typography>
-
-          <Typography
-            sx={{
-              mt: "0.25rem",
-              "@media (min-width:2000px)": {
-                fontSize: "2rem",
-              },
-            }}
-          >
-            SC Waste Powertech SRL
-          </Typography>
-
-          <Typography
-            sx={{
-              mt: "0.25rem",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              "@media (min-width:2000px)": {
-                fontSize: "2rem",
-              },
-            }}
-          >
-            <FaEnvelope /> office@wpowertech.ro
-          </Typography>
-
-          <Link
-            href="https://www.facebook.com/people/Waste-Powertech-SRL/61559358922953/"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              ...linkBaseSx,
-              mt: "0.25rem",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              opacity: 0.85,
-              color: "inherit",
-            }}
-          >
-            <FaFacebook /> Waste Powertech SRL
-          </Link>
-
-          <Link
-            href="https://www.youtube.com/@wastepowertech4213"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              ...linkBaseSx,
-              mt: "0.25rem",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              opacity: 0.85,
-              color: "inherit",
-            }}
-          >
-            <FaYoutube /> Waste Powertech
-          </Link>
-        </Grid>
-
-        <Grid
-          size={{ xs: 12, md: 4 }}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
+            display: "inline-flex",
             alignItems: "center",
+            justifyContent: "center",
+            color: "inherit",
+            textDecoration: "none",
           }}
         >
-          <PrivacyMap />
-        </Grid>
+          <Box
+            component="img"
+            src="/wpt-black-compact-logo.svg"
+            alt="Waste Powertech logo"
+            sx={{
+              width: { xs: "8.5rem", md: "10rem", xl: "12rem", xxl: "13rem", xxxl: "15rem" },
+              height: "auto",
+              display: "block",
+            }}
+          />
+        </Link>
 
-        <Grid
-          size={{ xs: 12, md: 4 }}
+        <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: { xs: "center", md: "flex-end" },
-            pr: { xs: 0, md: 8 },
-            gap: "0.5rem",
+            gap: { xs: "0.45rem", md: "0.5rem" },
           }}
         >
           <Link
@@ -202,35 +125,31 @@ export default function FFooter() {
               wordBreak: "break-word",
             }}
           >
-            {t('terms_of_use_title', 'Terms of Use')}
+            {t("terms_of_use_title", "Terms of Use")}
           </Link>
-        </Grid>
-      </Grid>
+
+          <Link
+            component={RouterLink}
+            to="/contact"
+            sx={{
+              ...linkBaseSx,
+              textAlign: { xs: "center", md: "right" },
+              opacity: 0.85,
+              color: "inherit",
+              wordBreak: "break-word",
+            }}
+          >
+            {t("contact-us", "Contact")}
+          </Link>
+        </Box>
+      </Box>
 
       <Typography
         variant="caption"
         sx={{
           textAlign: "center",
           opacity: 0.8,
-          mt: 2,
-          fontSize: "0.85rem",
-          px: 2,
-          maxWidth: "1200px",
-          "@media (min-width:2000px)": {
-            maxWidth: "2000px",
-            fontSize: "2rem",
-          },
-        }}
-      >
-        Map content is loaded only after explicit user action. No first-party tracking cookies are intentionally set by this website.
-      </Typography>
-
-      <Typography
-        variant="caption"
-        sx={{
-          textAlign: "center",
-          opacity: 0.8,
-          mt: 1,
+          mt: { xs: 1.5, md: 2 },
           fontSize: "0.85rem",
           px: 2,
           "@media (min-width:2000px)": {
@@ -238,7 +157,7 @@ export default function FFooter() {
           },
         }}
       >
-        {`All rights reserved © ${new Date().getFullYear()} Waste Powertech`}
+        {t("footer.rights_reserved", { year: new Date().getFullYear() })}
       </Typography>
     </Box>
   );

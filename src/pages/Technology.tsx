@@ -41,7 +41,16 @@ export default function Technology() {
           display: "flex",
           alignItems: "center",
           px: { xs: 2, sm: 3, md: 4, lg: 6, xl: 10, xxl: 10, xxxl: 20 },
-          py: { xs: 8, sm: 9, md: 10, lg: 12, xl: 14, xxl: 14, xxxl: 20 },
+          pt: {
+            xs: "calc(env(safe-area-inset-top, 0px) + 7rem)",
+            sm: "calc(env(safe-area-inset-top, 0px) + 7.5rem)",
+            md: 10,
+            lg: 12,
+            xl: 14,
+            xxl: 14,
+            xxxl: 20,
+          },
+          pb: { xs: 8, sm: 9, md: 10, lg: 12, xl: 14, xxl: 14, xxxl: 20 },
         }}
       >
         <Container maxWidth={false} sx={{ width: "100%", maxWidth: "120rem" }}>

@@ -69,11 +69,11 @@ $deploymentInfo = @(
 
 Set-Content -Path (Join-Path $resolvedTarget "DEPLOYMENT.txt") -Value $deploymentInfo
 
-if (-not (Test-Path (Join-Path $resolvedTarget ".gitignore"))) {
-  Set-Content -Path (Join-Path $resolvedTarget ".gitignore") -Value @(
-    ""
-  )
-}
+$deployGitignore = @(
+  $ZipName
+)
+
+Set-Content -Path (Join-Path $resolvedTarget ".gitignore") -Value $deployGitignore
 
 if (-not (Test-Path (Join-Path $resolvedTarget "README.md"))) {
   Set-Content -Path (Join-Path $resolvedTarget "README.md") -Value @(

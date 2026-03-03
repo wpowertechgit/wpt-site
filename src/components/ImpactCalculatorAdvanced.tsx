@@ -69,6 +69,7 @@ export default function ImpactCalculatorAdvanced() {
     setCustomTypes((prev) => [...prev, mix]);
     setWasteInputs((prev) => ({ ...prev, [mix.key]: { tonnes: 0, moisture: mix.defaultMoisture } }));
     setCustomBuilderOpen(false);
+    setSelectorOpen(true);
   }, []);
 
   const stats = useMemo(() => {

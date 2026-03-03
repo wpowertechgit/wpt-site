@@ -35,9 +35,9 @@ export const WASTE_TYPES: WasteType[] = [
     key: "biomass",
     image: "/wasteTypes/biomass.png",
     hhvDry: 17,
-    defaultMoisture: 57.5,
+    defaultMoisture: 60,
     color: "#4a7c59",
-    characteristics: ["HHV (dry): 17 MJ/kg", "Typical moisture: 45–70%", "Renewable / carbon-neutral"],
+    characteristics: ["HHV (dry): 17 MJ/kg", "Typical moisture: 45–75%", "Renewable / carbon-neutral"],
     typicalSources: "Agricultural residues, forestry waste, food processing byproducts, garden clippings",
   },
   {

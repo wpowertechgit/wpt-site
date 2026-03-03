@@ -20,9 +20,6 @@ const config: Config = {
                 headline: ["Stack Sans Headline", "sans-serif"],
                 body: ["Figtree", "sans-serif"],
             },
-            borderRadius: {
-                none: "0px",
-            },
             maxWidth: {
                 '8xl': '100rem',
             },
@@ -40,9 +37,6 @@ const config: Config = {
                 'p, span, li': {
                     fontFamily: 'Figtree',
                     textAlign: 'left'
-                },
-                '*': {
-                    borderRadius: '0px !important'
                 },
             })
         },

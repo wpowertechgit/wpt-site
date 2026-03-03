@@ -5,6 +5,7 @@ import { Center, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import AssemblyCompressedModel from "../components/AssemblyCompressedModel";
+import rawCameraPoses from "./cameraPoses.json";
 
 type Vec3Tuple = [number, number, number];
 
@@ -19,6 +20,19 @@ type PoseData = {
   position: Vec3Tuple;
   rotation: Vec3Tuple;
 };
+
+type SavedPoseData = PoseData & {
+  mouseWorld: Vec3Tuple | null;
+};
+
+type RawSavedPoseData = {
+  position?: number[];
+  rotation?: number[];
+  target?: number[];
+  mouseWorld?: number[] | null;
+};
+
+type RawSavedPoseMap = Record<string, Record<string, RawSavedPoseData>>;
 
 type AnchorSet = {
   width: number;
@@ -37,7 +51,7 @@ type PanelPosition = {
   y: number;
 };
 
-const DESKTOP_POSES: PoseData[] = [
+const DESKTOP_FALLBACK_POSES: PoseData[] = [
   { position: [-22.13, 2, 12.5], rotation: [-0.5, -0.7, -0.4] },
   { position: [-14.7, 0, 9], rotation: [0.5, -1.5, 0.5] },
   { position: [-4.8, 9.1, 14.8], rotation: [-1.55, -0.001, -0.001] },
@@ -49,7 +63,7 @@ const DESKTOP_POSES: PoseData[] = [
   { position: [-38.34, 0.43, 8.5], rotation: [-1.18, 1.55, 1.18] },
 ];
 
-const TABLET_POSES: PoseData[] = [
+const TABLET_FALLBACK_POSES: PoseData[] = [
   { position: [-27.605, -0.963, 10.804], rotation: [0.089, -1.196, 0.023] },
   { position: [-17.182, -0.205, 19.039], rotation: [0.01, -0.797, 0.007] },
   { position: [-5.744, 19.607, 15.028], rotation: [-1.487, -0.002, -0.018] },
@@ -61,7 +75,7 @@ const TABLET_POSES: PoseData[] = [
   { position: [-19.972, 8.98, 9.54], rotation: [-1.517, 1.378, 1.1516] },
 ];
 
-const PHONE_POSES: PoseData[] = [
+const PHONE_FALLBACK_POSES: PoseData[] = [
   { position: [-26.809, 0.072, 19.094], rotation: [-0.003, -0.728, 0.007] },
   { position: [-22.532, 0.96, 23.34], rotation: [-0.04, -0.8, -0.02] },
   { position: [-5.744, 19.607, 15.028], rotation: [-1.487, -0.002, -0.018] },
@@ -72,6 +86,79 @@ const PHONE_POSES: PoseData[] = [
   { position: [42, 10.7, 56.3], rotation: [-0.226, 0.658, 0.14] },
   { position: [-19.972, 8.98, 9.54], rotation: [-1.517, 1.378, 1.1516] },
 ];
+
+const RAW_CAMERA_POSES = rawCameraPoses as RawSavedPoseMap;
+
+function toVec3Tuple(value: unknown): Vec3Tuple | null {
+  if (!Array.isArray(value) || value.length !== 3) return null;
+  const [x, y, z] = value;
+  if (typeof x !== "number" || typeof y !== "number" || typeof z !== "number") return null;
+  return [x, y, z];
+}
+
+function deriveCameraRotation(position: Vec3Tuple, target: Vec3Tuple): Vec3Tuple {
+  const camera = new THREE.PerspectiveCamera();
+  camera.position.set(...position);
+  camera.lookAt(new THREE.Vector3(...target));
+  return [n3(camera.rotation.x), n3(camera.rotation.y), n3(camera.rotation.z)];
+}
+
+function normalizeSavedPose(pose?: RawSavedPoseData | null): SavedPoseData | null {
+  if (!pose) return null;
+
+  const position = toVec3Tuple(pose.position);
+  if (!position) return null;
+
+  const rotation = toVec3Tuple(pose.rotation)
+    ?? (() => {
+      const lookTarget = toVec3Tuple(pose.target) ?? toVec3Tuple(pose.mouseWorld);
+      return lookTarget ? deriveCameraRotation(position, lookTarget) : null;
+    })();
+
+  if (!rotation) return null;
+
+  return {
+    position,
+    rotation,
+    mouseWorld: toVec3Tuple(pose.mouseWorld),
+  };
+}
+
+function buildPresetPoses(widthKey: string, fallback: PoseData[]): PoseData[] {
+  const widthBucket = RAW_CAMERA_POSES[widthKey];
+
+  return fallback.map((pose, index) => {
+    const normalized = normalizeSavedPose(widthBucket?.[String(index + 1)]);
+    return normalized
+      ? { position: normalized.position, rotation: normalized.rotation }
+      : pose;
+  });
+}
+
+function buildInitialSavedPoses(): Record<string, Record<string, SavedPoseData>> {
+  const next: Record<string, Record<string, SavedPoseData>> = {};
+
+  Object.entries(RAW_CAMERA_POSES).forEach(([widthKey, sections]) => {
+    const normalizedSections: Record<string, SavedPoseData> = {};
+
+    Object.entries(sections).forEach(([sectionKey, pose]) => {
+      const normalized = normalizeSavedPose(pose);
+      if (normalized) {
+        normalizedSections[sectionKey] = normalized;
+      }
+    });
+
+    if (Object.keys(normalizedSections).length > 0) {
+      next[widthKey] = normalizedSections;
+    }
+  });
+
+  return next;
+}
+
+const DESKTOP_POSES = buildPresetPoses("1920", DESKTOP_FALLBACK_POSES);
+const TABLET_POSES = buildPresetPoses("768", TABLET_FALLBACK_POSES);
+const PHONE_POSES = buildPresetPoses("430", PHONE_FALLBACK_POSES);
 
 const ANCHOR_SETS: AnchorSet[] = [
   { width: 430, fov: 56, label: "Phone 430", poses: PHONE_POSES },
@@ -214,10 +301,10 @@ function DebugScene({
     const cr = camera.rotation;
     const target = controlsRef.current?.target
       ? [
-          controlsRef.current.target.x,
-          controlsRef.current.target.y,
-          controlsRef.current.target.z,
-        ]
+        controlsRef.current.target.x,
+        controlsRef.current.target.y,
+        controlsRef.current.target.z,
+      ]
       : [0, 0, 0];
 
     setTelemetry({
@@ -267,7 +354,7 @@ export default function TechnologyDebug() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [manualSnapPose, setManualSnapPose] = useState<PoseData | null>(null);
   const [saveSection, setSaveSection] = useState("1");
-  const [savedPoses, setSavedPoses] = useState<Record<string, Record<string, PoseData>>>({});
+  const [savedPoses, setSavedPoses] = useState<Record<string, Record<string, SavedPoseData>>>(() => buildInitialSavedPoses());
   const [panelVisible, setPanelVisible] = useState(true);
   const [panelCollapsed, setPanelCollapsed] = useState(false);
   const [panelPosition, setPanelPosition] = useState<PanelPosition>({ x: 16, y: 16 });
@@ -352,9 +439,12 @@ export default function TechnologyDebug() {
 
   const handleSaveCurrentCamera = () => {
     const widthKey = String(parsedWidth);
-    const nextPose: PoseData = {
+    const nextPose: SavedPoseData = {
       position: [n3(telemetry.cameraPos[0]), n3(telemetry.cameraPos[1]), n3(telemetry.cameraPos[2])],
       rotation: [n3(telemetry.cameraRot[0]), n3(telemetry.cameraRot[1]), n3(telemetry.cameraRot[2])],
+      mouseWorld: telemetry.hit
+        ? [n3(telemetry.hit[0]), n3(telemetry.hit[1]), n3(telemetry.hit[2])]
+        : null,
     };
 
     setSavedPoses((prev) => {
@@ -618,7 +708,7 @@ export default function TechnologyDebug() {
               </Stack>
 
               <Typography sx={{ fontFamily: "Figtree, sans-serif", fontSize: "0.78rem", mb: 0.6 }}>
-                Saved JSON format: width(px) {"->"} section(1-9) {"->"} {"{ position, rotation }"}
+                Saved JSON format: width(px) {"->"} section(1-9) {"->"} {"{ position, rotation, mouseWorld }"}
               </Typography>
 
               <Box

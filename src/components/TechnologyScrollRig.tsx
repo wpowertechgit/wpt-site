@@ -51,72 +51,72 @@ const OVERLAY_THEME = createTheme({
 
 const BASE_SECTION_POSES: SectionPose[] = [
   {
-    position: [-22.13, 2, 12.5],
-    rotation: [-0.5, -0.7, -0.4],
+    position: [-4.448, 5.032, 2.384],
+    rotation: [-0.58, -0.75, -0.42],
     title: "Primary Shredder",
     body: "Waste enters through the primary shredder for initial size reduction.",
     titleKey: "tech-scroll-1-title",
     bodyKey: "tech-scroll-1-body",
   },
   {
-    position: [-14.7, 0, 9],
-    rotation: [0.5, -1.5, 0.5],
+    position: [3.031, 1.023, 2.305],
+    rotation: [-0.117, -0.947, -0.095],
     title: "Secondary Shredder",
     body: "Secondary shredding reduces mixed waste to controlled feed size.",
     titleKey: "tech-scroll-2-title",
     bodyKey: "tech-scroll-2-body",
   },
   {
-    position: [-4.8, 9.1, 14.8],
-    rotation: [-1.55, -0.001, -0.001],
+    position: [14.735, 24.277, 0.817],
+    rotation: [-1.571, 0, 0.008],
     title: "Temporary Storage for Shredded Material",
     body: "Processed material is buffered before thermal processing.",
     titleKey: "tech-scroll-3-title",
     bodyKey: "tech-scroll-3-body",
   },
   {
-    position: [3.9, 2.4, 21.6],
-    rotation: [-0.2, 0.004, 0.004],
+    position: [24.811, 5.432, 10.78],
+    rotation: [-0.526, 0.028, 0.016],
     title: "Feed System",
     body: "Automated feed controls maintain stable reactor input flow.",
     titleKey: "tech-scroll-4-title",
     bodyKey: "tech-scroll-4-body",
   },
   {
-    position: [-5.2, -0.1, 7.8],
-    rotation: [2.2, -1.555, 2.2],
+    position: [13.571, -0.193, -4.538],
+    rotation: [0.669, -1.535, 0.669],
     title: "Pyrolysis Reactor",
     body: "Material undergoes high-temperature molecular disintegration without oxygen.",
     titleKey: "tech-scroll-5-title",
     bodyKey: "tech-scroll-5-body",
   },
   {
-    position: [-2.48, 1.15, 6.43],
-    rotation: [-0.74, -0.53, -0.43],
+    position: [17.323, 3.118, -6.701],
+    rotation: [-0.935, -0.509, -0.584],
     title: "Solid Byproduct (Char / Carbon Residue)",
     body: "Carbon-rich residue is extracted for secondary industrial use.",
     titleKey: "tech-scroll-6-title",
     bodyKey: "tech-scroll-6-body",
   },
   {
-    position: [7.46, -0.119, 0.983],
-    rotation: [3.1, 0.84, -3.12],
+    position: [36.859, 1.182, -12.151],
+    rotation: [-3.001, 0.752, 3.045],
     title: "Gas Filtration and Conditioning",
     body: "Gas is filtered and conditioned into cleaner synthesis gas.",
     titleKey: "tech-scroll-7-title",
     bodyKey: "tech-scroll-7-body",
   },
   {
-    position: [-4.9, 2.5, 32.9],
-    rotation: [-0.137, -0.88, -0.106],
+    position: [11.688, 5.643, 19.137],
+    rotation: [-0.595, -0.772, -0.441],
     title: "Gas Storage Tanks",
     body: "Conditioned gas is stored in pressurized tanks for flow regulation.",
     titleKey: "tech-scroll-8-title",
     bodyKey: "tech-scroll-8-body",
   },
   {
-    position: [-38.34, 0.43, 8.5],
-    rotation: [-1.18, 1.55, 1.18],
+    position: [-15.303, 7.76, -1.068],
+    rotation: [-1.573, 1.077, 1.574],
     title: "Power Generation",
     body: "Conditioned syngas drives generator units for electrical output.",
     titleKey: "tech-scroll-9-title",
@@ -127,27 +127,27 @@ const BASE_SECTION_POSES: SectionPose[] = [
 const REFERENCE_VIEWPORT: ViewportSize = { width: 1920, height: 1200 };
 
 const TABLET_POSE_DATA: PoseData[] = [
-  { position: [-27.605, -0.963, 10.804], rotation: [0.089, -1.196, 0.023] },
-  { position: [-17.182, -0.205, 19.039], rotation: [0.01, -0.797, 0.007] },
-  { position: [-5.744, 19.607, 15.028], rotation: [-1.487, -0.002, -0.018] },
-  { position: [3.201, 3.199, 26.533], rotation: [-0.182, -0.088, -0.014] },
-  { position: [-5.869, 0.186, 8.6], rotation: [-0.28, -1.519, -0.28] },
-  { position: [-4.406, -2.019, 6.317], rotation: [0.18, -0.738, 0.22] },
-  { position: [16.833, 0.214, -0.712], rotation: [-3.121, 0.84, 3.126] },
-  { position: [28.125, 6.528, 39.69], rotation: [-0.213, 0.631, 0.127] },
-  { position: [-19.972, 8.98, 9.54], rotation: [-1.517, 1.378, 1.1516] },
+  { position: [-2.93, 4.93, 1.179], rotation: [-0.665, -0.686, -0.46] },
+  { position: [5.369, 0.482, 2.732], rotation: [-0.089, -0.805, -0.064] },
+  { position: [16.386, 20.722, 1.075], rotation: [-1.571, 0, 0.006] },
+  { position: [25.581, 5.535, 10.334], rotation: [-0.427, 0.008, 0.004] },
+  { position: [14.828, 1.555, -5.121], rotation: [-1.376, -1.416, -1.374] },
+  { position: [18.252, 0.807, -7.145], rotation: [-0.439, -0.639, -0.273] },
+  { position: [37.631, 1.643, -13.292], rotation: [-3.043, 0.74, 3.075] },
+  { position: [11.748, 6.042, 25.447], rotation: [-0.159, -0.687, -0.101] },
+  { position: [-8.222, 10.586, -3.124], rotation: [-1.47, 1.279, 1.466] },
 ];
 
 const PHONE_POSE_DATA: PoseData[] = [
-  { position: [-26.809, 0.072, 19.094], rotation: [-0.003, -0.728, 0.007] },
-  { position: [-22.532, 0.96, 23.34], rotation: [-0.04, -0.8, -0.02] },
-  { position: [-5.744, 19.607, 15.028], rotation: [-1.487, -0.002, -0.018] },
-  { position: [-1.164, 3.755, 27.157], rotation: [-0.205, -0.375, -0.076] },
-  { position: [-12.483, 0.28, 8.9], rotation: [-0.286, -1.519, -0.28] },
-  { position: [-3.841, -2.125, 6.79], rotation: [0.182, -0.688, 0.116] },
-  { position: [16.833, 0.214, -0.712], rotation: [-3.121, 0.84, 3.126] },
-  { position: [42, 10.7, 56.3], rotation: [-0.226, 0.658, 0.14] },
-  { position: [-19.972, 8.98, 9.54], rotation: [-1.517, 1.378, 1.1516] },
+  { position: [-1.443, 6.144, 2.881], rotation: [-0.551, -0.543, -0.307] },
+  { position: [3.308, 4.045, 2.675], rotation: [-0.521, -0.828, -0.4] },
+  { position: [15.681, 19.642, 3.468], rotation: [-1.571, 0, 0.025] },
+  { position: [24.912, 6.755, 17.095], rotation: [-0.331, -0.017, -0.006] },
+  { position: [6.424, 2.213, -3.617], rotation: [-1.018, -1.463, -1.016] },
+  { position: [17.464, 1.763, -6.643], rotation: [-0.57, -0.75, -0.412] },
+  { position: [38.343, 2.926, -13.199], rotation: [-2.92, 0.842, 2.975] },
+  { position: [9.365, 8.947, 27.088], rotation: [-0.178, -0.695, -0.114] },
+  { position: [-8.247, 8.488, -0.372], rotation: [-1.46, 1.476, 1.46] },
 ];
 
 function buildAnchoredSectionPoses(data: PoseData[]) {
@@ -236,6 +236,20 @@ function lerpPose(a: SectionPose, b: SectionPose, t: number) {
   };
 }
 
+// ─── FIX: Trackpad / wheel delta normalisation ───────────────────────────────
+// Returns a normalised "scroll intent" in [-1, +1] range regardless of whether
+// the event comes from a traditional mouse wheel (large deltaY steps) or a
+// trackpad (small fractional steps that fire in rapid bursts).
+function classifyWheelDelta(deltaY: number): { isMouse: boolean; sign: number } {
+  const sign = deltaY > 0 ? 1 : -1;
+  const isMouse = Math.abs(deltaY) >= 60;
+  return { isMouse, sign };
+}
+
+// Mobile only: one page per section so scroll offset maps 1:1 with sections.
+// Desktop bypasses ScrollControls entirely — sections are driven by the wheel handler.
+const MOBILE_SCROLL_PAGES = 9;
+
 function Scene({
   sectionPoses,
   activeSection,
@@ -243,7 +257,7 @@ function Scene({
   modelScale,
   isMobile,
   levelHorizon,
-  useExactSmallScreenPose,
+  onScrollOffsetRef,
 }: {
   sectionPoses: SectionPose[];
   activeSection: number;
@@ -251,13 +265,16 @@ function Scene({
   modelScale: number;
   isMobile: boolean;
   levelHorizon: boolean;
-  useExactSmallScreenPose: boolean;
+  isTrackpad: boolean;
+  onScrollOffsetRef?: React.MutableRefObject<number>;
 }) {
-  const scroll = useScroll();
+  // Desktop: scroll is not used (no ScrollControls context).
+  // isMobile path uses scroll offset via MobileScrollDriver callback instead.
   const sectionRef = useRef(-1);
   const lastOffsetRef = useRef(0);
-  const offsetPrimedRef = useRef(false);
-  const startResetRef = useRef(false);
+  const mobileScrollOffsetRef = useRef(0);
+  // FIX: use a dedicated "camera initialised" flag so we always snap on first frame
+  const cameraInitialisedRef = useRef(false);
   const scrollAccumulatorRef = useRef(0);
   const cooldownRef = useRef(0);
   const targetEulerRef = useRef(new THREE.Euler());
@@ -268,22 +285,20 @@ function Scene({
   const lookAtRef = useRef(new THREE.Vector3());
   const lookMatrixRef = useRef(new THREE.Matrix4());
 
+  // FIX: reset everything (including camera) whenever sectionPoses changes
   useEffect(() => {
-    offsetPrimedRef.current = false;
-    startResetRef.current = false;
+    cameraInitialisedRef.current = false;
     sectionRef.current = -1;
     lastOffsetRef.current = 0;
+    mobileScrollOffsetRef.current = 0;
     scrollAccumulatorRef.current = 0;
     cooldownRef.current = 0;
     onSectionChange(0);
   }, [onSectionChange, sectionPoses]);
 
-  useFrame((state, delta) => {
-    if (!offsetPrimedRef.current) {
-      lastOffsetRef.current = scroll.offset;
-      offsetPrimedRef.current = true;
-    }
 
+
+  useFrame((state, delta) => {
     const setTargetQuaternion = (rotation: Vec3Tuple, cameraPosition: Vec3Tuple) => {
       targetEulerRef.current.set(...rotation);
 
@@ -299,50 +314,32 @@ function Scene({
       targetQuatRef.current.setFromRotationMatrix(lookMatrixRef.current);
     };
 
-    if (!startResetRef.current) {
+    // FIX: On first frame, hard-snap camera to section 0 and reset scroll to top.
+    // We do this imperatively so it is guaranteed to fire regardless of React
+    // render timing or how the Canvas was mounted.
+    if (!cameraInitialisedRef.current) {
       const firstPose = sectionPoses[0];
-      const scrollElement = (scroll as unknown as { el?: HTMLElement }).el;
-      if (scrollElement) {
-        scrollElement.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      }
+
+      state.camera.position.set(...firstPose.position);
+      setTargetQuaternion(firstPose.rotation, firstPose.position);
+      state.camera.quaternion.copy(targetQuatRef.current);
 
       sectionRef.current = 0;
-      offsetPrimedRef.current = false;
       lastOffsetRef.current = 0;
       scrollAccumulatorRef.current = 0;
       cooldownRef.current = 0;
       onSectionChange(0);
 
-      targetPosRef.current.set(...firstPose.position);
-      state.camera.position.copy(targetPosRef.current);
-      setTargetQuaternion(firstPose.rotation, firstPose.position);
-      state.camera.quaternion.copy(targetQuatRef.current);
-      startResetRef.current = true;
+      cameraInitialisedRef.current = true;
       return;
     }
 
-    if (useExactSmallScreenPose) {
-      const { section } = getSectionProgress(scroll.offset, sectionPoses.length);
-      const targetPose = sectionPoses[section];
-
-      targetPosRef.current.set(...targetPose.position);
-      state.camera.position.copy(targetPosRef.current);
-
-      setTargetQuaternion(targetPose.rotation, targetPose.position);
-      state.camera.quaternion.copy(targetQuatRef.current);
-
-      if (sectionRef.current !== section) {
-        sectionRef.current = section;
-        onSectionChange(section);
-      }
-      return;
-    }
-
+    // ── Mobile / small-screen: lerp through sections based on scroll offset ──
     if (isMobile) {
-      const { section, nextSection, t } = getSectionProgress(scroll.offset, sectionPoses.length);
+      const offset = onScrollOffsetRef ? onScrollOffsetRef.current : mobileScrollOffsetRef.current;
+      const { section, nextSection, t } = getSectionProgress(offset, sectionPoses.length);
       const targetPose = lerpPose(sectionPoses[section], sectionPoses[nextSection], t);
 
-      targetPosRef.current.set(...targetPose.position);
       easing.damp3(state.camera.position, targetPose.position, 0.28, delta);
 
       setTargetQuaternion(targetPose.rotation, targetPose.position);
@@ -355,28 +352,10 @@ function Scene({
       return;
     }
 
-    const offsetDelta = scroll.offset - lastOffsetRef.current;
-    lastOffsetRef.current = scroll.offset;
-    cooldownRef.current = Math.max(0, cooldownRef.current - delta);
-
-    if (cooldownRef.current <= 0 && Math.abs(offsetDelta) > 0.00015) {
-      scrollAccumulatorRef.current += offsetDelta;
-
-      const threshold = 0.058;
-      if (scrollAccumulatorRef.current >= threshold && activeSection < sectionPoses.length - 1) {
-        onSectionChange(activeSection + 1);
-        scrollAccumulatorRef.current = 0;
-        cooldownRef.current = 0.2;
-      } else if (scrollAccumulatorRef.current <= -threshold && activeSection > 0) {
-        onSectionChange(activeSection - 1);
-        scrollAccumulatorRef.current = 0;
-        cooldownRef.current = 0.2;
-      }
-    }
-
+    // ── Desktop: section is driven entirely by the native wheel handler above.
+    // useFrame just animates the camera toward the current activeSection pose.
     const currentPose = sectionPoses[activeSection];
-    const nextPose = sectionPoses[Math.min(activeSection + 1, sectionPoses.length - 1)];
-    const speed = activeSection === 7 && nextPose === sectionPoses[8] ? 0.62 : 0.28;
+    const speed = activeSection === 7 ? 0.62 : 0.28;
 
     targetPosRef.current.set(...currentPose.position);
     easing.damp3(state.camera.position, currentPose.position, speed, delta);
@@ -415,6 +394,15 @@ function Scene({
   );
 }
 
+// Thin component that lives inside ScrollControls and syncs scroll.offset into a ref.
+function MobileScrollDriver({ offsetRef }: { offsetRef: React.MutableRefObject<number> }) {
+  const scroll = useScroll();
+  useFrame(() => {
+    offsetRef.current = scroll.offset;
+  });
+  return null;
+}
+
 function Overlay({
   activePose,
   activeSection,
@@ -436,10 +424,17 @@ function Overlay({
         <Box
           sx={{
             position: "absolute",
-            width: isMobile ? "100%" : { xs: "calc(100% - 32px)", sm: 420, md: 500, lg: 580, xl: 640, xxl: 1260, xxxl: 1920 },
-            maxWidth: isMobile ? "100%" : { xs: "90vw", xxl: "48vw", xxxl: "50vw" },
-            px: isMobile ? { xs: 2, sm: 2.5 } : { xs: 2, md: 2.5, lg: 3, xxl: 6, xxxl: 8 },
-            py: isMobile ? { xs: 2, sm: 2.5 } : { xs: 1.5, md: 2, lg: 2.5, xxl: 5, xxxl: 7 },
+            // FIX: tighter widths on small screens so the model stays visible
+            width: isMobile
+              ? { xs: "min(calc(100% - 24px), 340px)", sm: "min(calc(100% - 32px), 420px)" }
+              : { xs: "calc(100% - 32px)", sm: 420, md: 500, lg: 580, xl: 640, xxl: 1260, xxxl: 1920 },
+            maxWidth: isMobile ? { xs: "78vw", sm: "72vw" } : { xs: "90vw", xxl: "48vw", xxxl: "50vw" },
+            px: isMobile
+              ? { xs: 1.5, sm: 2 }
+              : { xs: 2, md: 2.5, lg: 3, xxl: 6, xxxl: 8 },
+            py: isMobile
+              ? { xs: 1.25, sm: 1.75 }
+              : { xs: 1.5, md: 2, lg: 2.5, xxl: 5, xxxl: 7 },
             bgcolor: "#ffffff",
             border: isMobile ? "none" : "1px solid #000000",
             boxShadow: isMobile ? "none" : "0 10px 26px rgba(0,0,0,0.08)",
@@ -448,13 +443,15 @@ function Overlay({
             WebkitUserSelect: "none",
             ...(isMobile
               ? {
+                // FIX: push the card below the safe area + navbar height (56-72px) with a
+                // sensible cap so it never covers more than ~45% of screen height
                 top: {
-                  xs: "calc(env(safe-area-inset-top, 0px) + 56px)",
-                  sm: "calc(env(safe-area-inset-top, 0px) + 64px)",
-                  md: "calc(env(safe-area-inset-top, 0px) + 72px)",
+                  xs: "calc(env(safe-area-inset-top, 0px) + 60px)",
+                  sm: "calc(env(safe-area-inset-top, 0px) + 68px)",
+                  md: "calc(env(safe-area-inset-top, 0px) + 76px)",
                 },
-                left: 0,
-                right: 0,
+                left: { xs: 12, sm: 16 },
+                right: "auto",
                 transform: "none",
               }
               : pos),
@@ -473,29 +470,36 @@ function Overlay({
               <Box
                 sx={{
                   flex: isMobile ? "none" : "0 0 46%",
-                  width: isMobile ? { xs: "76%", sm: "64%", xxl: "50%" } : "46%",
+                  width: isMobile ? { xs: "64%", sm: "56%" } : "46%",
                   pr: isMobile ? 0 : { xs: 2, xxl: 4, xxxl: 6 },
-                  mb: isMobile ? 1.5 : 0,
+                  mb: isMobile ? 1 : 0,
                   display: "flex",
                   alignItems: "center",
                 }}
               >
                 <Box component="img" src={logoSrc} alt="Waste Power Tech" sx={{ width: "100%", height: "auto", display: "block" }} />
               </Box>
-              <Box sx={{
-                flex: 1, pl: isMobile ? 0 : { xs: 2, xxl: 4, xxxl: 6 },
-              }}>
+              <Box sx={{ flex: 1, pl: isMobile ? 0 : { xs: 2, xxl: 4, xxxl: 6 } }}>
                 <Typography
                   variant="h2"
                   sx={{
                     fontFamily: "Stack Sans Headline, sans-serif",
                     fontWeight: 700,
                     textAlign: "left",
-                    fontSize: { xs: "1.25rem", sm: "1.45rem", md: "1.8rem", lg: "2.15rem", xl: "2.4rem", xxl: "3rem", xxxl: "4rem" },
+                    // FIX: significantly reduced base font-sizes for small screens
+                    fontSize: {
+                      xs: "0.95rem",
+                      sm: "1.1rem",
+                      md: "1.8rem",
+                      lg: "2.15rem",
+                      xl: "2.4rem",
+                      xxl: "3rem",
+                      xxxl: "4rem",
+                    },
                     "@media (min-width:2560px)": { fontSize: "4rem" },
                     lineHeight: 1.08,
                     letterSpacing: "-0.015em",
-                    mb: { xs: 0.65, md: 0.85 },
+                    mb: { xs: 0.5, md: 0.85 },
                   }}
                 >
                   {t(activePose.titleKey, { defaultValue: activePose.title })}
@@ -505,7 +509,16 @@ function Overlay({
                     fontFamily: "Figtree, sans-serif",
                     textAlign: "left",
                     fontWeight: 400,
-                    fontSize: { xs: "0.9rem", sm: "0.98rem", md: "1.08rem", lg: "1.2rem", xl: "1.32rem", xxl: "2.7rem", xxxl: "2.7rem" },
+                    // FIX: smaller body text on mobile
+                    fontSize: {
+                      xs: "0.76rem",
+                      sm: "0.86rem",
+                      md: "1.08rem",
+                      lg: "1.2rem",
+                      xl: "1.32rem",
+                      xxl: "2.7rem",
+                      xxxl: "2.7rem",
+                    },
                     "@media (min-width:2560px)": { fontSize: "2rem" },
                     "@media (min-width:3840px)": { fontSize: "2.7rem" },
                     lineHeight: 1.45,
@@ -538,7 +551,7 @@ function ScrollHintOverlay({
     <Fade in={visible} timeout={{ enter: 180, exit: 180 }} unmountOnExit>
       <Box
         sx={{
-          mt: { xs: 1.5, sm: 1.75, md: 2, lg: 2.2, xl: 2.5, xxl: 2.8, xxxl: 3.4 },
+          mt: { xs: 1.25, sm: 1.5, md: 2, lg: 2.2, xl: 2.5, xxl: 2.8, xxxl: 3.4 },
           width: "fit-content",
           pointerEvents: "none",
         }}
@@ -547,9 +560,9 @@ function ScrollHintOverlay({
           sx={{
             display: "flex",
             alignItems: "center",
-            gap: { xs: 1.2, sm: 1.35, md: 1.5, lg: 1.7, xl: 1.9, xxl: 2.2, xxxl: 2.7 },
-            px: { xs: 1.35, sm: 1.5, md: 1.7, lg: 1.9, xl: 2.2, xxl: 2.5, xxxl: 3 },
-            py: { xs: 0.95, sm: 1.05, md: 1.15, lg: 1.3, xl: 1.45, xxl: 1.7, xxxl: 2.1 },
+            gap: { xs: 1, sm: 1.2, md: 1.5, lg: 1.7, xl: 1.9, xxl: 2.2, xxxl: 2.7 },
+            px: { xs: 1.1, sm: 1.3, md: 1.7, lg: 1.9, xl: 2.2, xxl: 2.5, xxxl: 3 },
+            py: { xs: 0.75, sm: 0.9, md: 1.15, lg: 1.3, xl: 1.45, xxl: 1.7, xxxl: 2.1 },
             bgcolor: "#ffffff",
             border: isMobile ? "none" : "1px solid #000000",
             boxShadow: isMobile ? "none" : "0 8px 18px rgba(0,0,0,0.06)",
@@ -558,8 +571,8 @@ function ScrollHintOverlay({
           <Box
             sx={{
               position: "relative",
-              width: { xs: 22, sm: 24, md: 26, lg: 30, xl: 34, xxl: 40, xxxl: 50 },
-              height: { xs: 40, sm: 44, md: 48, lg: 56, xl: 64, xxl: 74, xxxl: 92 },
+              width: { xs: 18, sm: 20, md: 26, lg: 30, xl: 34, xxl: 40, xxxl: 50 },
+              height: { xs: 32, sm: 36, md: 48, lg: 56, xl: 64, xxl: 74, xxxl: 92 },
               flexShrink: 0,
               border: "1px solid #000000",
               overflow: "hidden",
@@ -581,19 +594,140 @@ function ScrollHintOverlay({
           <Typography
             sx={{
               fontFamily: "Figtree, sans-serif",
-              fontSize: { xs: "0.85rem", sm: "0.92rem", md: "1rem", lg: "1.08rem", xl: "1.18rem", xxl: "2.8rem", xxxl: "3rem" },
+              fontSize: { xs: "0.72rem", sm: "0.82rem", md: "1rem", lg: "1.08rem", xl: "1.18rem", xxl: "2.8rem", xxxl: "3rem" },
               fontWeight: 500,
               lineHeight: 1.25,
               letterSpacing: "0.01em",
               color: "#000000",
-              maxWidth: { xs: "20ch", sm: "24ch", md: "26ch", lg: "28ch", xl: "30ch" },
+              maxWidth: { xs: "18ch", sm: "22ch", md: "26ch", lg: "28ch", xl: "30ch" },
             }}
           >
-            {t("tech-scroll-hint", { defaultValue: "Scroll to progress" })}
+            {t("tech-scroll-hint", { defaultValue: "Scroll to progress. Or use the -> and <- arrows" })}
           </Typography>
         </Box>
       </Box>
     </Fade>
+  );
+}
+
+// ─── Loading gate overlay ─────────────────────────────────────────────────────
+function LoadingGate({
+  isMobile,
+  onStart,
+}: {
+  isMobile: boolean;
+  onStart: () => void;
+}) {
+  const { t } = useTranslation();
+  const bgImage = isMobile
+    ? "/fallbackMobile/tech-phone-1.png"
+    : "/fallbackDesktop/tech-desktop-1.png";
+
+  return (
+    <Box
+      sx={{
+        position: "absolute",
+        inset: 0,
+        zIndex: 20,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: isMobile ? "flex-start" : "center",
+      }}
+    >
+      {/* Background static image */}
+      <Box
+        component="img"
+        src={bgImage}
+        alt=""
+        aria-hidden
+        sx={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          display: "block",
+        }}
+      />
+
+      {/* Intro card — same box styling as the explanation cards */}
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 1,
+          ml: isMobile ? { xs: "12px", sm: "16px" } : 0,
+          mt: isMobile
+            ? {
+              xs: "calc(env(safe-area-inset-top, 0px) + 60px)",
+              sm: "calc(env(safe-area-inset-top, 0px) + 68px)",
+            }
+            : 0,
+          alignSelf: isMobile ? "flex-start" : "center",
+          width: isMobile
+            ? { xs: "min(calc(100% - 24px), 340px)", sm: "min(calc(100% - 32px), 420px)" }
+            : { sm: 460, md: 520, lg: 580 },
+          maxWidth: isMobile ? "78vw" : "90vw",
+          px: isMobile ? { xs: 1.5, sm: 2 } : { xs: 2, md: 3 },
+          py: isMobile ? { xs: 1.5, sm: 2 } : { xs: 2, md: 3 },
+          bgcolor: "#ffffff",
+          border: "1px solid #000000",
+          boxShadow: "0 10px 26px rgba(0,0,0,0.08)",
+        }}
+      >
+        <Typography
+          sx={{
+            fontFamily: "Stack Sans Headline, sans-serif",
+            fontWeight: 700,
+            fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem", lg: "1.8rem" },
+            lineHeight: 1.1,
+            letterSpacing: "-0.015em",
+            mb: { xs: 0.75, md: 1 },
+          }}
+        >
+          {t("tech-gate-title", { defaultValue: "Explore Our 3D Process Model" })}
+        </Typography>
+        <Typography
+          sx={{
+            fontFamily: "Figtree, sans-serif",
+            fontWeight: 400,
+            fontSize: { xs: "0.78rem", sm: "0.88rem", md: "1rem" },
+            lineHeight: 1.45,
+            color: "rgba(0,0,0,0.8)",
+            mb: { xs: 1.25, md: 1.75 },
+          }}
+        >
+          {t("tech-gate-body", {
+            defaultValue:
+              "Walk through each stage of our waste-to-energy solution in an interactive 3D environment. Scroll to move between sections.",
+          })}
+        </Typography>
+        <Box
+          component="button"
+          onClick={onStart}
+          sx={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 1,
+            px: { xs: 1.5, md: 2 },
+            py: { xs: 0.75, md: 1 },
+            bgcolor: "#000000",
+            color: "#ffffff",
+            border: "1px solid #000000",
+            fontFamily: "Figtree, sans-serif",
+            fontWeight: 600,
+            fontSize: { xs: "0.82rem", sm: "0.9rem", md: "1rem" },
+            cursor: "pointer",
+            letterSpacing: "0.01em",
+            transition: "background 0.15s",
+            "&:hover": { bgcolor: "#222222" },
+          }}
+        >
+          {t("tech-gate-cta", { defaultValue: "Start Interactive Tour" })}
+          <Box component="span" sx={{ fontSize: "1.1em", lineHeight: 1 }}>→</Box>
+        </Box>
+      </Box>
+    </Box>
   );
 }
 
@@ -650,19 +784,32 @@ export default function TechnologyScrollRig() {
   const [viewportSize, setViewportSize] = useState<ViewportSize>(() => getCurrentViewport());
   const [hasRigSupport] = useState(() => supportsTechnologyRig());
   const [showScrollHint, setShowScrollHint] = useState(false);
+  // FIX: gate — user must press "Start" before the rig loads
+  const [rigStarted, setRigStarted] = useState(false);
+  // FIX: trackpad detection
+  const [isTrackpad, setIsTrackpad] = useState(false);
   const rigContainerRef = useRef<HTMLDivElement | null>(null);
   const hasShownScrollHintRef = useRef(false);
   const hintTimeoutRef = useRef<number | null>(null);
+  const mobileScrollOffsetRef = useRef(0);
+  // FIX: key to force Canvas remount after gate is opened (guarantees fresh camera state)
+  const [canvasKey, setCanvasKey] = useState(0);
 
   const dismissScrollHint = useCallback(() => {
     if (hintTimeoutRef.current !== null) {
       window.clearTimeout(hintTimeoutRef.current);
       hintTimeoutRef.current = null;
     }
-
     setShowScrollHint(false);
   }, []);
 
+  const handleStart = useCallback(() => {
+    setRigStarted(true);
+    // bump key so Canvas remounts fresh with correct initial camera
+    setCanvasKey((k) => k + 1);
+  }, []);
+
+  // ── Viewport tracking ──────────────────────────────────────────────────────
   useEffect(() => {
     const updateViewport = () => {
       const next = getCurrentViewport();
@@ -684,8 +831,9 @@ export default function TechnologyScrollRig() {
     };
   }, []);
 
+  // ── Scroll hint reveal via IntersectionObserver ────────────────────────────
   useEffect(() => {
-    if (!hasRigSupport) return;
+    if (!hasRigSupport || !rigStarted) return;
 
     const element = rigContainerRef.current;
     if (!element) return;
@@ -710,21 +858,16 @@ export default function TechnologyScrollRig() {
       (entries) => {
         const [entry] = entries;
         if (!entry?.isIntersecting || entry.intersectionRatio < 0.45) return;
-
         revealScrollHint();
         observer.disconnect();
       },
-      {
-        threshold: [0.45],
-      },
+      { threshold: [0.45] },
     );
 
     observer.observe(element);
 
-    return () => {
-      observer.disconnect();
-    };
-  }, [hasRigSupport]);
+    return () => observer.disconnect();
+  }, [hasRigSupport, rigStarted]);
 
   useEffect(() => {
     return () => {
@@ -734,9 +877,32 @@ export default function TechnologyScrollRig() {
     };
   }, []);
 
+  // ── Keyboard arrow navigation (desktop) ───────────────────────────────────
+  useEffect(() => {
+    if (!rigStarted || isMobile) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+        e.preventDefault();
+        dismissScrollHint();
+        setActiveSection((prev) => Math.min(prev + 1, sectionPoses.length - 1));
+      } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        dismissScrollHint();
+        setActiveSection((prev) => Math.max(prev - 1, 0));
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+    // We intentionally capture sectionPoses.length via closure below
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rigStarted, isMobile, dismissScrollHint]);
+
   const sectionPoses = useMemo(() => {
     return getSectionPosesForClosestAnchor(viewportSize.width);
   }, [viewportSize.width]);
+
   const isSmallScreen = viewportSize.width < 1000;
 
   const modelScale = useMemo(() => {
@@ -748,27 +914,77 @@ export default function TechnologyScrollRig() {
   const cameraFov = useMemo(() => {
     return getClosestFov(viewportSize.width);
   }, [viewportSize.width]);
+
   const firstPose = sectionPoses[0];
   const usePhoneStyleOverlay = viewportSize.width < 1030;
   const levelHorizon = isSmallScreen;
 
-  const handleRigWheelCapture = (event: React.WheelEvent<HTMLDivElement>) => {
-    dismissScrollHint();
+  // FIX: detect trackpad vs mouse wheel and handle exit-scroll properly
+  // ── Non-passive wheel handler ─────────────────────────────────────────────
+  // React's onWheel is always passive in modern browsers which means we can't
+  // call preventDefault() on it. We attach a native listener instead so we can
+  // block ScrollControls from consuming the event when the user is at the first
+  // or last section and wants to scroll the page.
+  const activeSectionRef = useRef(activeSection);
+  useEffect(() => { activeSectionRef.current = activeSection; }, [activeSection]);
+  const sectionCountRef = useRef(sectionPoses.length);
+  useEffect(() => { sectionCountRef.current = sectionPoses.length; }, [sectionPoses.length]);
 
-    if (isMobile || isSmallScreen) return;
+  // ── Desktop wheel: drive sections directly, no ScrollControls dependency ──
+  // We accumulate raw wheel deltaY and advance/retreat sections ourselves.
+  // At the first/last section boundary we let the event pass through to the page.
+  const wheelAccumulatorRef = useRef(0);
+  const wheelCooldownRef = useRef(0);
 
-    const atLastSection = activeSection >= sectionPoses.length - 1;
-    const atFirstSection = activeSection <= 0;
+  useEffect(() => {
+    const el = rigContainerRef.current;
+    if (!el) return;
 
-    if ((atLastSection && event.deltaY > 0) || (atFirstSection && event.deltaY < 0)) {
-      event.preventDefault();
-      event.stopPropagation();
-      window.scrollBy({
-        top: event.deltaY,
-        behavior: "auto",
-      });
-    }
-  };
+    let lastTime = performance.now();
+
+    const onWheel = (e: WheelEvent) => {
+      dismissScrollHint();
+      if (isMobile || isSmallScreen) return;
+
+      const now = performance.now();
+      const dt = Math.min((now - lastTime) / 1000, 0.1);
+      lastTime = now;
+
+      const { isMouse, sign } = classifyWheelDelta(e.deltaY);
+      setIsTrackpad(!isMouse);
+
+      const atLast = activeSectionRef.current >= sectionCountRef.current - 1;
+      const atFirst = activeSectionRef.current <= 0;
+
+      // At boundary in exit direction — let the page scroll, don't consume.
+      if (atLast && sign > 0) return;
+      if (atFirst && sign < 0) return;
+
+      // We're navigating inside the rig — consume the event entirely.
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Cooldown: ignore bursts right after a section change.
+      wheelCooldownRef.current = Math.max(0, wheelCooldownRef.current - dt);
+      if (wheelCooldownRef.current > 0) return;
+
+      const threshold = isMouse ? 80 : 220;
+      wheelAccumulatorRef.current += Math.abs(e.deltaY) * sign;
+
+      if (wheelAccumulatorRef.current >= threshold) {
+        wheelAccumulatorRef.current = 0;
+        wheelCooldownRef.current = isMouse ? 0.25 : 0.45;
+        setActiveSection((prev) => Math.min(prev + 1, sectionCountRef.current - 1));
+      } else if (wheelAccumulatorRef.current <= -threshold) {
+        wheelAccumulatorRef.current = 0;
+        wheelCooldownRef.current = isMouse ? 0.25 : 0.45;
+        setActiveSection((prev) => Math.max(prev - 1, 0));
+      }
+    };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [dismissScrollHint, isMobile, isSmallScreen]);
 
   if (!hasRigSupport) {
     return <TechnologyFallbackSequence />;
@@ -777,7 +993,6 @@ export default function TechnologyScrollRig() {
   return (
     <Box
       ref={rigContainerRef}
-      onWheelCapture={handleRigWheelCapture}
       onTouchStartCapture={dismissScrollHint}
       sx={{
         width: "100%",
@@ -799,34 +1014,66 @@ export default function TechnologyScrollRig() {
         },
       }}
     >
-      <Canvas
-        dpr={[1, 1]}
-        gl={{ antialias: false, powerPreference: "low-power" }}
-        camera={{ position: firstPose.position, fov: cameraFov }}
-        onCreated={({ camera }) => {
-          camera.rotation.set(...firstPose.rotation);
-        }}
-      >
-        <ScrollControls pages={sectionPoses.length} damping={0.18} style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
-          <Scene
-            sectionPoses={sectionPoses}
-            activeSection={activeSection}
-            onSectionChange={setActiveSection}
-            modelScale={modelScale}
-            isMobile={isMobile}
-            levelHorizon={levelHorizon}
-            useExactSmallScreenPose={false}
-          />
-        </ScrollControls>
-      </Canvas>
+      {/* Loading gate — shown until user clicks Start */}
+      {!rigStarted && (
+        <LoadingGate isMobile={usePhoneStyleOverlay} onStart={handleStart} />
+      )}
 
-      <Overlay
-        activePose={sectionPoses[activeSection]}
-        activeSection={activeSection}
-        isMobile={usePhoneStyleOverlay}
-        showScrollHint={showScrollHint}
-      />
+      {/* 3D Canvas — only mounted after user starts */}
+      {rigStarted && (
+        <>
+          <Canvas
+            key={canvasKey}
+            dpr={[1, 1]}
+            gl={{ antialias: false, powerPreference: "low-power" }}
+            // FIX: set initial camera position AND rotation here so the very first
+            // rendered frame matches section 0 — prevents the "wrong start pose" glitch
+            camera={{ position: firstPose.position, rotation: firstPose.rotation, fov: cameraFov }}
+            onCreated={({ camera }) => {
+              // Belt-and-braces: also set rotation imperatively on creation
+              camera.rotation.set(...firstPose.rotation);
+              camera.position.set(...firstPose.position);
+            }}
+          >
+            {(isMobile || isSmallScreen) ? (
+              <ScrollControls
+                pages={MOBILE_SCROLL_PAGES}
+                damping={0.3}
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              >
+                <MobileScrollDriver offsetRef={mobileScrollOffsetRef} />
+                <Scene
+                  sectionPoses={sectionPoses}
+                  activeSection={activeSection}
+                  onSectionChange={setActiveSection}
+                  modelScale={modelScale}
+                  isMobile={true}
+                  levelHorizon={levelHorizon}
+                  isTrackpad={false}
+                  onScrollOffsetRef={mobileScrollOffsetRef}
+                />
+              </ScrollControls>
+            ) : (
+              <Scene
+                sectionPoses={sectionPoses}
+                activeSection={activeSection}
+                onSectionChange={setActiveSection}
+                modelScale={modelScale}
+                isMobile={false}
+                levelHorizon={false}
+                isTrackpad={isTrackpad}
+              />
+            )}
+          </Canvas>
+
+          <Overlay
+            activePose={sectionPoses[activeSection]}
+            activeSection={activeSection}
+            isMobile={usePhoneStyleOverlay}
+            showScrollHint={showScrollHint}
+          />
+        </>
+      )}
     </Box>
   );
 }
-

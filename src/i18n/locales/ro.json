@@ -98,6 +98,7 @@
     "city-coverage": "% din oraș",
     "open-full-calculator": "Deschide calculatorul complet",
     "footer-text": "WPT · Waste Powertech · România",
+    "footer.rights_reserved": "Toate drepturile rezervate © {{year}} Waste Powertech",
     "contact-us": "Contactează-ne",
     "contact.form.name": "Numele dumneavoastră",
     "contact.form.email": "Emailul dumneavoastră",
@@ -184,7 +185,10 @@
     "tech-scroll-8-body": "Gazul curățat este stocat în rezervoare sub presiune pentru a regla fluxul și a menține o alimentare constantă către unitățile de generare. În funcție de configurația sistemului, gazul poate fi stocat sub formă comprimată sau parțial lichefiată.",
     "tech-scroll-9-title": "Generarea de energie",
     "tech-scroll-9-body": "Gazul de sinteză condiționat alimentează unitățile generatoare pentru producerea de energie electrică.",
-    "tech-scroll-hint": "Deruleaza pentru progres",
+    "tech-scroll-hint": "Deruleaza pentru progres. Sau foloseste sagetile -> si <-",
+    "tech-gate-title": "Exploreaza modelul nostru 3D al procesului",
+    "tech-gate-body": "Parcurge fiecare etapa a solutiei noastre de transformare a deseurilor in energie intr-un mediu 3D interactiv. Deruleaza pentru a trece intre sectiuni.",
+    "tech-gate-cta": "Porneste turul interactiv",
     "tabs": {
         "b2g": {
             "label": "B2G",
@@ -346,6 +350,7 @@
     "common.remove": "Elimină",
     "unit.th": "t/h",
     "calc.customMix.nameRequired": "Vă rugăm să introduceți un nume",
+    "calc.customMix.defaultNamePrefix": "Amestec personalizat",
     "calc.customMix.customSourcesPlaceholder": "Compoziție personalizată definită de utilizator",
     "calc.customMix.title": "Generator de amestecuri de deșeuri personalizate",
     "calc.customMix.subtitle": "Definiți compoziția pentru 1 tonă de deșeuri amestecate",

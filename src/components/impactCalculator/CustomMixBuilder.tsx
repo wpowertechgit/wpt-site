@@ -28,13 +28,15 @@ interface CustomMixBuilderProps {
 
 export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBuilderProps) {
   const { t } = useTranslation();
+  const customMixIdRef = useRef(0);
+  const getDefaultMixName = (index = customMixIdRef.current + 1) =>
+    `${tStr(t, "calc.customMix.defaultNamePrefix", "Custom Mix")} ${index}`;
   const [draft, setDraft] = useState<CustomMixDraft>({
-    name: "",
+    name: getDefaultMixName(),
     composition: createEmptyCustomComposition(),
     moisture: 15,
   });
   const [nameError, setNameError] = useState("");
-  const customMixIdRef = useRef(0);
 
   const totalPct = Object.values(draft.composition).reduce((sum, value) => sum + value, 0);
   const remaining = Math.max(0, 100 - totalPct);
@@ -63,11 +65,7 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
 
   const handleSave = () => {
     const trimmedName = draft.name.trim().replace(/[^a-zA-Z0-9 _-]/g, "");
-
-    if (!trimmedName) {
-      setNameError(tStr(t, "calc.customMix.nameRequired", "Please enter a name"));
-      return;
-    }
+    const resolvedName = trimmedName || getDefaultMixName();
 
     if (totalPct < 99) {
       return;
@@ -78,7 +76,7 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
     customMixIdRef.current += 1;
     const custom: WasteType = {
       key: nextCustomKey,
-      displayName: trimmedName,
+      displayName: resolvedName,
       image: "/wasteTypes/custom.png",
       hhvDry: parseFloat(blendHhv.toFixed(2)),
       defaultMoisture: draft.moisture,
@@ -94,7 +92,7 @@ export default function CustomMixBuilder({ open, onClose, onSave }: CustomMixBui
     };
 
     onSave(custom);
-    setDraft({ name: "", composition: createEmptyCustomComposition(), moisture: 15 });
+    setDraft({ name: getDefaultMixName(), composition: createEmptyCustomComposition(), moisture: 15 });
     setNameError("");
   };
 
