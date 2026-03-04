@@ -31,6 +31,12 @@ const COLORS = {
   buttonHover: '#ED1C24',
 };
 
+const LOCALES = [
+  ['en', '/us.png', 'English'],
+  ['ro', '/ro.png', 'Română'],
+  ['hu', '/hu.png', 'Magyar'],
+] as const;
+
 const NavbarMobile = () => {
   const { t } = useTranslation();
   const menuOpen = useUIStore((state) => state.mobileMenuOpen);
@@ -163,14 +169,16 @@ const NavbarMobile = () => {
         }}>
         <Box sx={{ width: "100%", p: 0 }}>
           <List sx={{ p: 0, m: 0 }}>
-            {[
-              ['en', '/us.png', 'English'],
-              ['ro', '/ro.png', 'Română'],
-              ['hu', '/hu.png', 'Magyar']
-            ].map(([code, flag, label], i) => (
+            {LOCALES.map(([code, flag, label]) => (
               <React.Fragment key={code}>
                 <ListItem onClick={() => handleLanguageChange(code)} disablePadding sx={{ m: 0 }}>
-                  <ListItemButton sx={{ display: 'flex', alignItems: 'center' }}>
+                  <ListItemButton
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      borderBottom: `1px solid ${COLORS.divider}`,
+                    }}
+                  >
                     <img
                       src={flag}
                       alt={label}
@@ -186,9 +194,6 @@ const NavbarMobile = () => {
                     <span style={{ color: COLORS.text }}>{label}</span>
                   </ListItemButton>
                 </ListItem>
-
-                {/* Divider except for last item */}
-                {i !== 1 && <Divider sx={{ borderColor: COLORS.divider, m: 0 }} />}
               </React.Fragment>
             ))}
           </List>
@@ -279,5 +284,3 @@ const NavbarMobile = () => {
 };
 
 export default NavbarMobile;
-
-
