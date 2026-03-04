@@ -17,6 +17,7 @@ const NAV_ITEMS = [
 const LOCALES = [
     ["en", "/us.png", "English"],
     ["ro", "/ro.png", "Română"],
+    ["hu", "/hu.png", "Magyar"]
 ];
 
 export default function Navbar() {

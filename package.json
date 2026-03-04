@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "images:webp": "node ./convert-jpg-assets-to-webp.mjs",
     "fix:locale-encoding": "node scripts/fix-locale-encoding.mjs",
     "test:e2e": "node scripts/run-playwright-if-present.mjs",
     "test:a11y": "node scripts/run-playwright-if-present.mjs tests/a11y.spec.ts",

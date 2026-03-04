@@ -166,6 +166,7 @@ const NavbarMobile = () => {
             {[
               ['en', '/us.png', 'English'],
               ['ro', '/ro.png', 'Română'],
+              ['hu', '/hu.png', 'Magyar']
             ].map(([code, flag, label], i) => (
               <React.Fragment key={code}>
                 <ListItem onClick={() => handleLanguageChange(code)} disablePadding sx={{ m: 0 }}>
