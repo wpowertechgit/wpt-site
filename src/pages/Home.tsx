@@ -1,6 +1,5 @@
 ﻿import { useRef } from "react";
 import { useTransform, useScroll, motion } from "framer-motion";
-import { useEffect } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
@@ -10,49 +9,12 @@ export default function Home() {
     const { t } = useTranslation();
     const currentLanguage = useUIStore((state) => state.language);
     const containerRef = useRef(null);
-    const desktopHeroVideoRef = useRef<HTMLVideoElement>(null);
-    const mobileHeroVideoRef = useRef<HTMLVideoElement>(null);
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 1000], [0, -48]);
     const caseStudyVideoUrl =
         currentLanguage === "ro"
             ? "https://www.youtube-nocookie.com/embed/7vnExoAwfu8?si=F328Juhk0f6Jtf-x"
             : "https://www.youtube-nocookie.com/embed/Lxk9Yu1eJYI?si=ok5kKliaBkjebA-u";
-
-    const ensureHeroVideoPlayback = (video: HTMLVideoElement | null) => {
-        if (!video) return;
-
-        video.muted = true;
-        video.defaultMuted = true;
-
-        const playPromise = video.play();
-
-        if (playPromise && typeof playPromise.catch === "function") {
-            playPromise.catch(() => {});
-        }
-    };
-
-    useEffect(() => {
-        const heroVideos = [desktopHeroVideoRef.current, mobileHeroVideoRef.current];
-
-        heroVideos.forEach((video) => {
-            ensureHeroVideoPlayback(video);
-        });
-
-        const handleVisibilityChange = () => {
-            if (!document.hidden) {
-                heroVideos.forEach((video) => {
-                    ensureHeroVideoPlayback(video);
-                });
-            }
-        };
-
-        document.addEventListener("visibilitychange", handleVisibilityChange);
-
-        return () => {
-            document.removeEventListener("visibilitychange", handleVisibilityChange);
-        };
-    }, []);
 
     return (
         <Box ref={containerRef} sx={{ bgcolor: "#ffffff" }}>
@@ -98,18 +60,15 @@ export default function Home() {
                     >
                         <Box
                             component="video"
-                            ref={desktopHeroVideoRef}
                             autoPlay
                             loop
                             muted
                             playsInline
-                            preload="auto"
                             controls={false}
                             disablePictureInPicture
                             controlsList="nodownload nofullscreen noremoteplayback"
                             aria-hidden="true"
                             tabIndex={-1}
-                            onLoadedData={(event) => ensureHeroVideoPlayback(event.currentTarget)}
                             onContextMenu={(e) => e.preventDefault()}
                             sx={{
                                 width: "100%",
@@ -150,18 +109,15 @@ export default function Home() {
                     >
                         <Box
                             component="video"
-                            ref={mobileHeroVideoRef}
                             autoPlay
                             loop
                             muted
                             playsInline
-                            preload="auto"
                             controls={false}
                             disablePictureInPicture
                             controlsList="nodownload nofullscreen noremoteplayback"
                             aria-hidden="true"
                             tabIndex={-1}
-                            onLoadedData={(event) => ensureHeroVideoPlayback(event.currentTarget)}
                             onContextMenu={(e) => e.preventDefault()}
                             sx={{
                                 width: "100%",
