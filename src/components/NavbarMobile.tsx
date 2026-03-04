@@ -207,11 +207,11 @@ const NavbarMobile = () => {
           <List sx={{ p: 0, m: 0 }}>
             {/* Technology */}
             <ListItem component={Link} to="/technology" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
-              <ListItemButton sx={{ backgroundColor: '#0000FF', color: '#FFFFFF' }}>
-                <ListItemText primary={t("nav.technology")} primaryTypographyProps={{ fontFamily: 'Stack Sans Headline', fontWeight: 700 }} />
+              <ListItemButton sx={{ backgroundColor: '#FFFFFF', color: '#000' }}>
+                <ListItemText primary={t("tech-title")} />
               </ListItemButton>
             </ListItem>
-
+            <Divider sx={{ borderColor: COLORS.divider, m: 0 }} />
             <ListItem component={Link} to="/calculator" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
               <ListItemButton sx={{ backgroundColor: '#FFFFFF', color: '#000' }}>
                 <ListItemText primary={t("nav.calculator")} />
@@ -222,8 +222,8 @@ const NavbarMobile = () => {
 
             {/* Applications */}
             <ListItem component={Link} to="/applications" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
-              <ListItemButton sx={{ backgroundColor: '#ED1C24', color: '#FFFFFF' }}>
-                <ListItemText primary={t("nav.applications")} primaryTypographyProps={{ fontFamily: 'Stack Sans Headline', fontWeight: 700 }} />
+              <ListItemButton sx={{ backgroundColor: '#FFFFFF', color: '#000000' }}>
+                <ListItemText primary={t("nav.applications")} />
               </ListItemButton>
             </ListItem>
 
@@ -240,8 +240,8 @@ const NavbarMobile = () => {
 
             {/* Brochure */}
             <ListItem component="a" href={brochureHref} target="_blank" rel="noreferrer" onClick={closeDrawer} disablePadding sx={{ textDecoration: 'none', p: 0, m: 0 }}>
-              <ListItemButton sx={{ backgroundColor: '#0000FF', color: '#FFFFFF' }}>
-                <ListItemText primary={t("commercial-presentation")} primaryTypographyProps={{ fontFamily: 'Stack Sans Headline', fontWeight: 700 }} />
+              <ListItemButton sx={{ backgroundColor: '#FFFFFF', color: '#000000' }}>
+                <ListItemText primary={t("commercial-presentation")} />
               </ListItemButton>
             </ListItem>
 

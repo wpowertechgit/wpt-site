@@ -10,6 +10,7 @@ import TechnologyDescriptionScroll from "../components/TechnologyDescriptionScro
 export default function Technology() {
   const { t } = useTranslation();
   const { key: routeEntryKey } = useLocation();
+  const heroRef = useRef<HTMLDivElement>(null);
   const rigRef = useRef<HTMLDivElement>(null);
   const wheelLockRef = useRef(false);
 
@@ -21,20 +22,45 @@ export default function Technology() {
     return () => window.cancelAnimationFrame(raf);
   }, [routeEntryKey]);
 
-  const handleHeroWheel = (event: React.WheelEvent<HTMLDivElement>) => {
-    if (event.deltaY <= 0 || wheelLockRef.current) return;
-    event.preventDefault();
-    wheelLockRef.current = true;
-    rigRef.current?.scrollIntoView({ behavior: "auto", block: "start" });
-    window.setTimeout(() => {
-      wheelLockRef.current = false;
-    }, 160);
-  };
+  useLayoutEffect(() => {
+    const hero = heroRef.current;
+
+    if (!hero) return;
+
+    let unlockTimeoutId: number | null = null;
+
+    const handleHeroWheel = (event: WheelEvent) => {
+      if (event.deltaY <= 0 || wheelLockRef.current) return;
+
+      event.preventDefault();
+      wheelLockRef.current = true;
+      rigRef.current?.scrollIntoView({ behavior: "auto", block: "start" });
+
+      if (unlockTimeoutId !== null) {
+        window.clearTimeout(unlockTimeoutId);
+      }
+
+      unlockTimeoutId = window.setTimeout(() => {
+        wheelLockRef.current = false;
+        unlockTimeoutId = null;
+      }, 160);
+    };
+
+    hero.addEventListener("wheel", handleHeroWheel, { passive: false });
+
+    return () => {
+      hero.removeEventListener("wheel", handleHeroWheel);
+
+      if (unlockTimeoutId !== null) {
+        window.clearTimeout(unlockTimeoutId);
+      }
+    };
+  }, []);
 
   return (
     <Box sx={{ bgcolor: "#ffffff" }}>
       <Box
-        onWheel={handleHeroWheel}
+        ref={heroRef}
         sx={{
           minHeight: "100vh",
           height: "100vh",

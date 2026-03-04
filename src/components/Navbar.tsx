@@ -24,8 +24,7 @@ export default function Navbar() {
     const currentLanguage = useUIStore((state) => state.language);
     const setLanguage = useUIStore((state) => state.setLanguage);
     const [localeAnchor, setLocaleAnchor] = useState<null | HTMLElement>(null);
-    const technologySiteLabel =
-        currentLanguage === "ro" ? "Tehnologia WPT" : "WPT Technology";
+    const technologySiteLabel = t("tech-title");
     const brochureHref =
         currentLanguage === "ro"
             ? "/docs/wpt- brosura-ro.pdf"

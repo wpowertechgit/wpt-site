@@ -9,6 +9,7 @@ i18n.use(initReactI18next).init({
         ro: { translation: roTranslations }
     },
     lng: "en",
+    showSupportNotice: false,
     fallbackLng: "en",
     interpolation: {
         escapeValue: false

@@ -1,5 +1,6 @@
 ﻿import { useRef } from "react";
 import { useTransform, useScroll, motion } from "framer-motion";
+import { useEffect } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
@@ -9,12 +10,49 @@ export default function Home() {
     const { t } = useTranslation();
     const currentLanguage = useUIStore((state) => state.language);
     const containerRef = useRef(null);
+    const desktopHeroVideoRef = useRef<HTMLVideoElement>(null);
+    const mobileHeroVideoRef = useRef<HTMLVideoElement>(null);
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 1000], [0, -48]);
     const caseStudyVideoUrl =
         currentLanguage === "ro"
             ? "https://www.youtube-nocookie.com/embed/7vnExoAwfu8?si=F328Juhk0f6Jtf-x"
             : "https://www.youtube-nocookie.com/embed/Lxk9Yu1eJYI?si=ok5kKliaBkjebA-u";
+
+    const ensureHeroVideoPlayback = (video: HTMLVideoElement | null) => {
+        if (!video) return;
+
+        video.muted = true;
+        video.defaultMuted = true;
+
+        const playPromise = video.play();
+
+        if (playPromise && typeof playPromise.catch === "function") {
+            playPromise.catch(() => {});
+        }
+    };
+
+    useEffect(() => {
+        const heroVideos = [desktopHeroVideoRef.current, mobileHeroVideoRef.current];
+
+        heroVideos.forEach((video) => {
+            ensureHeroVideoPlayback(video);
+        });
+
+        const handleVisibilityChange = () => {
+            if (!document.hidden) {
+                heroVideos.forEach((video) => {
+                    ensureHeroVideoPlayback(video);
+                });
+            }
+        };
+
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+
+        return () => {
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
+        };
+    }, []);
 
     return (
         <Box ref={containerRef} sx={{ bgcolor: "#ffffff" }}>
@@ -47,17 +85,6 @@ export default function Home() {
                 >
                     {/* DESKTOP VIDEO */}
                     <Box
-                        component="video"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        controls={false}
-                        disablePictureInPicture
-                        controlsList="nodownload nofullscreen noremoteplayback"
-                        aria-hidden="true"
-                        tabIndex={-1}
-                        onContextMenu={(e) => e.preventDefault()}
                         sx={{
                             width: "100%",
                             // Slightly reduced maxWidth to take up less vertical height
@@ -66,29 +93,51 @@ export default function Home() {
                             mb: "1rem", // Reduced margin from 2rem
                             mx: "auto",
                             display: { xs: "none", md: "block" },
-                            pointerEvents: "none",
-                            userSelect: "none",
-                            backgroundColor: "#ffffff",
-                            // Hardware acceleration for smoother lifting
-                            transform: "translateZ(0)"
+                            position: "relative"
                         }}
                     >
-                        <source src="/logo-desktop-optimized.mp4" type="video/mp4" />
+                        <Box
+                            component="video"
+                            ref={desktopHeroVideoRef}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="auto"
+                            controls={false}
+                            disablePictureInPicture
+                            controlsList="nodownload nofullscreen noremoteplayback"
+                            aria-hidden="true"
+                            tabIndex={-1}
+                            onLoadedData={(event) => ensureHeroVideoPlayback(event.currentTarget)}
+                            onContextMenu={(e) => e.preventDefault()}
+                            sx={{
+                                width: "100%",
+                                height: "100%",
+                                display: "block",
+                                pointerEvents: "none",
+                                userSelect: "none",
+                                backgroundColor: "#ffffff",
+                                // Hardware acceleration for smoother lifting
+                                transform: "translateZ(0)"
+                            }}
+                        >
+                            <source src="/logo-desktop-optimized.mp4" type="video/mp4" />
+                        </Box>
+                        <Box
+                            aria-hidden="true"
+                            sx={{
+                                position: "absolute",
+                                inset: 0,
+                                background:
+                                    "linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.14) 100%)",
+                                pointerEvents: "none"
+                            }}
+                        />
                     </Box>
 
                     {/* MOBILE VIDEO */}
                     <Box
-                        component="video"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        controls={false}
-                        disablePictureInPicture
-                        controlsList="nodownload nofullscreen noremoteplayback"
-                        aria-hidden="true"
-                        tabIndex={-1}
-                        onContextMenu={(e) => e.preventDefault()}
                         sx={{
                             width: "100%",
                             maxWidth: "14rem", // Reduced from 16.75rem to fit mobile screens better
@@ -96,12 +145,45 @@ export default function Home() {
                             mb: "1rem", // Reduced margin from 2rem
                             mx: "auto",
                             display: { xs: "block", md: "none" },
-                            pointerEvents: "none",
-                            userSelect: "none",
-                            backgroundColor: "#ffffff"
+                            position: "relative"
                         }}
                     >
-                        <source src="/logo-mid-res-optimized.mp4" type="video/mp4" />
+                        <Box
+                            component="video"
+                            ref={mobileHeroVideoRef}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="auto"
+                            controls={false}
+                            disablePictureInPicture
+                            controlsList="nodownload nofullscreen noremoteplayback"
+                            aria-hidden="true"
+                            tabIndex={-1}
+                            onLoadedData={(event) => ensureHeroVideoPlayback(event.currentTarget)}
+                            onContextMenu={(e) => e.preventDefault()}
+                            sx={{
+                                width: "100%",
+                                height: "100%",
+                                display: "block",
+                                pointerEvents: "none",
+                                userSelect: "none",
+                                backgroundColor: "#ffffff"
+                            }}
+                        >
+                            <source src="/logo-mid-res-optimized.mp4" type="video/mp4" />
+                        </Box>
+                        <Box
+                            aria-hidden="true"
+                            sx={{
+                                position: "absolute",
+                                inset: 0,
+                                background:
+                                    "linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.14) 100%)",
+                                pointerEvents: "none"
+                            }}
+                        />
                     </Box>
 
                     <Typography
@@ -353,6 +435,7 @@ export default function Home() {
                                 <Box
                                     component="iframe"
                                     src={caseStudyVideoUrl}
+                                    loading="lazy"
                                     title="Cluj reference presentation"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowFullScreen

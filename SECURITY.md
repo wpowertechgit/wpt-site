@@ -8,7 +8,7 @@ branch and to the current production deployment workflow.
 ## Reporting a Vulnerability
 
 Do not open public issues for suspected vulnerabilities.
-Send reports to `office@wpowertech.ro`.
+Send reports to `tkrisztian@wpowertech.ro`.
 
 Include:
 

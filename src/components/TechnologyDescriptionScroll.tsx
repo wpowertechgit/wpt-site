@@ -4,6 +4,7 @@ import { Box, ButtonBase, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { MdFactory, MdOutlineElectricalServices, MdOutlineFactCheck } from "react-icons/md";
 import { FaTrashAlt } from "react-icons/fa";
+import { useUIStore } from "../store/uiStore";
 
 type SectionItem = {
   titleKey: string;
@@ -79,7 +80,6 @@ const SECTION_ITEMS: SectionItem[] = [
     titleKey: "tech-body-page-6-title",
     bodyKey: "tech-body-page-6-body",
     videoTitleKey: "tech-body-page-6-video-title",
-    videoEmbedUrl: "https://www.youtube-nocookie.com/embed/Lxk9Yu1eJYI?si=ok5kKliaBkjebA-u",
     nextKey: "tech-body-page-6-next",
     prevKey: "tech-body-page-6-prev",
   },
@@ -110,9 +110,14 @@ const PROCESS_ICON_SOURCES: Record<NonNullable<SectionItem["processStepKeys"]>[n
 
 export default function TechnologyDescriptionScroll() {
   const { t } = useTranslation();
+  const currentLanguage = useUIStore((state) => state.language);
   const wrapperRef = useRef<HTMLElement | null>(null);
   const sectionRefs = useRef<Array<HTMLElement | null>>([]);
   const sections = useMemo(() => SECTION_ITEMS, []);
+  const technologyVideoUrl =
+    currentLanguage === "ro"
+      ? "https://www.youtube-nocookie.com/embed/7vnExoAwfu8?si=F328Juhk0f6Jtf-x"
+      : "https://www.youtube-nocookie.com/embed/Lxk9Yu1eJYI?si=ok5kKliaBkjebA-u";
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
     offset: ["start 90%", "start 20%"],
@@ -137,6 +142,7 @@ export default function TechnologyDescriptionScroll() {
         const hasPrev = index > 0 && t(section.prevKey || "").trim().length > 0;
         const hasNext = index < sections.length - 1 && t(section.nextKey).trim().length > 0;
         const title = t(section.titleKey);
+        const videoEmbedUrl = section.videoEmbedUrl ?? (section.videoTitleKey ? technologyVideoUrl : undefined);
 
         return (
           <Box
@@ -206,7 +212,7 @@ export default function TechnologyDescriptionScroll() {
                     </Typography>
                   )}
 
-                  {section.videoEmbedUrl ? (
+                  {videoEmbedUrl ? (
                     <Box
                       sx={{
                         display: "grid",
@@ -258,7 +264,7 @@ export default function TechnologyDescriptionScroll() {
                         <Box
                           component="iframe"
                           loading="lazy"
-                          src={section.videoEmbedUrl}
+                          src={videoEmbedUrl}
                           title={t(section.videoTitleKey || "")}
                           referrerPolicy="strict-origin-when-cross-origin"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
