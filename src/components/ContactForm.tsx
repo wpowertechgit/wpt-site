@@ -92,7 +92,7 @@ const ContactForm = () => {
         }
 
         try {
-            const res = await fetch("https://wpowertech.ro/sendemail.php", {
+            const res = await fetch("https://api.wpowertech.ro/sendemail.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -383,3 +383,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+

@@ -1,6 +1,6 @@
 {
     "hero-title": "Waste Powertech",
-    "hero-subtitle": "A hulladék energiává alakítása molekuláris dezintegráció révén",
+    "hero-subtitle": "A hulladék energiává alakítása molekuláris hőbontás révén",
     "nav.technology": "Technológia",
     "nav.calculator": "Kalkulátor",
     "nav.applications": "Alkalmazások",
@@ -14,14 +14,14 @@
     "pillar-power-title": "Power",
     "pillar-power-description": "A rendszer a hulladékot szintézisgázzá (szingáz) alakítja, amelyet ezt követően magas hatásfokú belső égésű motorokban használnak fel villamosenergia-termelésre. Körülbelül 14 MJ/kg átlagos fűtőértékű alapanyag esetén a folyamat (a konverzió hatásfokától függően) feldolgozott tonnánként mintegy 1 MWh villamos energia előállítását teszi lehetővé. Az üzemi paraméterek automatizált felügyelete és szabályozása révén biztosítja a folyamatos működést és a stabil betáplálást az Országos Villamosenergia-rendszerbe (SEN). Ezen integráció révén a létesítmény hozzájárul a helyi energetikai infrastruktúra stabilitásához és rugalmasságához.",
     "pillar-tech-title": "Tech",
-    "pillar-tech-description": "A molekuláris dezintegráció egy oxigénmentes környezetben zajló, szabályozott termokémiai folyamat, amelynek során a komplex szerves struktúrák kémiai kötései felszakadnak, ezáltal szintézisgáz (szingáz) keletkezik. A közvetlen égetéssel ellentétben a folyamat nem jár teljes oxidációval; ez egy szabályozott konverzió, amely az anyagot elemi összetevőkre bontja. Eredményként egy szűrt energiahordozót (szingáz), valamint egy ipari újrahasznosításra alkalmas, stabilizált inert ásványi maradékanyagot (hamu) állít elő.",
+    "pillar-tech-description": "A molekuláris hőbontás egy oxigénmentes környezetben zajló, szabályozott termokémiai folyamat, amelynek során a komplex szerves struktúrák kémiai kötései felszakadnak, ezáltal szintézisgáz (szingáz) keletkezik. A közvetlen égetéssel ellentétben a folyamat nem jár teljes oxidációval; ez egy szabályozott konverzió, amely az anyagot elemi összetevőkre bontja. Eredményként egy szűrt energiahordozót (szingáz), valamint egy ipari újrahasznosításra alkalmas, stabilizált inert ásványi maradékanyagot (hamu) állít elő.",
     "learn-more": "Tudjon meg többet",
-    "case-study-title": "Működési referencia: Kolozsvári Molekuláris Dezintegrációs Üzem",
-    "case-study-description": "A Kolozsvári Molekuláris Dezintegrációs Üzem (CMID) a WPT technológia fő funkcionális referenciájaként szolgál aktív környezetben. Ez a megvalósítás bizonyítja a molekuláris dezintegrációs módszer megvalósíthatóságát működési léptékben, érvényesített és dokumentált alapot biztosítva a strukturális replikációhoz más települési és ipari helyszíneken.",
+    "case-study-title": "Működési referencia: Kolozsvári Molekuláris Hőbontó Üzem",
+    "case-study-description": "A Kolozsvári Molekuláris Hőbontó Üzem (CMID) a WPT technológia fő funkcionális referenciájaként szolgál aktív környezetben. Ez a megvalósítás bizonyítja a molekuláris hőbontási módszer megvalósíthatóságát működési léptékben, érvényesített és dokumentált alapot biztosítva a strukturális replikációhoz más települési és ipari helyszíneken.",
     "view-case": "Megvalósítási részletek megtekintése",
     "institutional-b2g": "Intézményi (B2G)",
     "industrial-b2i": "Ipari (B2I) és Üzleti (B2B)",
-    "app-b2g-description": "A WPT egy tanúsított keretrendszert kínál a hatóságok számára a települési hulladékkezeléshez, amely a hagyományos hulladéklerakást szabályozott energetikai hasznosítással helyettesíti. A folyamat molekuláris dezintegráció révén működik — amely egy égés nélküli termokémiai módszer —, biztosítva a teljes kompatibilitást az európai környezetvédelmi előírásokkal, és ellenőrizhető, valamint auditálható megoldást nyújtva a hulladék energetikai hasznosítását célzó regionális célkitűzésekhez.",
+    "app-b2g-description": "A WPT egy tanúsított keretrendszert kínál a hatóságok számára a települési hulladékkezeléshez, amely a hagyományos hulladéklerakást szabályozott energetikai hasznosítással helyettesíti. A folyamat molekuláris hőbontás révén működik — amely egy égés nélküli termokémiai módszer —, biztosítva a teljes kompatibilitást az európai környezetvédelmi előírásokkal, és ellenőrizhető, valamint auditálható megoldást nyújtva a hulladék energetikai hasznosítását célzó regionális célkitűzésekhez.",
     "app-b2i-description": "A WPT rendszer lehetővé teszi az ipari üzemeltetők számára, hogy a heterogén hulladékáramokat stabil villamos- és hőenergiává alakítsák a helyszínen. A működési méretezhetőségre tervezett technológia integrálódik a meglévő ipari infrastruktúrába a komplex maradékanyagok feldolgozása érdekében, mérhető növekedést biztosítva az erőforrás-hatékonyságban, és csökkentve a külső energiaforrásoktól való rendszerszintű függőséget.",
     "explore": "Alkalmazások felfedezése",
     "documentation": "Dokumentáció",
@@ -36,7 +36,7 @@
     "docs.documents.directive3": "SR EN 60204 1:2007",
     "docs.documents.directive4": "SR EN 62061:2005",
     "docs.documents.directive5": "SR EN 842+A1:2009",
-    "docs.brand.intro": "A kereskedelmi prezentáciok és márkaanyagok ebben a modulban PDF formátumban kerülnek közzétételre.",
+    "docs.brand.intro": "A kereskedelmi prezentációk és márkaanyagok ebben a modulban PDF formátumban kerülnek közzétételre.",
     "docs.brand.fileEn": "Kereskedelmi prezentáció (Angol)",
     "docs.brand.fileRo": "Kereskedelmi prezentáció (Román)",
     "docs.certificates.title1": "1. Tanúsítvány",
@@ -56,35 +56,35 @@
     "blank": "‎ ",
     "news8": {
         "title": "Egy kolozsvári üzem árammal láthatná el a várost áramkimaradás esetén. A hulladékot villamos energiává și hővé lehet alakítani.",
-        "paragraph": "A molekuláris bomlás során keletkező gázzal működtetik az áramot termelő generátorokat. Ennek több mint 70%-a a nemzeti hálózatba kerül, a többi pedig az üzemet látja el energiával. Egy év alatt 25 000 tonna hulladékból 18 500 megawatt energiát lehetne előállítani, ami elegendő energia Kolozsvár csaknem 5000 háztartásának ellátásához. Megoldás vészhelyzetekre\nSzakács János, projektmenedzser: „Áramkimaradás esetén ez a létesítmény vészáramellátást biztosíthat Kolozsváron, beleértve olyan fontos intézményeket is, mint az ISU, az iskolák és a kórházak. Jelenleg óránként 3 megawattal Kolozsvár fogyasztásának körülbelül 7-8%-át tudjuk fedezni."
+        "paragraph": "A molekuláris hőbontás során keletkező gázzal működtetik az áramot termelő generátorokat. Ennek több mint 70%-a a nemzeti hálózatba kerül, a többi pedig az üzemet látja el energiával. Egy év alatt 25 000 tonna hulladékból 18 500 megawatt energiát lehetne előállítani, ami elegendő energia Kolozsvár csaknem 5000 háztartásának ellátásához. Megoldás vészhelyzetekre\nSzakács János, projektmenedzser: „Áramkimaradás esetén ez a létesítmény vészáramellátást biztosíthat Kolozsváron, beleértve olyan fontos intézményeket is, mint az ISU, az iskolák és a kórházak. Jelenleg óránként 3 megawattal Kolozsvár fogyasztásának körülbelül 7-8%-át tudjuk fedezni."
     },
     "news7": {
         "title": "Országos premierként a Kolozs Megyei Tanács a hulladékot zöld energiává, és végső soron a kolozsváriak pénzzé alakítja.",
-        "paragraph": "Románia első molekuláris hulladéklebontási állomását helyezték üzembe. Idén október 30-án, csütörtökön, a Kolozs megyei tanács elnöke, Alin Tișe úr, az intézmény alelnökei, Radu Rațiu és Vákár István úr, valamint a műszaki soluțiát szállító și a berendezést építő szakcég képviselőinek jelenlétében helyezték üzembe Kolozs megye első, molekuláris dezintegrációval előállított, kommunális hulladék energetikai hasznosítására szolgáló kezelőállomását."
+        "paragraph": "Románia első molekuláris hulladék-hőbontó állomását helyezték üzembe. Idén október 30-án, csütörtökön, a Kolozs megyei tanács elnöke, Alin Tișe úr, az intézmény alelnökei, Radu Rațiu és Vákár István úr, valamint a műszaki megoldást szállító és a berendezést építő szakcég képviselőinek jelenlétében helyezték üzembe Kolozs megye első, molekuláris hőbontással működő, kommunális hulladék energetikai hasznosítására szolgáló kezelőállomását."
     },
     "news6": {
-        "title": "A molekuláris bomlasztóállomás építési munkálatai körülbelül 80%-os készültségen állnak",
-        "paragraph": "A hulladék energiává alakítása, rendkívül közel a megvalósuláshoz Kolozsváron\n Gyors ütemben halad és egyre közelebb kerül a befejezéshez az a projekt, amelynek célja az első molekuláris bomlasztással működő, a kommunális hulladékok energetikai hasznosítására szolgáló kezelőüzem megépítése Kolozs megyében."
+        "title": "A molekuláris hőbontó állomás építési munkálatai körülbelül 80%-os készültségen állnak",
+        "paragraph": "A hulladék energiává alakítása rendkívül közel a megvalósuláshoz Kolozsváron\n Gyors ütemben halad és egyre közelebb kerül a befejezéshez az a projekt, amelynek célja az első molekuláris hőbontással működő, a kommunális hulladékok energetikai hasznosítására szolgáló kezelőüzem megépítése Kolozs megyében."
     },
     "news5": {
-        "title": "Energiaügyi miniszter: „Támogatni fogjuk a Kolozs Megyei Tanács molekuláris dezintegrációs projektjének országos kiterjesztését”",
+        "title": "Energiaügyi miniszter: „Támogatni fogjuk a Kolozs Megyei Tanács molekuláris hőbontási projektjének országos kiterjesztését”",
         "paragraph": "Sebastian Burduja energiaügyi miniszter szombat este Kolozsváron forradalminak nevezte a Kolozs Megyei Tanácsnak azt a projektjét, amelynek célja, hogy a szemetet zöld energiává alakítsák, és segíteni fog a kolozsvári CMID telephelyén megépítendő állomás finanszírozásának felkutatásában."
     },
     "news4": {
-        "title": "Egy important új lépés a hulladék-energia átalakítás felé",
-        "paragraph": "Egy important új lépés a hulladék-energia átalakítás felé. Befejeződött az első, molekuláris szétesésen alapuló kommunális hulladékkezelő üzem tervezési szakasza Kolozs megyében.\n\nA Kolozs Megyei Tanács megkapta jóváhagyásra és elemzésre a műszaki tervet (PT), amely a 2024 májusában aláírt szerződéshez kapcsolódik a Waste Powertech SRL-lel, amely az első molekuláris széteséssel működő hulladékkezelő üzem megtervezésére és kivitelezésére vonatkozik Kolozs megyében, a kommunális hulladék energetikai hasznosítása céljából."
+        "title": "Egy fontos új lépés a hulladék-energia átalakítás felé",
+        "paragraph": "Egy fontos új lépés a hulladék-energia átalakítás felé. Befejeződött az első, molekuláris hőbontáson alapuló kommunális hulladékkezelő üzem tervezési szakasza Kolozs megyében.\n\nA Kolozs Megyei Tanács megkapta jóváhagyásra és elemzésre a műszaki tervet (PT), amely a 2024 májusában aláírt szerződéshez kapcsolódik a Waste Powertech SRL-lel, amely az első molekuláris hőbontással működő hulladékkezelő üzem megtervezésére és kivitelezésére vonatkozik Kolozs megyében, a kommunális hulladék energetikai hasznosítása céljából."
     },
     "news3": {
         "title": "Energiát termelnek a szemétből: A Kolozs Megyei Tanács 61 millió lej értékben fektet be egy modern hulladékkezelő létesítmény építésébe",
-        "paragraph": "Kolozs megye környezetbarát módon gazdaságosan hasznosítható energiát termel a szemétből, és azt tűzi ki célul, hogy 2025-re a települési hulladék legalább 15%-ának energetikai hasznosítását megvalósítsa. Ezt várja a Kolozs Megyei Tanács elnöke, Alin Tișe, a mintegy 61 millió lejes beruházástól. Szerdán aláírta a hulladék molekuláris bontás útján történő kezelésére szolgáló üzem megvásárlásáról szóló szerződést. Az új hulladékkezelő létesítményt a Kolozs Megyei Tanács saját forrásból finanszírozza."
+        "paragraph": "Kolozs megye környezetbarát módon gazdaságosan hasznosítható energiát termel a szemétből, és azt tűzi ki célul, hogy 2025-re a települési hulladék legalább 15%-ának energetikai hasznosítását megvalósítsa. Ezt várja a Kolozs Megyei Tanács elnöke, Alin Tișe, a mintegy 61 millió lejes beruházástól. Szerdán aláírta a hulladék molekuláris hőbontás útján történő kezelésére szolgáló üzem megvásárlásáról szóló szerződést. Az új hulladékkezelő létesítményt a Kolozs Megyei Tanács saját forrásból finanszírozza."
     },
     "news2": {
-        "title": "Aláírták az első molekuláris lebontással működő városi hulladékkezelő üzem beszerzési szerződését Kolozs megyében",
-        "paragraph": "A Kolozs Megyei Tanács elnöke, Alin Tișe úr 2024. május 8-án, szerdán aláírta a Kolozs megyei települési hulladékok energetikai hasznosítására szolgáló, molekuláris lebontással működő hulladékkezelő üzem tervezési és kivitelezési szerződését a közbeszerzési eljárás nyertesével, a Waste Powertech SRL vállalattal.\n\nA szerződés értéke 60.794.052 RON áfa nélkül, a finanszírozást a Kolozs Megyei Tanács saját forrásaiból biztosítja."
+        "title": "Aláírták az első molekuláris hőbontással működő városi hulladékkezelő üzem beszerzési szerződését Kolozs megyében",
+        "paragraph": "A Kolozs Megyei Tanács elnöke, Alin Tișe úr 2024. május 8-án, szerdán aláírta a Kolozs megyei települési hulladékok energetikai hasznosítására szolgáló, molekuláris hőbontással működő hulladékkezelő üzem tervezési és kivitelezési szerződését a közbeszerzési eljárás nyertesével, a Waste Powertech SRL vállalattal.\n\nA szerződés értéke 60.794.052 RON áfa nélkül, a finanszírozást a Kolozs Megyei Tanács saját forrásaiból biztosítja."
     },
     "news1": {
-        "title": "A Waste Powertech molekuláris bomlási állomást biztosít Kolozsvárnak",
-        "paragraph": "A Megyei Tanács (CJ) befektetése az első ilyen települési hulladékkezelő létesítménybe 14 millió eurót tesz ki. Az intézmény elnöke, Alin Tișe aláírta a tender győztesével, a Waste Powertech-kel a molekuláris bomlási hulladékkezelő létesítmény tervezési și kivitelezési szerződését, amely a megye települési hulladékainak energetikai hasznosítását szolgálja. A szerződés odaítélt értéke 60 millió lej, áfa nélkül. A finanszírozást a CJ Kolozs megye saját forrásaiból biztosítja."
+        "title": "A Waste Powertech molekuláris hőbontó állomást biztosít Kolozsvárnak",
+        "paragraph": "A Megyei Tanács (CJ) befektetése az első ilyen települési hulladékkezelő létesítménybe 14 millió eurót tesz ki. Az intézmény elnöke, Alin Tișe aláírta a tender győztesével, a Waste Powertech-kel a molekuláris hőbontó hulladékkezelő létesítmény tervezési és kivitelezési szerződését, amely a megye települési hulladékainak energetikai hasznosítását szolgálja. A szerződés odaítélt értéke 60 millió lej, áfa nélkül. A finanszírozást a CJ Kolozs megye saját forrásaiból biztosítja."
     },
     "press.heroTitle": "News",
     "press.heroDescription": "Ez a rész a Waste Power Tech megoldásával kapcsolatos, harmadik felek által közzétett média hivatkozásokat és nyilvános intézményi kommunikációkat mutatja be. A tartalom nyilvános és dokumentált forrásokon alapuló bejegyzések formájában van rendszerezve, promóciós jelleg nélkül.",
@@ -106,20 +106,20 @@
     "contact.form.message": "Az Ön üzenete",
     "contact.form.submit": "Üzenet küldése",
     "tech-title": "A WPT technológia",
-    "tech-intro": "A termokémiai folyamatok és a molekuláris szabályozás terén elért fejlődés lehetővé teszi olyan módszerek kifejlesztését, amelyek képesek az anyagokat strukturális szinten kezelni, nem csupán mechanikai vagy égési szinten. \n\nEbben a technológiai keretben jelenik meg a szabályozott molekuláris dezintegráció – egy olyan folyamat, amely a molekulák közötti kötésekbe beavatkozva elősegíti az anyag stabil és felhasználható energiaformává történő konverzióját. \n\nA Waste Power Tech integrált technológiai infrastruktúraként fejleszti și alkalmazza ezt a módszert, a hulladékkezelés és az energiatermelés metszéspontjában elhelyezkedve.",
+    "tech-intro": "A termokémiai folyamatok és a molekuláris szabályozás terén elért fejlődés lehetővé teszi olyan módszerek kifejlesztését, amelyek képesek az anyagokat strukturális szinten kezelni, nem csupán mechanikai vagy égési szinten. \n\nEbben a technológiai keretben jelenik meg a szabályozott molekuláris hőbontás – egy olyan folyamat, amely a molekulák közötti kötésekbe beavatkozva elősegíti az anyag stabil és felhasználható energiaformává történő konverzióját. \n\nA Waste Power Tech integrált technológiai infrastruktúraként fejleszti és alkalmazza ezt a módszert, a hulladékkezelés és az energiatermelés metszéspontjában elhelyezkedve.",
     "tech-body-page-1-title": "",
-    "tech-body-page-1-body": "A modern hulladékkezelés és energiatermelés már nem közelíthető meg egydimenziós megoldásokkal. A technológia alapvető szerepet játszik olyan integrált rendszerek létrehozásában, amelyek képesek egyszerre kezelni az anyaghatékonyságot, a környezeti hatást és a gazdasági életképességet. Robusztus technológiai megoldások hiányában a hulladék logisztikai probléma marad, az energia pedig nyomást gyakorol a meglévő infrastruktúrára. \n\nA klasszikus kezelési technológiák - legyen szó lerakásról, égetésről vagy anaerob lebontásról - egyértelmű korlátokkal rendelkeznek az energiahatékonyság, a kibocsátás-szabályozás vagy az elfogadott anyagtípusok tekintetében. Különösen a vegyes, szennyezett vagy nehezen újrahasznosítható frakciók esetében olyan megközelítésre van szükség, amely kémiai, és nem csupán mechanikai vagy biológiai szinten avatkozik be. A molekuláris dezintegráció egy szabályozott termokémiai folyamaton keresztül válaszol erre az igényre, amely a hulladék szerves frakcióját energetikailag hasznosítható szintézisgázzá alakítja. A megközelítés nem csupán a térfogatcsökkentést célozza, hanem az anyagban lévő kémiai energia szabályozott konverzióját. Az automatizálás, a folyamatos felügyelet és a moduláris felépítés révén a technológia lehetővé teszi a meglévő energiarendszerbe való integrációt, működési kiszámíthatóságot és a változó anyagáramokhoz való alkalmazkodóképességet biztosítva.",
-    "tech-body-page-1-next": "A következő oldalon: Molekuláris dezintegráció",
+    "tech-body-page-1-body": "A modern hulladékkezelés és energiatermelés már nem közelíthető meg egydimenziós megoldásokkal. A technológia alapvető szerepet játszik olyan integrált rendszerek létrehozásában, amelyek képesek egyszerre kezelni az anyaghatékonyságot, a környezeti hatást és a gazdasági életképességet. Robusztus technológiai megoldások hiányában a hulladék logisztikai probléma marad, az energia pedig nyomást gyakorol a meglévő infrastruktúrára. \n\nA klasszikus kezelési technológiák - legyen szó lerakásról, égetésről vagy anaerob lebontásról - egyértelmű korlátokkal rendelkeznek az energiahatékonyság, a kibocsátás-szabályozás vagy az elfogadott anyagtípusok tekintetében. Különösen a vegyes, szennyezett vagy nehezen újrahasznosítható frakciók esetében olyan megközelítésre van szükség, amely kémiai, és nem csupán mechanikai vagy biológiai szinten avatkozik be. A molekuláris hőbontás egy szabályozott termokémiai folyamaton keresztül válaszol erre az igényre, amely a hulladék szerves frakcióját energetikailag hasznosítható szintézisgázzá alakítja. A megközelítés nem csupán a térfogatcsökkentést célozza, hanem az anyagban lévő kémiai energia szabályozott konverzióját. Az automatizálás, a folyamatos felügyelet és a moduláris felépítés révén a technológia lehetővé teszi a meglévő energiarendszerbe való integrációt, működési kiszámíthatóságot és a változó anyagáramokhoz való alkalmazkodóképességet biztosítva.",
+    "tech-body-page-1-next": "A következő oldalon: Molekuláris hőbontás",
     "tech-body-prev-link": "Az előző oldalon",
-    "tech-body-page-2-title": "Molekuláris dezintegráció - a technológiai alapelv",
-    "tech-body-page-2-body": "A molekuláris dezintegráció egy szabályozott termokémiai folyamaton keresztül válaszol erre az igényre, amely a hulladék szerves frakcióját energetikailag hasznosítható szintézisgázzá alakítja. A megközelítés nem csupán a térfogatcsökkentést célozza, hanem az anyagban lévő kémiai energia szabályozott konverzióját. Az automatizálás, a folyamatos felügyelet és a moduláris felépítés révén a technológia lehetővé teszi a meglévő energiarendszerbe való integrációt, működési kiszámíthatóságot és a változó anyagáramokhoz való alkalmazkodóképességet biztosítva. A WPT technológia a szerves anyagok szabályozott termokémiai molekuláris dezintegrációs folyamatán alapul. A folyamat szabályozott környezetben, közvetlen égés és oxigén hiányában megy végbe, elkerülve a klasszikus hulladékégetési mechanizmust.",
-    "tech-body-page-2-next": "A következő oldalon: Miért a molekuláris dezintegráció?",
+    "tech-body-page-2-title": "Molekuláris hőbontás - a technológiai alapelv",
+    "tech-body-page-2-body": "A molekuláris hőbontás egy szabályozott termokémiai folyamaton keresztül válaszol erre az igényre, amely a hulladék szerves frakcióját energetikailag hasznosítható szintézisgázzá alakítja. A megközelítés nem csupán a térfogatcsökkentést célozza, hanem az anyagban lévő kémiai energia szabályozott konverzióját. Az automatizálás, a folyamatos felügyelet és a moduláris felépítés révén a technológia lehetővé teszi a meglévő energiarendszerbe való integrációt, működési kiszámíthatóságot és a változó anyagáramokhoz való alkalmazkodóképességet biztosítva. A WPT technológia a szerves anyagok szabályozott termokémiai molekuláris hőbontási folyamatán alapul. A folyamat szabályozott környezetben, közvetlen égés és oxigén hiányában megy végbe, elkerülve a klasszikus hulladékégetési mechanizmust.",
+    "tech-body-page-2-next": "A következő oldalon: Miért a molekuláris hőbontás?",
     "tech-body-page-2-prev": "Az előző oldalon: A modern hulladékkezelés és az energiatermelés",
-    "tech-body-page-why-title": "Miért a molekuláris dezintegráció?",
-    "tech-body-page-why-body": "Mert a hulladékprobléma már nem oldható meg kizárólag mechanikai szinten.\nA klasszikus újrahasznosítás válogatás, aprítás és fizikai újrafelhasználás révén működik. A ma keletkező hulladékok nagy része azonban - vegyes, szennyezett, kompozit hulladékok - már nem nyerhető vissza hatékonyan a hagyományos módszerekkel. Ezek lerakókba kerülnek vagy elégetik őket.\n\nA molekuláris dezintegráció az anyag fundamentális szintjéig hatol.\nAhelyett, hogy magát a tárgyat próbálná újrahasznosítani, a folyamat elemi összetevőkre (szintetikus gázokra, energetikai frakciókra, újrahasznosítható vegyületekre) bontja az anyag kémiai szerkezetét. Gyakorlatilag már nem a hulladék formáját kezeljük, hanem az összetételét.\n\nEz egy konverziós, és nem ártalmatlanítási megközelítés.\nA molekuláris kötések szabályozott felszakítása révén a hulladék energiaforrássá vagy másodlagos nyersanyaggá válik. Így: csökkentjük a lerakott térfogatot, elkerüljük a közvetlen égetést, szabályozott módon nyerünk ki energiát, és csökkentjük a primer fosszilis erőforrásoktól való függőséget.",
-    "tech-body-page-why-next": "A következő oldalon: Mi a molekuláris dezintegráció?",
-    "tech-body-page-why-prev": "Az előző oldalon: Molekuláris dezintegráció - a technológiai alapelv",
-    "tech-body-page-3-title": "Mi a molekuláris dezintegráció?",
+    "tech-body-page-why-title": "Miért a molekuláris hőbontás?",
+    "tech-body-page-why-body": "Mert a hulladékprobléma már nem oldható meg kizárólag mechanikai szinten.\nA klasszikus újrahasznosítás válogatás, aprítás és fizikai újrafelhasználás révén működik. A ma keletkező hulladékok nagy része azonban - vegyes, szennyezett, kompozit hulladékok - már nem nyerhető vissza hatékonyan a hagyományos módszerekkel. Ezek lerakókba kerülnek vagy elégetik őket.\n\nA molekuláris hőbontás az anyag fundamentális szintjéig hatol.\nAhelyett, hogy magát a tárgyat próbálná újrahasznosítani, a folyamat elemi összetevőkre (szintetikus gázokra, energetikai frakciókra, újrahasznosítható vegyületekre) bontja az anyag kémiai szerkezetét. Gyakorlatilag már nem a hulladék formáját kezeljük, hanem az összetételét.\n\nEz egy konverziós, és nem ártalmatlanítási megközelítés.\nA molekuláris kötések szabályozott felszakítása révén a hulladék energiaforrássá vagy másodlagos nyersanyaggá válik. Így: csökkentjük a lerakott térfogatot, elkerüljük a közvetlen égetést, szabályozott módon nyerünk ki energiát, és csökkentjük a primer fosszilis erőforrásoktól való függőséget.",
+    "tech-body-page-why-next": "A következő oldalon: Mi a molekuláris hőbontás?",
+    "tech-body-page-why-prev": "Az előző oldalon: Molekuláris hőbontás - a technológiai alapelv",
+    "tech-body-page-3-title": "Mi a molekuláris hőbontás?",
     "tech-body-page-3-body": "Egy szabályozott technológiai folyamat, amelynek során a hulladékban lévő komplex szerves struktúrák egyszerűbb vegyületekre töredeznek, közvetlen égés nélkül.",
     "tech-body-page-3-subtitle": "Mi történik a folyamat során?",
     "tech-body-page-3-step-1": "Az anyagot egy szabályozott környezetbe vezetjük",
@@ -127,15 +127,15 @@
     "tech-body-page-3-step-3": "A molekuláris kötések felszakadnak",
     "tech-body-page-3-step-4": "Éghető gáz (szingáz) keletkezik",
     "tech-body-page-3-next": "A következő oldalon: Mi történik a keletkező gázzal?",
-    "tech-body-page-3-prev": "Az előző oldalon: Miért a molekuláris dezintegráció?",
+    "tech-body-page-3-prev": "Az előző oldalon: Miért a molekuláris hőbontás?",
     "tech-body-page-4-title": "Mi történik a keletkező gázzal?",
     "tech-body-page-4-step-1": "Összegyűjtik a reaktorból és lehűtik",
     "tech-body-page-4-step-2": "Megszűrik a részecskéktől",
     "tech-body-page-4-step-3": "Stabilizálják az áramlást és a nyomást",
     "tech-body-page-4-step-4": "Egy motorban használják fel,\namely villamos energiát\ntermel",
-    "tech-body-page-4-body": "A molekuláris dezintegrációs folyamat után a keletkező gázt összegyűjtik a reaktorból, lehűtik, és átszűrik a maradék részecskék eltávolítása érdekében, majd áramlás és nyomás szempontjából stabilizálják. Ebben a szabályozott formában egy kapcsolt energiatermelő (kogenerációs) motor táplálására használják, amely az éghető gázokat villamos energiává alakítja. A megtermelt villamos energiát betáplálják az országos hálózatba, és elosztják a fogyasztóknak – legyen szó városokról, közmű-infrastruktúráról vagy ipari szereplőkről –, így integrálva a kezelt hulladékot a valós energetikai körforgásba.",
+    "tech-body-page-4-body": "A molekuláris hőbontási folyamat után a keletkező gázt összegyűjtik a reaktorból, lehűtik, és átszűrik a maradék részecskék eltávolítása érdekében, majd áramlás és nyomás szempontjából stabilizálják. Ebben a szabályozott formában egy kapcsolt energiatermelő (kogenerációs) motor táplálására használják, amely az éghető gázokat villamos energiává alakítja. A megtermelt villamos energiát betáplálják az országos hálózatba, és elosztják a fogyasztóknak – legyen szó városokról, közmű-infrastruktúráról vagy ipari szereplőkről –, így integrálva a kezelt hulladékot a valós energetikai körforgásba.",
     "tech-body-page-4-next": "A következő oldalon: Mi marad a folyamat után?",
-    "tech-body-page-4-prev": "Az előző oldalon: Mi a molekuláris dezintegráció?",
+    "tech-body-page-4-prev": "Az előző oldalon: Mi a molekuláris hőbontás?",
     "tech-body-page-5-title": "Mi marad a folyamat után?",
     "tech-body-page-5-body": "A folyamat a szerves frakciót szintézisgázzá redukálja, és stabilizálja a hulladék ásványi összetevőjét. Az eredmény egy inert anyag, amely ipari és infrastrukturális alkalmazásokban újrahasznosítható, jelentősen csökkentve a lerakóba kerülő mennyiséget.",
     "tech-body-page-5-timeline-label": "HULLADÉK",
@@ -145,7 +145,7 @@
     "tech-body-page-5-next": "A következő oldalon: Milyen a létesítmény fizikai felépítése?",
     "tech-body-page-5-prev": "Az előző oldalon: Mi történik a keletkező gázzal?",
     "tech-body-page-6-title": "Milyen a létesítmény\nfizikai felépítése?",
-    "tech-body-page-6-body": "A WPT létesítmény moduláris felépítésű, és magában foglalja az átvételi és tárolási területet, a molekuláris dezintegrációs reaktort, a gázhűtő és -kondicionáló rendszereket, a kogenerációs egységet, valamint az ásványi maradékanyag kezelősorát.",
+    "tech-body-page-6-body": "A WPT létesítmény moduláris felépítésű, és magában foglalja az átvételi és tárolási területet, a molekuláris hőbontó reaktort, a gázhűtő és -kondicionáló rendszereket, a kogenerációs egységet, valamint az ásványi maradékanyag kezelősorát.",
     "tech-body-page-6-video-title": "A létesítményt bemutató magyarázó videó",
     "tech-body-page-6-next": "A következő oldalon: Milyen feltételek szükségesek a telepítéshez?",
     "tech-body-page-6-prev": "Az előző oldalon: Mi marad a folyamat után?",
@@ -159,15 +159,15 @@
     "tech-body-page-7-prev": "Az előző oldalon: Milyen a létesítmény fizikai felépítése?",
     "tech-diagram-title": "A folyamat sorrendje",
     "tech-step-feedstock-title": "1. Az alapanyag kondicionálása",
-    "tech-step-feedstock-desc": "A bemeneti áramokat előzetesen jellemezzük és stabilizáljuk az állandó molekuláris dezintegrációs feltételek és az auditálható hozam érdekében.",
-    "tech-step-reactor-desc": "A reaktormodul szabályozott termikus és mechanikai paramétereket alkalmaz a komplex anyagszerkezetek dezintegrálására egy zárt folyamatburkon belül.",
+    "tech-step-feedstock-desc": "A bemeneti áramokat előzetesen jellemezzük és stabilizáljuk az állandó molekuláris hőbontási feltételek és az auditálható hozam érdekében.",
+    "tech-step-reactor-desc": "A reaktormodul szabályozott termikus és mechanikai paramétereket alkalmaz a komplex anyagszerkezetek hőbontására egy zárt folyamatburkon belül.",
     "tech-step-energy-title": "3. Energia-konverzió és felügyelet",
     "tech-step-energy-desc": "A kinyert terméket felhasználható energiává alakítjuk, miközben a vezérlőrendszerek valós időben rögzítik a teljesítményt, a rendelkezésre állást és a megfelelőségi mutatókat.",
     "tech-control-title": "Vezérlési és biztonsági szint",
     "tech-control-desc": "A rendszer viselkedését behatárolt működési ablakok, szenzor-redundancia és a folyamatos működésre tervezett eljárási reteszelések szabályozzák.",
     "tech-output-title": "Termelési és ellenőrzési szint",
     "tech-output-desc": "A termelés minőségét és a rendszer hatékonyságát a műszaki jelentéstételi követelményekhez igazodó, ismételhető mérési pontokon keresztül hitelesítjük.",
-    "tech-step-reactor-title": "2. Szabályozott molekuláris dezintegráció",
+    "tech-step-reactor-title": "2. Szabályozott molekuláris hőbontás",
     "tech-scroll-1-title": "Elsődleges aprító",
     "tech-scroll-1-body": "A hulladék az elsődleges aprítón keresztül lép be a rendszerbe. Ez az egység a nagyméretű szilárd anyagokat kisebb darabokra redukálja, hogy a következő szakaszokban egyenletes méretet biztosítson.",
     "tech-scroll-2-title": "Másodlagos aprító",
@@ -177,7 +177,7 @@
     "tech-scroll-4-title": "Adagolórendszer",
     "tech-scroll-4-body": "A tárolóból az anyagot a reaktor központi kamrájába szállítják. Az automatizált adagolórendszer szabályozza a bemeneti áramlást a stabil működési feltételek fenntartása érdekében.",
     "tech-scroll-5-title": "Reaktor",
-    "tech-scroll-5-body": "Az anyag magas hőmérsékletű molekuláris dezintegráción megy keresztül oxigén hiányában. Levegő nélkül nem jön létre égés. A folyamat termikusan szintézisgázra (szingáz) és egy szilárd maradékanyagra bontja a hulladékot.",
+    "tech-scroll-5-body": "Az anyag magas hőmérsékletű molekuláris hőbontáson megy keresztül oxigén hiányában. Levegő nélkül nem jön létre égés. A folyamat termikusan szintézisgázra (szingáz) és egy szilárd maradékanyagra bontja a hulladékot.",
     "tech-scroll-6-title": "Szilárd melléktermék (Hamu / Inert anyag)",
     "tech-scroll-6-body": "Egy szilárd melléktermék keletkezik. Ez a maradékanyag másodlagos ipari alkalmazásokban, többek között építőanyagokban használható fel.",
     "tech-scroll-7-title": "Gázszűrés és kondicionálás",
@@ -226,7 +226,7 @@
             "compliance": {
                 "title": "2. Kibocsátás-szabályozás és jogszabályi megfelelőség",
                 "imageAlt": "SCADA felügyeleti felület és gázszűrő egység",
-                "body": "A molekuláris dezintegrációs folyamat zárt láncú rendszerként működik, többlépcsős gáztisztítást alkalmazva az ellenőrizetlen légköri kibocsátások megelőzése érdekében. Minden üzemi paramétert PLC/SCADA rendszereken keresztül felügyelnek, biztosítva a dokumentált megfelelést az ISO 14001 szabványoknak és az Európai Unió ipari kibocsátásokról szóló irányelveinek (IED)."
+                "body": "A molekuláris hőbontási folyamat zárt láncú rendszerként működik, többlépcsős gáztisztítást alkalmazva az ellenőrizetlen légköri kibocsátások megelőzése érdekében. Minden üzemi paramétert PLC/SCADA rendszereken keresztül felügyelnek, biztosítva a dokumentált megfelelést az ISO 14001 szabványoknak és az Európai Unió ipari kibocsátásokról szóló irányelveinek (IED)."
             },
             "resilience": {
                 "title": "3. Decentralizált energetikai reziliencia",
@@ -243,7 +243,7 @@
             "title": "B2G „Refrakciós” alapelvek",
             "intro": "Intézményi alapelv: A WPT inkább műszaki hatóságként, mintsem kereskedelmi beszállítóként működik. A közszférában az egyértelműség felelősség, az átláthatóság pedig funkcionális követelmény.",
             "principle1": "A módszer az ígéret előtt: A teljesítményt ellenőrizhető adatok támasztják alá, nem általános állítások. Az energiahozam egyértelműen meghatározott (kb. 1 MWh feldolgozott hulladék tonnánként, 14 MJ/kg fűtőérték mellett), mért műszaki paraméterek alapján.",
-            "principle2": "Technológiai és szabályozási egyértelműség: A molekuláris dezintegrációt kifejezetten szabályozott fragmentáció révén megvalósuló termokémiai konverziós folyamatként definiáljuk, amely elkülönül az égetéstől, biztosítva az egyértelműséget a szabályozási kerettel és a nyilvános kommunikációval kapcsolatban.",
+            "principle2": "Technológiai és szabályozási egyértelműség: A molekuláris hőbontást kifejezetten szabályozott fragmentáció révén megvalósuló termokémiai konverziós folyamatként definiáljuk, amely elkülönül az égetéstől, biztosítva az egyértelműséget a szabályozási kerettel és a nyilvános kommunikációval kapcsolatban.",
             "principle3": "Integráció és kockázatcsökkentés: Minden létesítmény replikálható moduláris rendszerként van megtervezve, optimalizálva a meglévő települési logisztikai láncokba való stabil integrációra és a működési kockázatok csökkentésére."
         }
     },
@@ -269,7 +269,7 @@
             "caloric": {
                 "title": "2. Kalória-kivonás és a hulladék eszközzé alakítása",
                 "imageAlt": "SCADA felügyeleti felület és gázszűrő egység",
-                "body": "A hagyományos mechanikai újrahasznosításon túl a molekuláris dezintegráció hasznosítja a szennyezett vagy vegyes hulladékáramok energetikai potenciálját. Körülbelül 1 MWh villamos energia előállításával feldolgozott tonnánként, 14 MJ/kg átlagos fűtőérték mellett, a Waste Power Tech rendszere az ipari hulladékot logisztikai költségközpontból kiszámítható energiaforrássá alakítja. Ez a konverzió csökkenti az energiapiaci volatilitásnak való kitettséget, és mérsékli a hulladék ártalmatlanításával vagy lerakásával kapcsolatos költségeket."
+                "body": "A hagyományos mechanikai újrahasznosításon túl a molekuláris hőbontás hasznosítja a szennyezett vagy vegyes hulladékáramok energetikai potenciálját. Körülbelül 1 MWh villamos energia előállításával feldolgozott tonnánként, 14 MJ/kg átlagos fűtőérték mellett, a Waste Power Tech rendszere az ipari hulladékot logisztikai költségközpontból kiszámítható energiaforrássá alakítja. Ez a konverzió csökkenti az energiapiaci volatilitásnak való kitettséget, és mérsékli a hulladék ártalmatlanításával vagy lerakásával kapcsolatos költségeket."
             },
             "scalability": {
                 "title": "3. Infrastrukturális skálázhatóság és moduláris architektúra",
@@ -344,7 +344,7 @@
     "elastomers-description": "Főként használt gumiabroncsokból és ipari alkalmazásokból származó elasztomer anyagok. Szintetikus polimerekből, koromból és műszaki adalékanyagokból állnak, nagy sűrűséggel és magas fűtőértékkel rendelkeznek.",
     "cellulosics-description": "A lignocellulóz anyagok közé tartozik a települési vagy ipari áramokból származó papír, karton, fa és ezek származékai. Főként cellulózból, hemicellulózból és ligninből állnak — ezek jelentős energetikai potenciállal rendelkező szerves struktúrák.",
     "carbon-resources-description": "A lignit és más szénben gazdag anyagok az energiatermelésben történelmileg használt hagyományos energiaforrások. Kémiai szempontból ezek fosszilizálódott szerves anyagok, amelyeket stabil energiatartalom és releváns fűtőérték jellemez.",
-    "inert-material-description": "Az üveg, beton, kő, fémek és egyéb inert frakciók nem vesznek részt a molekuláris dezintegrációs folyamatban. Ezeket az anyagokat a feldolgozás előtt elkülönítik a hulladékáramból, és fűtőértékükkel nem járulnak hozzá az energiamérleghez.",
+    "inert-material-description": "Az üveg, beton, kő, fémek és egyéb inert frakciók nem vesznek részt a molekuláris hőbontási folyamatban. Ezeket az anyagokat a feldolgozás előtt elkülönítik a hulladékáramból, és fűtőértékükkel nem járulnak hozzá az energiamérleghez.",
     "inert-material-sources": "Üveg, beton, kő, fémek, kerámia, ásványi frakciók és a feldolgozás előtt elkülönített egyéb inert anyagok",
     "common.cancel": "Mégse",
     "common.remove": "Eltávolítás",
@@ -362,7 +362,7 @@
     "calc.customMix.chartTitle": "Keverék előnézete",
     "calc.customMix.blendedStats": "A keverék tulajdonságai",
     "calc.customMix.defaultMoistureLabel": "Alapértelmezett nedvességtartalom",
-    "calc.customMix.defaultCalorificLabel": "Száraz fűtőérték (PCS)",
+    "calc.customMix.defaultCalorificLabel": "Száraz felső fűtőérték (HHV)",
     "calc.customMix.mustReach100": "A mentéshez az összetételnek el kell érnie a 100%-ot",
     "calc.customMix.startAdding": "A keverék összeállításához adjon hozzá hulladéktípusokat fent",
     "calc.customMix.readyToSave": "Mentésre kész",
@@ -401,20 +401,20 @@
     "calc.typesSelected": "kiválasztott típus(ok)",
     "calc.emptyTitle": "Még nincs kiválasztva hulladéktípus",
     "calc.emptyHint": "A kezdéshez kattintson a „Válassza ki a hulladéktípusokat” gombra",
-    "calc.mixLabel": "Hulladékkeverék — átbocsátás és nedvesség",
+    "calc.mixLabel": "Hulladékkeverék — tömegáram és nedvességtartalom",
     "calc.summary.totalInput": "Teljes bemenet",
-    "calc.summary.tph": "tonna hulladék/óra",
+    "calc.summary.tph": "tonna hulladék/óra (t/h)",
     "calc.summary.thermal": "Termikus",
     "calc.summary.electrical": "Elektromos",
     "calc.totalAmount.label": "Feldolgozási idő kiszámítása",
     "calc.totalAmount.hint": "Adja meg a feldolgozandó hulladék teljes mennyiségét",
-    "calc.totalAmount.result": "a jelenlegi átbocsátási rátával történő feldolgozáshoz",
-    "calc.totalAmount.noMix": "A számításhoz adjon meg átbocsátással rendelkező hulladéktípusokat",
+    "calc.totalAmount.result": "a jelenlegi tömegárammal történő feldolgozáshoz",
+    "calc.totalAmount.noMix": "A számításhoz adjon meg tömegárammal rendelkező hulladéktípusokat",
     "calc.methodology.title": "Nedvességkorrekció — EN 14918",
-    "calc.methodology.moisture": "nedvesség %",
+    "calc.methodology.moisture": "nedvességtartalom %",
     "calc.methodology.latentHeat": "látens párolgási hő 25°C-on",
     "calc.methodology.explanation": "Két veszteségmechanizmus: (1) tömeghígítás inert víz révén, (2) párolgási energia az égés során. Nem lineáris — a nedves hulladék aránytalanul többet veszít. ",
-    "calc.methodology.calibration": "Ref. WP1000: 1 t/h biomassza @ 17 MJ/kg PCS → 1 MWh elektromos energia",
+    "calc.methodology.calibration": "Ref. WP1000: 1 t/h biomassza @ 17 MJ/kg HHV → 1 MWh elektromos energia",
     "calc.exportPdf": "PDF jelentés exportálása",
     "calc.emptyResults": "Állítsa be a hulladékkeveréket az éves hatás-előrejelzések megtekintéséhez",
     "calc.breakdown.title": "Energetikai hozzájárulás típusonként",
@@ -422,7 +422,7 @@
     "calc.disclaimer.body": "Minden adat hozzávetőleges becslés a Kolozsvári referencialétesítmény alapján (25 550 t/év, 24/7 működés, karbantartás ~10 nagyobb ünnepnapon).",
     "calc.disclaimer.uptime": "rendelkezésre állási idő",
     "calc.disclaimer.warning": "A termelés függ a fűtőértéktől (HHV), a nedvességtartalomtól, a hamutartalomtól és a részecskemérettől. Állítsa be a nedvességtartalmat típusonként minden sorban.",
-    "calc.disclaimer.src.moisture": "Nedvesség-képlet",
+    "calc.disclaimer.src.moisture": "Nedvességtartalom-képlet",
     "calc.disclaimer.src.households": "Háztartások",
     "calc.disclaimer.src.co2": "Elkerült CO₂",
     "calc.disclaimer.src.cars": "Kivont autók",
