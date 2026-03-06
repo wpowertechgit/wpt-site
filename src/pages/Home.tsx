@@ -7,9 +7,18 @@ import PillarsSection from "../components/home/PillarsSection";
 
 export default function Home() {
     const { t } = useTranslation();
+    const heroSurface = "#ffffff";
+    const heroVideoWhiteShadow = "0 0 0 0.125rem #ffffff, 0 0 1.25rem 0.75rem #ffffff";
+    const whitePoster =
+        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23ffffff'/%3E%3C/svg%3E";
+    const safariVideoToneFix = {
+        "@supports (-webkit-touch-callout: none)": {
+            filter: "brightness(1.06) contrast(1.01) saturate(0.92)"
+        }
+    };
 
     return (
-        <Box sx={{ bgcolor: "#ffffff" }}>
+        <Box sx={{ bgcolor: heroSurface }}>
             {/* HERO SECTION */}
             <Box
                 sx={{
@@ -17,7 +26,7 @@ export default function Home() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    bgcolor: "#ffffff",
+                    bgcolor: heroSurface,
                     position: "relative",
                     overflow: "hidden",
                     px: 2
@@ -53,6 +62,8 @@ export default function Home() {
                             loop
                             muted
                             playsInline
+                            preload="auto"
+                            poster={whitePoster}
                             controls={false}
                             disablePictureInPicture
                             controlsList="nodownload nofullscreen noremoteplayback"
@@ -65,22 +76,16 @@ export default function Home() {
                                 display: "block",
                                 pointerEvents: "none",
                                 userSelect: "none",
-                                backgroundColor: "#ffffff",
-                                transform: "translateZ(0)"
+                                backgroundColor: heroSurface,
+                                boxShadow: heroVideoWhiteShadow,
+                                transform: "translateZ(0)",
+                                backfaceVisibility: "hidden",
+                                WebkitBackfaceVisibility: "hidden",
+                                ...safariVideoToneFix
                             }}
                         >
                             <source src="/logo-desktop-optimized.mp4" type="video/mp4" />
                         </Box>
-                        <Box
-                            aria-hidden="true"
-                            sx={{
-                                position: "absolute",
-                                inset: 0,
-                                background:
-                                    "linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.14) 100%)",
-                                pointerEvents: "none"
-                            }}
-                        />
                     </Box>
 
                     <Box
@@ -100,6 +105,8 @@ export default function Home() {
                             loop
                             muted
                             playsInline
+                            preload="auto"
+                            poster={whitePoster}
                             controls={false}
                             disablePictureInPicture
                             controlsList="nodownload nofullscreen noremoteplayback"
@@ -112,21 +119,15 @@ export default function Home() {
                                 display: "block",
                                 pointerEvents: "none",
                                 userSelect: "none",
-                                backgroundColor: "#ffffff"
+                                backgroundColor: heroSurface,
+                                boxShadow: heroVideoWhiteShadow,
+                                backfaceVisibility: "hidden",
+                                WebkitBackfaceVisibility: "hidden",
+                                ...safariVideoToneFix
                             }}
                         >
                             <source src="/logo-mid-res-optimized.mp4" type="video/mp4" />
                         </Box>
-                        <Box
-                            aria-hidden="true"
-                            sx={{
-                                position: "absolute",
-                                inset: 0,
-                                background:
-                                    "linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.14) 100%)",
-                                pointerEvents: "none"
-                            }}
-                        />
                     </Box>
 
                     <Typography
