@@ -4,6 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Center, ScrollControls, useScroll } from "@react-three/drei";
 import { motion } from "framer-motion";
 import { easing } from "maath";
+import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from "react-icons/md";
 import * as THREE from "three";
 import { useTranslation } from "react-i18next";
 import AssemblyCompressedModel from "./AssemblyCompressedModel";
@@ -37,6 +38,11 @@ type FovAnchor = {
 };
 
 const FALLBACK_SECTION_COUNT = 9;
+
+function getFallbackImageSources(isPhone: boolean) {
+  const imagePrefix = isPhone ? "/fallbackMobile/tech-phone" : "/fallbackDesktop/tech-desktop";
+  return Array.from({ length: FALLBACK_SECTION_COUNT }, (_, index) => `${imagePrefix}-${index + 1}.png`);
+}
 
 const OVERLAY_THEME = createTheme({
   typography: {
@@ -419,10 +425,20 @@ function Scene({
 }
 
 // Thin component that lives inside ScrollControls and syncs scroll.offset into a ref.
-function MobileScrollDriver({ offsetRef }: { offsetRef: React.MutableRefObject<number> }) {
+function MobileScrollDriver({
+  offsetRef,
+  scrollElementRef,
+}: {
+  offsetRef: React.MutableRefObject<number>;
+  scrollElementRef: React.MutableRefObject<HTMLDivElement | null>;
+}) {
   const scroll = useScroll();
   useFrame(() => {
     offsetRef.current = scroll.offset;
+    const state = scroll as unknown as { el?: HTMLDivElement };
+    if (state.el) {
+      scrollElementRef.current = state.el;
+    }
   });
   return null;
 }
@@ -743,8 +759,6 @@ function LoadingGate({
             fontSize: { xs: "0.82rem", sm: "0.9rem", md: "1rem" },
             cursor: "pointer",
             letterSpacing: "0.01em",
-            transition: "background 0.15s",
-            "&:hover": { bgcolor: "#222222" },
           }}
         >
           {t("tech-gate-cta", { defaultValue: "Start Interactive Tour" })}
@@ -767,11 +781,7 @@ function supportsTechnologyRig() {
 
 function TechnologyFallbackSequence() {
   const isMobile = useMediaQuery("(max-width:767px)");
-  const imagePrefix = isMobile ? "/fallbackMobile/tech-phone" : "/fallbackDesktop/tech-desktop";
-  const images = useMemo(
-    () => Array.from({ length: FALLBACK_SECTION_COUNT }, (_, index) => `${imagePrefix}-${index + 1}.png`),
-    [imagePrefix],
-  );
+  const images = useMemo(() => getFallbackImageSources(isMobile), [isMobile]);
 
   return (
     <Box
@@ -801,6 +811,425 @@ function TechnologyFallbackSequence() {
   );
 }
 
+function RigVisibilityHelp({
+  onOpenGallery,
+  onPrevSection,
+  onNextSection,
+  canPrev,
+  canNext,
+}: {
+  onOpenGallery: () => void;
+  onPrevSection: () => void;
+  onNextSection: () => void;
+  canPrev: boolean;
+  canNext: boolean;
+}) {
+  const { t } = useTranslation();
+  const [isQuestionHovering, setIsQuestionHovering] = useState(false);
+  const [isQuestionFocused, setIsQuestionFocused] = useState(false);
+  const [isPromptHovering, setIsPromptHovering] = useState(false);
+  const showPrompt = isQuestionHovering || isQuestionFocused || isPromptHovering;
+
+  return (
+    <Box
+      sx={{
+        position: "absolute",
+        left: { xs: 12, sm: 16, md: 20 },
+        bottom: { xs: 12, sm: 16, md: 20 },
+        zIndex: 35,
+        display: "flex",
+        alignItems: "flex-end",
+        gap: 1.1,
+        pointerEvents: "auto",
+      }}
+    >
+      <Box
+        sx={{
+          display: "inline-flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: { xs: "flex-start", md: "center" },
+          gap: { xs: 0.8, md: 0.8 },
+        }}
+      >
+        <Box
+          sx={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 0.8,
+            order: { xs: 1, md: 2 },
+          }}
+        >
+          <Box
+            component="button"
+            type="button"
+            onClick={onPrevSection}
+            disabled={!canPrev}
+            aria-label="Previous section"
+            sx={{
+              width: { xs: 64, sm: 72, md: 58 },
+              height: { xs: 64, sm: 72, md: 58 },
+              border: "2px solid #000000",
+              bgcolor: "#000000",
+              color: "#ffffff",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              p: 0,
+              cursor: canPrev ? "pointer" : "not-allowed",
+              borderRadius: 0,
+              opacity: canPrev ? 1 : 0.35,
+              "& svg": {
+                width: { xs: 34, sm: 38, md: 32 },
+                height: "auto",
+              },
+            }}
+          >
+            <MdOutlineArrowBackIosNew />
+          </Box>
+
+          <Box
+            component="button"
+            type="button"
+            onClick={onNextSection}
+            disabled={!canNext}
+            aria-label="Next section"
+            sx={{
+              width: { xs: 64, sm: 72, md: 58 },
+              height: { xs: 64, sm: 72, md: 58 },
+              border: "2px solid #000000",
+              bgcolor: "#000000",
+              color: "#ffffff",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              p: 0,
+              cursor: canNext ? "pointer" : "not-allowed",
+              borderRadius: 0,
+              opacity: canNext ? 1 : 0.35,
+              "& svg": {
+                width: { xs: 34, sm: 38, md: 32 },
+                height: "auto",
+              },
+            }}
+          >
+            <MdOutlineArrowForwardIos />
+          </Box>
+        </Box>
+
+        <Box
+          component="button"
+          type="button"
+          aria-label={t("tech-rig-help-label", { defaultValue: "Model visibility help" })}
+          onClick={onOpenGallery}
+          onMouseEnter={() => setIsQuestionHovering(true)}
+          onMouseLeave={() => setIsQuestionHovering(false)}
+          onFocus={() => setIsQuestionFocused(true)}
+          onBlur={() => setIsQuestionFocused(false)}
+          sx={{
+            width: { xs: 36, sm: 40, md: 42 },
+            height: { xs: 36, sm: 40, md: 42 },
+            border: "1px solid #000000",
+            bgcolor: "#000000",
+            color: "#ffffff",
+            fontFamily: "Stack Sans Headline, sans-serif",
+            fontWeight: 700,
+            fontSize: { xs: "1.05rem", sm: "1.1rem", md: "1.2rem" },
+            lineHeight: 1,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            p: 0,
+            cursor: "pointer",
+            borderRadius: 0,
+            order: { xs: 2, md: 1 },
+            "&:focus-visible": {
+              outline: "2px solid #0000FF",
+              outlineOffset: 2,
+            },
+          }}
+        >
+          ?
+        </Box>
+      </Box>
+
+      <Fade in={showPrompt} timeout={{ enter: 140, exit: 140 }} unmountOnExit>
+        <Box
+          onMouseEnter={() => setIsPromptHovering(true)}
+          onMouseLeave={() => setIsPromptHovering(false)}
+          sx={{
+            maxWidth: { xs: "30ch", sm: "34ch", md: "38ch" },
+            bgcolor: "#ffffff",
+            border: "1px solid #000000",
+            px: { xs: 1, sm: 1.2, md: 1.4 },
+            py: { xs: 0.9, sm: 1, md: 1.15 },
+            boxShadow: "0 8px 18px rgba(0,0,0,0.08)",
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: "Figtree, sans-serif",
+              fontWeight: 500,
+              fontSize: { xs: "0.78rem", sm: "0.82rem", md: "0.9rem" },
+              lineHeight: 1.3,
+              color: "#000000",
+              mb: 0.8,
+            }}
+          >
+            {t("tech-rig-help-prompt", { defaultValue: "Model not visible?" })}
+          </Typography>
+          <Box
+            component="button"
+            type="button"
+            onClick={onOpenGallery}
+            sx={{
+              border: "1px solid #000000",
+              bgcolor: "#000000",
+              color: "#ffffff",
+              fontFamily: "Figtree, sans-serif",
+              fontWeight: 600,
+              fontSize: { xs: "0.74rem", sm: "0.78rem", md: "0.86rem" },
+              letterSpacing: "0.01em",
+              px: { xs: 1, sm: 1.2, md: 1.4 },
+              py: { xs: 0.45, sm: 0.5, md: 0.6 },
+              borderRadius: 0,
+              cursor: "pointer",
+            }}
+          >
+            {t("tech-rig-help-open-gallery", { defaultValue: "Open image gallery" })}
+          </Box>
+        </Box>
+      </Fade>
+    </Box>
+  );
+}
+
+function RigFallbackGallery({
+  open,
+  onClose,
+  isPhone,
+}: {
+  open: boolean;
+  onClose: () => void;
+  isPhone: boolean;
+}) {
+  const { t } = useTranslation();
+  const images = useMemo(() => getFallbackImageSources(isPhone), [isPhone]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const lastIndex = images.length - 1;
+  const atFirst = activeIndex <= 0;
+  const atLast = activeIndex >= lastIndex;
+
+  useEffect(() => {
+    if (!open) return;
+    setActiveIndex(0);
+  }, [open, isPhone]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        setActiveIndex((current) => Math.max(current - 1, 0));
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        setActiveIndex((current) => Math.min(current + 1, lastIndex));
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open, onClose, lastIndex]);
+
+  return (
+    <Fade in={open} timeout={{ enter: 160, exit: 160 }} unmountOnExit>
+      <Box
+        role="dialog"
+        aria-modal="true"
+        aria-label={t("tech-rig-gallery-dialog-label", {
+          defaultValue: "Technology fallback image gallery",
+        })}
+        sx={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 1400,
+          bgcolor: "rgba(255,255,255,0.97)",
+          borderTop: "1px solid #000000",
+        }}
+      >
+        <Box
+          sx={{
+            height: "100%",
+            overflowY: "auto",
+            px: { xs: 1.2, sm: 1.8, md: 2.5 },
+            py: { xs: 1.2, sm: 1.4, md: 1.8 },
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 1.5, mb: 1.2 }}>
+            <Box>
+              <Typography
+                sx={{
+                  fontFamily: "Stack Sans Headline, sans-serif",
+                  fontWeight: 700,
+                  fontSize: { xs: "1rem", sm: "1.2rem", md: "1.4rem" },
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.015em",
+                }}
+              >
+                {t("tech-rig-gallery-title", { defaultValue: "Technology Image Sequence" })}
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Figtree, sans-serif",
+                  fontWeight: 400,
+                  fontSize: { xs: "0.75rem", sm: "0.82rem", md: "0.9rem" },
+                  color: "rgba(0,0,0,0.78)",
+                  lineHeight: 1.35,
+                  mt: 0.45,
+                }}
+              >
+                {t("tech-rig-gallery-description", {
+                  defaultValue: "If 3D is not visible, use these static section images.",
+                })}
+              </Typography>
+            </Box>
+            <Box
+              component="button"
+              type="button"
+              onClick={onClose}
+              sx={{
+                border: "1px solid #000000",
+                bgcolor: "#000000",
+                color: "#ffffff",
+                px: { xs: 0.95, sm: 1.1, md: 1.25 },
+                py: { xs: 0.5, sm: 0.55, md: 0.6 },
+                fontFamily: "Figtree, sans-serif",
+                fontWeight: 600,
+                fontSize: { xs: "0.74rem", sm: "0.78rem", md: "0.86rem" },
+                letterSpacing: "0.01em",
+                borderRadius: 0,
+                cursor: "pointer",
+              }}
+            >
+              {t("tech-rig-gallery-close", { defaultValue: "Close gallery" })}
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              position: "relative",
+              width: "100%",
+              maxWidth: { xs: "100%", md: "92vw", xl: "86vw" },
+              mx: "auto",
+              border: "1px solid #000000",
+              bgcolor: "#ffffff",
+              p: { xs: 0.6, sm: 0.8, md: 1 },
+              pb: { xs: 1.2, sm: 1.5, md: 2.2 },
+            }}
+          >
+            <Box
+              component="img"
+              src={images[activeIndex]}
+              alt={t("tech-rig-gallery-image-alt", {
+                defaultValue: "Technology process fallback section {{index}}",
+                index: activeIndex + 1,
+              })}
+              loading="eager"
+              sx={{
+                display: "block",
+                width: "100%",
+                height: "auto",
+                maxHeight: { xs: "72vh", md: "76vh" },
+                objectFit: "contain",
+                objectPosition: "center",
+                border: "1px solid #d9d9d9",
+              }}
+            />
+
+            <Box
+              component="button"
+              type="button"
+              onClick={() => setActiveIndex((current) => Math.max(current - 1, 0))}
+              disabled={atFirst}
+              aria-label={t("tech-rig-gallery-prev", { defaultValue: "Previous" })}
+              sx={{
+                position: "absolute",
+                left: { xs: 8, sm: 10, md: 14 },
+                top: "50%",
+                transform: "translateY(-50%)",
+                minWidth: { xs: 78, sm: 86, md: 94 },
+                border: "1px solid #000000",
+                bgcolor: "#000000",
+                color: "#ffffff",
+                px: { xs: 0.8, sm: 1, md: 1.1 },
+                py: { xs: 0.5, sm: 0.55, md: 0.6 },
+                fontFamily: "Figtree, sans-serif",
+                fontWeight: 600,
+                fontSize: { xs: "0.72rem", sm: "0.76rem", md: "0.82rem" },
+                letterSpacing: "0.01em",
+                borderRadius: 0,
+                cursor: atFirst ? "not-allowed" : "pointer",
+                opacity: atFirst ? 0.35 : 1,
+              }}
+            >
+              <MdOutlineArrowBackIosNew />
+            </Box>
+
+            <Box
+              component="button"
+              type="button"
+              onClick={() => setActiveIndex((current) => Math.min(current + 1, lastIndex))}
+              disabled={atLast}
+              aria-label={t("tech-rig-gallery-next", { defaultValue: "Next" })}
+              sx={{
+                position: "absolute",
+                right: { xs: 8, sm: 10, md: 14 },
+                top: "50%",
+                transform: "translateY(-50%)",
+                minWidth: { xs: 60, sm: 66, md: 74 },
+                border: "1px solid #000000",
+                bgcolor: "#000000",
+                color: "#ffffff",
+                px: { xs: 0.8, sm: 1, md: 1.1 },
+                py: { xs: 0.5, sm: 0.55, md: 0.6 },
+                fontFamily: "Figtree, sans-serif",
+                fontWeight: 600,
+                fontSize: { xs: "0.72rem", sm: "0.76rem", md: "0.82rem" },
+                letterSpacing: "0.01em",
+                borderRadius: 0,
+                cursor: atLast ? "not-allowed" : "pointer",
+                opacity: atLast ? 0.35 : 1,
+              }}
+            >
+              <MdOutlineArrowForwardIos />
+
+            </Box>
+          </Box>
+
+          <Typography
+            sx={{
+              mt: 0.9,
+              fontFamily: "Figtree, sans-serif",
+              fontWeight: 500,
+              fontSize: { xs: "0.74rem", sm: "0.8rem", md: "0.86rem" },
+              color: "rgba(0,0,0,0.78)",
+              textAlign: "center",
+            }}
+          >
+            {t("tech-rig-gallery-counter", {
+              defaultValue: "{{current}} / {{total}}",
+              current: activeIndex + 1,
+              total: images.length,
+            })}
+          </Typography>
+        </Box>
+      </Box>
+    </Fade>
+  );
+}
+
 export default function TechnologyScrollRig() {
   const isMobile = useMediaQuery("(max-width:767px)");
   const is4k = useMediaQuery("(min-width:2560px)");
@@ -810,12 +1239,14 @@ export default function TechnologyScrollRig() {
   const [showScrollHint, setShowScrollHint] = useState(false);
   // FIX: gate — user must press "Start" before the rig loads
   const [rigStarted, setRigStarted] = useState(false);
+  const [fallbackGalleryOpen, setFallbackGalleryOpen] = useState(false);
   // FIX: trackpad detection
   const [isTrackpad, setIsTrackpad] = useState(false);
   const rigContainerRef = useRef<HTMLDivElement | null>(null);
   const hasShownScrollHintRef = useRef(false);
   const hintTimeoutRef = useRef<number | null>(null);
   const mobileScrollOffsetRef = useRef(0);
+  const mobileScrollElementRef = useRef<HTMLDivElement | null>(null);
   // FIX: key to force Canvas remount after gate is opened (guarantees fresh camera state)
   const [canvasKey, setCanvasKey] = useState(0);
 
@@ -832,6 +1263,15 @@ export default function TechnologyScrollRig() {
     // bump key so Canvas remounts fresh with correct initial camera
     setCanvasKey((k) => k + 1);
   }, []);
+
+  useEffect(() => {
+    if (!fallbackGalleryOpen || typeof document === "undefined") return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [fallbackGalleryOpen]);
 
   // ── Viewport tracking ──────────────────────────────────────────────────────
   useEffect(() => {
@@ -926,8 +1366,36 @@ export default function TechnologyScrollRig() {
   const sectionPoses = useMemo(() => {
     return getSectionPosesForClosestAnchor(viewportSize.width);
   }, [viewportSize.width]);
+  const sectionCount = sectionPoses.length;
 
   const isSmallScreen = viewportSize.width < 1000;
+  const usesScrollControls = isMobile || isSmallScreen;
+
+  const jumpToSection = useCallback((targetSection: number) => {
+    const clamped = THREE.MathUtils.clamp(targetSection, 0, sectionCount - 1);
+
+    if (usesScrollControls) {
+      const el = mobileScrollElementRef.current;
+      if (el) {
+        const maxScroll = Math.max(0, el.scrollHeight - el.clientHeight);
+        const offset = clamped / sectionCount;
+        const targetTop = Math.min(maxScroll, Math.max(0, maxScroll * offset + (clamped > 0 ? 1 : 0)));
+        el.scrollTo({ top: targetTop, behavior: "smooth" });
+      }
+    } else {
+      setActiveSection(clamped);
+    }
+  }, [sectionCount, usesScrollControls]);
+
+  const goToNextSection = useCallback(() => {
+    dismissScrollHint();
+    jumpToSection(activeSection + 1);
+  }, [dismissScrollHint, jumpToSection, activeSection]);
+
+  const goToPrevSection = useCallback(() => {
+    dismissScrollHint();
+    jumpToSection(activeSection - 1);
+  }, [dismissScrollHint, jumpToSection, activeSection]);
 
   const modelScale = useMemo(() => {
     if (isSmallScreen) return 1;
@@ -1059,13 +1527,16 @@ export default function TechnologyScrollRig() {
               camera.position.set(...firstPose.position);
             }}
           >
-            {(isMobile || isSmallScreen) ? (
+            {usesScrollControls ? (
               <ScrollControls
                 pages={MOBILE_SCROLL_PAGES}
                 damping={0.3}
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
-                <MobileScrollDriver offsetRef={mobileScrollOffsetRef} />
+                <MobileScrollDriver
+                  offsetRef={mobileScrollOffsetRef}
+                  scrollElementRef={mobileScrollElementRef}
+                />
                 <Scene
                   sectionPoses={sectionPoses}
                   activeSection={activeSection}
@@ -1098,6 +1569,22 @@ export default function TechnologyScrollRig() {
           />
         </>
       )}
+
+      {rigStarted && (
+        <RigVisibilityHelp
+          onOpenGallery={() => setFallbackGalleryOpen(true)}
+          onPrevSection={goToPrevSection}
+          onNextSection={goToNextSection}
+          canPrev={activeSection > 0}
+          canNext={activeSection < sectionCount - 1}
+        />
+      )}
+
+      <RigFallbackGallery
+        open={fallbackGalleryOpen}
+        onClose={() => setFallbackGalleryOpen(false)}
+        isPhone={isMobile}
+      />
     </Box>
   );
 }

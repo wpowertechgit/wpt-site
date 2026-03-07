@@ -1,14 +1,15 @@
 import { Clone, useGLTF } from "@react-three/drei";
 import type { ThreeElements } from "@react-three/fiber";
-import modelUrl from "../assets/assembly/machinecluj-transformed.glb";
+
+const MODEL_URL = "/model/rig.glb";
+useGLTF.setDecoderPath("/draco/");
 
 type ModelProps = ThreeElements["group"];
 type ModelCloneProps = Omit<ModelProps, "ref">;
 
 export default function AssemblyCompressedModel(props: ModelCloneProps) {
-  const { scene } = useGLTF(modelUrl, true);
+  const { scene } = useGLTF(MODEL_URL, true);
   return <Clone object={scene} {...props} />;
 }
 
-useGLTF.preload(modelUrl, true);
-
+useGLTF.preload(MODEL_URL, true);
